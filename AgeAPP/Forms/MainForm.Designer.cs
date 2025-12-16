@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
             dataGridViewPlayers = new DataGridView();
             SplitButton = new Button();
             panel1 = new Panel();
@@ -41,17 +42,20 @@
             // 
             dataGridViewPlayers.AllowUserToAddRows = false;
             dataGridViewPlayers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewPlayers.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
             dataGridViewPlayers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewPlayers.Location = new Point(12, 12);
             dataGridViewPlayers.Name = "dataGridViewPlayers";
             dataGridViewPlayers.ReadOnly = true;
+            dataGridViewPlayers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewPlayers.Size = new Size(456, 492);
             dataGridViewPlayers.TabIndex = 0;
             // 
             // SplitButton
             // 
             SplitButton.AutoSize = true;
-            SplitButton.Location = new Point(28, 81);
+            SplitButton.Font = new Font("Arial", 16F);
+            SplitButton.Location = new Point(22, 78);
             SplitButton.Name = "SplitButton";
             SplitButton.Size = new Size(227, 55);
             SplitButton.TabIndex = 2;
@@ -61,19 +65,22 @@
             // 
             // panel1
             // 
+            panel1.BackgroundImage = Properties.Resources.Panel_bg2;
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(AdminPanelButton);
             panel1.Controls.Add(LoginButton);
             panel1.Controls.Add(SplitButton);
             panel1.Location = new Point(484, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(268, 237);
+            panel1.Size = new Size(268, 492);
             panel1.TabIndex = 2;
             // 
             // AdminPanelButton
             // 
             AdminPanelButton.AutoSize = true;
             AdminPanelButton.Enabled = false;
-            AdminPanelButton.Location = new Point(28, 142);
+            AdminPanelButton.Font = new Font("Arial", 16F);
+            AdminPanelButton.Location = new Point(22, 139);
             AdminPanelButton.Name = "AdminPanelButton";
             AdminPanelButton.Size = new Size(227, 55);
             AdminPanelButton.TabIndex = 3;
@@ -83,7 +90,8 @@
             // LoginButton
             // 
             LoginButton.AutoSize = true;
-            LoginButton.Location = new Point(28, 20);
+            LoginButton.Font = new Font("Arial", 16F);
+            LoginButton.Location = new Point(22, 17);
             LoginButton.Name = "LoginButton";
             LoginButton.Size = new Size(227, 55);
             LoginButton.TabIndex = 1;
@@ -95,14 +103,18 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.Civ_details_bg;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(775, 516);
             Controls.Add(panel1);
             Controls.Add(dataGridViewPlayers);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "FMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Main";
+            Text = "AgeAPP - Menu";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).EndInit();
             panel1.ResumeLayout(false);

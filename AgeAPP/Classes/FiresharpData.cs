@@ -7,6 +7,7 @@ namespace AgeAPP.Classes
     {
         public class Player
         {
+            public int Id { get; set; }
             public string Name { get; set; }
             public int Rating { get; set; }
         }
@@ -23,6 +24,11 @@ namespace AgeAPP.Classes
 
             return data.Values
                 .OrderByDescending(p => p.Rating)
+                .Select((p, index) =>
+                {
+                    p.Id = index + 1;
+                    return p;
+                })
                 .ToList();
         }
     }
