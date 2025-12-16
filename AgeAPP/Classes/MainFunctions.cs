@@ -4,6 +4,59 @@ namespace AgeAPP.Classes
 {
     public class MainFunctions
     {
+        public static string basePath = AppDomain.CurrentDomain.BaseDirectory;
+        public string DataFolder_path { get; set; } = Path.Combine(basePath, "Data");
+        public string LogsFolder_path { get; set; } = Path.Combine(basePath, "Data", "Logs");
+        public string BackupsFolder_path { get; set; } = Path.Combine(basePath, "Data", "Backups");
+
+        public void Create_Required_folders()
+        {
+            if(Directory.Exists(DataFolder_path))
+                return;
+
+            Directory.CreateDirectory(DataFolder_path);
+            Directory.CreateDirectory(LogsFolder_path);
+            Directory.CreateDirectory(BackupsFolder_path);
+        }
+
+        class SessionData
+        {
+            public Admin Local_admin { get; set; }
+        }
+        public void Save_session(Admin local_admin)
+        {
+            SessionData session = new SessionData
+            {
+                Local_admin = local_admin
+            };
+
+            string json = System.Text.Json.JsonSerializer.Serialize(session);
+
+            File.WriteAllText(Path.Combine(DataFolder_path, "session.json"), json);
+        }
+
+        public Admin Load_session()
+        {
+            string sessionFilePath = Path.Combine(DataFolder_path, "session.json");
+
+            if (!File.Exists(sessionFilePath))
+                return null;
+
+            string json = File.ReadAllText(sessionFilePath);
+
+            SessionData session = System.Text.Json.JsonSerializer.Deserialize<SessionData>(json);
+
+            return session.Local_admin;
+        }
+
+        public void Delete_session()
+        {
+            string sessionFilePath = Path.Combine(DataFolder_path, "session.json");
+
+            if (File.Exists(sessionFilePath))
+                File.Delete(sessionFilePath);
+        }
+
         public (List<Player> teamA, List<Player> teamB) SplitTeams(List<Player> players)
         {
             var teamA = new List<Player>();

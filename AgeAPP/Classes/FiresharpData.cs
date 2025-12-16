@@ -18,21 +18,38 @@ namespace AgeAPP.Classes
 
         // Admin
         public bool Admin_LoggedIn = false;
-        public Admin Admin_Logged;
+        public Admin Local_Admin_Logged;
 
         public List<Admin> Admins = new List<Admin>
         {
-            new Admin { Name = "pedreiro", Password = "admin123" },
-            new Admin { Name = "oldtime", Password = "admin123" },
-            new Admin { Name = "biel", Password = "admin123" },
-            new Admin { Name = "kakashi", Password = "admin123" },
-            new Admin { Name = "snow", Password = "admin123" }
+            new Admin { Name = "pedreiro", Password = "chapeudecouro" },
+            new Admin { Name = "oldtime", Password = "artemis" },
+            new Admin { Name = "biel", Password = "amointerno" },
+            new Admin { Name = "kakashi", Password = "artuzao" },
+            new Admin { Name = "snow", Password = "neve" }
         };
 
         public class Admin
         {
             public string Name { get; set; }
             public string Password { get; set; }
+        }
+
+        public Admin Try_login(string username, string password)
+        {
+            var admin = Admins.FirstOrDefault(a =>
+                a.Name.Equals(username, StringComparison.OrdinalIgnoreCase) &&
+                a.Password == password
+            );
+
+            if (admin != null)
+            {
+                Local_Admin_Logged = admin;
+
+                return admin;
+            }
+
+            return null;
         }
 
         public void Connect_to_firesharp(string mode)
@@ -61,6 +78,9 @@ namespace AgeAPP.Classes
             public int Id { get; set; }
             public string Name { get; set; }
             public int Rating { get; set; }
+            public int Matches { get; set; }
+            public int Wins { get; set; }
+            public float WinRate { get; set; }
         }
 
         public async Task<List<Player>> GetAllPlayers()
@@ -70,17 +90,22 @@ namespace AgeAPP.Classes
             if (response.Body == "null")
                 return new List<Player>();
 
-            // Pega a data
+            // Pega o conteudo da resposta e converte para dicionario
             var data = response.ResultAs<Dictionary<string, Player>>();
 
-            return data.Values
+            var players_list = data.Values
                 .OrderByDescending(p => p.Rating)
                 .Select((p, index) =>
                 {
                     p.Id = index + 1;
+
+                    p.WinRate = p.Matches > 0 ? (float)Math.Round((float)p.Wins / p.Matches * 100, 2) : 0;
+
                     return p;
                 })
                 .ToList();
+
+            return players_list;
         }
     }
 }

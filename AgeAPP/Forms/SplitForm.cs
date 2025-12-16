@@ -30,7 +30,7 @@ namespace AgeAPP.Forms
                 .Where(p => p != null)
                 .ToList();
 
-            if (selectedPlayers.Count < 5)
+            if (selectedPlayers.Count < 3)
             {
                 MessageBox.Show("Selecione pelo menos 4 jogadores.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

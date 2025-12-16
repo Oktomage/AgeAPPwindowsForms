@@ -1,13 +1,5 @@
 ﻿using AgeAPP.Classes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using static AgeAPP.Classes.FiresharpData;
 
 namespace AgeAPP.Forms
 {
@@ -22,9 +14,38 @@ namespace AgeAPP.Forms
             local_Data_service = data_service;
         }
 
-        private void AdminPanelForm_Load(object sender, EventArgs e)
+        private async void AdminPanelForm_Load(object sender, EventArgs e)
         {
-
+            var players = await local_Data_service.GetAllPlayers();
+            dataGridViewPlayers.DataSource = players;
         }
+
+        private void dataGridViewPlayers_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridViewPlayers.SelectedRows.Count == 0)
+                return;
+
+            Player selectedPlayer = dataGridViewPlayers.SelectedRows[0].DataBoundItem as Player;
+
+            // Mostra dados do jogador no painel
+            if (selectedPlayer != null)
+            {
+                SelectedPlayerLabel.Text = $"{selectedPlayer.Name} | {selectedPlayer.Rating}";
+                SelectedPlayerRatingTextBox.Text = selectedPlayer.Rating.ToString();
+            }
+        }
+
+        #region PLAYER PANEL BUTTONS
+
+        private void SelectedPlayerRatingTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite apenas números e teclas de controle (Backspace, Delete)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        #endregion
     }
 }

@@ -74,6 +74,7 @@ namespace AgeAPP.Forms
             TextBoxPassword.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TextBoxPassword.Location = new Point(12, 79);
             TextBoxPassword.Name = "TextBoxPassword";
+            TextBoxPassword.PlaceholderText = "Senha de admin";
             TextBoxPassword.Size = new Size(223, 29);
             TextBoxPassword.TabIndex = 2;
             // 
@@ -82,6 +83,7 @@ namespace AgeAPP.Forms
             TextBoxLoginName.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TextBoxLoginName.Location = new Point(12, 29);
             TextBoxLoginName.Name = "TextBoxLoginName";
+            TextBoxLoginName.PlaceholderText = "Nome de usuario";
             TextBoxLoginName.Size = new Size(223, 29);
             TextBoxLoginName.TabIndex = 1;
             // 

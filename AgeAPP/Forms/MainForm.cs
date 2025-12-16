@@ -1,8 +1,6 @@
 using AgeAPP.Classes;
 using AgeAPP.Forms;
-using FireSharp.Config;
-using FireSharp.Interfaces;
-using FireSharp.Response;
+using static AgeAPP.Classes.FiresharpData;
 
 namespace AgeAPP
 {
@@ -10,6 +8,7 @@ namespace AgeAPP
     {
         // Serviços
         public FiresharpData Data_service = new FiresharpData();
+        private MainFunctions local_Main_functions_service = new MainFunctions();
 
         public FMain()
         {
@@ -18,8 +17,28 @@ namespace AgeAPP
 
         private async void Form1_Load(object sender, EventArgs e)
         {
-            Data_service.Connect_to_firesharp("user");
+            local_Main_functions_service.Create_Required_folders();
 
+            // Temtar persistencia de login
+            Data_service.Local_Admin_Logged = local_Main_functions_service.Load_session();
+
+            if(Data_service.Local_Admin_Logged != null)
+            {
+                Admin adm = Data_service.Try_login(Data_service.Local_Admin_Logged.Name, Data_service.Local_Admin_Logged.Password);
+
+                if(adm != null)
+                    Data_service.Connect_to_firesharp("admin");
+                else
+                {
+                    local_Main_functions_service.Delete_session();
+                    Data_service.Connect_to_firesharp("user");
+                }     
+            }
+                
+            else
+                Data_service.Connect_to_firesharp("user");
+
+            // Preenche a tabela inicial
             var players = await Data_service.GetAllPlayers();
             dataGridViewPlayers.DataSource = players;
         }
@@ -27,23 +46,19 @@ namespace AgeAPP
         private void SplitButton_Click(object sender, EventArgs e)
         {
             SplitForm splitForm = new SplitForm(Data_service);
-
             splitForm.ShowDialog();
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm(Data_service);
-
             loginForm.ShowDialog();
         }
 
         private void AdminPanelButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcionalidade em desenvolvimento.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            //AdminForm adminForm = new AdminForm();
-            //adminForm.ShowDialog();
+            AdminPanelForm adminForm = new AdminPanelForm(Data_service);
+            adminForm.ShowDialog();
         }
 
         private void ConnectionTimer_Tick(object sender, EventArgs e)
@@ -52,11 +67,15 @@ namespace AgeAPP
             {
                 LoginButton.Enabled = false;
                 AdminPanelButton.Enabled = true;
+            
+                AdminConnectedLabel.Text = $"Olá: {Data_service.Local_Admin_Logged.Name}";
             }
             else
             {
                 LoginButton.Enabled = true;
                 AdminPanelButton.Enabled = false;
+
+                AdminConnectedLabel.Text = "Nenhum admin conectado";
             }
         }
     }

@@ -6,7 +6,8 @@ namespace AgeAPP.Forms
     public partial class LoginForm : Form
     {
         // Serviços
-        public FiresharpData local_data_service = new FiresharpData();
+        private FiresharpData local_data_service = new FiresharpData();
+        private MainFunctions local_main_functions_service = new MainFunctions();
 
         public LoginForm(FiresharpData Data_service)
         {
@@ -21,28 +22,27 @@ namespace AgeAPP.Forms
 
         private void LogInButton_Click(object sender, EventArgs e)
         {
-            // Testar login
             string user = TextBoxLoginName.Text.Trim();
             string pass = TextBoxPassword.Text;
 
-            Admin admin = local_data_service.Admins.FirstOrDefault(a =>
-                a.Name.Equals(user, StringComparison.OrdinalIgnoreCase) &&
-                a.Password == pass
-            );
+            // Tentar logar
+            Admin admin = local_data_service.Try_login(user, pass);
 
             if (admin != null)
             {
-                local_data_service.Admin_Logged = admin;
+                // LogIn
+                local_data_service.Local_Admin_Logged = admin;
+
                 local_data_service.Connect_to_firesharp("admin");
 
-                //MessageBox.Show($"Bem-vindo, {admin.Name}!");
+                // Savar sessão
+                local_main_functions_service.Save_session(admin);
 
-                // Fechar login form
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Usuário ou senha inválidos.");
+                MessageBox.Show("Usuário ou senha inválidos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

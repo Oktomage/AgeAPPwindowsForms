@@ -73,6 +73,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ant_mainmenu_hr {
+            get {
+                object obj = ResourceManager.GetObject("ant_mainmenu_hr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Civ_details_bg {
             get {
                 object obj = ResourceManager.GetObject("Civ-details-bg", resourceCulture);
@@ -93,6 +103,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap news_splash {
+            get {
+                object obj = ResourceManager.GetObject("news_splash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Panel_bg {
             get {
                 object obj = ResourceManager.GetObject("Panel_bg", resourceCulture);
@@ -106,6 +126,16 @@ namespace AgeAPP.Properties {
         internal static System.Drawing.Bitmap Panel_bg2 {
             get {
                 object obj = ResourceManager.GetObject("Panel_bg2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seperator2 {
+            get {
+                object obj = ResourceManager.GetObject("seperator2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
