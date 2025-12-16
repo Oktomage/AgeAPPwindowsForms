@@ -35,11 +35,13 @@ namespace AgeAPP
             dataGridViewPlayers = new DataGridView();
             SplitButton = new Button();
             panel1 = new Panel();
+            AutoPlayerListRefresh = new CheckBox();
             pictureBox1 = new PictureBox();
             AdminConnectedLabel = new Label();
             AdminPanelButton = new Button();
             LoginButton = new Button();
             ConnectionTimer = new System.Windows.Forms.Timer(components);
+            AutoRefresh = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -75,7 +77,7 @@ namespace AgeAPP
             SplitButton.Name = "SplitButton";
             SplitButton.Size = new Size(227, 55);
             SplitButton.TabIndex = 1;
-            SplitButton.Text = "Splitar times";
+            SplitButton.Text = "Divisor de times";
             SplitButton.UseVisualStyleBackColor = true;
             SplitButton.Click += SplitButton_Click;
             // 
@@ -83,6 +85,8 @@ namespace AgeAPP
             // 
             panel1.BackgroundImage = Properties.Resources.Panel_bg2;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(AutoPlayerListRefresh);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(AdminConnectedLabel);
             panel1.Controls.Add(AdminPanelButton);
@@ -92,6 +96,16 @@ namespace AgeAPP
             panel1.Name = "panel1";
             panel1.Size = new Size(268, 492);
             panel1.TabIndex = 2;
+            // 
+            // AutoPlayerListRefresh
+            // 
+            AutoPlayerListRefresh.AutoSize = true;
+            AutoPlayerListRefresh.Location = new Point(3, 445);
+            AutoPlayerListRefresh.Name = "AutoPlayerListRefresh";
+            AutoPlayerListRefresh.Size = new Size(123, 19);
+            AutoPlayerListRefresh.TabIndex = 6;
+            AutoPlayerListRefresh.Text = "Auto atualizar lista";
+            AutoPlayerListRefresh.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -110,7 +124,7 @@ namespace AgeAPP
             AdminConnectedLabel.BackColor = Color.Transparent;
             AdminConnectedLabel.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AdminConnectedLabel.ForeColor = Color.Lime;
-            AdminConnectedLabel.Location = new Point(3, 473);
+            AdminConnectedLabel.Location = new Point(3, 467);
             AdminConnectedLabel.Name = "AdminConnectedLabel";
             AdminConnectedLabel.Size = new Size(41, 16);
             AdminConnectedLabel.TabIndex = 4;
@@ -133,7 +147,7 @@ namespace AgeAPP
             // 
             LoginButton.AutoSize = true;
             LoginButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LoginButton.Location = new Point(189, 461);
+            LoginButton.Location = new Point(185, 457);
             LoginButton.Name = "LoginButton";
             LoginButton.Size = new Size(76, 28);
             LoginButton.TabIndex = 3;
@@ -146,6 +160,12 @@ namespace AgeAPP
             ConnectionTimer.Enabled = true;
             ConnectionTimer.Interval = 500;
             ConnectionTimer.Tick += ConnectionTimer_Tick;
+            // 
+            // AutoRefresh
+            // 
+            AutoRefresh.Enabled = true;
+            AutoRefresh.Interval = 5000;
+            AutoRefresh.Tick += AutoRefresh_Tick;
             // 
             // FMain
             // 
@@ -181,5 +201,7 @@ namespace AgeAPP
         private System.Windows.Forms.Timer ConnectionTimer;
         private Label AdminConnectedLabel;
         private PictureBox pictureBox1;
+        private CheckBox AutoPlayerListRefresh;
+        private System.Windows.Forms.Timer AutoRefresh;
     }
 }

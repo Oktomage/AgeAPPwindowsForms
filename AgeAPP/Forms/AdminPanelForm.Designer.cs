@@ -33,13 +33,18 @@
             dataGridViewPlayers = new DataGridView();
             SelectedPlayerLabel = new Label();
             panel1 = new Panel();
-            button2 = new Button();
-            button1 = new Button();
+            DeleteSelectedPlayerButton = new Button();
+            ChangeSelectedPlayerRating = new Button();
             SelectedPlayerRatingTextBox = new TextBox();
+            label3 = new Label();
             label1 = new Label();
             label2 = new Label();
+            CreateNewPlayerButton = new Button();
+            panel2 = new Panel();
+            ApplyMatchResultButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridViewPlayers
@@ -73,15 +78,17 @@
             SelectedPlayerLabel.Size = new Size(77, 27);
             SelectedPlayerLabel.TabIndex = 2;
             SelectedPlayerLabel.Text = "label1";
+            SelectedPlayerLabel.Click += SelectedPlayerLabel_Click;
             // 
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.news_splash;
             panel1.BackgroundImageLayout = ImageLayout.Center;
             panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(DeleteSelectedPlayerButton);
+            panel1.Controls.Add(ChangeSelectedPlayerRating);
             panel1.Controls.Add(SelectedPlayerRatingTextBox);
+            panel1.Controls.Add(label3);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(SelectedPlayerLabel);
             panel1.Location = new Point(474, 55);
@@ -89,26 +96,28 @@
             panel1.Size = new Size(358, 426);
             panel1.TabIndex = 3;
             // 
-            // button2
+            // DeleteSelectedPlayerButton
             // 
-            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button2.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(220, 384);
-            button2.Name = "button2";
-            button2.Size = new Size(131, 35);
-            button2.TabIndex = 4;
-            button2.Text = "Deletar jogador";
-            button2.UseVisualStyleBackColor = true;
+            DeleteSelectedPlayerButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            DeleteSelectedPlayerButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DeleteSelectedPlayerButton.Location = new Point(220, 384);
+            DeleteSelectedPlayerButton.Name = "DeleteSelectedPlayerButton";
+            DeleteSelectedPlayerButton.Size = new Size(131, 35);
+            DeleteSelectedPlayerButton.TabIndex = 4;
+            DeleteSelectedPlayerButton.Text = "Deletar jogador";
+            DeleteSelectedPlayerButton.UseVisualStyleBackColor = true;
+            DeleteSelectedPlayerButton.Click += DeleteSelectedPlayerButton_Click;
             // 
-            // button1
+            // ChangeSelectedPlayerRating
             // 
-            button1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(170, 84);
-            button1.Name = "button1";
-            button1.Size = new Size(64, 35);
-            button1.TabIndex = 4;
-            button1.Text = "Mudar";
-            button1.UseVisualStyleBackColor = true;
+            ChangeSelectedPlayerRating.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ChangeSelectedPlayerRating.Location = new Point(170, 84);
+            ChangeSelectedPlayerRating.Name = "ChangeSelectedPlayerRating";
+            ChangeSelectedPlayerRating.Size = new Size(64, 35);
+            ChangeSelectedPlayerRating.TabIndex = 4;
+            ChangeSelectedPlayerRating.Text = "Mudar";
+            ChangeSelectedPlayerRating.UseVisualStyleBackColor = true;
+            ChangeSelectedPlayerRating.Click += ChangeSelectedPlayerRating_Click;
             // 
             // SelectedPlayerRatingTextBox
             // 
@@ -119,6 +128,16 @@
             SelectedPlayerRatingTextBox.Size = new Size(152, 35);
             SelectedPlayerRatingTextBox.TabIndex = 3;
             SelectedPlayerRatingTextBox.KeyPress += SelectedPlayerRatingTextBox_KeyPress;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(12, 137);
+            label3.Name = "label3";
+            label3.Size = new Size(119, 18);
+            label3.TabIndex = 2;
+            label3.Text = "Mapas favoritos";
             // 
             // label1
             // 
@@ -134,13 +153,49 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(474, 12);
+            label2.Location = new Point(474, 17);
             label2.Name = "label2";
-            label2.Size = new Size(279, 40);
+            label2.Size = new Size(224, 32);
             label2.TabIndex = 2;
             label2.Text = "Painel do jogador";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // CreateNewPlayerButton
+            // 
+            CreateNewPlayerButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            CreateNewPlayerButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CreateNewPlayerButton.Location = new Point(704, 17);
+            CreateNewPlayerButton.Name = "CreateNewPlayerButton";
+            CreateNewPlayerButton.Size = new Size(128, 35);
+            CreateNewPlayerButton.TabIndex = 4;
+            CreateNewPlayerButton.Text = "Criar novo jogador";
+            CreateNewPlayerButton.UseVisualStyleBackColor = true;
+            CreateNewPlayerButton.Click += CreateNewPlayerButton_Click;
+            // 
+            // panel2
+            // 
+            panel2.BackgroundImage = Properties.Resources.Panel_bg2;
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(ApplyMatchResultButton);
+            panel2.Location = new Point(851, 55);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(282, 426);
+            panel2.TabIndex = 5;
+            // 
+            // ApplyMatchResultButton
+            // 
+            ApplyMatchResultButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            ApplyMatchResultButton.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ApplyMatchResultButton.Location = new Point(18, 8);
+            ApplyMatchResultButton.Name = "ApplyMatchResultButton";
+            ApplyMatchResultButton.Size = new Size(247, 73);
+            ApplyMatchResultButton.TabIndex = 4;
+            ApplyMatchResultButton.Text = "Aplicar resultado de partida";
+            ApplyMatchResultButton.UseVisualStyleBackColor = true;
+            ApplyMatchResultButton.Click += ApplyMatchResultButton_Click;
             // 
             // AdminPanelForm
             // 
@@ -148,7 +203,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.admin_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1338, 493);
+            ClientSize = new Size(1150, 493);
+            Controls.Add(panel2);
+            Controls.Add(CreateNewPlayerButton);
             Controls.Add(panel1);
             Controls.Add(dataGridViewPlayers);
             Controls.Add(label2);
@@ -162,6 +219,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -173,8 +231,12 @@
         private Panel panel1;
         private TextBox SelectedPlayerRatingTextBox;
         private Label label1;
-        private Button button1;
-        private Button button2;
+        private Button ChangeSelectedPlayerRating;
+        private Button DeleteSelectedPlayerButton;
         private Label label2;
+        private Button CreateNewPlayerButton;
+        private Panel panel2;
+        private Button ApplyMatchResultButton;
+        private Label label3;
     }
 }

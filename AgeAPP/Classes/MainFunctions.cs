@@ -57,6 +57,8 @@ namespace AgeAPP.Classes
                 File.Delete(sessionFilePath);
         }
 
+        #region Team Splitting Methods
+
         public (List<Player> teamA, List<Player> teamB) SplitTeams(List<Player> players)
         {
             var teamA = new List<Player>();
@@ -133,5 +135,7 @@ namespace AgeAPP.Classes
 
             return (bestTeamA, bestTeamB);
         }
+
+        #endregion
     }
 }

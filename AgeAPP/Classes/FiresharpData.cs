@@ -2,6 +2,7 @@
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Newtonsoft.Json;
 
 namespace AgeAPP.Classes
 {
@@ -54,7 +55,7 @@ namespace AgeAPP.Classes
 
         public void Connect_to_firesharp(string mode)
         {
-            switch(mode.ToLower())
+            switch (mode.ToLower())
             {
                 case "admin":
                     config.AuthSecret = "wG6kd0l3gfUtBDqu4g1xqXPpm4gl5tMsXTLqIl99";
@@ -73,6 +74,27 @@ namespace AgeAPP.Classes
                 MessageBox.Show("Connection to database successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
         }
 
+        public void Download_dataBase_Backup()
+        {
+            var response = client.GetAsync("").Result;
+
+            string json = response.Body;
+
+            // Formatar JSON
+            string formattedJson = JsonConvert.SerializeObject(JsonConvert.DeserializeObject(json), Formatting.Indented);
+
+            string backupFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "Backups", $"database_backup_{DateTime.Now:yyyyMMdd_HHmmss}.json");
+
+            // Salvar o JSON formatado no arquivo
+            File.WriteAllText(backupFilePath, formattedJson);
+        }
+
+        public class Map
+        {
+            public string Name { get; set; }
+            public int Type { get; set; }
+        }
+
         public class Player
         {
             public int Id { get; set; }
@@ -81,6 +103,7 @@ namespace AgeAPP.Classes
             public int Matches { get; set; }
             public int Wins { get; set; }
             public float WinRate { get; set; }
+            //public List<Map> Favorite_maps { get; set; }
         }
 
         public async Task<List<Player>> GetAllPlayers()
@@ -106,6 +129,26 @@ namespace AgeAPP.Classes
                 .ToList();
 
             return players_list;
+        }
+
+        public async Task Overwrite_playerData(Player player, string field, object new_value)
+        {
+            var data = new Dictionary<string, object>
+            {
+                { field, new_value }
+            };
+
+            await client.UpdateAsync($"players/{player.Name}", data);
+        }
+
+        public async Task Add_new_player(Player player)
+        {
+            await client.SetAsync($"players/{player.Name.ToLower()}", player);
+        }
+
+        public async Task Delete_player(Player player)
+        {
+            await client.DeleteAsync($"players/{player.Name}");
         }
     }
 }
