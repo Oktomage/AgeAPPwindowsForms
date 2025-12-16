@@ -1,4 +1,5 @@
-﻿namespace AgeAPP
+﻿
+namespace AgeAPP
 {
     partial class FMain
     {
@@ -28,12 +29,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
             dataGridViewPlayers = new DataGridView();
             SplitButton = new Button();
             panel1 = new Panel();
             AdminPanelButton = new Button();
             LoginButton = new Button();
+            ConnectionTimer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -86,6 +89,7 @@
             AdminPanelButton.TabIndex = 3;
             AdminPanelButton.Text = "Painel de admin";
             AdminPanelButton.UseVisualStyleBackColor = true;
+            AdminPanelButton.Click += AdminPanelButton_Click;
             // 
             // LoginButton
             // 
@@ -98,6 +102,12 @@
             LoginButton.Text = "Login";
             LoginButton.UseVisualStyleBackColor = true;
             LoginButton.Click += LoginButton_Click;
+            // 
+            // ConnectionTimer
+            // 
+            ConnectionTimer.Enabled = true;
+            ConnectionTimer.Interval = 500;
+            ConnectionTimer.Tick += ConnectionTimer_Tick;
             // 
             // FMain
             // 
@@ -129,5 +139,6 @@
         private Panel panel1;
         private Button LoginButton;
         private Button AdminPanelButton;
+        private System.Windows.Forms.Timer ConnectionTimer;
     }
 }

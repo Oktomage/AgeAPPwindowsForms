@@ -8,16 +8,6 @@ namespace AgeAPP
 {
     public partial class FMain : Form
     {
-        // Firesharp connection
-        public IFirebaseConfig config = new FirebaseConfig
-        {
-            BasePath = "https://internoapp-e8138-default-rtdb.firebaseio.com/",
-            AuthSecret = ""
-            //AuthSecret = "wG6kd0l3gfUtBDqu4g1xqXPpm4gl5tMsXTLqIl99"
-        };
-
-        public static IFirebaseClient client;
-
         // Serviços
         public FiresharpData Data_service = new FiresharpData();
 
@@ -26,45 +16,48 @@ namespace AgeAPP
             InitializeComponent();
         }
 
-        private void Connect_to_firesharp()
-        {
-            client = new FireSharp.FirebaseClient(config);
-
-            /*
-            if (client != null)
-                MessageBox.Show("Connection to database successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
-        }
-
         private async void Form1_Load(object sender, EventArgs e)
         {
-            Connect_to_firesharp();
+            Data_service.Connect_to_firesharp("user");
 
             var players = await Data_service.GetAllPlayers();
-
             dataGridViewPlayers.DataSource = players;
         }
 
         private void SplitButton_Click(object sender, EventArgs e)
         {
-            SplitForm splitForm = new SplitForm();
+            SplitForm splitForm = new SplitForm(Data_service);
 
             splitForm.ShowDialog();
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcionalidade em desenvolvimento.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LoginForm loginForm = new LoginForm(Data_service);
 
-            //LoginForm loginForm = new LoginForm();
-            //loginForm.ShowDialog();
+            loginForm.ShowDialog();
         }
 
         private void AdminPanelButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Funcionalidade em desenvolvimento.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+
             //AdminForm adminForm = new AdminForm();
             //adminForm.ShowDialog();
+        }
+
+        private void ConnectionTimer_Tick(object sender, EventArgs e)
+        {
+            if (Data_service.Admin_LoggedIn)
+            {
+                LoginButton.Enabled = false;
+                AdminPanelButton.Enabled = true;
+            }
+            else
+            {
+                LoginButton.Enabled = true;
+                AdminPanelButton.Enabled = false;
+            }
         }
     }
 }

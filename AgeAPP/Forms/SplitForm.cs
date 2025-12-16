@@ -6,17 +6,18 @@ namespace AgeAPP.Forms
     public partial class SplitForm : Form
     {
         // Serviços
-        public FiresharpData Data_service = new FiresharpData();
         public MainFunctions Main_functions_service = new MainFunctions();
+        private FiresharpData local_Data_service;
 
-        public SplitForm()
+        public SplitForm(FiresharpData Data_service)
         {
             InitializeComponent();
+            local_Data_service = Data_service;
         }
 
         private async void SplitForm_Load(object sender, EventArgs e)
         {
-            var players = await Data_service.GetAllPlayers();
+            var players = await local_Data_service.GetAllPlayers();
 
             dataGridViewPlayers.DataSource = players;
         }
@@ -29,9 +30,9 @@ namespace AgeAPP.Forms
                 .Where(p => p != null)
                 .ToList();
 
-            if (selectedPlayers.Count < 2)
+            if (selectedPlayers.Count < 5)
             {
-                MessageBox.Show("Selecione pelo menos 2 jogadores.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Selecione pelo menos 4 jogadores.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else if (selectedPlayers.Count > 8)
