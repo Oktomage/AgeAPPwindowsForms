@@ -131,6 +131,11 @@ namespace AgeAPP.Classes
             return players_list;
         }
 
+        public async Task Overwrite_player(Player player)
+        {
+            await client.SetAsync($"players/{player.Name}", player);
+        }
+
         public async Task Overwrite_playerData(Player player, string field, object new_value)
         {
             var data = new Dictionary<string, object>
@@ -149,6 +154,20 @@ namespace AgeAPP.Classes
         public async Task Delete_player(Player player)
         {
             await client.DeleteAsync($"players/{player.Name}");
+        }
+
+        public class Log
+        {
+            public string Author_name;
+            public string Date;
+            public List<Player> Players = new List<Player>();
+
+            public string Role = "default";
+            public string Content;
+        }
+        public async Task Post_log(Log log)
+        {
+            await client.PushAsync($"logs/{log.Author_name}/{log.Role}", log);
         }
     }
 }

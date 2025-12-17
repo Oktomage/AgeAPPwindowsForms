@@ -41,7 +41,14 @@ namespace AgeAPP
             // Baixa backup
             Data_service.Download_dataBase_Backup();
 
-            // Preenche a tabela inicial
+            // Atualiza a tabela inicial
+            UpdateDataGridViewPlayers();
+        }
+
+        private async void UpdateDataGridViewPlayers()
+        {
+            dataGridViewPlayers.DataSource = null;
+
             var players = await Data_service.GetAllPlayers();
             dataGridViewPlayers.DataSource = players;
         }
@@ -94,10 +101,7 @@ namespace AgeAPP
             // Atualiza lista de jogadores
             if (AutoPlayerListRefresh.Checked)
             {
-                dataGridViewPlayers.DataSource = null;
-
-                var players = await Data_service.GetAllPlayers();
-                dataGridViewPlayers.DataSource = players;
+                UpdateDataGridViewPlayers();
             }
         }
 

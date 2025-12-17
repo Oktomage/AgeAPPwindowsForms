@@ -137,5 +137,72 @@ namespace AgeAPP.Classes
         }
 
         #endregion
+
+        #region Match results Methods 
+
+        public List<Player> Apply_match_result(List<Player> teamA, List<Player> teamB, bool teamAWon)
+        {
+            int teamARating = teamA.Sum(p => p.Rating);
+            int teamBRating = teamB.Sum(p => p.Rating);
+
+            // Calcula valor da mudança de rating
+            int ratingDelta = Calculate_rating_delta_changes(teamARating, teamBRating, teamAWon);
+
+            // Aplica mudanças nos jogadores
+            foreach (var player in teamA)
+            {
+                player.Matches += 1;
+
+                if (teamAWon)
+                {
+                    player.Wins += 1;
+                }
+
+                player.Rating += ratingDelta;
+            }
+            foreach (var player in teamB)
+            {
+                player.Matches += 1;
+
+                if (!teamAWon)
+                {
+                    player.Wins += 1;
+                }
+
+                player.Rating -= ratingDelta;  
+            }
+
+            List<Player> all_updated_players = teamA.Concat(teamB).ToList();
+
+            /*
+            string message = string.Join(
+                Environment.NewLine,
+                all_updated_players.Select(p =>
+                $"{p.Name} | Rating: {p.Rating} | Wins: {p.Wins} | Matches: {p.Matches}")
+                );
+
+            MessageBox.Show($"{message}");
+            */
+
+            return all_updated_players;
+        }
+
+        private int Calculate_rating_delta_changes(int teamRatingA, int teamRatingB, bool teamAWon)
+        {
+             int BASE_DELTA = 20;
+
+            int diff = teamRatingA - teamRatingB;
+
+            // vantagem esperada
+            float expectedA = 1f / (1f + (float)Math.Pow(10, -diff / 400f));
+
+            float scoreA = teamAWon ? 1f : 0f;
+
+            int deltaA = (int)Math.Round(BASE_DELTA * (scoreA - expectedA));
+
+            return deltaA;
+        }
+
+        #endregion
     }
 }

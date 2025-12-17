@@ -45,12 +45,20 @@ namespace AgeAPP.Forms
             }
         }
 
-        private void CreateNewPlayerButton_Click(object sender, EventArgs e)
+        private async void CreateNewPlayerButton_Click(object sender, EventArgs e)
         {
             CreateNewPlayerForm creationForm = new CreateNewPlayerForm(local_Data_service);
 
             if (creationForm.ShowDialog(this) == DialogResult.OK)
             {
+                await local_Data_service.Post_log(new Log
+                {
+                    Author_name = local_Data_service.Local_Admin_Logged.Name,
+                    Role = "Player_changes",
+                    Date = DateTime.Now.ToString(),
+                    Content = $"Criou um novo jogador"
+                });
+
                 UpdateGridViewPlayers();
             }
         }
@@ -59,7 +67,9 @@ namespace AgeAPP.Forms
 
         private void ApplyMatchResultButton_Click(object sender, EventArgs e)
         {
+            ApplyMatchResultForm match_result_form = new ApplyMatchResultForm(local_Data_service);
 
+            match_result_form.ShowDialog(this);
         }
 
         #endregion
@@ -83,6 +93,13 @@ namespace AgeAPP.Forms
                 return;
 
             await local_Data_service.Overwrite_playerData(selectedPlayer, "Rating", int.Parse(SelectedPlayerRatingTextBox.Text));
+            await local_Data_service.Post_log(new Log
+            {
+                Author_name = local_Data_service.Local_Admin_Logged.Name,
+                Role = "Player_changes",
+                Date = DateTime.Now.ToString(),
+                Content = $"Alterou o rating do jogador {selectedPlayer.Name} para {SelectedPlayerRatingTextBox.Text}"
+            });
 
             UpdateGridViewPlayers();
         }
@@ -96,6 +113,13 @@ namespace AgeAPP.Forms
 
             // Deleta o jogador
             await local_Data_service.Delete_player(selectedPlayer);
+            await local_Data_service.Post_log(new Log
+            {
+                Author_name = local_Data_service.Local_Admin_Logged.Name,
+                Role = "Player_changes",
+                Date = DateTime.Now.ToString(),
+                Content = $"Deletou o jogador {selectedPlayer.Name}"
+            });
 
             UpdateGridViewPlayers();
         }
@@ -106,7 +130,5 @@ namespace AgeAPP.Forms
         }
 
         #endregion
-
-
     }
 }
