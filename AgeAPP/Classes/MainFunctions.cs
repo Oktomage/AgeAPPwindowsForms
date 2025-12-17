@@ -136,6 +136,61 @@ namespace AgeAPP.Classes
             return (bestTeamA, bestTeamB);
         }
 
+        public Map Get_mapBased_on_players_favoriteMaps(List<Player> players, List<Map> allMaps)
+        {
+            // Dicionário: mapa -> peso
+            Dictionary<string, int> votes = new Dictionary<string, int>();
+
+            // Inicializa todos os mapas com peso 0
+            foreach (var map in allMaps)
+            {
+                votes[map.Name] = 0;
+            }
+
+            // Conta votos
+            foreach (var player in players)
+            {
+                if (player.Favorite_maps == null)
+                    continue;
+
+                foreach (var favMap in player.Favorite_maps.Keys)
+                {
+                    if (votes.ContainsKey(favMap))
+                    {
+                        votes[favMap]++;
+                    }
+                }
+            }
+
+            // Remove mapas sem votos (opcional)
+            var validVotes = votes
+                .Where(v => v.Value > 0)
+                .ToList();
+
+            // Se ninguém votou, escolhe aleatório
+            if (!validVotes.Any())
+            {
+                return allMaps[new Random().Next(allMaps.Count)];
+            }
+
+            // Sorteio ponderado
+            int totalWeight = validVotes.Sum(v => v.Value);
+            int roll = new Random().Next(1, totalWeight + 1);
+
+            int cumulative = 0;
+            foreach (var v in validVotes)
+            {
+                cumulative += v.Value;
+                if (roll <= cumulative)
+                {
+                    return allMaps.First(m => m.Name == v.Key);
+                }
+            }
+
+            // Fallback (não deveria acontecer)
+            return allMaps.First();
+        }
+
         #endregion
 
         #region Match results Methods 
@@ -212,6 +267,21 @@ namespace AgeAPP.Classes
             int deltaA = (int)Math.Round(BASE_DELTA * (scoreA - expectedA));
 
             return deltaA;
+        }
+
+        #endregion
+
+        #region Log Methods
+
+        public void Save_log_to_file(Log log)
+        {
+            string logFileName = $"log_ {log.Role}_{DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss")}.json";
+            string logFilePath = Path.Combine(LogsFolder_path, logFileName);
+
+            // Serializa log para JSON identado
+            string json = System.Text.Json.JsonSerializer.Serialize(log, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+
+            File.WriteAllText(logFilePath, json);
         }
 
         #endregion

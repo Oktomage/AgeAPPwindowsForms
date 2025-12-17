@@ -179,15 +179,17 @@ namespace AgeAPP.Classes
 
         public class Log
         {
-            public string Author_name;
-            public string Date;
-            public List<Player> Players = new List<Player>();
-
-            public string Role = "default";
-            public string Content;
-            public MatchResult Match_result;
+            public string Author_name { get; set; }
+            public string Date { get; set; }
+            public List<Player> All_players { get; set; } = new List<Player>();
+            public List<Player> TeamA_players { get; set; } = new List<Player>();
+            public List<Player> TeamB_players { get; set; } = new List<Player>();
+            public Map Played_map { get; set; }
+            public string Role { get; set; } = "default";
+            public string Content { get; set; }
+            public MatchResult Match_result { get; set; }
         }
-        public async Task Post_log(Log log)
+        public async Task Post_log_on_dataBase(Log log)
         {
             await client.PushAsync($"logs/{log.Author_name}/{log.Role}", log);
         }

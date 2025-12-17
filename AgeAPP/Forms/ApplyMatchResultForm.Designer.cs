@@ -29,34 +29,30 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplyMatchResultForm));
-            dataGridViewPlayers1 = new DataGridView();
-            dataGridViewPlayers2 = new DataGridView();
+            dataGridViewMatchLog = new DataGridView();
             label1 = new Label();
-            label2 = new Label();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             ApplyResultButton = new Button();
             TeamVictoriousBox = new ComboBox();
             label3 = new Label();
-            label4 = new Label();
-            PlayedMapBox = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers2).BeginInit();
+            FindLogButton = new Button();
+            OpenFileDialog = new OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMatchLog).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
-            // dataGridViewPlayers1
+            // dataGridViewMatchLog
             // 
-            dataGridViewPlayers1.AllowUserToAddRows = false;
-            dataGridViewPlayers1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewPlayers1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
-            dataGridViewPlayers1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewPlayers1.Location = new Point(12, 48);
-            dataGridViewPlayers1.Name = "dataGridViewPlayers1";
-            dataGridViewPlayers1.ReadOnly = true;
+            dataGridViewMatchLog.AllowUserToAddRows = false;
+            dataGridViewMatchLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewMatchLog.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
+            dataGridViewMatchLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewMatchLog.Location = new Point(12, 48);
+            dataGridViewMatchLog.Name = "dataGridViewMatchLog";
+            dataGridViewMatchLog.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -64,31 +60,10 @@
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridViewPlayers1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewPlayers1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewPlayers1.Size = new Size(344, 471);
-            dataGridViewPlayers1.TabIndex = 2;
-            // 
-            // dataGridViewPlayers2
-            // 
-            dataGridViewPlayers2.AllowUserToAddRows = false;
-            dataGridViewPlayers2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewPlayers2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
-            dataGridViewPlayers2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewPlayers2.Location = new Point(555, 48);
-            dataGridViewPlayers2.Name = "dataGridViewPlayers2";
-            dataGridViewPlayers2.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridViewPlayers2.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewPlayers2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewPlayers2.Size = new Size(344, 471);
-            dataGridViewPlayers2.TabIndex = 3;
+            dataGridViewMatchLog.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewMatchLog.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewMatchLog.Size = new Size(344, 283);
+            dataGridViewMatchLog.TabIndex = 2;
             // 
             // label1
             // 
@@ -98,21 +73,9 @@
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(112, 36);
+            label1.Size = new Size(307, 36);
             label1.TabIndex = 4;
-            label1.Text = "Time A";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(785, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(114, 36);
-            label2.TabIndex = 4;
-            label2.Text = "Time B";
+            label1.Text = "Jogadores da partida";
             // 
             // pictureBox1
             // 
@@ -139,7 +102,7 @@
             // ApplyResultButton
             // 
             ApplyResultButton.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ApplyResultButton.Location = new Point(362, 472);
+            ApplyResultButton.Location = new Point(362, 285);
             ApplyResultButton.Name = "ApplyResultButton";
             ApplyResultButton.Size = new Size(187, 46);
             ApplyResultButton.TabIndex = 6;
@@ -170,27 +133,20 @@
             label3.TabIndex = 4;
             label3.Text = "Quem ganhou ?";
             // 
-            // label4
+            // FindLogButton
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(362, 294);
-            label4.Name = "label4";
-            label4.Size = new Size(112, 22);
-            label4.TabIndex = 4;
-            label4.Text = "Qual mapa?";
+            FindLogButton.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FindLogButton.Location = new Point(446, 8);
+            FindLogButton.Name = "FindLogButton";
+            FindLogButton.Size = new Size(103, 34);
+            FindLogButton.TabIndex = 6;
+            FindLogButton.Text = "Buscar log";
+            FindLogButton.UseVisualStyleBackColor = true;
+            FindLogButton.Click += FindLogButton_Click;
             // 
-            // PlayedMapBox
+            // OpenFileDialog
             // 
-            PlayedMapBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            PlayedMapBox.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            PlayedMapBox.FormattingEnabled = true;
-            PlayedMapBox.Location = new Point(362, 319);
-            PlayedMapBox.Name = "PlayedMapBox";
-            PlayedMapBox.Size = new Size(187, 35);
-            PlayedMapBox.TabIndex = 7;
+            OpenFileDialog.FileName = "openFileDialog1";
             // 
             // ApplyMatchResultForm
             // 
@@ -198,18 +154,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Holidays_1920x1080;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(914, 533);
-            Controls.Add(PlayedMapBox);
+            ClientSize = new Size(567, 344);
             Controls.Add(TeamVictoriousBox);
+            Controls.Add(FindLogButton);
             Controls.Add(ApplyResultButton);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Controls.Add(label2);
-            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label1);
-            Controls.Add(dataGridViewPlayers2);
-            Controls.Add(dataGridViewPlayers1);
+            Controls.Add(dataGridViewMatchLog);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -218,8 +171,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Aplicando resultado...";
             Load += ApplyMatchResultForm_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMatchLog).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -228,16 +180,14 @@
 
         #endregion
 
-        private DataGridView dataGridViewPlayers1;
-        private DataGridView dataGridViewPlayers2;
+        private DataGridView dataGridViewMatchLog;
         private Label label1;
-        private Label label2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Button ApplyResultButton;
         private ComboBox TeamVictoriousBox;
         private Label label3;
-        private Label label4;
-        private ComboBox PlayedMapBox;
+        private Button FindLogButton;
+        private OpenFileDialog OpenFileDialog;
     }
 }

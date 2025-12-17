@@ -62,7 +62,7 @@ namespace AgeAPP.Forms
 
             if (creationForm.ShowDialog(this) == DialogResult.OK)
             {
-                await local_Data_service.Post_log(new Log
+                await local_Data_service.Post_log_on_dataBase(new Log
                 {
                     Author_name = local_Data_service.Local_Admin_Logged.Name,
                     Role = "Player_changes",
@@ -104,7 +104,7 @@ namespace AgeAPP.Forms
                 return;
 
             await local_Data_service.Overwrite_playerData(selectedPlayer, "Rating", int.Parse(SelectedPlayerRatingTextBox.Text));
-            await local_Data_service.Post_log(new Log
+            await local_Data_service.Post_log_on_dataBase(new Log
             {
                 Author_name = local_Data_service.Local_Admin_Logged.Name,
                 Role = "Player_changes",
@@ -124,7 +124,7 @@ namespace AgeAPP.Forms
 
             // Deleta o jogador
             await local_Data_service.Delete_player(selectedPlayer);
-            await local_Data_service.Post_log(new Log
+            await local_Data_service.Post_log_on_dataBase(new Log
             {
                 Author_name = local_Data_service.Local_Admin_Logged.Name,
                 Role = "Player_changes",

@@ -63,6 +63,25 @@ namespace AgeAPP.Forms
 
             TextBoxTeam1.Text = BuildTeamLine("TIME A", teamA);
             TextBoxTeam2.Text = BuildTeamLine("TIME B", teamB);
+
+            // Salvar log
+            Request_post_splitLog(teamA, teamB);
+        }
+
+        private void Request_post_splitLog(List<Player> teamA, List<Player> teamB)
+        {
+            Log log = new Log
+            {
+                Author_name = local_Data_service.Local_Admin_Logged.Name,
+                Date = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss"),
+                All_players = teamA.Concat(teamB).ToList(),
+                TeamA_players = teamA,
+                TeamB_players = teamB,
+                Role = "Split_log"
+            };
+
+            // Salvar
+            Main_functions_service.Save_log_to_file(log);
         }
     }
 }
