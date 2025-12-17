@@ -81,10 +81,10 @@ namespace AgeAPP
             // SplitButton
             // 
             SplitButton.AutoSize = true;
-            SplitButton.Font = new Font("Arial", 16F);
-            SplitButton.Location = new Point(22, 66);
+            SplitButton.Font = new Font("Arial", 14.25F);
+            SplitButton.Location = new Point(22, 50);
             SplitButton.Name = "SplitButton";
-            SplitButton.Size = new Size(227, 55);
+            SplitButton.Size = new Size(227, 45);
             SplitButton.TabIndex = 1;
             SplitButton.Text = "Divisor de times";
             SplitButton.UseVisualStyleBackColor = true;
@@ -110,11 +110,11 @@ namespace AgeAPP
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.BackgroundImage = Properties.Resources.seperator;
+            pictureBox2.BackgroundImage = Properties.Resources.seperator_grey;
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Location = new Point(22, 203);
+            pictureBox2.Location = new Point(22, 168);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(227, 17);
+            pictureBox2.Size = new Size(227, 16);
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             // 
@@ -123,7 +123,7 @@ namespace AgeAPP
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImage = Properties.Resources.seperator2;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(22, 19);
+            pictureBox1.Location = new Point(22, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(227, 41);
             pictureBox1.TabIndex = 5;
@@ -145,10 +145,10 @@ namespace AgeAPP
             // 
             MatchesButton.AutoSize = true;
             MatchesButton.Enabled = false;
-            MatchesButton.Font = new Font("Arial", 16F);
-            MatchesButton.Location = new Point(22, 127);
+            MatchesButton.Font = new Font("Arial", 14.25F);
+            MatchesButton.Location = new Point(22, 101);
             MatchesButton.Name = "MatchesButton";
-            MatchesButton.Size = new Size(227, 55);
+            MatchesButton.Size = new Size(227, 45);
             MatchesButton.TabIndex = 2;
             MatchesButton.Text = "Histórico de partidas";
             MatchesButton.UseVisualStyleBackColor = true;
@@ -158,10 +158,10 @@ namespace AgeAPP
             // 
             AdminPanelButton.AutoSize = true;
             AdminPanelButton.Enabled = false;
-            AdminPanelButton.Font = new Font("Arial", 16F);
-            AdminPanelButton.Location = new Point(22, 226);
+            AdminPanelButton.Font = new Font("Arial", 14.25F);
+            AdminPanelButton.Location = new Point(22, 190);
             AdminPanelButton.Name = "AdminPanelButton";
-            AdminPanelButton.Size = new Size(227, 55);
+            AdminPanelButton.Size = new Size(227, 45);
             AdminPanelButton.TabIndex = 3;
             AdminPanelButton.Text = "Painel de admin";
             AdminPanelButton.UseVisualStyleBackColor = true;
@@ -183,7 +183,7 @@ namespace AgeAPP
             // 
             ForceGridRefreshButton.AutoSize = true;
             ForceGridRefreshButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ForceGridRefreshButton.Location = new Point(751, 1);
+            ForceGridRefreshButton.Location = new Point(746, 1);
             ForceGridRefreshButton.Name = "ForceGridRefreshButton";
             ForceGridRefreshButton.Size = new Size(93, 24);
             ForceGridRefreshButton.TabIndex = 4;
@@ -271,7 +271,7 @@ namespace AgeAPP
             MaximizeBox = false;
             Name = "FMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AgeAPP - Menu";
+            Text = "AgeAPP - SOBERANO";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).EndInit();
             panel1.ResumeLayout(false);

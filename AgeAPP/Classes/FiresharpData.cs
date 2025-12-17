@@ -86,7 +86,7 @@ namespace AgeAPP.Classes
             // Formatar JSON
             string formattedJson = JsonConvert.SerializeObject(JsonConvert.DeserializeObject(json), Formatting.Indented);
 
-            string backupFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "Backups", $"database_backup_{DateTime.Now:yyyyMMdd_HHmmss}.json");
+            string backupFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "Backups", $"database_backup_{DateTime.Now:dd-MM-yyyy}.json");
 
             // Salvar o JSON formatado no arquivo
             File.WriteAllText(backupFilePath, formattedJson);

@@ -168,7 +168,7 @@ namespace AgeAPP.Forms
 
             // Aplicar resultado da partida
             
-            MatchResult match_result = local_Main_functions_service.Apply_match_result(selected_log.TeamA_players, selected_log.TeamB_players, teamAWon, selected_log.Played_map.Name);
+            MatchResult match_result = local_Main_functions_service.Apply_match_result(selected_log.TeamA_players, selected_log.TeamB_players, teamAWon, selected_log.Played_map?.Name ?? "Desconhecido");
 
             // Salvar alterações no banco
             foreach (var player in match_result.TeamA)

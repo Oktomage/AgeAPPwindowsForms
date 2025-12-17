@@ -44,9 +44,11 @@
             panel2 = new Panel();
             button1 = new Button();
             ApplyMatchResultButton = new Button();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dataGridViewPlayers
@@ -166,11 +168,12 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
+            label2.BorderStyle = BorderStyle.FixedSingle;
             label2.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(474, 17);
             label2.Name = "label2";
-            label2.Size = new Size(224, 32);
+            label2.Size = new Size(226, 34);
             label2.TabIndex = 2;
             label2.Text = "Painel do jogador";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -178,10 +181,10 @@
             // CreateNewPlayerButton
             // 
             CreateNewPlayerButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            CreateNewPlayerButton.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CreateNewPlayerButton.Location = new Point(18, 87);
+            CreateNewPlayerButton.Font = new Font("Arial", 12F);
+            CreateNewPlayerButton.Location = new Point(3, 94);
             CreateNewPlayerButton.Name = "CreateNewPlayerButton";
-            CreateNewPlayerButton.Size = new Size(247, 73);
+            CreateNewPlayerButton.Size = new Size(252, 38);
             CreateNewPlayerButton.TabIndex = 4;
             CreateNewPlayerButton.Text = "Registrar novo jogador";
             CreateNewPlayerButton.UseVisualStyleBackColor = true;
@@ -192,22 +195,23 @@
             panel2.BackgroundImage = Properties.Resources.Panel_bg2;
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(CreateNewPlayerButton);
             panel2.Controls.Add(ApplyMatchResultButton);
             panel2.Location = new Point(851, 55);
             panel2.Name = "panel2";
-            panel2.Size = new Size(282, 426);
+            panel2.Size = new Size(265, 426);
             panel2.TabIndex = 5;
             // 
             // button1
             // 
             button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button1.Enabled = false;
-            button1.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(18, 166);
+            button1.Font = new Font("Arial", 12F);
+            button1.Location = new Point(3, 137);
             button1.Name = "button1";
-            button1.Size = new Size(247, 73);
+            button1.Size = new Size(252, 38);
             button1.TabIndex = 4;
             button1.Text = "Registrar novo mapa";
             button1.UseVisualStyleBackColor = true;
@@ -216,14 +220,25 @@
             // ApplyMatchResultButton
             // 
             ApplyMatchResultButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            ApplyMatchResultButton.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ApplyMatchResultButton.Location = new Point(18, 8);
+            ApplyMatchResultButton.Font = new Font("Arial", 12F);
+            ApplyMatchResultButton.Location = new Point(3, 50);
             ApplyMatchResultButton.Name = "ApplyMatchResultButton";
-            ApplyMatchResultButton.Size = new Size(247, 73);
+            ApplyMatchResultButton.Size = new Size(252, 38);
             ApplyMatchResultButton.TabIndex = 4;
             ApplyMatchResultButton.Text = "Aplicar resultado de partida";
             ApplyMatchResultButton.UseVisualStyleBackColor = true;
             ApplyMatchResultButton.Click += ApplyMatchResultButton_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = Properties.Resources.seperator2;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(252, 41);
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
             // 
             // AdminPanelForm
             // 
@@ -231,7 +246,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.admin_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1150, 493);
+            ClientSize = new Size(1125, 489);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(dataGridViewPlayers);
@@ -247,6 +262,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -267,5 +283,6 @@
         private Label label3;
         private Button button1;
         private ListBox FavoriteMapListBox;
+        private PictureBox pictureBox1;
     }
 }

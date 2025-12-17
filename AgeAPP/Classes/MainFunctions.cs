@@ -197,8 +197,8 @@ namespace AgeAPP.Classes
 
         public class MatchResult
         {
-            public List<Player> TeamA { get; set; }
-            public List<Player> TeamB { get; set; }
+            public List<Player> TeamA { get; set; } = new List<Player>();
+            public List<Player> TeamB { get; set; } = new List<Player>();
             public int DeltaRating { get; set; }
             public bool TeamAWon { get; set; }
             public string PlayedMap_name { get; set; }
@@ -232,7 +232,9 @@ namespace AgeAPP.Classes
                     player.Wins += 1;
                 }
 
+                // Aplica mudança de dados
                 player.Rating += ratingDelta;
+                player.Last_time_played = DateTime.Now.ToString("g");
             }
             foreach (var player in teamB)
             {
@@ -245,7 +247,9 @@ namespace AgeAPP.Classes
                     player.Wins += 1;
                 }
 
-                player.Rating -= ratingDelta;  
+                // Aplica mudança de dados
+                player.Rating -= ratingDelta;
+                player.Last_time_played = DateTime.Now.ToString("g");
             }
 
             List<Player> all_updated_players = teamA.Concat(teamB).ToList();
