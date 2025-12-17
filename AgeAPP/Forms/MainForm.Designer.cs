@@ -134,12 +134,13 @@ namespace AgeAPP
             AdminConnectedLabel.AutoSize = true;
             AdminConnectedLabel.BackColor = Color.Transparent;
             AdminConnectedLabel.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AdminConnectedLabel.ForeColor = Color.Lime;
+            AdminConnectedLabel.ForeColor = Color.White;
             AdminConnectedLabel.Location = new Point(3, 467);
             AdminConnectedLabel.Name = "AdminConnectedLabel";
             AdminConnectedLabel.Size = new Size(41, 16);
             AdminConnectedLabel.TabIndex = 4;
             AdminConnectedLabel.Text = "label1";
+            AdminConnectedLabel.Click += AdminConnectedLabel_Click;
             // 
             // MatchesButton
             // 

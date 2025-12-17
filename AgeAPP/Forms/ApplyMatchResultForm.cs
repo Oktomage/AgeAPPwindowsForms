@@ -167,7 +167,6 @@ namespace AgeAPP.Forms
             ApplyResultButton.Enabled = false;
 
             // Aplicar resultado da partida
-            
             MatchResult match_result = local_Main_functions_service.Apply_match_result(selected_log.TeamA_players, selected_log.TeamB_players, teamAWon, selected_log.Played_map?.Name ?? "Desconhecido");
 
             // Salvar alterações no banco
@@ -180,6 +179,12 @@ namespace AgeAPP.Forms
                 await local_Data_service.Overwrite_player(player);
             }
 
+            Map played_map = await local_Data_service.Get_map(match_result.PlayedMap_name);
+            played_map.Matches += 1;
+
+            await local_Data_service.Overwrite_map(played_map);
+
+            // Salvar log da partida no banco
             await local_Data_service.Post_log_on_dataBase(new Log
             {
                 Author_name = local_Data_service.Local_Admin_Logged.Name,

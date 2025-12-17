@@ -56,6 +56,15 @@ namespace AgeAPP.Forms
             }
         }
 
+        #region PANEL BUTTONS
+
+        private void ApplyMatchResultButton_Click(object sender, EventArgs e)
+        {
+            ApplyMatchResultForm match_result_form = new ApplyMatchResultForm(local_Data_service);
+
+            match_result_form.ShowDialog(this);
+        }
+
         private async void CreateNewPlayerButton_Click(object sender, EventArgs e)
         {
             CreateNewPlayerForm creationForm = new CreateNewPlayerForm(local_Data_service);
@@ -74,13 +83,22 @@ namespace AgeAPP.Forms
             }
         }
 
-        #region MATCH PANEL BUTTONS
-
-        private void ApplyMatchResultButton_Click(object sender, EventArgs e)
+        private async void CreateNewMapButton_Click(object sender, EventArgs e)
         {
-            ApplyMatchResultForm match_result_form = new ApplyMatchResultForm(local_Data_service);
+            CreateNewMapForm creationForm = new CreateNewMapForm(local_Data_service);
 
-            match_result_form.ShowDialog(this);
+            if (creationForm.ShowDialog(this) == DialogResult.OK)
+            {
+                await local_Data_service.Post_log_on_dataBase(new Log
+                {
+                    Author_name = local_Data_service.Local_Admin_Logged.Name,
+                    Role = "Map_changes",
+                    Date = DateTime.Now.ToString(),
+                    Content = $"Criou um novo mapa"
+                });
+
+                UpdateGridViewPlayers();
+            }
         }
 
         #endregion

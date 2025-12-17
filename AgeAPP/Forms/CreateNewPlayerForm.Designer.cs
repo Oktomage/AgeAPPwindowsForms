@@ -51,9 +51,10 @@
             panel1.Controls.Add(TextBoxPlayerRating);
             panel1.Controls.Add(TextBoxPlayerName);
             panel1.Controls.Add(CreateButton);
-            panel1.Location = new Point(3, 2);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(607, 304);
+            panel1.Size = new Size(622, 307);
             panel1.TabIndex = 1;
             // 
             // dataGridViewMaps

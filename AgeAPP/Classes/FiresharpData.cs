@@ -1,10 +1,11 @@
 ﻿using AgeAPP;
-using static AgeAPP.Classes.MainFunctions;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Newtonsoft.Json;
 using System.ComponentModel;
+using static AgeAPP.Classes.FiresharpData;
+using static AgeAPP.Classes.MainFunctions;
 
 namespace AgeAPP.Classes
 {
@@ -178,6 +179,29 @@ namespace AgeAPP.Classes
             var maps_list = data.Values.ToList();
 
             return maps_list;
+        }
+
+        public async Task<Map> Get_map(string map_name)
+        {
+            FirebaseResponse response = await client.GetAsync($"maps/{map_name}");
+
+            var map = response.ResultAs<Map>();
+            return map;
+        }
+
+        public async Task Add_new_map(Map map)
+        {
+            await client.SetAsync($"maps/{map.Name.ToLower()}", map);
+        }
+
+        public async Task Overwrite_map(Map map)
+        {
+            await client.SetAsync($"maps/{map.Name}", map);
+        }
+
+        public async Task Delete_map(Map map)
+        {
+            await client.DeleteAsync($"maps/{map.Name}");
         }
 
         public class Log

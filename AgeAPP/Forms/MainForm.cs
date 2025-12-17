@@ -88,6 +88,11 @@ namespace AgeAPP
             UpdateDataGridViewMaps();
         }
 
+        private void AdminConnectedLabel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Informações sobre o admin conectado atualmente.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         #endregion
 
         #region TIMERS

@@ -42,9 +42,10 @@
             label2 = new Label();
             CreateNewPlayerButton = new Button();
             panel2 = new Panel();
-            button1 = new Button();
-            ApplyMatchResultButton = new Button();
             pictureBox1 = new PictureBox();
+            CreateNewMapButton = new Button();
+            ApplyMatchResultButton = new Button();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -76,9 +77,9 @@
             // SelectedPlayerLabel
             // 
             SelectedPlayerLabel.AutoSize = true;
-            SelectedPlayerLabel.BackColor = SystemColors.Control;
+            SelectedPlayerLabel.BackColor = Color.Black;
             SelectedPlayerLabel.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SelectedPlayerLabel.ForeColor = SystemColors.ControlText;
+            SelectedPlayerLabel.ForeColor = SystemColors.Control;
             SelectedPlayerLabel.Location = new Point(12, 10);
             SelectedPlayerLabel.Name = "SelectedPlayerLabel";
             SelectedPlayerLabel.Size = new Size(77, 27);
@@ -115,9 +116,9 @@
             // 
             DeleteSelectedPlayerButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             DeleteSelectedPlayerButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DeleteSelectedPlayerButton.Location = new Point(220, 384);
+            DeleteSelectedPlayerButton.Location = new Point(244, 9);
             DeleteSelectedPlayerButton.Name = "DeleteSelectedPlayerButton";
-            DeleteSelectedPlayerButton.Size = new Size(131, 35);
+            DeleteSelectedPlayerButton.Size = new Size(107, 28);
             DeleteSelectedPlayerButton.TabIndex = 4;
             DeleteSelectedPlayerButton.Text = "Deletar jogador";
             DeleteSelectedPlayerButton.UseVisualStyleBackColor = true;
@@ -126,7 +127,7 @@
             // ChangeSelectedPlayerRating
             // 
             ChangeSelectedPlayerRating.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ChangeSelectedPlayerRating.Location = new Point(170, 84);
+            ChangeSelectedPlayerRating.Location = new Point(122, 84);
             ChangeSelectedPlayerRating.Name = "ChangeSelectedPlayerRating";
             ChangeSelectedPlayerRating.Size = new Size(64, 35);
             ChangeSelectedPlayerRating.TabIndex = 4;
@@ -140,14 +141,16 @@
             SelectedPlayerRatingTextBox.Location = new Point(12, 84);
             SelectedPlayerRatingTextBox.Name = "SelectedPlayerRatingTextBox";
             SelectedPlayerRatingTextBox.PlaceholderText = "Rating";
-            SelectedPlayerRatingTextBox.Size = new Size(152, 35);
+            SelectedPlayerRatingTextBox.Size = new Size(104, 35);
             SelectedPlayerRatingTextBox.TabIndex = 3;
             SelectedPlayerRatingTextBox.KeyPress += SelectedPlayerRatingTextBox_KeyPress;
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Black;
             label3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(12, 137);
             label3.Name = "label3";
             label3.Size = new Size(119, 18);
@@ -157,7 +160,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Black;
             label1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(12, 63);
             label1.Name = "label1";
             label1.Size = new Size(53, 18);
@@ -167,13 +172,12 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.BorderStyle = BorderStyle.FixedSingle;
+            label2.BackColor = Color.Black;
             label2.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(474, 17);
             label2.Name = "label2";
-            label2.Size = new Size(226, 34);
+            label2.Size = new Size(224, 32);
             label2.TabIndex = 2;
             label2.Text = "Painel do jogador";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -196,7 +200,7 @@
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(pictureBox1);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(CreateNewMapButton);
             panel2.Controls.Add(CreateNewPlayerButton);
             panel2.Controls.Add(ApplyMatchResultButton);
             panel2.Location = new Point(851, 55);
@@ -204,18 +208,28 @@
             panel2.Size = new Size(265, 426);
             panel2.TabIndex = 5;
             // 
-            // button1
+            // pictureBox1
             // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.Enabled = false;
-            button1.Font = new Font("Arial", 12F);
-            button1.Location = new Point(3, 137);
-            button1.Name = "button1";
-            button1.Size = new Size(252, 38);
-            button1.TabIndex = 4;
-            button1.Text = "Registrar novo mapa";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += ApplyMatchResultButton_Click;
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = Properties.Resources.seperator2;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(252, 41);
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            // 
+            // CreateNewMapButton
+            // 
+            CreateNewMapButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            CreateNewMapButton.Font = new Font("Arial", 12F);
+            CreateNewMapButton.Location = new Point(3, 137);
+            CreateNewMapButton.Name = "CreateNewMapButton";
+            CreateNewMapButton.Size = new Size(252, 38);
+            CreateNewMapButton.TabIndex = 4;
+            CreateNewMapButton.Text = "Registrar novo mapa";
+            CreateNewMapButton.UseVisualStyleBackColor = true;
+            CreateNewMapButton.Click += CreateNewMapButton_Click;
             // 
             // ApplyMatchResultButton
             // 
@@ -229,16 +243,18 @@
             ApplyMatchResultButton.UseVisualStyleBackColor = true;
             ApplyMatchResultButton.Click += ApplyMatchResultButton_Click;
             // 
-            // pictureBox1
+            // label4
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImage = Properties.Resources.seperator2;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(252, 41);
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
+            label4.AutoSize = true;
+            label4.BackColor = Color.Black;
+            label4.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.Control;
+            label4.Location = new Point(851, 17);
+            label4.Name = "label4";
+            label4.Size = new Size(231, 32);
+            label4.TabIndex = 2;
+            label4.Text = "Painel de controle";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // AdminPanelForm
             // 
@@ -250,6 +266,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(dataGridViewPlayers);
+            Controls.Add(label4);
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -281,8 +298,9 @@
         private Panel panel2;
         private Button ApplyMatchResultButton;
         private Label label3;
-        private Button button1;
+        private Button CreateNewMapButton;
         private ListBox FavoriteMapListBox;
         private PictureBox pictureBox1;
+        private Label label4;
     }
 }
