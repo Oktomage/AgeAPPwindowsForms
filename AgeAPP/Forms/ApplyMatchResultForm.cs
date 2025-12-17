@@ -147,6 +147,12 @@ namespace AgeAPP.Forms
 
         private async void ApplyResultButton_Click(object sender, EventArgs e)
         {
+            if (selected_log == null)
+            {
+                MessageBox.Show("Nenhum log selecionado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // Verifica seleção dos times
             bool teamAWon;
 

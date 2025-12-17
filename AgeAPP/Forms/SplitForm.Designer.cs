@@ -48,13 +48,17 @@
             // 
             // ConfirmSplitTeamsButton
             // 
+            ConfirmSplitTeamsButton.BackColor = Color.Transparent;
+            ConfirmSplitTeamsButton.BackgroundImage = Properties.Resources.button_wide_normal;
+            ConfirmSplitTeamsButton.BackgroundImageLayout = ImageLayout.Stretch;
             ConfirmSplitTeamsButton.Font = new Font("Arial", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ConfirmSplitTeamsButton.ForeColor = SystemColors.Control;
             ConfirmSplitTeamsButton.Location = new Point(21, 55);
             ConfirmSplitTeamsButton.Name = "ConfirmSplitTeamsButton";
             ConfirmSplitTeamsButton.Size = new Size(228, 48);
             ConfirmSplitTeamsButton.TabIndex = 0;
-            ConfirmSplitTeamsButton.Text = "Dividir times";
-            ConfirmSplitTeamsButton.UseVisualStyleBackColor = true;
+            ConfirmSplitTeamsButton.Text = "Dividir jogadores";
+            ConfirmSplitTeamsButton.UseVisualStyleBackColor = false;
             ConfirmSplitTeamsButton.Click += ConfirmSplitTeamsButton_Click;
             // 
             // dataGridViewPlayers

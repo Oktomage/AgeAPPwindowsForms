@@ -83,6 +83,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap button_wide_normal {
+            get {
+                object obj = ResourceManager.GetObject("button_wide_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Civ_details_bg {
             get {
                 object obj = ResourceManager.GetObject("Civ-details-bg", resourceCulture);
@@ -93,9 +103,39 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Delete_icon {
+            get {
+                object obj = ResourceManager.GetObject("Delete_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hand_icon {
+            get {
+                object obj = ResourceManager.GetObject("Hand_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Holidays_1920x1080 {
             get {
                 object obj = ResourceManager.GetObject("Holidays_1920x1080", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kill_icon {
+            get {
+                object obj = ResourceManager.GetObject("Kill_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,6 +173,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Open_folder_icon {
+            get {
+                object obj = ResourceManager.GetObject("Open_folder_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Panel_bg {
             get {
                 object obj = ResourceManager.GetObject("Panel_bg", resourceCulture);
@@ -146,6 +196,16 @@ namespace AgeAPP.Properties {
         internal static System.Drawing.Bitmap Panel_bg2 {
             get {
                 object obj = ResourceManager.GetObject("Panel_bg2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Refresh_data_icon {
+            get {
+                object obj = ResourceManager.GetObject("Refresh_data_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +236,16 @@ namespace AgeAPP.Properties {
         internal static System.Drawing.Bitmap seperator2 {
             get {
                 object obj = ResourceManager.GetObject("seperator2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Shuffle_icon {
+            get {
+                object obj = ResourceManager.GetObject("Shuffle_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

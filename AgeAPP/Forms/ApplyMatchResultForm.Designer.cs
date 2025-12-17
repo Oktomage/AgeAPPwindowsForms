@@ -69,20 +69,20 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
+            label1.BackColor = Color.Black;
             label1.Font = new Font("Arial", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(307, 36);
+            label1.Size = new Size(132, 36);
             label1.TabIndex = 4;
-            label1.Text = "Jogadores da partida";
+            label1.Text = "Registro";
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.loading_slash;
-            pictureBox1.Location = new Point(362, 48);
+            pictureBox1.Location = new Point(362, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(187, 107);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -93,7 +93,7 @@
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = Properties.Resources.seperator2;
-            pictureBox2.Location = new Point(362, 161);
+            pictureBox2.Location = new Point(362, 125);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(187, 35);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -102,10 +102,13 @@
             // 
             // ApplyResultButton
             // 
+            ApplyResultButton.BackgroundImage = Properties.Resources.button_wide_normal;
+            ApplyResultButton.BackgroundImageLayout = ImageLayout.Stretch;
             ApplyResultButton.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ApplyResultButton.Location = new Point(362, 324);
+            ApplyResultButton.ForeColor = SystemColors.Control;
+            ApplyResultButton.Location = new Point(362, 268);
             ApplyResultButton.Name = "ApplyResultButton";
-            ApplyResultButton.Size = new Size(187, 33);
+            ApplyResultButton.Size = new Size(187, 47);
             ApplyResultButton.TabIndex = 6;
             ApplyResultButton.Text = "Aplicar";
             ApplyResultButton.UseVisualStyleBackColor = true;
@@ -117,7 +120,7 @@
             TeamVictoriousBox.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TeamVictoriousBox.FormattingEnabled = true;
             TeamVictoriousBox.Items.AddRange(new object[] { "Team A", "Team B" });
-            TeamVictoriousBox.Location = new Point(362, 224);
+            TeamVictoriousBox.Location = new Point(362, 188);
             TeamVictoriousBox.Name = "TeamVictoriousBox";
             TeamVictoriousBox.Size = new Size(187, 35);
             TeamVictoriousBox.TabIndex = 7;
@@ -128,7 +131,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(362, 199);
+            label3.Location = new Point(362, 163);
             label3.Name = "label3";
             label3.Size = new Size(145, 22);
             label3.TabIndex = 4;
@@ -136,12 +139,13 @@
             // 
             // FindLogButton
             // 
+            FindLogButton.BackgroundImage = Properties.Resources.Open_folder_icon;
+            FindLogButton.BackgroundImageLayout = ImageLayout.Stretch;
             FindLogButton.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FindLogButton.Location = new Point(446, 8);
+            FindLogButton.Location = new Point(163, 11);
             FindLogButton.Name = "FindLogButton";
-            FindLogButton.Size = new Size(103, 34);
+            FindLogButton.Size = new Size(38, 34);
             FindLogButton.TabIndex = 6;
-            FindLogButton.Text = "Buscar log";
             FindLogButton.UseVisualStyleBackColor = true;
             FindLogButton.Click += FindLogButton_Click;
             // 
@@ -152,7 +156,7 @@
             // PlayedMapLabel
             // 
             PlayedMapLabel.AutoSize = true;
-            PlayedMapLabel.BackColor = Color.Transparent;
+            PlayedMapLabel.BackColor = Color.Black;
             PlayedMapLabel.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PlayedMapLabel.ForeColor = SystemColors.Control;
             PlayedMapLabel.Location = new Point(12, 324);

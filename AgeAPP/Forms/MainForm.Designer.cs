@@ -48,6 +48,7 @@ namespace AgeAPP
             label1 = new Label();
             label2 = new Label();
             panel2 = new Panel();
+            ToolTips = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -81,13 +82,17 @@ namespace AgeAPP
             // SplitButton
             // 
             SplitButton.AutoSize = true;
+            SplitButton.BackColor = Color.Black;
+            SplitButton.BackgroundImage = Properties.Resources.button_wide_normal;
+            SplitButton.BackgroundImageLayout = ImageLayout.Stretch;
             SplitButton.Font = new Font("Arial", 14.25F);
+            SplitButton.ForeColor = SystemColors.Control;
             SplitButton.Location = new Point(22, 50);
             SplitButton.Name = "SplitButton";
             SplitButton.Size = new Size(227, 45);
             SplitButton.TabIndex = 1;
             SplitButton.Text = "Divisor de times";
-            SplitButton.UseVisualStyleBackColor = true;
+            SplitButton.UseVisualStyleBackColor = false;
             SplitButton.Click += SplitButton_Click;
             // 
             // panel1
@@ -145,36 +150,47 @@ namespace AgeAPP
             // MatchesButton
             // 
             MatchesButton.AutoSize = true;
+            MatchesButton.BackColor = Color.Transparent;
+            MatchesButton.BackgroundImage = Properties.Resources.button_wide_normal;
+            MatchesButton.BackgroundImageLayout = ImageLayout.Stretch;
             MatchesButton.Enabled = false;
             MatchesButton.Font = new Font("Arial", 14.25F);
+            MatchesButton.ForeColor = SystemColors.Control;
             MatchesButton.Location = new Point(22, 101);
             MatchesButton.Name = "MatchesButton";
             MatchesButton.Size = new Size(227, 45);
             MatchesButton.TabIndex = 2;
             MatchesButton.Text = "Histórico de partidas";
-            MatchesButton.UseVisualStyleBackColor = true;
+            MatchesButton.UseVisualStyleBackColor = false;
             MatchesButton.Click += AdminPanelButton_Click;
             // 
             // AdminPanelButton
             // 
             AdminPanelButton.AutoSize = true;
+            AdminPanelButton.BackColor = Color.Transparent;
+            AdminPanelButton.BackgroundImage = Properties.Resources.button_wide_normal;
+            AdminPanelButton.BackgroundImageLayout = ImageLayout.Stretch;
             AdminPanelButton.Enabled = false;
             AdminPanelButton.Font = new Font("Arial", 14.25F);
+            AdminPanelButton.ForeColor = SystemColors.Control;
             AdminPanelButton.Location = new Point(22, 190);
             AdminPanelButton.Name = "AdminPanelButton";
             AdminPanelButton.Size = new Size(227, 45);
             AdminPanelButton.TabIndex = 3;
             AdminPanelButton.Text = "Painel de admin";
-            AdminPanelButton.UseVisualStyleBackColor = true;
+            AdminPanelButton.UseVisualStyleBackColor = false;
             AdminPanelButton.Click += AdminPanelButton_Click;
             // 
             // LoginButton
             // 
             LoginButton.AutoSize = true;
-            LoginButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LoginButton.Location = new Point(185, 457);
+            LoginButton.BackgroundImage = Properties.Resources.button_wide_normal;
+            LoginButton.BackgroundImageLayout = ImageLayout.Stretch;
+            LoginButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LoginButton.ForeColor = SystemColors.Control;
+            LoginButton.Location = new Point(167, 450);
             LoginButton.Name = "LoginButton";
-            LoginButton.Size = new Size(76, 28);
+            LoginButton.Size = new Size(94, 35);
             LoginButton.TabIndex = 4;
             LoginButton.Text = "Login";
             LoginButton.UseVisualStyleBackColor = true;
@@ -183,12 +199,13 @@ namespace AgeAPP
             // ForceGridRefreshButton
             // 
             ForceGridRefreshButton.AutoSize = true;
+            ForceGridRefreshButton.BackgroundImage = Properties.Resources.Refresh_data_icon;
+            ForceGridRefreshButton.BackgroundImageLayout = ImageLayout.Stretch;
             ForceGridRefreshButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ForceGridRefreshButton.Location = new Point(746, 1);
+            ForceGridRefreshButton.Location = new Point(812, 1);
             ForceGridRefreshButton.Name = "ForceGridRefreshButton";
-            ForceGridRefreshButton.Size = new Size(93, 24);
+            ForceGridRefreshButton.Size = new Size(27, 24);
             ForceGridRefreshButton.TabIndex = 4;
-            ForceGridRefreshButton.Text = "Forçar atualizar";
             ForceGridRefreshButton.UseVisualStyleBackColor = true;
             ForceGridRefreshButton.Click += ForceGridRefreshButton_Click;
             // 
@@ -255,13 +272,19 @@ namespace AgeAPP
             panel2.Size = new Size(846, 28);
             panel2.TabIndex = 5;
             // 
+            // ToolTips
+            // 
+            ToolTips.AutoPopDelay = 5000;
+            ToolTips.InitialDelay = 250;
+            ToolTips.ReshowDelay = 100;
+            // 
             // FMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Civ_details_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1149, 537);
+            ClientSize = new Size(1149, 534);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(dataGridViewMaps);
@@ -302,5 +325,6 @@ namespace AgeAPP
         private Button ForceGridRefreshButton;
         private Panel panel2;
         private PictureBox pictureBox2;
+        private ToolTip ToolTips;
     }
 }

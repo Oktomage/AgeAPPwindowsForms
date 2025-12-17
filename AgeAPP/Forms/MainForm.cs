@@ -44,6 +44,18 @@ namespace AgeAPP
             // Atualiza a tabela inicial
             UpdateDataGridViewPlayers();
             UpdateDataGridViewMaps();
+
+            //
+            Write_toolTips();
+        }
+
+        private void Write_toolTips()
+        {
+            ToolTips.SetToolTip(ForceGridRefreshButton, "Força a atualização das tabelas de jogadores e mapas.");
+            ToolTips.SetToolTip(SplitButton, "Abre a janela de divisão de times.");
+            ToolTips.SetToolTip(MatchesButton, "Abre a janela de histórico de partidas.");
+            ToolTips.SetToolTip(AdminPanelButton, "Abre o painel de administração (requer login).");
+            ToolTips.SetToolTip(LoginButton, "Abre a janela de login de administradores.");
         }
 
         private async void UpdateDataGridViewPlayers()

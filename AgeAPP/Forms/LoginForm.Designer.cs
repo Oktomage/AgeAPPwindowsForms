@@ -49,7 +49,7 @@ namespace AgeAPP.Forms
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(245, 146);
+            panel1.Size = new Size(245, 161);
             panel1.TabIndex = 0;
             // 
             // label2
@@ -90,9 +90,13 @@ namespace AgeAPP.Forms
             // 
             // LogInButton
             // 
-            LogInButton.Location = new Point(133, 113);
+            LogInButton.BackgroundImage = Properties.Resources.button_wide_normal;
+            LogInButton.BackgroundImageLayout = ImageLayout.Stretch;
+            LogInButton.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LogInButton.ForeColor = SystemColors.Control;
+            LogInButton.Location = new Point(122, 113);
             LogInButton.Name = "LogInButton";
-            LogInButton.Size = new Size(102, 29);
+            LogInButton.Size = new Size(113, 45);
             LogInButton.TabIndex = 3;
             LogInButton.Text = "Logar";
             LogInButton.UseVisualStyleBackColor = true;
@@ -102,7 +106,7 @@ namespace AgeAPP.Forms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(245, 146);
+            ClientSize = new Size(245, 161);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");

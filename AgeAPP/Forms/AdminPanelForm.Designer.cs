@@ -115,23 +115,26 @@
             // DeleteSelectedPlayerButton
             // 
             DeleteSelectedPlayerButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            DeleteSelectedPlayerButton.BackColor = Color.Transparent;
+            DeleteSelectedPlayerButton.BackgroundImage = Properties.Resources.Kill_icon;
+            DeleteSelectedPlayerButton.BackgroundImageLayout = ImageLayout.Stretch;
             DeleteSelectedPlayerButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DeleteSelectedPlayerButton.Location = new Point(244, 9);
+            DeleteSelectedPlayerButton.Location = new Point(285, 361);
             DeleteSelectedPlayerButton.Name = "DeleteSelectedPlayerButton";
-            DeleteSelectedPlayerButton.Size = new Size(107, 28);
+            DeleteSelectedPlayerButton.Size = new Size(66, 58);
             DeleteSelectedPlayerButton.TabIndex = 4;
-            DeleteSelectedPlayerButton.Text = "Deletar jogador";
-            DeleteSelectedPlayerButton.UseVisualStyleBackColor = true;
+            DeleteSelectedPlayerButton.UseVisualStyleBackColor = false;
             DeleteSelectedPlayerButton.Click += DeleteSelectedPlayerButton_Click;
             // 
             // ChangeSelectedPlayerRating
             // 
+            ChangeSelectedPlayerRating.BackgroundImage = Properties.Resources.Hand_icon;
+            ChangeSelectedPlayerRating.BackgroundImageLayout = ImageLayout.Stretch;
             ChangeSelectedPlayerRating.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ChangeSelectedPlayerRating.Location = new Point(122, 84);
+            ChangeSelectedPlayerRating.Location = new Point(137, 84);
             ChangeSelectedPlayerRating.Name = "ChangeSelectedPlayerRating";
-            ChangeSelectedPlayerRating.Size = new Size(64, 35);
+            ChangeSelectedPlayerRating.Size = new Size(43, 35);
             ChangeSelectedPlayerRating.TabIndex = 4;
-            ChangeSelectedPlayerRating.Text = "Mudar";
             ChangeSelectedPlayerRating.UseVisualStyleBackColor = true;
             ChangeSelectedPlayerRating.Click += ChangeSelectedPlayerRating_Click;
             // 
@@ -141,7 +144,7 @@
             SelectedPlayerRatingTextBox.Location = new Point(12, 84);
             SelectedPlayerRatingTextBox.Name = "SelectedPlayerRatingTextBox";
             SelectedPlayerRatingTextBox.PlaceholderText = "Rating";
-            SelectedPlayerRatingTextBox.Size = new Size(104, 35);
+            SelectedPlayerRatingTextBox.Size = new Size(119, 35);
             SelectedPlayerRatingTextBox.TabIndex = 3;
             SelectedPlayerRatingTextBox.KeyPress += SelectedPlayerRatingTextBox_KeyPress;
             // 
@@ -185,13 +188,17 @@
             // CreateNewPlayerButton
             // 
             CreateNewPlayerButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            CreateNewPlayerButton.BackColor = Color.Transparent;
+            CreateNewPlayerButton.BackgroundImage = Properties.Resources.button_wide_normal;
+            CreateNewPlayerButton.BackgroundImageLayout = ImageLayout.Stretch;
             CreateNewPlayerButton.Font = new Font("Arial", 12F);
-            CreateNewPlayerButton.Location = new Point(3, 94);
+            CreateNewPlayerButton.ForeColor = SystemColors.Control;
+            CreateNewPlayerButton.Location = new Point(3, 109);
             CreateNewPlayerButton.Name = "CreateNewPlayerButton";
-            CreateNewPlayerButton.Size = new Size(252, 38);
+            CreateNewPlayerButton.Size = new Size(255, 53);
             CreateNewPlayerButton.TabIndex = 4;
             CreateNewPlayerButton.Text = "Registrar novo jogador";
-            CreateNewPlayerButton.UseVisualStyleBackColor = true;
+            CreateNewPlayerButton.UseVisualStyleBackColor = false;
             CreateNewPlayerButton.Click += CreateNewPlayerButton_Click;
             // 
             // panel2
@@ -222,25 +229,33 @@
             // CreateNewMapButton
             // 
             CreateNewMapButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            CreateNewMapButton.BackColor = Color.Transparent;
+            CreateNewMapButton.BackgroundImage = Properties.Resources.button_wide_normal;
+            CreateNewMapButton.BackgroundImageLayout = ImageLayout.Stretch;
             CreateNewMapButton.Font = new Font("Arial", 12F);
-            CreateNewMapButton.Location = new Point(3, 137);
+            CreateNewMapButton.ForeColor = SystemColors.Control;
+            CreateNewMapButton.Location = new Point(3, 168);
             CreateNewMapButton.Name = "CreateNewMapButton";
-            CreateNewMapButton.Size = new Size(252, 38);
+            CreateNewMapButton.Size = new Size(255, 53);
             CreateNewMapButton.TabIndex = 4;
             CreateNewMapButton.Text = "Registrar novo mapa";
-            CreateNewMapButton.UseVisualStyleBackColor = true;
+            CreateNewMapButton.UseVisualStyleBackColor = false;
             CreateNewMapButton.Click += CreateNewMapButton_Click;
             // 
             // ApplyMatchResultButton
             // 
             ApplyMatchResultButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            ApplyMatchResultButton.BackColor = Color.Transparent;
+            ApplyMatchResultButton.BackgroundImage = Properties.Resources.button_wide_normal;
+            ApplyMatchResultButton.BackgroundImageLayout = ImageLayout.Stretch;
             ApplyMatchResultButton.Font = new Font("Arial", 12F);
+            ApplyMatchResultButton.ForeColor = SystemColors.Control;
             ApplyMatchResultButton.Location = new Point(3, 50);
             ApplyMatchResultButton.Name = "ApplyMatchResultButton";
-            ApplyMatchResultButton.Size = new Size(252, 38);
+            ApplyMatchResultButton.Size = new Size(255, 53);
             ApplyMatchResultButton.TabIndex = 4;
             ApplyMatchResultButton.Text = "Aplicar resultado de partida";
-            ApplyMatchResultButton.UseVisualStyleBackColor = true;
+            ApplyMatchResultButton.UseVisualStyleBackColor = false;
             ApplyMatchResultButton.Click += ApplyMatchResultButton_Click;
             // 
             // label4
