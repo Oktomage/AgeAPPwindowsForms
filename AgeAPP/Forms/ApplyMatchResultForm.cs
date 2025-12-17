@@ -11,10 +11,19 @@ namespace AgeAPP.Forms
         private FiresharpData local_Data_service = new FiresharpData();
         private MainFunctions local_Main_functions_service = new MainFunctions();
 
+        // Local data
+        private Log selected_log;
+
         public ApplyMatchResultForm(FiresharpData data_service)
         {
             InitializeComponent();
             local_Data_service = data_service;
+        }
+
+        private async void ApplyMatchResultForm_Load(object sender, EventArgs e)
+        {
+            // Configura ComboBox
+            TeamVictoriousBox.SelectedIndex = 0;
 
             // Configura DataGridView
             dataGridViewMatchLog.AutoGenerateColumns = false;
@@ -49,14 +58,6 @@ namespace AgeAPP.Forms
                 DataPropertyName = "RatingB",
                 HeaderText = "Rating"
             });
-        }
-
-        private async void ApplyMatchResultForm_Load(object sender, EventArgs e)
-        {
-            // Configura ComboBox
-            TeamVictoriousBox.SelectedIndex = 0;
-
-            var maps = await local_Data_service.GetAllMaps();
         }
 
         public class MatchRowView
@@ -99,7 +100,7 @@ namespace AgeAPP.Forms
         }
 
 
-        private async void UpdateDataGridViewMatchLog(Log log)
+        private async void UpdateUIbased_on_log(Log log)
         {
             if (log == null ||
                 log.All_players == null ||
@@ -114,6 +115,8 @@ namespace AgeAPP.Forms
 
             dataGridViewMatchLog.DataSource = null;
             dataGridViewMatchLog.DataSource = rows;
+
+            PlayedMapLabel.Text = log.Played_map != null ? $"Mapa: {log.Played_map.Name}" : "Desconhecido";
         }
 
         #region BUTTONS
@@ -134,7 +137,11 @@ namespace AgeAPP.Forms
 
                 Log log = JsonSerializer.Deserialize<Log>(json);
 
-                UpdateDataGridViewMatchLog(log);
+                // Armazena log selecionado
+                selected_log = log;
+
+                // Atualiza UI
+                UpdateUIbased_on_log(selected_log);
             }
         }
 
@@ -149,6 +156,7 @@ namespace AgeAPP.Forms
                 return;
             }
 
+            // Pega a definição do time vencedor
             teamAWon = TeamVictoriousBox.SelectedItem.ToString() == "Team A";
 
             var result = MessageBox.Show($"Tem certeza que deseja aplicar esse resultado ? \n Essa ação não pode ser desfeita.", "Confirmar mudança", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -159,13 +167,8 @@ namespace AgeAPP.Forms
             ApplyResultButton.Enabled = false;
 
             // Aplicar resultado da partida
-            /*
-            MatchResult match_result = local_Main_functions_service.Apply_match_result(
-                dataGridViewMatchLog.SelectedRows.Cast<DataGridViewRow>().Select(r => r.DataBoundItem as Player).ToList(),
-                dataGridViewPlayers2.SelectedRows.Cast<DataGridViewRow>().Select(r => r.DataBoundItem as Player).ToList(),
-                teamAWon,
-                PlayedMapBox.SelectedItem.ToString()
-            );
+            
+            MatchResult match_result = local_Main_functions_service.Apply_match_result(selected_log.TeamA_players, selected_log.TeamB_players, teamAWon, selected_log.Played_map.Name);
 
             // Salvar alterações no banco
             foreach (var player in match_result.TeamA)
@@ -185,7 +188,7 @@ namespace AgeAPP.Forms
                 Content = $"Lançou um resultado de partida",
                 Match_result = match_result
             });
-            */
+            
 
             // Fechar painel
             this.Close();

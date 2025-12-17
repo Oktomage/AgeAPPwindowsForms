@@ -1,4 +1,5 @@
 ﻿using AgeAPP.Classes;
+using System.Threading.Tasks;
 using static AgeAPP.Classes.FiresharpData;
 
 namespace AgeAPP.Forms
@@ -6,7 +7,7 @@ namespace AgeAPP.Forms
     public partial class SplitForm : Form
     {
         // Serviços
-        public MainFunctions Main_functions_service = new MainFunctions();
+        private MainFunctions Main_functions_service = new MainFunctions();
         private FiresharpData local_Data_service;
 
         public SplitForm(FiresharpData Data_service)
@@ -22,7 +23,7 @@ namespace AgeAPP.Forms
             dataGridViewPlayers.DataSource = players;
         }
 
-        private void ConfirmSplitTeamsButton_Click(object sender, EventArgs e)
+        private async void ConfirmSplitTeamsButton_Click(object sender, EventArgs e)
         {
             var selectedPlayers = dataGridViewPlayers.SelectedRows
                 .Cast<DataGridViewRow>()
@@ -46,10 +47,14 @@ namespace AgeAPP.Forms
                 return;
             }
 
-            var (teamA, teamB) = Main_functions_service.SplitTeamsBruteForce(selectedPlayers);
+            // Pega mapa
+            var allmaps = await local_Data_service.GetAllMaps();
+            var selectedMap = Main_functions_service.Get_mapBased_on_players_favoriteMaps(selectedPlayers, allmaps);
 
-            //dgvTeamA.DataSource = teamA;
-            //dgvTeamB.DataSource = teamB;
+            TextBoxMap.Text = $"Mapa: [{selectedMap.Name}]";
+
+            // Pega a divisão de times
+            var (teamA, teamB) = Main_functions_service.SplitTeamsBruteForce(selectedPlayers);
 
             string BuildTeamLine(string teamName, List<Player> team)
             {
@@ -65,10 +70,10 @@ namespace AgeAPP.Forms
             TextBoxTeam2.Text = BuildTeamLine("TIME B", teamB);
 
             // Salvar log
-            Request_post_splitLog(teamA, teamB);
+            Request_post_splitLog(teamA, teamB, selectedMap);
         }
 
-        private void Request_post_splitLog(List<Player> teamA, List<Player> teamB)
+        private void Request_post_splitLog(List<Player> teamA, List<Player> teamB, Map playedMap)
         {
             Log log = new Log
             {
@@ -77,6 +82,7 @@ namespace AgeAPP.Forms
                 All_players = teamA.Concat(teamB).ToList(),
                 TeamA_players = teamA,
                 TeamB_players = teamB,
+                Played_map = playedMap,
                 Role = "Split_log"
             };
 

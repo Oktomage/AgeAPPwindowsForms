@@ -39,6 +39,7 @@
             label3 = new Label();
             FindLogButton = new Button();
             OpenFileDialog = new OpenFileDialog();
+            PlayedMapLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMatchLog).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -62,7 +63,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridViewMatchLog.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewMatchLog.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewMatchLog.Size = new Size(344, 283);
+            dataGridViewMatchLog.Size = new Size(344, 267);
             dataGridViewMatchLog.TabIndex = 2;
             // 
             // label1
@@ -102,9 +103,9 @@
             // ApplyResultButton
             // 
             ApplyResultButton.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ApplyResultButton.Location = new Point(362, 285);
+            ApplyResultButton.Location = new Point(362, 324);
             ApplyResultButton.Name = "ApplyResultButton";
-            ApplyResultButton.Size = new Size(187, 46);
+            ApplyResultButton.Size = new Size(187, 33);
             ApplyResultButton.TabIndex = 6;
             ApplyResultButton.Text = "Aplicar";
             ApplyResultButton.UseVisualStyleBackColor = true;
@@ -116,7 +117,7 @@
             TeamVictoriousBox.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TeamVictoriousBox.FormattingEnabled = true;
             TeamVictoriousBox.Items.AddRange(new object[] { "Team A", "Team B" });
-            TeamVictoriousBox.Location = new Point(362, 244);
+            TeamVictoriousBox.Location = new Point(362, 224);
             TeamVictoriousBox.Name = "TeamVictoriousBox";
             TeamVictoriousBox.Size = new Size(187, 35);
             TeamVictoriousBox.TabIndex = 7;
@@ -127,7 +128,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(362, 219);
+            label3.Location = new Point(362, 199);
             label3.Name = "label3";
             label3.Size = new Size(145, 22);
             label3.TabIndex = 4;
@@ -148,19 +149,32 @@
             // 
             OpenFileDialog.FileName = "openFileDialog1";
             // 
+            // PlayedMapLabel
+            // 
+            PlayedMapLabel.AutoSize = true;
+            PlayedMapLabel.BackColor = Color.Transparent;
+            PlayedMapLabel.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PlayedMapLabel.ForeColor = SystemColors.Control;
+            PlayedMapLabel.Location = new Point(12, 324);
+            PlayedMapLabel.Name = "PlayedMapLabel";
+            PlayedMapLabel.Size = new Size(189, 33);
+            PlayedMapLabel.TabIndex = 4;
+            PlayedMapLabel.Text = "Mapa: { Null }";
+            // 
             // ApplyMatchResultForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Holidays_1920x1080;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(567, 344);
+            ClientSize = new Size(567, 364);
             Controls.Add(TeamVictoriousBox);
             Controls.Add(FindLogButton);
             Controls.Add(ApplyResultButton);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(label3);
+            Controls.Add(PlayedMapLabel);
             Controls.Add(label1);
             Controls.Add(dataGridViewMatchLog);
             DoubleBuffered = true;
@@ -189,5 +203,6 @@
         private Label label3;
         private Button FindLogButton;
         private OpenFileDialog OpenFileDialog;
+        private Label PlayedMapLabel;
     }
 }

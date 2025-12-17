@@ -102,6 +102,9 @@ namespace AgeAPP.Classes
             public float WinRate { get; set; }
 
             [Browsable(false)]
+            public string Last_time_played { get; set; }
+
+            [Browsable(false)]
             public Dictionary<string, FavoriteMap> Favorite_maps { get; set; }
         }
 

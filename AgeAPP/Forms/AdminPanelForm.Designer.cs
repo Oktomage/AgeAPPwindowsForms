@@ -203,6 +203,7 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button1.Enabled = false;
             button1.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.Location = new Point(18, 166);
             button1.Name = "button1";

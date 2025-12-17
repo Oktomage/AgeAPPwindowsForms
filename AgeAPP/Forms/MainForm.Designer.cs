@@ -36,20 +36,24 @@ namespace AgeAPP
             dataGridViewPlayers = new DataGridView();
             SplitButton = new Button();
             panel1 = new Panel();
+            pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             AdminConnectedLabel = new Label();
             MatchesButton = new Button();
             AdminPanelButton = new Button();
-            ForceGridRefreshButton = new Button();
             LoginButton = new Button();
+            ForceGridRefreshButton = new Button();
             ConnectionTimer = new System.Windows.Forms.Timer(components);
             dataGridViewMaps = new DataGridView();
             label1 = new Label();
             label2 = new Label();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridViewPlayers
@@ -91,6 +95,7 @@ namespace AgeAPP
             panel1.BackgroundImage = Properties.Resources.Panel_bg2;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(AdminConnectedLabel);
             panel1.Controls.Add(MatchesButton);
@@ -101,6 +106,17 @@ namespace AgeAPP
             panel1.Name = "panel1";
             panel1.Size = new Size(268, 492);
             panel1.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.BackgroundImage = Properties.Resources.seperator;
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Location = new Point(22, 203);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(227, 17);
+            pictureBox2.TabIndex = 5;
+            pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -143,25 +159,13 @@ namespace AgeAPP
             AdminPanelButton.AutoSize = true;
             AdminPanelButton.Enabled = false;
             AdminPanelButton.Font = new Font("Arial", 16F);
-            AdminPanelButton.Location = new Point(22, 188);
+            AdminPanelButton.Location = new Point(22, 226);
             AdminPanelButton.Name = "AdminPanelButton";
             AdminPanelButton.Size = new Size(227, 55);
             AdminPanelButton.TabIndex = 3;
             AdminPanelButton.Text = "Painel de admin";
             AdminPanelButton.UseVisualStyleBackColor = true;
             AdminPanelButton.Click += AdminPanelButton_Click;
-            // 
-            // ForceGridRefreshButton
-            // 
-            ForceGridRefreshButton.AutoSize = true;
-            ForceGridRefreshButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ForceGridRefreshButton.Location = new Point(765, 3);
-            ForceGridRefreshButton.Name = "ForceGridRefreshButton";
-            ForceGridRefreshButton.Size = new Size(93, 28);
-            ForceGridRefreshButton.TabIndex = 4;
-            ForceGridRefreshButton.Text = "Forçar atualizar";
-            ForceGridRefreshButton.UseVisualStyleBackColor = true;
-            ForceGridRefreshButton.Click += ForceGridRefreshButton_Click;
             // 
             // LoginButton
             // 
@@ -174,6 +178,18 @@ namespace AgeAPP
             LoginButton.Text = "Login";
             LoginButton.UseVisualStyleBackColor = true;
             LoginButton.Click += LoginButton_Click;
+            // 
+            // ForceGridRefreshButton
+            // 
+            ForceGridRefreshButton.AutoSize = true;
+            ForceGridRefreshButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForceGridRefreshButton.Location = new Point(751, 1);
+            ForceGridRefreshButton.Name = "ForceGridRefreshButton";
+            ForceGridRefreshButton.Size = new Size(93, 24);
+            ForceGridRefreshButton.TabIndex = 4;
+            ForceGridRefreshButton.Text = "Forçar atualizar";
+            ForceGridRefreshButton.UseVisualStyleBackColor = true;
+            ForceGridRefreshButton.Click += ForceGridRefreshButton_Click;
             // 
             // ConnectionTimer
             // 
@@ -207,11 +223,11 @@ namespace AgeAPP
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Arial", 15.75F);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(12, 3);
+            label1.Location = new Point(0, 1);
             label1.Name = "label1";
-            label1.Size = new Size(131, 27);
+            label1.Size = new Size(115, 24);
             label1.TabIndex = 3;
             label1.Text = "Jogadores:";
             // 
@@ -219,13 +235,24 @@ namespace AgeAPP
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Arial", 15.75F);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(438, 3);
+            label2.Location = new Point(424, 1);
             label2.Name = "label2";
-            label2.Size = new Size(90, 27);
+            label2.Size = new Size(79, 24);
             label2.TabIndex = 3;
             label2.Text = "Mapas:";
+            // 
+            // panel2
+            // 
+            panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(ForceGridRefreshButton);
+            panel2.Location = new Point(12, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(846, 28);
+            panel2.TabIndex = 5;
             // 
             // FMain
             // 
@@ -234,11 +261,9 @@ namespace AgeAPP
             BackgroundImage = Properties.Resources.Civ_details_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1149, 537);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(dataGridViewMaps);
-            Controls.Add(ForceGridRefreshButton);
             Controls.Add(dataGridViewPlayers);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -251,10 +276,12 @@ namespace AgeAPP
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -272,5 +299,7 @@ namespace AgeAPP
         private Label label1;
         private Label label2;
         private Button ForceGridRefreshButton;
+        private Panel panel2;
+        private PictureBox pictureBox2;
     }
 }

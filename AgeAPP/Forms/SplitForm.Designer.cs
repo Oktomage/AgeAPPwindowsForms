@@ -39,6 +39,8 @@
             TextBoxTeam2 = new TextBox();
             label2 = new Label();
             label3 = new Label();
+            label4 = new Label();
+            TextBoxMap = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -125,7 +127,7 @@
             // TextBoxTeam2
             // 
             TextBoxTeam2.Font = new Font("Arial", 16F);
-            TextBoxTeam2.Location = new Point(483, 346);
+            TextBoxTeam2.Location = new Point(483, 335);
             TextBoxTeam2.Name = "TextBoxTeam2";
             TextBoxTeam2.PlaceholderText = "Time B";
             TextBoxTeam2.ReadOnly = true;
@@ -150,11 +152,33 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(483, 328);
+            label3.Location = new Point(483, 317);
             label3.Name = "label3";
             label3.Size = new Size(46, 15);
             label3.TabIndex = 8;
             label3.Text = "Time B";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.Control;
+            label4.Location = new Point(483, 381);
+            label4.Name = "label4";
+            label4.Size = new Size(37, 15);
+            label4.TabIndex = 8;
+            label4.Text = "Mapa";
+            // 
+            // TextBoxMap
+            // 
+            TextBoxMap.Font = new Font("Arial", 16F);
+            TextBoxMap.Location = new Point(483, 399);
+            TextBoxMap.Name = "TextBoxMap";
+            TextBoxMap.PlaceholderText = "Mapa ex: { Floresta negra }";
+            TextBoxMap.ReadOnly = true;
+            TextBoxMap.Size = new Size(268, 32);
+            TextBoxMap.TabIndex = 7;
             // 
             // SplitForm
             // 
@@ -163,8 +187,10 @@
             BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(765, 450);
+            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
+            Controls.Add(TextBoxMap);
             Controls.Add(TextBoxTeam2);
             Controls.Add(TextBoxTeam1);
             Controls.Add(panel1);
@@ -195,5 +221,7 @@
         private Label label2;
         private Label label3;
         private PictureBox pictureBox1;
+        private Label label4;
+        private TextBox TextBoxMap;
     }
 }
