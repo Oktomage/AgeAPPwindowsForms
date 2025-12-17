@@ -42,6 +42,17 @@ namespace AgeAPP.Forms
             {
                 SelectedPlayerLabel.Text = $"{selectedPlayer.Name} - [{selectedPlayer.Rating}]";
                 SelectedPlayerRatingTextBox.Text = selectedPlayer.Rating.ToString();
+
+                // Se tiver maps favoritos, mostra na lista
+                FavoriteMapListBox.Items.Clear();
+
+                if (selectedPlayer.Favorite_maps != null && selectedPlayer.Favorite_maps.Count > 0)
+                {
+                    foreach (FavoriteMap map in selectedPlayer.Favorite_maps.Values)
+                    {
+                        FavoriteMapListBox.Items.Add($"{map.Name} - Jogado {map.Times_played} vezes");
+                    }
+                }
             }
         }
 

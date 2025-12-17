@@ -3,6 +3,7 @@ using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Newtonsoft.Json;
+using System.ComponentModel;
 
 namespace AgeAPP.Classes
 {
@@ -24,6 +25,7 @@ namespace AgeAPP.Classes
         public List<Admin> Admins = new List<Admin>
         {
             new Admin { Name = "pedreiro", Password = "chapeudecouro" },
+            new Admin { Name = "gomes", Password = "calvo" },
             new Admin { Name = "oldtime", Password = "artemis" },
             new Admin { Name = "biel", Password = "amointerno" },
             new Admin { Name = "kakashi", Password = "artuzao" },
@@ -89,12 +91,6 @@ namespace AgeAPP.Classes
             File.WriteAllText(backupFilePath, formattedJson);
         }
 
-        public class Map
-        {
-            public string Name { get; set; }
-            public int Type { get; set; }
-        }
-
         public class Player
         {
             public int Id { get; set; }
@@ -103,7 +99,9 @@ namespace AgeAPP.Classes
             public int Matches { get; set; }
             public int Wins { get; set; }
             public float WinRate { get; set; }
-            //public List<Map> Favorite_maps { get; set; }
+
+            [Browsable(false)]
+            public Dictionary<string, FavoriteMap> Favorite_maps { get; set; }
         }
 
         public async Task<List<Player>> GetAllPlayers()
@@ -154,6 +152,28 @@ namespace AgeAPP.Classes
         public async Task Delete_player(Player player)
         {
             await client.DeleteAsync($"players/{player.Name}");
+        }
+
+        public class FavoriteMap
+        {
+            public string Name { get; set; }
+            public int Times_played { get; set; }
+        }
+        public class Map
+        {
+            public string Name { get; set; }
+            public int Matches { get; set; }
+            public int Type { get; set; }
+        }
+        public async Task<List<Map>> GetAllMaps()
+        {
+            FirebaseResponse response = await client.GetAsync("maps");
+            
+            var data = response.ResultAs<Dictionary<string, Map>>();
+
+            var maps_list = data.Values.ToList();
+
+            return maps_list;
         }
 
         public class Log

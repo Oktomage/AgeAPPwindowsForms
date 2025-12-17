@@ -31,6 +31,7 @@ namespace AgeAPP
         {
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
             dataGridViewPlayers = new DataGridView();
             SplitButton = new Button();
@@ -38,13 +39,18 @@ namespace AgeAPP
             AutoPlayerListRefresh = new CheckBox();
             pictureBox1 = new PictureBox();
             AdminConnectedLabel = new Label();
+            MatchesButton = new Button();
             AdminPanelButton = new Button();
             LoginButton = new Button();
             ConnectionTimer = new System.Windows.Forms.Timer(components);
             AutoRefresh = new System.Windows.Forms.Timer(components);
+            dataGridViewMaps = new DataGridView();
+            label1 = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).BeginInit();
             SuspendLayout();
             // 
             // dataGridViewPlayers
@@ -62,11 +68,11 @@ namespace AgeAPP
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             dataGridViewPlayers.DefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewPlayers.Location = new Point(12, 12);
+            dataGridViewPlayers.Location = new Point(12, 33);
             dataGridViewPlayers.Name = "dataGridViewPlayers";
             dataGridViewPlayers.ReadOnly = true;
             dataGridViewPlayers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewPlayers.Size = new Size(456, 492);
+            dataGridViewPlayers.Size = new Size(420, 492);
             dataGridViewPlayers.TabIndex = 0;
             // 
             // SplitButton
@@ -89,10 +95,11 @@ namespace AgeAPP
             panel1.Controls.Add(AutoPlayerListRefresh);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(AdminConnectedLabel);
+            panel1.Controls.Add(MatchesButton);
             panel1.Controls.Add(AdminPanelButton);
             panel1.Controls.Add(LoginButton);
             panel1.Controls.Add(SplitButton);
-            panel1.Location = new Point(484, 12);
+            panel1.Location = new Point(869, 33);
             panel1.Name = "panel1";
             panel1.Size = new Size(268, 492);
             panel1.TabIndex = 2;
@@ -100,12 +107,14 @@ namespace AgeAPP
             // AutoPlayerListRefresh
             // 
             AutoPlayerListRefresh.AutoSize = true;
+            AutoPlayerListRefresh.BackColor = Color.Transparent;
+            AutoPlayerListRefresh.ForeColor = SystemColors.Control;
             AutoPlayerListRefresh.Location = new Point(3, 445);
             AutoPlayerListRefresh.Name = "AutoPlayerListRefresh";
             AutoPlayerListRefresh.Size = new Size(123, 19);
             AutoPlayerListRefresh.TabIndex = 6;
             AutoPlayerListRefresh.Text = "Auto atualizar lista";
-            AutoPlayerListRefresh.UseVisualStyleBackColor = true;
+            AutoPlayerListRefresh.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -130,15 +139,28 @@ namespace AgeAPP
             AdminConnectedLabel.TabIndex = 4;
             AdminConnectedLabel.Text = "label1";
             // 
+            // MatchesButton
+            // 
+            MatchesButton.AutoSize = true;
+            MatchesButton.Enabled = false;
+            MatchesButton.Font = new Font("Arial", 16F);
+            MatchesButton.Location = new Point(22, 127);
+            MatchesButton.Name = "MatchesButton";
+            MatchesButton.Size = new Size(227, 55);
+            MatchesButton.TabIndex = 2;
+            MatchesButton.Text = "Histórico de partidas";
+            MatchesButton.UseVisualStyleBackColor = true;
+            MatchesButton.Click += AdminPanelButton_Click;
+            // 
             // AdminPanelButton
             // 
             AdminPanelButton.AutoSize = true;
             AdminPanelButton.Enabled = false;
             AdminPanelButton.Font = new Font("Arial", 16F);
-            AdminPanelButton.Location = new Point(22, 127);
+            AdminPanelButton.Location = new Point(22, 188);
             AdminPanelButton.Name = "AdminPanelButton";
             AdminPanelButton.Size = new Size(227, 55);
-            AdminPanelButton.TabIndex = 2;
+            AdminPanelButton.TabIndex = 3;
             AdminPanelButton.Text = "Painel de admin";
             AdminPanelButton.UseVisualStyleBackColor = true;
             AdminPanelButton.Click += AdminPanelButton_Click;
@@ -150,7 +172,7 @@ namespace AgeAPP
             LoginButton.Location = new Point(185, 457);
             LoginButton.Name = "LoginButton";
             LoginButton.Size = new Size(76, 28);
-            LoginButton.TabIndex = 3;
+            LoginButton.TabIndex = 4;
             LoginButton.Text = "Login";
             LoginButton.UseVisualStyleBackColor = true;
             LoginButton.Click += LoginButton_Click;
@@ -167,14 +189,63 @@ namespace AgeAPP
             AutoRefresh.Interval = 5000;
             AutoRefresh.Tick += AutoRefresh_Tick;
             // 
+            // dataGridViewMaps
+            // 
+            dataGridViewMaps.AllowUserToAddRows = false;
+            dataGridViewMaps.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewMaps.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
+            dataGridViewMaps.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewMaps.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridViewMaps.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewMaps.Location = new Point(438, 33);
+            dataGridViewMaps.Name = "dataGridViewMaps";
+            dataGridViewMaps.ReadOnly = true;
+            dataGridViewMaps.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewMaps.Size = new Size(420, 492);
+            dataGridViewMaps.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(12, 3);
+            label1.Name = "label1";
+            label1.Size = new Size(131, 27);
+            label1.TabIndex = 3;
+            label1.Text = "Jogadores:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(438, 3);
+            label2.Name = "label2";
+            label2.Size = new Size(90, 27);
+            label2.TabIndex = 3;
+            label2.Text = "Mapas:";
+            // 
             // FMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Civ_details_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(775, 516);
+            ClientSize = new Size(1149, 537);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(panel1);
+            Controls.Add(dataGridViewMaps);
             Controls.Add(dataGridViewPlayers);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -188,7 +259,9 @@ namespace AgeAPP
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -203,5 +276,9 @@ namespace AgeAPP
         private PictureBox pictureBox1;
         private CheckBox AutoPlayerListRefresh;
         private System.Windows.Forms.Timer AutoRefresh;
+        private DataGridView dataGridViewMaps;
+        private Button MatchesButton;
+        private Label label1;
+        private Label label2;
     }
 }

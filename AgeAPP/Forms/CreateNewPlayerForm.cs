@@ -14,9 +14,17 @@ namespace AgeAPP.Forms
             local_Data_service = data_service;
         }
 
+        private async void CreateNewPlayerForm_Load(object sender, EventArgs e)
+        {
+            dataGridViewMaps.DataSource = null;
+
+            var maps = await local_Data_service.GetAllMaps();
+            dataGridViewMaps.DataSource = maps;
+        }
+
         private async void CreateButton_Click(object sender, EventArgs e)
         {
-            if(TextBoxPlayerName.Text == "" || TextBoxPlayerRating.Text == "")
+            if (TextBoxPlayerName.Text == "" || TextBoxPlayerRating.Text == "")
             {
                 MessageBox.Show("Por favor, preencha todos os campos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

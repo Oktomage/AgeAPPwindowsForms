@@ -135,7 +135,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(483, 264);
             label2.Name = "label2";
             label2.Size = new Size(44, 15);
@@ -145,7 +147,9 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(483, 328);
             label3.Name = "label3";
             label3.Size = new Size(46, 15);
@@ -170,7 +174,7 @@
             MaximizeBox = false;
             Name = "SplitForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Split de times";
+            Text = "Divisor de times";
             Load += SplitForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).EndInit();
             panel1.ResumeLayout(false);

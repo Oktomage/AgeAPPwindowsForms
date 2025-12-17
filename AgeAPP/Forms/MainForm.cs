@@ -43,6 +43,7 @@ namespace AgeAPP
 
             // Atualiza a tabela inicial
             UpdateDataGridViewPlayers();
+            UpdateDataGridViewMaps();
         }
 
         private async void UpdateDataGridViewPlayers()
@@ -51,6 +52,14 @@ namespace AgeAPP
 
             var players = await Data_service.GetAllPlayers();
             dataGridViewPlayers.DataSource = players;
+        }
+
+        private async void UpdateDataGridViewMaps()
+        {
+            dataGridViewMaps.DataSource = null;
+
+            var maps = await Data_service.GetAllMaps();
+            dataGridViewMaps.DataSource = maps;
         }
 
         #region BUTTONS
