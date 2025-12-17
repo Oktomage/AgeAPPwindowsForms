@@ -70,14 +70,14 @@ namespace AgeAPP.Forms
             TextBoxTeam2.Text = BuildTeamLine("TIME B", teamB);
 
             // Salvar log
-            Request_post_splitLog(teamA, teamB, selectedMap);
+            Request_save_splitLog(teamA, teamB, selectedMap);
         }
 
-        private void Request_post_splitLog(List<Player> teamA, List<Player> teamB, Map playedMap)
+        private void Request_save_splitLog(List<Player> teamA, List<Player> teamB, Map playedMap)
         {
             Log log = new Log
             {
-                Author_name = local_Data_service.Local_Admin_Logged.Name,
+                Author_name = local_Data_service.Local_Admin_Logged?.Name ?? "Sistema",
                 Date = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss"),
                 All_players = teamA.Concat(teamB).ToList(),
                 TeamA_players = teamA,
