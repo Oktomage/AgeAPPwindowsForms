@@ -140,17 +140,36 @@ namespace AgeAPP.Classes
 
         #region Match results Methods 
 
-        public List<Player> Apply_match_result(List<Player> teamA, List<Player> teamB, bool teamAWon)
+        public class MatchResult
         {
+            public List<Player> TeamA { get; set; }
+            public List<Player> TeamB { get; set; }
+            public int DeltaRating { get; set; }
+            public bool TeamAWon { get; set; }
+            public string PlayedMap_name { get; set; }
+            public DateTime MatchDate { get; set; }
+        }
+        public MatchResult Apply_match_result(List<Player> teamA, List<Player> teamB, bool teamAWon, string map_name)
+        {
+            MatchResult result = new MatchResult();
+
+            result.TeamAWon = teamAWon;
+            result.MatchDate = DateTime.Now;
+            result.PlayedMap_name = map_name;
+
             int teamARating = teamA.Sum(p => p.Rating);
             int teamBRating = teamB.Sum(p => p.Rating);
 
             // Calcula valor da mudança de rating
             int ratingDelta = Calculate_rating_delta_changes(teamARating, teamBRating, teamAWon);
 
+            result.DeltaRating = ratingDelta;
+
             // Aplica mudanças nos jogadores
             foreach (var player in teamA)
             {
+                result.TeamA.Add(player);
+
                 player.Matches += 1;
 
                 if (teamAWon)
@@ -162,6 +181,8 @@ namespace AgeAPP.Classes
             }
             foreach (var player in teamB)
             {
+                result.TeamB.Add(player);
+
                 player.Matches += 1;
 
                 if (!teamAWon)
@@ -174,17 +195,7 @@ namespace AgeAPP.Classes
 
             List<Player> all_updated_players = teamA.Concat(teamB).ToList();
 
-            /*
-            string message = string.Join(
-                Environment.NewLine,
-                all_updated_players.Select(p =>
-                $"{p.Name} | Rating: {p.Rating} | Wins: {p.Wins} | Matches: {p.Matches}")
-                );
-
-            MessageBox.Show($"{message}");
-            */
-
-            return all_updated_players;
+            return result;
         }
 
         private int Calculate_rating_delta_changes(int teamRatingA, int teamRatingB, bool teamAWon)

@@ -40,6 +40,8 @@
             ApplyResultButton = new Button();
             TeamVictoriousBox = new ComboBox();
             label3 = new Label();
+            label4 = new Label();
+            PlayedMapBox = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -168,6 +170,28 @@
             label3.TabIndex = 4;
             label3.Text = "Quem ganhou ?";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.Control;
+            label4.Location = new Point(362, 294);
+            label4.Name = "label4";
+            label4.Size = new Size(112, 22);
+            label4.TabIndex = 4;
+            label4.Text = "Qual mapa?";
+            // 
+            // PlayedMapBox
+            // 
+            PlayedMapBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            PlayedMapBox.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PlayedMapBox.FormattingEnabled = true;
+            PlayedMapBox.Location = new Point(362, 319);
+            PlayedMapBox.Name = "PlayedMapBox";
+            PlayedMapBox.Size = new Size(187, 35);
+            PlayedMapBox.TabIndex = 7;
+            // 
             // ApplyMatchResultForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -175,11 +199,13 @@
             BackgroundImage = Properties.Resources.Holidays_1920x1080;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(914, 533);
+            Controls.Add(PlayedMapBox);
             Controls.Add(TeamVictoriousBox);
             Controls.Add(ApplyResultButton);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(label2);
+            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(dataGridViewPlayers2);
@@ -211,5 +237,7 @@
         private Button ApplyResultButton;
         private ComboBox TeamVictoriousBox;
         private Label label3;
+        private Label label4;
+        private ComboBox PlayedMapBox;
     }
 }

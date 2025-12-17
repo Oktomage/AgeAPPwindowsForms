@@ -106,7 +106,7 @@
             FavoriteMapListBox.FormattingEnabled = true;
             FavoriteMapListBox.Location = new Point(11, 158);
             FavoriteMapListBox.Name = "FavoriteMapListBox";
-            FavoriteMapListBox.Size = new Size(223, 94);
+            FavoriteMapListBox.Size = new Size(223, 139);
             FavoriteMapListBox.TabIndex = 5;
             // 
             // DeleteSelectedPlayerButton

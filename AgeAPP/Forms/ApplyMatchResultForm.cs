@@ -1,5 +1,6 @@
 ﻿using AgeAPP.Classes;
 using static AgeAPP.Classes.FiresharpData;
+using static AgeAPP.Classes.MainFunctions;
 
 namespace AgeAPP.Forms
 {
@@ -15,11 +16,17 @@ namespace AgeAPP.Forms
             local_Data_service = data_service;
         }
 
-        private void ApplyMatchResultForm_Load(object sender, EventArgs e)
+        private async void ApplyMatchResultForm_Load(object sender, EventArgs e)
         {
             UpdateDataGridViewPlayers();
 
+            // Configura ComboBox
             TeamVictoriousBox.SelectedIndex = 0;
+
+            var maps = await local_Data_service.GetAllMaps();
+
+            PlayedMapBox.Items.AddRange(maps.Select(m => m.Name).ToArray());
+            PlayedMapBox.SelectedIndex = 0;
         }
 
         private async void UpdateDataGridViewPlayers()
@@ -63,11 +70,6 @@ namespace AgeAPP.Forms
                 MessageBox.Show("O número máximo de jogadores por time é 4.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (selectedPlayers_grid1.Count % 2 != 0)
-            {
-                MessageBox.Show("Número ímpar de jogadores selecionados. Selecione um número par de jogadores.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
             var selectedPlayers_grid2 = dataGridViewPlayers2.SelectedRows
                 .Cast<DataGridViewRow>()
@@ -85,11 +87,6 @@ namespace AgeAPP.Forms
                 MessageBox.Show("O número máximo de jogadores por time é 4.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (selectedPlayers_grid2.Count % 2 != 0)
-            {
-                MessageBox.Show("Número ímpar de jogadores selecionados. Selecione um número par de jogadores.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
             if(selectedPlayers_grid1.Count != selectedPlayers_grid2.Count)
             { 
@@ -105,14 +102,19 @@ namespace AgeAPP.Forms
             ApplyResultButton.Enabled = false;
 
             // Aplicar resultado da partida
-            List<Player> updated_players = local_Main_functions_service.Apply_match_result(
+            MatchResult match_result = local_Main_functions_service.Apply_match_result(
                 dataGridViewPlayers1.SelectedRows.Cast<DataGridViewRow>().Select(r => r.DataBoundItem as Player).ToList(),
                 dataGridViewPlayers2.SelectedRows.Cast<DataGridViewRow>().Select(r => r.DataBoundItem as Player).ToList(),
-                teamAWon
+                teamAWon,
+                PlayedMapBox.SelectedItem.ToString()
             );
 
             // Salvar alterações no banco
-            foreach (var player in updated_players)
+            foreach (var player in match_result.TeamA)
+            {
+                await local_Data_service.Overwrite_player(player);
+            }
+            foreach (var player in match_result.TeamB)
             {
                 await local_Data_service.Overwrite_player(player);
             }
@@ -122,7 +124,8 @@ namespace AgeAPP.Forms
                 Author_name = local_Data_service.Local_Admin_Logged.Name,
                 Role = "Match_results",
                 Date = DateTime.Now.ToString(),
-                Content = $"Lançou um resultado de partida"
+                Content = $"Lançou um resultado de partida",
+                Match_result = match_result
             });
 
             // Fechar painel

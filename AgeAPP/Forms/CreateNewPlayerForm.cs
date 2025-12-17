@@ -30,6 +30,12 @@ namespace AgeAPP.Forms
                 return;
             }
 
+            var selectedFavorite_maps = dataGridViewMaps.SelectedRows
+                .Cast<DataGridViewRow>()
+                .Select(r => r.DataBoundItem as Map)
+                .Where(p => p != null)
+                .ToList();
+
             Player newPlayer = new Player
             {
                 Id = 0, // O ID será atribuído automaticamente pelo serviço de dados
@@ -37,7 +43,14 @@ namespace AgeAPP.Forms
                 Rating = int.Parse(TextBoxPlayerRating.Text),
                 Matches = 0,
                 Wins = 0,
-                WinRate = 0f
+                WinRate = 0f,
+                Favorite_maps = selectedFavorite_maps.ToDictionary(
+                    map => map.Name,
+                    map => new FavoriteMap
+                    {
+                        Name = map.Name,
+                        Times_played = 0
+                    })
             };
 
             await local_Data_service.Add_new_player(newPlayer);

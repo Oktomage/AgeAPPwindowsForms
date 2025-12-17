@@ -1,4 +1,5 @@
 ﻿using AgeAPP;
+using static AgeAPP.Classes.MainFunctions;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
@@ -184,6 +185,7 @@ namespace AgeAPP.Classes
 
             public string Role = "default";
             public string Content;
+            public MatchResult Match_result;
         }
         public async Task Post_log(Log log)
         {

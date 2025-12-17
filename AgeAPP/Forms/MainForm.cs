@@ -82,6 +82,12 @@ namespace AgeAPP
             adminForm.ShowDialog();
         }
 
+        private void ForceGridRefreshButton_Click(object sender, EventArgs e)
+        {
+            UpdateDataGridViewPlayers();
+            UpdateDataGridViewMaps();
+        }
+
         #endregion
 
         #region TIMERS
@@ -102,15 +108,6 @@ namespace AgeAPP
                 AdminPanelButton.Enabled = false;
 
                 AdminConnectedLabel.Text = "Nenhum admin conectado";
-            }
-        }
-
-        private async void AutoRefresh_Tick(object sender, EventArgs e)
-        {
-            // Atualiza lista de jogadores
-            if (AutoPlayerListRefresh.Checked)
-            {
-                UpdateDataGridViewPlayers();
             }
         }
 

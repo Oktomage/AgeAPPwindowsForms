@@ -36,14 +36,13 @@ namespace AgeAPP
             dataGridViewPlayers = new DataGridView();
             SplitButton = new Button();
             panel1 = new Panel();
-            AutoPlayerListRefresh = new CheckBox();
             pictureBox1 = new PictureBox();
             AdminConnectedLabel = new Label();
             MatchesButton = new Button();
             AdminPanelButton = new Button();
+            ForceGridRefreshButton = new Button();
             LoginButton = new Button();
             ConnectionTimer = new System.Windows.Forms.Timer(components);
-            AutoRefresh = new System.Windows.Forms.Timer(components);
             dataGridViewMaps = new DataGridView();
             label1 = new Label();
             label2 = new Label();
@@ -92,7 +91,6 @@ namespace AgeAPP
             panel1.BackgroundImage = Properties.Resources.Panel_bg2;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(AutoPlayerListRefresh);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(AdminConnectedLabel);
             panel1.Controls.Add(MatchesButton);
@@ -103,18 +101,6 @@ namespace AgeAPP
             panel1.Name = "panel1";
             panel1.Size = new Size(268, 492);
             panel1.TabIndex = 2;
-            // 
-            // AutoPlayerListRefresh
-            // 
-            AutoPlayerListRefresh.AutoSize = true;
-            AutoPlayerListRefresh.BackColor = Color.Transparent;
-            AutoPlayerListRefresh.ForeColor = SystemColors.Control;
-            AutoPlayerListRefresh.Location = new Point(3, 445);
-            AutoPlayerListRefresh.Name = "AutoPlayerListRefresh";
-            AutoPlayerListRefresh.Size = new Size(123, 19);
-            AutoPlayerListRefresh.TabIndex = 6;
-            AutoPlayerListRefresh.Text = "Auto atualizar lista";
-            AutoPlayerListRefresh.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -165,6 +151,18 @@ namespace AgeAPP
             AdminPanelButton.UseVisualStyleBackColor = true;
             AdminPanelButton.Click += AdminPanelButton_Click;
             // 
+            // ForceGridRefreshButton
+            // 
+            ForceGridRefreshButton.AutoSize = true;
+            ForceGridRefreshButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForceGridRefreshButton.Location = new Point(765, 3);
+            ForceGridRefreshButton.Name = "ForceGridRefreshButton";
+            ForceGridRefreshButton.Size = new Size(93, 28);
+            ForceGridRefreshButton.TabIndex = 4;
+            ForceGridRefreshButton.Text = "Forçar atualizar";
+            ForceGridRefreshButton.UseVisualStyleBackColor = true;
+            ForceGridRefreshButton.Click += ForceGridRefreshButton_Click;
+            // 
             // LoginButton
             // 
             LoginButton.AutoSize = true;
@@ -182,12 +180,6 @@ namespace AgeAPP
             ConnectionTimer.Enabled = true;
             ConnectionTimer.Interval = 500;
             ConnectionTimer.Tick += ConnectionTimer_Tick;
-            // 
-            // AutoRefresh
-            // 
-            AutoRefresh.Enabled = true;
-            AutoRefresh.Interval = 5000;
-            AutoRefresh.Tick += AutoRefresh_Tick;
             // 
             // dataGridViewMaps
             // 
@@ -246,6 +238,7 @@ namespace AgeAPP
             Controls.Add(label1);
             Controls.Add(panel1);
             Controls.Add(dataGridViewMaps);
+            Controls.Add(ForceGridRefreshButton);
             Controls.Add(dataGridViewPlayers);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -274,11 +267,10 @@ namespace AgeAPP
         private System.Windows.Forms.Timer ConnectionTimer;
         private Label AdminConnectedLabel;
         private PictureBox pictureBox1;
-        private CheckBox AutoPlayerListRefresh;
-        private System.Windows.Forms.Timer AutoRefresh;
         private DataGridView dataGridViewMaps;
         private Button MatchesButton;
         private Label label1;
         private Label label2;
+        private Button ForceGridRefreshButton;
     }
 }
