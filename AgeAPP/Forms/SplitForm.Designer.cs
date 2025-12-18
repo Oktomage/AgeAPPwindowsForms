@@ -44,6 +44,10 @@
             ListBoxRoom = new ListBox();
             label5 = new Label();
             panel2 = new Panel();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            FilterPlayerTextBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -83,7 +87,7 @@
             dataGridViewPlayers.Name = "dataGridViewPlayers";
             dataGridViewPlayers.ReadOnly = true;
             dataGridViewPlayers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewPlayers.Size = new Size(456, 426);
+            dataGridViewPlayers.Size = new Size(456, 398);
             dataGridViewPlayers.TabIndex = 1;
             dataGridViewPlayers.CellDoubleClick += dataGridViewPlayers_CellDoubleClick;
             // 
@@ -131,7 +135,7 @@
             TextBoxTeam1.Name = "TextBoxTeam1";
             TextBoxTeam1.PlaceholderText = "Time A";
             TextBoxTeam1.ReadOnly = true;
-            TextBoxTeam1.Size = new Size(523, 32);
+            TextBoxTeam1.Size = new Size(495, 32);
             TextBoxTeam1.TabIndex = 6;
             // 
             // TextBoxTeam2
@@ -141,7 +145,7 @@
             TextBoxTeam2.Name = "TextBoxTeam2";
             TextBoxTeam2.PlaceholderText = "Time B";
             TextBoxTeam2.ReadOnly = true;
-            TextBoxTeam2.Size = new Size(523, 32);
+            TextBoxTeam2.Size = new Size(495, 32);
             TextBoxTeam2.TabIndex = 7;
             // 
             // label2
@@ -217,6 +221,9 @@
             // 
             panel2.BackColor = Color.Transparent;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(button3);
+            panel2.Controls.Add(button2);
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(TextBoxTeam1);
             panel2.Controls.Add(label4);
@@ -228,6 +235,45 @@
             panel2.Size = new Size(543, 181);
             panel2.TabIndex = 10;
             // 
+            // button3
+            // 
+            button3.BackgroundImage = Properties.Resources.Link_icon;
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.Location = new Point(316, 144);
+            button3.Name = "button3";
+            button3.Size = new Size(34, 32);
+            button3.TabIndex = 9;
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.BackgroundImage = Properties.Resources.Link_icon;
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.Location = new Point(504, 80);
+            button2.Name = "button2";
+            button2.Size = new Size(34, 32);
+            button2.TabIndex = 9;
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.BackgroundImage = Properties.Resources.Link_icon;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Location = new Point(504, 27);
+            button1.Name = "button1";
+            button1.Size = new Size(34, 32);
+            button1.TabIndex = 9;
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // FilterPlayerTextBox
+            // 
+            FilterPlayerTextBox.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FilterPlayerTextBox.Location = new Point(12, 416);
+            FilterPlayerTextBox.Name = "FilterPlayerTextBox";
+            FilterPlayerTextBox.PlaceholderText = "Filtrar jogador ex: Kakashi";
+            FilterPlayerTextBox.Size = new Size(200, 22);
+            FilterPlayerTextBox.TabIndex = 11;
+            // 
             // SplitForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -235,6 +281,7 @@
             BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1031, 450);
+            Controls.Add(FilterPlayerTextBox);
             Controls.Add(panel2);
             Controls.Add(ListBoxRoom);
             Controls.Add(label5);
@@ -273,5 +320,9 @@
         private ListBox ListBoxRoom;
         private Label label5;
         private Panel panel2;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private TextBox FilterPlayerTextBox;
     }
 }

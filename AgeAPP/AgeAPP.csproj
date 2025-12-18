@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>Img\AgeappIcon.ico</ApplicationIcon>
+    <ApplicationIcon>Img\AgeappIcon2.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Img\AgeappIcon.ico" />
+    <Content Include="Img\AgeappIcon2.ico" />
   </ItemGroup>
 
   <ItemGroup>

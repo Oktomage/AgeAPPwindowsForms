@@ -40,6 +40,7 @@
             FindLogButton = new Button();
             OpenFileDialog = new OpenFileDialog();
             PlayedMapLabel = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMatchLog).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -165,6 +166,17 @@
             PlayedMapLabel.TabIndex = 4;
             PlayedMapLabel.Text = "Mapa: { Null }";
             // 
+            // button1
+            // 
+            button1.BackgroundImage = Properties.Resources.Help_icon;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(318, 11);
+            button1.Name = "button1";
+            button1.Size = new Size(38, 34);
+            button1.TabIndex = 6;
+            button1.UseVisualStyleBackColor = true;
+            // 
             // ApplyMatchResultForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -173,6 +185,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(567, 364);
             Controls.Add(TeamVictoriousBox);
+            Controls.Add(button1);
             Controls.Add(FindLogButton);
             Controls.Add(ApplyResultButton);
             Controls.Add(pictureBox2);
@@ -208,5 +221,6 @@
         private Button FindLogButton;
         private OpenFileDialog OpenFileDialog;
         private Label PlayedMapLabel;
+        private Button button1;
     }
 }

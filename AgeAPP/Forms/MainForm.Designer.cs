@@ -50,6 +50,8 @@ namespace AgeAPP
             panel2 = new Panel();
             ToolTips = new ToolTip(components);
             FilterPlayerTextBox = new TextBox();
+            label3 = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -73,7 +75,7 @@ namespace AgeAPP
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             dataGridViewPlayers.DefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewPlayers.Location = new Point(12, 39);
+            dataGridViewPlayers.Location = new Point(12, 52);
             dataGridViewPlayers.Name = "dataGridViewPlayers";
             dataGridViewPlayers.ReadOnly = true;
             dataGridViewPlayers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -98,7 +100,7 @@ namespace AgeAPP
             // 
             // panel1
             // 
-            panel1.BackgroundImage = Properties.Resources.Panel_bg2;
+            panel1.BackgroundImage = Properties.Resources.news_splash;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(pictureBox2);
@@ -108,7 +110,7 @@ namespace AgeAPP
             panel1.Controls.Add(AdminPanelButton);
             panel1.Controls.Add(LoginButton);
             panel1.Controls.Add(SplitButton);
-            panel1.Location = new Point(869, 39);
+            panel1.Location = new Point(869, 52);
             panel1.Name = "panel1";
             panel1.Size = new Size(268, 492);
             panel1.TabIndex = 2;
@@ -116,11 +118,11 @@ namespace AgeAPP
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.BackgroundImage = Properties.Resources.seperator_grey;
+            pictureBox2.BackgroundImage = Properties.Resources.seperator2;
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Location = new Point(22, 168);
+            pictureBox2.Location = new Point(22, 164);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(227, 16);
+            pictureBox2.Size = new Size(227, 41);
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             // 
@@ -174,7 +176,7 @@ namespace AgeAPP
             AdminPanelButton.Enabled = false;
             AdminPanelButton.Font = new Font("Arial", 14.25F);
             AdminPanelButton.ForeColor = SystemColors.Control;
-            AdminPanelButton.Location = new Point(22, 190);
+            AdminPanelButton.Location = new Point(22, 211);
             AdminPanelButton.Name = "AdminPanelButton";
             AdminPanelButton.Size = new Size(227, 45);
             AdminPanelButton.TabIndex = 3;
@@ -200,12 +202,12 @@ namespace AgeAPP
             // ForceGridRefreshButton
             // 
             ForceGridRefreshButton.AutoSize = true;
-            ForceGridRefreshButton.BackgroundImage = Properties.Resources.Refresh_data_icon;
+            ForceGridRefreshButton.BackgroundImage = Properties.Resources.Refresh_icon;
             ForceGridRefreshButton.BackgroundImageLayout = ImageLayout.Stretch;
             ForceGridRefreshButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ForceGridRefreshButton.Location = new Point(812, 1);
+            ForceGridRefreshButton.Location = new Point(807, 1);
             ForceGridRefreshButton.Name = "ForceGridRefreshButton";
-            ForceGridRefreshButton.Size = new Size(27, 24);
+            ForceGridRefreshButton.Size = new Size(32, 29);
             ForceGridRefreshButton.TabIndex = 4;
             ForceGridRefreshButton.UseVisualStyleBackColor = true;
             ForceGridRefreshButton.Click += ForceGridRefreshButton_Click;
@@ -231,7 +233,7 @@ namespace AgeAPP
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridViewMaps.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewMaps.Location = new Point(438, 39);
+            dataGridViewMaps.Location = new Point(438, 52);
             dataGridViewMaps.Name = "dataGridViewMaps";
             dataGridViewMaps.ReadOnly = true;
             dataGridViewMaps.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -243,34 +245,35 @@ namespace AgeAPP
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial", 15.75F);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(0, 1);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(3, 5);
             label1.Name = "label1";
-            label1.Size = new Size(115, 24);
+            label1.Size = new Size(127, 24);
             label1.TabIndex = 3;
-            label1.Text = "Jogadores:";
+            label1.Text = "| Jogadores:";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Arial", 15.75F);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(424, 1);
+            label2.ForeColor = SystemColors.Control;
+            label2.Location = new Point(424, 5);
             label2.Name = "label2";
-            label2.Size = new Size(79, 24);
+            label2.Size = new Size(91, 24);
             label2.TabIndex = 3;
-            label2.Text = "Mapas:";
+            label2.Text = "| Mapas:";
             // 
             // panel2
             // 
+            panel2.BackColor = SystemColors.ActiveCaptionText;
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(label1);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(ForceGridRefreshButton);
             panel2.Location = new Point(12, 9);
             panel2.Name = "panel2";
-            panel2.Size = new Size(846, 28);
+            panel2.Size = new Size(846, 37);
             panel2.TabIndex = 5;
             // 
             // ToolTips
@@ -282,12 +285,36 @@ namespace AgeAPP
             // FilterPlayerTextBox
             // 
             FilterPlayerTextBox.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FilterPlayerTextBox.Location = new Point(14, 535);
+            FilterPlayerTextBox.Location = new Point(14, 548);
             FilterPlayerTextBox.Name = "FilterPlayerTextBox";
             FilterPlayerTextBox.PlaceholderText = "Filtrar jogador ex: Kakashi";
             FilterPlayerTextBox.Size = new Size(200, 22);
             FilterPlayerTextBox.TabIndex = 6;
             FilterPlayerTextBox.TextChanged += FilterPlayerTextBox_TextChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Black;
+            label3.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(869, 19);
+            label3.Name = "label3";
+            label3.Size = new Size(136, 27);
+            label3.TabIndex = 4;
+            label3.Text = "Interno App";
+            // 
+            // button1
+            // 
+            button1.AutoSize = true;
+            button1.BackgroundImage = Properties.Resources.Help_icon;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(1103, 17);
+            button1.Name = "button1";
+            button1.Size = new Size(34, 29);
+            button1.TabIndex = 4;
+            button1.UseVisualStyleBackColor = true;
             // 
             // FMain
             // 
@@ -295,9 +322,11 @@ namespace AgeAPP
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Civ_details_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1149, 567);
+            ClientSize = new Size(1149, 577);
             Controls.Add(FilterPlayerTextBox);
             Controls.Add(panel2);
+            Controls.Add(button1);
+            Controls.Add(label3);
             Controls.Add(panel1);
             Controls.Add(dataGridViewMaps);
             Controls.Add(dataGridViewPlayers);
@@ -337,8 +366,10 @@ namespace AgeAPP
         private Label label2;
         private Button ForceGridRefreshButton;
         private Panel panel2;
-        private PictureBox pictureBox2;
         private ToolTip ToolTips;
         private TextBox FilterPlayerTextBox;
+        private PictureBox pictureBox2;
+        private Label label3;
+        private Button button1;
     }
 }

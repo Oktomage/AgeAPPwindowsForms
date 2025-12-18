@@ -66,6 +66,7 @@ namespace AgeAPP
 
         private async Task UpdateLocalData()
         {
+            // Get updated data
             allPlayers = await Data_service.GetAllPlayers();
         }
 

@@ -39,7 +39,7 @@ namespace AgeAPP.Forms
             Player newPlayer = new Player
             {
                 Id = 0, // O ID será atribuído automaticamente pelo serviço de dados
-                Name = TextBoxPlayerName.Text,
+                Name = TextBoxPlayerName.Text.Trim().ToLower(),
                 Rating = int.Parse(TextBoxPlayerRating.Text),
                 Matches = 0,
                 Wins = 0,

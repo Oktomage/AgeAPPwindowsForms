@@ -1,5 +1,6 @@
 ﻿using AgeAPP.Classes;
 using static AgeAPP.Classes.FiresharpData;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace AgeAPP.Forms
 {
@@ -20,6 +21,18 @@ namespace AgeAPP.Forms
         private void AdminPanelForm_Load(object sender, EventArgs e)
         {
             UpdateGridViewPlayers();
+
+            Write_toolTips();
+        }
+
+        private void Write_toolTips()
+        {
+            ToolTips.SetToolTip(DeleteSelectedPlayerButton, "Deleta o jogador selecionado permanentemente do banco de dados.");
+            ToolTips.SetToolTip(ChangeSelectedPlayerRating, "Aplica a mudança de rating para o jogador selecionado.");
+            ToolTips.SetToolTip(DuplicateSelectedPlayerButton, "Cria uma cópia do jogador selecionado.");
+            ToolTips.SetToolTip(ApplyMatchResultButton, "Abre a janela para aplicar o resultado de uma partida entre dois times.");
+            ToolTips.SetToolTip(CreateNewPlayerButton, "Abre a janela para criar um novo jogador.");
+            ToolTips.SetToolTip(CreateNewMapButton, "Abre a janela para criar um novo mapa.");
         }
 
         private async void UpdateGridViewPlayers()

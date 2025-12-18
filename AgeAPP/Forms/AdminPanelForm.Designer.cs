@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanelForm));
             dataGridViewPlayers = new DataGridView();
             SelectedPlayerLabel = new Label();
             panel1 = new Panel();
             FavoriteMapListBox = new ListBox();
+            DuplicateSelectedPlayerButton = new Button();
             DeleteSelectedPlayerButton = new Button();
             ChangeSelectedPlayerRating = new Button();
             SelectedPlayerRatingTextBox = new TextBox();
@@ -46,6 +48,8 @@
             CreateNewMapButton = new Button();
             ApplyMatchResultButton = new Button();
             label4 = new Label();
+            ToolTips = new ToolTip(components);
+            FilterPlayerTextBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -70,7 +74,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridViewPlayers.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewPlayers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewPlayers.Size = new Size(456, 471);
+            dataGridViewPlayers.Size = new Size(456, 443);
             dataGridViewPlayers.TabIndex = 1;
             dataGridViewPlayers.SelectionChanged += dataGridViewPlayers_SelectionChanged;
             // 
@@ -93,6 +97,7 @@
             panel1.BackgroundImageLayout = ImageLayout.Center;
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(FavoriteMapListBox);
+            panel1.Controls.Add(DuplicateSelectedPlayerButton);
             panel1.Controls.Add(DeleteSelectedPlayerButton);
             panel1.Controls.Add(ChangeSelectedPlayerRating);
             panel1.Controls.Add(SelectedPlayerRatingTextBox);
@@ -112,6 +117,19 @@
             FavoriteMapListBox.Size = new Size(223, 139);
             FavoriteMapListBox.TabIndex = 5;
             // 
+            // DuplicateSelectedPlayerButton
+            // 
+            DuplicateSelectedPlayerButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            DuplicateSelectedPlayerButton.BackColor = Color.Transparent;
+            DuplicateSelectedPlayerButton.BackgroundImage = Properties.Resources.Duplicate_icon;
+            DuplicateSelectedPlayerButton.BackgroundImageLayout = ImageLayout.Stretch;
+            DuplicateSelectedPlayerButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DuplicateSelectedPlayerButton.Location = new Point(213, 361);
+            DuplicateSelectedPlayerButton.Name = "DuplicateSelectedPlayerButton";
+            DuplicateSelectedPlayerButton.Size = new Size(66, 58);
+            DuplicateSelectedPlayerButton.TabIndex = 4;
+            DuplicateSelectedPlayerButton.UseVisualStyleBackColor = false;
+            // 
             // DeleteSelectedPlayerButton
             // 
             DeleteSelectedPlayerButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -128,7 +146,7 @@
             // 
             // ChangeSelectedPlayerRating
             // 
-            ChangeSelectedPlayerRating.BackgroundImage = Properties.Resources.Hand_icon;
+            ChangeSelectedPlayerRating.BackgroundImage = Properties.Resources.Hand_icon2;
             ChangeSelectedPlayerRating.BackgroundImageLayout = ImageLayout.Stretch;
             ChangeSelectedPlayerRating.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ChangeSelectedPlayerRating.Location = new Point(137, 84);
@@ -271,6 +289,21 @@
             label4.Text = "Painel de controle";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // ToolTips
+            // 
+            ToolTips.AutoPopDelay = 5000;
+            ToolTips.InitialDelay = 300;
+            ToolTips.ReshowDelay = 100;
+            // 
+            // FilterPlayerTextBox
+            // 
+            FilterPlayerTextBox.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FilterPlayerTextBox.Location = new Point(12, 459);
+            FilterPlayerTextBox.Name = "FilterPlayerTextBox";
+            FilterPlayerTextBox.PlaceholderText = "Filtrar jogador ex: Kakashi";
+            FilterPlayerTextBox.Size = new Size(200, 22);
+            FilterPlayerTextBox.TabIndex = 7;
+            // 
             // AdminPanelForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -278,6 +311,7 @@
             BackgroundImage = Properties.Resources.admin_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1125, 489);
+            Controls.Add(FilterPlayerTextBox);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(dataGridViewPlayers);
@@ -317,5 +351,8 @@
         private ListBox FavoriteMapListBox;
         private PictureBox pictureBox1;
         private Label label4;
+        private ToolTip ToolTips;
+        private TextBox FilterPlayerTextBox;
+        private Button DuplicateSelectedPlayerButton;
     }
 }
