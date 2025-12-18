@@ -10,6 +10,9 @@ namespace AgeAPP
         public FiresharpData Data_service = new FiresharpData();
         private MainFunctions local_Main_functions_service = new MainFunctions();
 
+        // Local data
+        private List<Player> allPlayers = new List<Player>();
+
         public FMain()
         {
             InitializeComponent();
@@ -42,6 +45,7 @@ namespace AgeAPP
             Data_service.Download_dataBase_Backup();
 
             // Atualiza a tabela inicial
+            await UpdateLocalData();
             UpdateDataGridViewPlayers();
             UpdateDataGridViewMaps();
 
@@ -56,14 +60,19 @@ namespace AgeAPP
             ToolTips.SetToolTip(MatchesButton, "Abre a janela de histórico de partidas.");
             ToolTips.SetToolTip(AdminPanelButton, "Abre o painel de administração (requer login).");
             ToolTips.SetToolTip(LoginButton, "Abre a janela de login de administradores.");
+            ToolTips.SetToolTip(AdminConnectedLabel, "Mostra o admin conectado atualmente.");
+            ToolTips.SetToolTip(FilterPlayerTextBox, "Filtra a lista de jogadores pelo nome.");
         }
 
-        private async void UpdateDataGridViewPlayers()
+        private async Task UpdateLocalData()
+        {
+            allPlayers = await Data_service.GetAllPlayers();
+        }
+
+        private void UpdateDataGridViewPlayers()
         {
             dataGridViewPlayers.DataSource = null;
-
-            var players = await Data_service.GetAllPlayers();
-            dataGridViewPlayers.DataSource = players;
+            dataGridViewPlayers.DataSource = allPlayers;
         }
 
         private async void UpdateDataGridViewMaps()
@@ -94,8 +103,10 @@ namespace AgeAPP
             adminForm.ShowDialog();
         }
 
-        private void ForceGridRefreshButton_Click(object sender, EventArgs e)
+        private async void ForceGridRefreshButton_Click(object sender, EventArgs e)
         {
+            await UpdateLocalData();
+
             UpdateDataGridViewPlayers();
             UpdateDataGridViewMaps();
         }
@@ -125,6 +136,25 @@ namespace AgeAPP
                 AdminPanelButton.Enabled = false;
 
                 AdminConnectedLabel.Text = "Nenhum admin conectado";
+            }
+        }
+
+        #endregion
+
+        #region TEXT BOXES
+        private void FilterPlayerTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string search = FilterPlayerTextBox.Text.Trim().ToLower();
+
+            if (string.IsNullOrEmpty(search))
+            {
+                dataGridViewPlayers.DataSource = allPlayers;
+            }
+            else
+            {
+                dataGridViewPlayers.DataSource = allPlayers
+                    .Where(p => p.Name.ToLower().Contains(search))
+                    .ToList();
             }
         }
 

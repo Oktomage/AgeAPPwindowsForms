@@ -41,9 +41,13 @@
             label3 = new Label();
             label4 = new Label();
             TextBoxMap = new TextBox();
+            ListBoxRoom = new ListBox();
+            label5 = new Label();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // ConfirmSplitTeamsButton
@@ -81,16 +85,18 @@
             dataGridViewPlayers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewPlayers.Size = new Size(456, 426);
             dataGridViewPlayers.TabIndex = 1;
+            dataGridViewPlayers.CellDoubleClick += dataGridViewPlayers_CellDoubleClick;
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel1.BackgroundImage = Properties.Resources.Panel_bg2;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(ConfirmSplitTeamsButton);
-            panel1.Location = new Point(483, 12);
+            panel1.Location = new Point(749, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(268, 237);
             panel1.TabIndex = 3;
@@ -114,28 +120,28 @@
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(3, 188);
             label1.Name = "label1";
-            label1.Size = new Size(217, 36);
+            label1.Size = new Size(242, 36);
             label1.TabIndex = 1;
-            label1.Text = "Segure CTRL, e selecione os \r\njogadores da sala";
+            label1.Text = "Clique na lista de jogadores para \r\nadicionar na sala";
             // 
             // TextBoxTeam1
             // 
             TextBoxTeam1.Font = new Font("Arial", 16F);
-            TextBoxTeam1.Location = new Point(483, 282);
+            TextBoxTeam1.Location = new Point(3, 27);
             TextBoxTeam1.Name = "TextBoxTeam1";
             TextBoxTeam1.PlaceholderText = "Time A";
             TextBoxTeam1.ReadOnly = true;
-            TextBoxTeam1.Size = new Size(268, 32);
+            TextBoxTeam1.Size = new Size(523, 32);
             TextBoxTeam1.TabIndex = 6;
             // 
             // TextBoxTeam2
             // 
             TextBoxTeam2.Font = new Font("Arial", 16F);
-            TextBoxTeam2.Location = new Point(483, 335);
+            TextBoxTeam2.Location = new Point(3, 80);
             TextBoxTeam2.Name = "TextBoxTeam2";
             TextBoxTeam2.PlaceholderText = "Time B";
             TextBoxTeam2.ReadOnly = true;
-            TextBoxTeam2.Size = new Size(268, 32);
+            TextBoxTeam2.Size = new Size(523, 32);
             TextBoxTeam2.TabIndex = 7;
             // 
             // label2
@@ -144,7 +150,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(483, 264);
+            label2.Location = new Point(3, 9);
             label2.Name = "label2";
             label2.Size = new Size(44, 15);
             label2.TabIndex = 8;
@@ -156,7 +162,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(483, 317);
+            label3.Location = new Point(3, 62);
             label3.Name = "label3";
             label3.Size = new Size(46, 15);
             label3.TabIndex = 8;
@@ -168,7 +174,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(483, 381);
+            label4.Location = new Point(3, 126);
             label4.Name = "label4";
             label4.Size = new Size(37, 15);
             label4.TabIndex = 8;
@@ -177,12 +183,50 @@
             // TextBoxMap
             // 
             TextBoxMap.Font = new Font("Arial", 16F);
-            TextBoxMap.Location = new Point(483, 399);
+            TextBoxMap.Location = new Point(3, 144);
             TextBoxMap.Name = "TextBoxMap";
             TextBoxMap.PlaceholderText = "Mapa ex: { Floresta negra }";
             TextBoxMap.ReadOnly = true;
-            TextBoxMap.Size = new Size(268, 32);
+            TextBoxMap.Size = new Size(307, 32);
             TextBoxMap.TabIndex = 7;
+            // 
+            // ListBoxRoom
+            // 
+            ListBoxRoom.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ListBoxRoom.FormattingEnabled = true;
+            ListBoxRoom.Location = new Point(474, 37);
+            ListBoxRoom.Name = "ListBoxRoom";
+            ListBoxRoom.Size = new Size(269, 202);
+            ListBoxRoom.TabIndex = 9;
+            ListBoxRoom.DoubleClick += ListBoxRoom_DoubleClick;
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.Control;
+            label5.Location = new Point(474, 12);
+            label5.Name = "label5";
+            label5.Size = new Size(166, 22);
+            label5.TabIndex = 8;
+            label5.Text = "Jogadores da sala";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(TextBoxTeam1);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(TextBoxTeam2);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(TextBoxMap);
+            panel2.Location = new Point(474, 257);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(543, 181);
+            panel2.TabIndex = 10;
             // 
             // SplitForm
             // 
@@ -190,13 +234,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(765, 450);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(TextBoxMap);
-            Controls.Add(TextBoxTeam2);
-            Controls.Add(TextBoxTeam1);
+            ClientSize = new Size(1031, 450);
+            Controls.Add(panel2);
+            Controls.Add(ListBoxRoom);
+            Controls.Add(label5);
             Controls.Add(panel1);
             Controls.Add(dataGridViewPlayers);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -210,6 +251,8 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -227,5 +270,8 @@
         private PictureBox pictureBox1;
         private Label label4;
         private TextBox TextBoxMap;
+        private ListBox ListBoxRoom;
+        private Label label5;
+        private Panel panel2;
     }
 }

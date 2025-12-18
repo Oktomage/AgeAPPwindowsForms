@@ -49,6 +49,7 @@ namespace AgeAPP
             label2 = new Label();
             panel2 = new Panel();
             ToolTips = new ToolTip(components);
+            FilterPlayerTextBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -72,7 +73,7 @@ namespace AgeAPP
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             dataGridViewPlayers.DefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewPlayers.Location = new Point(12, 33);
+            dataGridViewPlayers.Location = new Point(12, 39);
             dataGridViewPlayers.Name = "dataGridViewPlayers";
             dataGridViewPlayers.ReadOnly = true;
             dataGridViewPlayers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -107,7 +108,7 @@ namespace AgeAPP
             panel1.Controls.Add(AdminPanelButton);
             panel1.Controls.Add(LoginButton);
             panel1.Controls.Add(SplitButton);
-            panel1.Location = new Point(869, 33);
+            panel1.Location = new Point(869, 39);
             panel1.Name = "panel1";
             panel1.Size = new Size(268, 492);
             panel1.TabIndex = 2;
@@ -230,7 +231,7 @@ namespace AgeAPP
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridViewMaps.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewMaps.Location = new Point(438, 33);
+            dataGridViewMaps.Location = new Point(438, 39);
             dataGridViewMaps.Name = "dataGridViewMaps";
             dataGridViewMaps.ReadOnly = true;
             dataGridViewMaps.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -267,7 +268,7 @@ namespace AgeAPP
             panel2.Controls.Add(label1);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(ForceGridRefreshButton);
-            panel2.Location = new Point(12, 3);
+            panel2.Location = new Point(12, 9);
             panel2.Name = "panel2";
             panel2.Size = new Size(846, 28);
             panel2.TabIndex = 5;
@@ -278,13 +279,24 @@ namespace AgeAPP
             ToolTips.InitialDelay = 250;
             ToolTips.ReshowDelay = 100;
             // 
+            // FilterPlayerTextBox
+            // 
+            FilterPlayerTextBox.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FilterPlayerTextBox.Location = new Point(14, 535);
+            FilterPlayerTextBox.Name = "FilterPlayerTextBox";
+            FilterPlayerTextBox.PlaceholderText = "Filtrar jogador ex: Kakashi";
+            FilterPlayerTextBox.Size = new Size(200, 22);
+            FilterPlayerTextBox.TabIndex = 6;
+            FilterPlayerTextBox.TextChanged += FilterPlayerTextBox_TextChanged;
+            // 
             // FMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Civ_details_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1149, 534);
+            ClientSize = new Size(1149, 567);
+            Controls.Add(FilterPlayerTextBox);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(dataGridViewMaps);
@@ -306,6 +318,7 @@ namespace AgeAPP
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -326,5 +339,6 @@ namespace AgeAPP
         private Panel panel2;
         private PictureBox pictureBox2;
         private ToolTip ToolTips;
+        private TextBox FilterPlayerTextBox;
     }
 }
