@@ -42,6 +42,34 @@ namespace AgeAPP.Forms
 
         #region Action Methods
 
+        private void Add_player_to_room(Player player)
+        {
+            // Evita adicionar o mesmo jogador duas vezes
+            if (!ListBoxRoom.Items.Contains(player.Name))
+            {
+                ListBoxRoom.Items.Add(player.Name);
+                room_players.Add(player);
+            }
+            else
+                MessageBox.Show("Este jogador já está na sala.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        
+            // Atualiza tamanho da sala
+            RoomSizeLabel.Text = $"Sala: {room_players.Count}/8";
+        }
+
+        private void Remove_player_from_the_room()
+        {
+            if (ListBoxRoom.SelectedItem != null)
+            {
+                room_players.RemoveAt(room_players.FindIndex(p => p.Name == ListBoxRoom.SelectedItem.ToString()));
+
+                ListBoxRoom.Items.Remove(ListBoxRoom.SelectedItem);
+            }
+
+            // Atualiza tamanho da sala
+            RoomSizeLabel.Text = $"Sala: {room_players.Count}/8";
+        }
+
         private async void ConfirmSplitTeamsButton_Click(object sender, EventArgs e)
         {
             if (room_players.Count < 3)
@@ -110,7 +138,7 @@ namespace AgeAPP.Forms
                 return;
 
             // Ignora se listBoxRoom estiver cheio
-            if (ListBoxRoom.Items.Count >= 8)
+            if (room_players.Count >= 8)
             {
                 MessageBox.Show("A sala já está cheia. Remova um jogador antes de adicionar outro.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -123,23 +151,42 @@ namespace AgeAPP.Forms
             if (player == null)
                 return;
 
-            room_players.Add(player);
-
-            // Evita adicionar o mesmo jogador duas vezes
-            if (!ListBoxRoom.Items.Contains(player.Name))
-            {
-                ListBoxRoom.Items.Add(player.Name);
-            }
+            Add_player_to_room(player);
         }
 
         private void ListBoxRoom_DoubleClick(object sender, EventArgs e)
         {
-            if (ListBoxRoom.SelectedItem != null)
-            {
-                room_players.RemoveAt(room_players.FindIndex(p => p.Name == ListBoxRoom.SelectedItem.ToString()));
+            Remove_player_from_the_room();
+        }
 
-                ListBoxRoom.Items.Remove(ListBoxRoom.SelectedItem);
+        private void AddPlayerToRoomButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewPlayers.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um jogador da lista para adicionar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            // Pega a primeira linha selecionada
+            DataGridViewRow row = dataGridViewPlayers.SelectedRows[0];
+
+            Player player = row.DataBoundItem as Player;
+
+            if (player == null)
+                return;
+
+            Add_player_to_room(player);
+        }
+
+        private void RemovePlayerFromTheRoomButton_Click(object sender, EventArgs e)
+        {
+            if (ListBoxRoom.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um jogador da sala para remover.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Remove_player_from_the_room();
         }
 
         #endregion

@@ -63,6 +63,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_iron_4k_normal {
+            get {
+                object obj = ResourceManager.GetObject("add_iron_4k_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap admin_bg {
             get {
                 object obj = ResourceManager.GetObject("admin_bg", resourceCulture);
@@ -256,6 +266,16 @@ namespace AgeAPP.Properties {
         internal static System.Drawing.Bitmap Refresh_icon {
             get {
                 object obj = ResourceManager.GetObject("Refresh_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap remove_iron_4k_normal {
+            get {
+                object obj = ResourceManager.GetObject("remove_iron_4k_normal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

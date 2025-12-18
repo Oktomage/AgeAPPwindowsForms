@@ -48,10 +48,16 @@
             CopyTeamBTextButton = new Button();
             CopyTeamATextButton = new Button();
             FilterPlayerTextBox = new TextBox();
+            panel3 = new Panel();
+            RemovePlayerFromTheRoomButton = new Button();
+            AddPlayerToRoomButton = new Button();
+            RoomSizeLabel = new Label();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // ConfirmSplitTeamsButton
@@ -84,12 +90,12 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             dataGridViewPlayers.DefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewPlayers.Location = new Point(12, 12);
+            dataGridViewPlayers.Location = new Point(12, 38);
             dataGridViewPlayers.MultiSelect = false;
             dataGridViewPlayers.Name = "dataGridViewPlayers";
             dataGridViewPlayers.ReadOnly = true;
             dataGridViewPlayers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewPlayers.Size = new Size(456, 398);
+            dataGridViewPlayers.Size = new Size(456, 372);
             dataGridViewPlayers.TabIndex = 1;
             dataGridViewPlayers.CellDoubleClick += dataGridViewPlayers_CellDoubleClick;
             // 
@@ -126,9 +132,9 @@
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(3, 188);
             label1.Name = "label1";
-            label1.Size = new Size(242, 36);
+            label1.Size = new Size(244, 36);
             label1.TabIndex = 1;
-            label1.Text = "Clique na lista de jogadores para \r\nadicionar na sala";
+            label1.Text = "Clique duplo na lista de jogadores\r\npara adiconar o jogador a sala";
             // 
             // TextBoxTeam1
             // 
@@ -153,7 +159,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
+            label2.BackColor = Color.Black;
             label2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(3, 9);
@@ -165,7 +171,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
+            label3.BackColor = Color.Black;
             label3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(3, 62);
@@ -177,7 +183,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
+            label4.BackColor = Color.Black;
             label4.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.Control;
             label4.Location = new Point(3, 126);
@@ -200,9 +206,9 @@
             // 
             ListBoxRoom.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ListBoxRoom.FormattingEnabled = true;
-            ListBoxRoom.Location = new Point(474, 37);
+            ListBoxRoom.Location = new Point(0, 25);
             ListBoxRoom.Name = "ListBoxRoom";
-            ListBoxRoom.Size = new Size(269, 202);
+            ListBoxRoom.Size = new Size(269, 166);
             ListBoxRoom.TabIndex = 9;
             ListBoxRoom.DoubleClick += ListBoxRoom_DoubleClick;
             // 
@@ -210,10 +216,10 @@
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
+            label5.BackColor = Color.Black;
             label5.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.Control;
-            label5.Location = new Point(474, 12);
+            label5.Location = new Point(-2, 0);
             label5.Name = "label5";
             label5.Size = new Size(166, 22);
             label5.TabIndex = 8;
@@ -280,6 +286,70 @@
             FilterPlayerTextBox.TabIndex = 11;
             FilterPlayerTextBox.TextChanged += FilterPlayerTextBox_TextChanged;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Transparent;
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(RemovePlayerFromTheRoomButton);
+            panel3.Controls.Add(AddPlayerToRoomButton);
+            panel3.Controls.Add(RoomSizeLabel);
+            panel3.Controls.Add(label5);
+            panel3.Controls.Add(ListBoxRoom);
+            panel3.Location = new Point(474, 12);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(269, 237);
+            panel3.TabIndex = 12;
+            // 
+            // RemovePlayerFromTheRoomButton
+            // 
+            RemovePlayerFromTheRoomButton.BackgroundImage = Properties.Resources.remove_iron_4k_normal;
+            RemovePlayerFromTheRoomButton.BackgroundImageLayout = ImageLayout.Stretch;
+            RemovePlayerFromTheRoomButton.FlatStyle = FlatStyle.Flat;
+            RemovePlayerFromTheRoomButton.Location = new Point(47, 197);
+            RemovePlayerFromTheRoomButton.Name = "RemovePlayerFromTheRoomButton";
+            RemovePlayerFromTheRoomButton.Size = new Size(41, 39);
+            RemovePlayerFromTheRoomButton.TabIndex = 10;
+            RemovePlayerFromTheRoomButton.UseVisualStyleBackColor = true;
+            RemovePlayerFromTheRoomButton.Click += RemovePlayerFromTheRoomButton_Click;
+            // 
+            // AddPlayerToRoomButton
+            // 
+            AddPlayerToRoomButton.BackgroundImage = Properties.Resources.add_iron_4k_normal;
+            AddPlayerToRoomButton.BackgroundImageLayout = ImageLayout.Stretch;
+            AddPlayerToRoomButton.FlatStyle = FlatStyle.Flat;
+            AddPlayerToRoomButton.Location = new Point(0, 197);
+            AddPlayerToRoomButton.Name = "AddPlayerToRoomButton";
+            AddPlayerToRoomButton.Size = new Size(41, 39);
+            AddPlayerToRoomButton.TabIndex = 10;
+            AddPlayerToRoomButton.UseVisualStyleBackColor = true;
+            AddPlayerToRoomButton.Click += AddPlayerToRoomButton_Click;
+            // 
+            // RoomSizeLabel
+            // 
+            RoomSizeLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            RoomSizeLabel.AutoSize = true;
+            RoomSizeLabel.BackColor = Color.Black;
+            RoomSizeLabel.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            RoomSizeLabel.ForeColor = SystemColors.Control;
+            RoomSizeLabel.Location = new Point(94, 203);
+            RoomSizeLabel.Name = "RoomSizeLabel";
+            RoomSizeLabel.Size = new Size(29, 32);
+            RoomSizeLabel.TabIndex = 8;
+            RoomSizeLabel.Text = "0";
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.BackColor = Color.Black;
+            label6.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = SystemColors.Control;
+            label6.Location = new Point(12, 12);
+            label6.Name = "label6";
+            label6.Size = new Size(167, 22);
+            label6.TabIndex = 8;
+            label6.Text = "Lista de jogadores";
+            // 
             // SplitForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -287,12 +357,12 @@
             BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1031, 450);
+            Controls.Add(label6);
             Controls.Add(FilterPlayerTextBox);
             Controls.Add(panel2);
-            Controls.Add(ListBoxRoom);
-            Controls.Add(label5);
             Controls.Add(panel1);
             Controls.Add(dataGridViewPlayers);
+            Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -306,6 +376,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -330,5 +402,10 @@
         private Button CopyTeamBTextButton;
         private Button CopyMapTextButton;
         private TextBox FilterPlayerTextBox;
+        private Panel panel3;
+        private Label label6;
+        private Button AddPlayerToRoomButton;
+        private Button RemovePlayerFromTheRoomButton;
+        private Label RoomSizeLabel;
     }
 }
