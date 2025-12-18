@@ -53,6 +53,7 @@
             dataGridViewMatchLog.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
             dataGridViewMatchLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewMatchLog.Location = new Point(12, 48);
+            dataGridViewMatchLog.MultiSelect = false;
             dataGridViewMatchLog.Name = "dataGridViewMatchLog";
             dataGridViewMatchLog.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;

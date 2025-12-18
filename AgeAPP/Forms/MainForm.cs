@@ -58,7 +58,7 @@ namespace AgeAPP
             // Verifica atualizações
             bool has_updates = await Data_service.Check_for_updates();
 
-            if(has_updates)
+            if (has_updates)
                 MessageBox.Show("Existe uma atualização obrigatória do aplicativo pendente !", "Atualização", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
@@ -72,6 +72,7 @@ namespace AgeAPP
             ToolTips.SetToolTip(AdminConnectedLabel, "Mostra o admin conectado atualmente.");
             ToolTips.SetToolTip(FilterPlayerTextBox, "Filtra a lista de jogadores pelo nome.");
             ToolTips.SetToolTip(HelpButton, "Mostra um breve tutorial do aplicativo.");
+            ToolTips.SetToolTip(SignOutButton, "Desconecta o admin atualmente conectado.");
         }
 
         private async Task UpdateLocalData()
@@ -136,6 +137,17 @@ namespace AgeAPP
             MessageBox.Show("Informações sobre o admin conectado atualmente.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void HelpButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bem-vindo ao AgeAPP! [Feito por: Pedro_win]\n\n" +
+                "1. Dividir Times: Use o botão 'Dividir Times' para criar equipes balanceadas com base no rating dos jogadores.\n\n" +
+                "2. Histórico de Partidas: Acesse o histórico completo de partidas para analisar desempenhos anteriores.\n\n" +
+                "3. Painel de Administração: Faça login como administrador para gerenciar jogadores, mapas e visualizar logs de atividades.\n\n" +
+                "4. Filtragem de Jogadores: Utilize a caixa de filtro para encontrar rapidamente jogadores pelo nome.\n\n" +
+                "5. Atualizações: Mantenha o aplicativo atualizado para garantir acesso às últimas funcionalidades e melhorias.", 
+                "Ajuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         #endregion
 
         #region TIMERS
@@ -147,6 +159,7 @@ namespace AgeAPP
             {
                 LoginButton.Enabled = false;
                 LoginButton.Visible = false;
+                SignOutButton.Visible = true;
                 AdminPanelButton.Enabled = true;
 
                 AdminConnectedLabel.Text = $"Conectado como: {Data_service.Local_Admin_Logged.Name}";
@@ -155,6 +168,7 @@ namespace AgeAPP
             {
                 LoginButton.Enabled = true;
                 LoginButton.Visible = true;
+                SignOutButton.Visible = false;
                 AdminPanelButton.Enabled = false;
 
                 AdminConnectedLabel.Text = "Nenhum admin conectado";

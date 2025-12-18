@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplitForm));
             ConfirmSplitTeamsButton = new Button();
@@ -53,6 +54,7 @@
             AddPlayerToRoomButton = new Button();
             RoomSizeLabel = new Label();
             label6 = new Label();
+            ToolTips = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -350,6 +352,12 @@
             label6.TabIndex = 8;
             label6.Text = "Lista de jogadores";
             // 
+            // ToolTips
+            // 
+            ToolTips.AutoPopDelay = 5000;
+            ToolTips.InitialDelay = 300;
+            ToolTips.ReshowDelay = 100;
+            // 
             // SplitForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -407,5 +415,6 @@
         private Button AddPlayerToRoomButton;
         private Button RemovePlayerFromTheRoomButton;
         private Label RoomSizeLabel;
+        private ToolTip ToolTips;
     }
 }

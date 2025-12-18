@@ -1,5 +1,6 @@
 ﻿using AgeAPP.Classes;
 using static AgeAPP.Classes.FiresharpData;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace AgeAPP.Forms
 {
@@ -23,9 +24,20 @@ namespace AgeAPP.Forms
         {
             room_players.Clear();
 
+            Write_toolTips();
+
             // Atualiza a tabela inicial
             await UpdateLocalData();
             UpdateDataGridViewPlayers();
+        }
+
+        private void Write_toolTips()
+        {
+            ToolTips.SetToolTip(ConfirmSplitTeamsButton, "Divide os jogadores da sala em dois times balanceados e escolhe um mapa.");
+            ToolTips.SetToolTip(AddPlayerToRoomButton, "Adiciona o jogador selecionado na lista à sala.");
+            ToolTips.SetToolTip(RemovePlayerFromTheRoomButton, "Remove o jogador selecionado da sala.");
+            ToolTips.SetToolTip(ListBoxRoom, "Duplo clique para remover o jogador da sala.");
+            ToolTips.SetToolTip(dataGridViewPlayers, "Duplo clique em um jogador para adicioná-lo à sala.");
         }
 
         private async Task UpdateLocalData()

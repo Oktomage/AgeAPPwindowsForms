@@ -38,6 +38,7 @@ namespace AgeAPP
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
+            SignOutButton = new Button();
             AdminConnectedLabel = new Label();
             MatchesButton = new Button();
             AdminPanelButton = new Button();
@@ -108,6 +109,7 @@ namespace AgeAPP
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(SignOutButton);
             panel1.Controls.Add(AdminConnectedLabel);
             panel1.Controls.Add(MatchesButton);
             panel1.Controls.Add(AdminPanelButton);
@@ -139,6 +141,19 @@ namespace AgeAPP
             pictureBox1.Size = new Size(227, 41);
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
+            // 
+            // SignOutButton
+            // 
+            SignOutButton.AutoSize = true;
+            SignOutButton.BackgroundImage = Properties.Resources.SignOut_icon;
+            SignOutButton.BackgroundImageLayout = ImageLayout.Stretch;
+            SignOutButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SignOutButton.Location = new Point(231, 456);
+            SignOutButton.Name = "SignOutButton";
+            SignOutButton.Size = new Size(30, 29);
+            SignOutButton.TabIndex = 4;
+            SignOutButton.UseVisualStyleBackColor = true;
+            SignOutButton.Visible = false;
             // 
             // AdminConnectedLabel
             // 
@@ -211,9 +226,9 @@ namespace AgeAPP
             ForceGridRefreshButton.BackgroundImage = Properties.Resources.Refresh_icon;
             ForceGridRefreshButton.BackgroundImageLayout = ImageLayout.Stretch;
             ForceGridRefreshButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ForceGridRefreshButton.Location = new Point(807, 1);
+            ForceGridRefreshButton.Location = new Point(808, 1);
             ForceGridRefreshButton.Name = "ForceGridRefreshButton";
-            ForceGridRefreshButton.Size = new Size(32, 29);
+            ForceGridRefreshButton.Size = new Size(31, 29);
             ForceGridRefreshButton.TabIndex = 4;
             ForceGridRefreshButton.UseVisualStyleBackColor = true;
             ForceGridRefreshButton.Click += ForceGridRefreshButton_Click;
@@ -323,6 +338,7 @@ namespace AgeAPP
             HelpButton.Size = new Size(30, 29);
             HelpButton.TabIndex = 4;
             HelpButton.UseVisualStyleBackColor = true;
+            HelpButton.Click += HelpButton_Click;
             // 
             // FMain
             // 
@@ -379,5 +395,6 @@ namespace AgeAPP
         private PictureBox pictureBox2;
         private Label AgeAppLabel;
         private Button HelpButton;
+        private Button SignOutButton;
     }
 }
