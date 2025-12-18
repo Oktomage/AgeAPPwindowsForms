@@ -132,9 +132,10 @@
             // 
             CreateButton.BackgroundImage = Properties.Resources.button_wide_normal;
             CreateButton.BackgroundImageLayout = ImageLayout.Stretch;
+            CreateButton.FlatStyle = FlatStyle.Flat;
             CreateButton.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             CreateButton.ForeColor = SystemColors.Control;
-            CreateButton.Location = new Point(43, 249);
+            CreateButton.Location = new Point(89, 249);
             CreateButton.Name = "CreateButton";
             CreateButton.Size = new Size(146, 44);
             CreateButton.TabIndex = 3;

@@ -1,6 +1,5 @@
 ﻿using AgeAPP.Classes;
 using static AgeAPP.Classes.FiresharpData;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace AgeAPP.Forms
 {
@@ -11,6 +10,7 @@ namespace AgeAPP.Forms
 
         // Local data
         private Player selectedPlayer = null;
+        private List<Player> allPlayers = new List<Player>();
 
         public AdminPanelForm(FiresharpData data_service)
         {
@@ -18,9 +18,10 @@ namespace AgeAPP.Forms
             local_Data_service = data_service;
         }
 
-        private void AdminPanelForm_Load(object sender, EventArgs e)
+        private async void AdminPanelForm_Load(object sender, EventArgs e)
         {
-            UpdateGridViewPlayers();
+            // Atualiza a tabela inicial
+            await UpdateLocalData();
 
             Write_toolTips();
         }
@@ -35,12 +36,18 @@ namespace AgeAPP.Forms
             ToolTips.SetToolTip(CreateNewMapButton, "Abre a janela para criar um novo mapa.");
         }
 
-        private async void UpdateGridViewPlayers()
+        private async Task UpdateLocalData()
+        {
+            // Get updated data
+            allPlayers = await local_Data_service.GetAllPlayers();
+
+            UpdateDataGridViewPlayers();
+        }
+
+        private void UpdateDataGridViewPlayers()
         {
             dataGridViewPlayers.DataSource = null;
-
-            var players = await local_Data_service.GetAllPlayers();
-            dataGridViewPlayers.DataSource = players;
+            dataGridViewPlayers.DataSource = allPlayers;
         }
 
         private void dataGridViewPlayers_SelectionChanged(object sender, EventArgs e)
@@ -92,7 +99,7 @@ namespace AgeAPP.Forms
                     Content = $"Criou um novo jogador"
                 });
 
-                UpdateGridViewPlayers();
+                await UpdateLocalData();
             }
         }
 
@@ -110,7 +117,7 @@ namespace AgeAPP.Forms
                     Content = $"Criou um novo mapa"
                 });
 
-                UpdateGridViewPlayers();
+                await UpdateLocalData();
             }
         }
 
@@ -143,7 +150,7 @@ namespace AgeAPP.Forms
                 Content = $"Alterou o rating do jogador {selectedPlayer.Name} para {SelectedPlayerRatingTextBox.Text}"
             });
 
-            UpdateGridViewPlayers();
+            await UpdateLocalData();
         }
 
         private async void DeleteSelectedPlayerButton_Click(object sender, EventArgs e)
@@ -163,12 +170,32 @@ namespace AgeAPP.Forms
                 Content = $"Deletou o jogador {selectedPlayer.Name}"
             });
 
-            UpdateGridViewPlayers();
+            await UpdateLocalData();
         }
 
         private void SelectedPlayerLabel_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"Você está olhando o jogador: {selectedPlayer.Name}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        #endregion
+
+        #region TEXT BOXES
+
+        private void FilterPlayerTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string search = FilterPlayerTextBox.Text.Trim().ToLower();
+
+            if (string.IsNullOrEmpty(search))
+            {
+                dataGridViewPlayers.DataSource = allPlayers;
+            }
+            else
+            {
+                dataGridViewPlayers.DataSource = allPlayers
+                    .Where(p => p.Name.ToLower().Contains(search))
+                    .ToList();
+            }
         }
 
         #endregion

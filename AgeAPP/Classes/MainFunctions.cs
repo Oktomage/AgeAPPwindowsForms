@@ -204,7 +204,7 @@ namespace AgeAPP.Classes
             public string PlayedMap_name { get; set; }
             public DateTime MatchDate { get; set; }
         }
-        public MatchResult Apply_match_result(List<Player> teamA, List<Player> teamB, bool teamAWon, string map_name)
+        public MatchResult Get_match_result(List<Player> teamA, List<Player> teamB, bool teamAWon, string map_name)
         {
             MatchResult result = new MatchResult();
 

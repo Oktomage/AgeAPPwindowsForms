@@ -11,16 +11,21 @@ namespace AgeAPP.Classes
 {
     public class FiresharpData
     {
-        // Firesharp connection
+        // Serviços
+        private Main_classes local_Main_classes = new Main_classes();
+
+        // Conexão Firesharp
+        public static string DataBasePath = "https://ageappv2-default-rtdb.firebaseio.com/";
+
         public IFirebaseConfig config = new FirebaseConfig
         {
-            BasePath = "https://internoapp-e8138-default-rtdb.firebaseio.com/",
+            BasePath = DataBasePath,
             AuthSecret = ""
         };
 
         public IFirebaseClient client;
 
-        // Admin
+        // Admin data
         public bool Admin_LoggedIn = false;
         public Admin Local_Admin_Logged;
 
@@ -33,7 +38,6 @@ namespace AgeAPP.Classes
             new Admin { Name = "kakashi", Password = "artuzao" },
             new Admin { Name = "snow", Password = "neve" }
         };
-
         public class Admin
         {
             public string Name { get; set; }
@@ -62,7 +66,7 @@ namespace AgeAPP.Classes
             switch (mode.ToLower())
             {
                 case "admin":
-                    config.AuthSecret = "wG6kd0l3gfUtBDqu4g1xqXPpm4gl5tMsXTLqIl99";
+                    config.AuthSecret = "a1EylzvxpigRZYBKsDl9pLQcRJxiTxpde53z5S4I";
                     Admin_LoggedIn = true;
                     break;
 
@@ -76,6 +80,22 @@ namespace AgeAPP.Classes
             /*
             if (client != null)
                 MessageBox.Show("Connection to database successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+        }
+
+        public async Task<bool> Check_for_updates()
+        {
+            FirebaseResponse response = await client.GetAsync($"/version");
+
+            if (response.Body == "null")
+                return false;
+
+            string onlineVersion = response.ResultAs<string>().Trim();
+            string localVersion = local_Main_classes.App_Version;
+
+            Version vOnline = new Version(onlineVersion);
+            Version vLocal = new Version(localVersion);
+
+            return vOnline > vLocal;
         }
 
         public void Download_dataBase_Backup()
@@ -95,18 +115,18 @@ namespace AgeAPP.Classes
 
         public class Player
         {
-            public int Id { get; set; }
-            public string Name { get; set; }
-            public int Rating { get; set; }
-            public int Matches { get; set; }
-            public int Wins { get; set; }
+            public int Id { get; set; } = 0;
+            public string Name { get; set; } = "system_error";
+            public int Rating { get; set; } = 0;
+            public int Matches { get; set; } = 0;
+            public int Wins { get; set; } = 0;
             public float WinRate { get; set; }
 
             [Browsable(false)]
             public string Last_time_played { get; set; }
 
             [Browsable(false)]
-            public Dictionary<string, FavoriteMap> Favorite_maps { get; set; }
+            public Dictionary<string, FavoriteMap> Favorite_maps { get; set; } = new Dictionary<string, FavoriteMap>();
         }
 
         public async Task<List<Player>> GetAllPlayers()
@@ -132,6 +152,14 @@ namespace AgeAPP.Classes
                 .ToList();
 
             return players_list;
+        }
+
+        public async Task<Player> Get_player(string player_name)
+        {
+            FirebaseResponse response = await client.GetAsync($"players/{player_name}");
+
+            var player = response.ResultAs<Player>();
+            return player;
         }
 
         public async Task Overwrite_player(Player player)

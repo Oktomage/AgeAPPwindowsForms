@@ -63,6 +63,7 @@
             dataGridViewPlayers.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
             dataGridViewPlayers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewPlayers.Location = new Point(12, 10);
+            dataGridViewPlayers.MultiSelect = false;
             dataGridViewPlayers.Name = "dataGridViewPlayers";
             dataGridViewPlayers.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -73,6 +74,7 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridViewPlayers.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewPlayers.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewPlayers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewPlayers.Size = new Size(456, 443);
             dataGridViewPlayers.TabIndex = 1;
@@ -111,35 +113,34 @@
             // 
             // FavoriteMapListBox
             // 
+            FavoriteMapListBox.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FavoriteMapListBox.FormattingEnabled = true;
             FavoriteMapListBox.Location = new Point(11, 158);
             FavoriteMapListBox.Name = "FavoriteMapListBox";
-            FavoriteMapListBox.Size = new Size(223, 139);
+            FavoriteMapListBox.Size = new Size(223, 130);
             FavoriteMapListBox.TabIndex = 5;
             // 
             // DuplicateSelectedPlayerButton
             // 
-            DuplicateSelectedPlayerButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             DuplicateSelectedPlayerButton.BackColor = Color.Transparent;
             DuplicateSelectedPlayerButton.BackgroundImage = Properties.Resources.Duplicate_icon;
             DuplicateSelectedPlayerButton.BackgroundImageLayout = ImageLayout.Stretch;
             DuplicateSelectedPlayerButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DuplicateSelectedPlayerButton.Location = new Point(213, 361);
+            DuplicateSelectedPlayerButton.Location = new Point(223, 361);
             DuplicateSelectedPlayerButton.Name = "DuplicateSelectedPlayerButton";
-            DuplicateSelectedPlayerButton.Size = new Size(66, 58);
+            DuplicateSelectedPlayerButton.Size = new Size(61, 58);
             DuplicateSelectedPlayerButton.TabIndex = 4;
             DuplicateSelectedPlayerButton.UseVisualStyleBackColor = false;
             // 
             // DeleteSelectedPlayerButton
             // 
-            DeleteSelectedPlayerButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             DeleteSelectedPlayerButton.BackColor = Color.Transparent;
             DeleteSelectedPlayerButton.BackgroundImage = Properties.Resources.Kill_icon;
             DeleteSelectedPlayerButton.BackgroundImageLayout = ImageLayout.Stretch;
             DeleteSelectedPlayerButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DeleteSelectedPlayerButton.Location = new Point(285, 361);
+            DeleteSelectedPlayerButton.Location = new Point(290, 361);
             DeleteSelectedPlayerButton.Name = "DeleteSelectedPlayerButton";
-            DeleteSelectedPlayerButton.Size = new Size(66, 58);
+            DeleteSelectedPlayerButton.Size = new Size(61, 58);
             DeleteSelectedPlayerButton.TabIndex = 4;
             DeleteSelectedPlayerButton.UseVisualStyleBackColor = false;
             DeleteSelectedPlayerButton.Click += DeleteSelectedPlayerButton_Click;
@@ -209,6 +210,7 @@
             CreateNewPlayerButton.BackColor = Color.Transparent;
             CreateNewPlayerButton.BackgroundImage = Properties.Resources.button_wide_normal;
             CreateNewPlayerButton.BackgroundImageLayout = ImageLayout.Stretch;
+            CreateNewPlayerButton.FlatStyle = FlatStyle.Flat;
             CreateNewPlayerButton.Font = new Font("Arial", 12F);
             CreateNewPlayerButton.ForeColor = SystemColors.Control;
             CreateNewPlayerButton.Location = new Point(3, 109);
@@ -250,6 +252,7 @@
             CreateNewMapButton.BackColor = Color.Transparent;
             CreateNewMapButton.BackgroundImage = Properties.Resources.button_wide_normal;
             CreateNewMapButton.BackgroundImageLayout = ImageLayout.Stretch;
+            CreateNewMapButton.FlatStyle = FlatStyle.Flat;
             CreateNewMapButton.Font = new Font("Arial", 12F);
             CreateNewMapButton.ForeColor = SystemColors.Control;
             CreateNewMapButton.Location = new Point(3, 168);
@@ -266,6 +269,7 @@
             ApplyMatchResultButton.BackColor = Color.Transparent;
             ApplyMatchResultButton.BackgroundImage = Properties.Resources.button_wide_normal;
             ApplyMatchResultButton.BackgroundImageLayout = ImageLayout.Stretch;
+            ApplyMatchResultButton.FlatStyle = FlatStyle.Flat;
             ApplyMatchResultButton.Font = new Font("Arial", 12F);
             ApplyMatchResultButton.ForeColor = SystemColors.Control;
             ApplyMatchResultButton.Location = new Point(3, 50);
@@ -303,6 +307,7 @@
             FilterPlayerTextBox.PlaceholderText = "Filtrar jogador ex: Kakashi";
             FilterPlayerTextBox.Size = new Size(200, 22);
             FilterPlayerTextBox.TabIndex = 7;
+            FilterPlayerTextBox.TextChanged += FilterPlayerTextBox_TextChanged;
             // 
             // AdminPanelForm
             // 

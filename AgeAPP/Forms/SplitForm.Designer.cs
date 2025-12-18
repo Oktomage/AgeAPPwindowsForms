@@ -44,9 +44,9 @@
             ListBoxRoom = new ListBox();
             label5 = new Label();
             panel2 = new Panel();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            CopyMapTextButton = new Button();
+            CopyTeamBTextButton = new Button();
+            CopyTeamATextButton = new Button();
             FilterPlayerTextBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
@@ -59,6 +59,7 @@
             ConfirmSplitTeamsButton.BackColor = Color.Transparent;
             ConfirmSplitTeamsButton.BackgroundImage = Properties.Resources.button_wide_normal;
             ConfirmSplitTeamsButton.BackgroundImageLayout = ImageLayout.Stretch;
+            ConfirmSplitTeamsButton.FlatStyle = FlatStyle.Flat;
             ConfirmSplitTeamsButton.Font = new Font("Arial", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ConfirmSplitTeamsButton.ForeColor = SystemColors.Control;
             ConfirmSplitTeamsButton.Location = new Point(21, 55);
@@ -84,6 +85,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             dataGridViewPlayers.DefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewPlayers.Location = new Point(12, 12);
+            dataGridViewPlayers.MultiSelect = false;
             dataGridViewPlayers.Name = "dataGridViewPlayers";
             dataGridViewPlayers.ReadOnly = true;
             dataGridViewPlayers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -221,9 +223,9 @@
             // 
             panel2.BackColor = Color.Transparent;
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(button3);
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(CopyMapTextButton);
+            panel2.Controls.Add(CopyTeamBTextButton);
+            panel2.Controls.Add(CopyTeamATextButton);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(TextBoxTeam1);
             panel2.Controls.Add(label4);
@@ -235,35 +237,38 @@
             panel2.Size = new Size(543, 181);
             panel2.TabIndex = 10;
             // 
-            // button3
+            // CopyMapTextButton
             // 
-            button3.BackgroundImage = Properties.Resources.Link_icon;
-            button3.BackgroundImageLayout = ImageLayout.Stretch;
-            button3.Location = new Point(316, 144);
-            button3.Name = "button3";
-            button3.Size = new Size(34, 32);
-            button3.TabIndex = 9;
-            button3.UseVisualStyleBackColor = true;
+            CopyMapTextButton.BackgroundImage = Properties.Resources.Link_icon;
+            CopyMapTextButton.BackgroundImageLayout = ImageLayout.Stretch;
+            CopyMapTextButton.Location = new Point(316, 144);
+            CopyMapTextButton.Name = "CopyMapTextButton";
+            CopyMapTextButton.Size = new Size(34, 32);
+            CopyMapTextButton.TabIndex = 9;
+            CopyMapTextButton.UseVisualStyleBackColor = true;
+            CopyMapTextButton.Click += CopyMapTextButton_Click;
             // 
-            // button2
+            // CopyTeamBTextButton
             // 
-            button2.BackgroundImage = Properties.Resources.Link_icon;
-            button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.Location = new Point(504, 80);
-            button2.Name = "button2";
-            button2.Size = new Size(34, 32);
-            button2.TabIndex = 9;
-            button2.UseVisualStyleBackColor = true;
+            CopyTeamBTextButton.BackgroundImage = Properties.Resources.Link_icon;
+            CopyTeamBTextButton.BackgroundImageLayout = ImageLayout.Stretch;
+            CopyTeamBTextButton.Location = new Point(504, 80);
+            CopyTeamBTextButton.Name = "CopyTeamBTextButton";
+            CopyTeamBTextButton.Size = new Size(34, 32);
+            CopyTeamBTextButton.TabIndex = 9;
+            CopyTeamBTextButton.UseVisualStyleBackColor = true;
+            CopyTeamBTextButton.Click += CopyTeamBTextButton_Click;
             // 
-            // button1
+            // CopyTeamATextButton
             // 
-            button1.BackgroundImage = Properties.Resources.Link_icon;
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.Location = new Point(504, 27);
-            button1.Name = "button1";
-            button1.Size = new Size(34, 32);
-            button1.TabIndex = 9;
-            button1.UseVisualStyleBackColor = true;
+            CopyTeamATextButton.BackgroundImage = Properties.Resources.Link_icon;
+            CopyTeamATextButton.BackgroundImageLayout = ImageLayout.Stretch;
+            CopyTeamATextButton.Location = new Point(504, 27);
+            CopyTeamATextButton.Name = "CopyTeamATextButton";
+            CopyTeamATextButton.Size = new Size(34, 32);
+            CopyTeamATextButton.TabIndex = 9;
+            CopyTeamATextButton.UseVisualStyleBackColor = true;
+            CopyTeamATextButton.Click += CopyTeamATextButton_Click;
             // 
             // FilterPlayerTextBox
             // 
@@ -273,6 +278,7 @@
             FilterPlayerTextBox.PlaceholderText = "Filtrar jogador ex: Kakashi";
             FilterPlayerTextBox.Size = new Size(200, 22);
             FilterPlayerTextBox.TabIndex = 11;
+            FilterPlayerTextBox.TextChanged += FilterPlayerTextBox_TextChanged;
             // 
             // SplitForm
             // 
@@ -320,9 +326,9 @@
         private ListBox ListBoxRoom;
         private Label label5;
         private Panel panel2;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button CopyTeamATextButton;
+        private Button CopyTeamBTextButton;
+        private Button CopyMapTextButton;
         private TextBox FilterPlayerTextBox;
     }
 }

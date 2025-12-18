@@ -100,7 +100,7 @@ namespace AgeAPP.Forms
         }
 
 
-        private async void UpdateUIbased_on_log(Log log)
+        private void UpdateUIbased_on_log(Log log)
         {
             if (log == null ||
                 log.All_players == null ||
@@ -136,6 +136,12 @@ namespace AgeAPP.Forms
                 string json = File.ReadAllText(dialog.FileName);
 
                 Log log = JsonSerializer.Deserialize<Log>(json);
+
+                if(log == null)
+                {
+                    MessageBox.Show("Log inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
                 // Armazena log selecionado
                 selected_log = log;
@@ -173,17 +179,14 @@ namespace AgeAPP.Forms
             ApplyResultButton.Enabled = false;
 
             // Aplicar resultado da partida
-            MatchResult match_result = local_Main_functions_service.Apply_match_result(selected_log.TeamA_players, selected_log.TeamB_players, teamAWon, selected_log.Played_map?.Name ?? "Desconhecido");
+            MatchResult match_result = local_Main_functions_service.Get_match_result(selected_log.TeamA_players, selected_log.TeamB_players, teamAWon, selected_log.Played_map?.Name ?? "Desconhecido");
 
             // Salvar alterações no banco
             foreach (var player in match_result.TeamA)
-            {
                 await local_Data_service.Overwrite_player(player);
-            }
+
             foreach (var player in match_result.TeamB)
-            {
                 await local_Data_service.Overwrite_player(player);
-            }
 
             Map played_map = await local_Data_service.Get_map(match_result.PlayedMap_name);
             played_map.Matches += 1;

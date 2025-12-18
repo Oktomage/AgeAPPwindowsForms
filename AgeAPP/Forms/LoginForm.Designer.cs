@@ -92,6 +92,7 @@ namespace AgeAPP.Forms
             // 
             LogInButton.BackgroundImage = Properties.Resources.button_wide_normal;
             LogInButton.BackgroundImageLayout = ImageLayout.Stretch;
+            LogInButton.FlatStyle = FlatStyle.Flat;
             LogInButton.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LogInButton.ForeColor = SystemColors.Control;
             LogInButton.Location = new Point(122, 113);

@@ -1,5 +1,4 @@
 ﻿using AgeAPP.Classes;
-using System.Threading.Tasks;
 using static AgeAPP.Classes.FiresharpData;
 
 namespace AgeAPP.Forms
@@ -10,7 +9,9 @@ namespace AgeAPP.Forms
         private MainFunctions Main_functions_service = new MainFunctions();
         private FiresharpData local_Data_service;
 
+        // Local data
         private List<Player> room_players = new List<Player>();
+        private List<Player> allPlayers = new List<Player>();
 
         public SplitForm(FiresharpData Data_service)
         {
@@ -22,9 +23,24 @@ namespace AgeAPP.Forms
         {
             room_players.Clear();
 
-            var players = await local_Data_service.GetAllPlayers();
-            dataGridViewPlayers.DataSource = players;
+            // Atualiza a tabela inicial
+            await UpdateLocalData();
+            UpdateDataGridViewPlayers();
         }
+
+        private async Task UpdateLocalData()
+        {
+            // Get updated data
+            allPlayers = await local_Data_service.GetAllPlayers();
+        }
+
+        private void UpdateDataGridViewPlayers()
+        {
+            dataGridViewPlayers.DataSource = null;
+            dataGridViewPlayers.DataSource = allPlayers;
+        }
+
+        #region Action Methods
 
         private async void ConfirmSplitTeamsButton_Click(object sender, EventArgs e)
         {
@@ -125,5 +141,67 @@ namespace AgeAPP.Forms
                 ListBoxRoom.Items.Remove(ListBoxRoom.SelectedItem);
             }
         }
+
+        #endregion
+
+        #region TEXT BOXES
+
+        private void FilterPlayerTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string search = FilterPlayerTextBox.Text.Trim().ToLower();
+
+            if (string.IsNullOrEmpty(search))
+            {
+                dataGridViewPlayers.DataSource = allPlayers;
+            }
+            else
+            {
+                dataGridViewPlayers.DataSource = allPlayers
+                    .Where(p => p.Name.ToLower().Contains(search))
+                    .ToList();
+            }
+        }
+
+        #endregion
+
+        #region EXTRA BUTTONS
+
+        private void CopyTeamATextButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TextBoxTeam1.Text))
+            {
+                MessageBox.Show("Nada para copiar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Clipboard.SetText(TextBoxTeam1.Text);
+            MessageBox.Show("Texto copiado para a área de transferência!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void CopyTeamBTextButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TextBoxTeam2.Text))
+            {
+                MessageBox.Show("Nada para copiar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Clipboard.SetText(TextBoxTeam2.Text);
+            MessageBox.Show("Texto copiado para a área de transferência!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void CopyMapTextButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TextBoxMap.Text))
+            {
+                MessageBox.Show("Nada para copiar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Clipboard.SetText(TextBoxMap.Text);
+            MessageBox.Show("Texto copiado para a área de transferência!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        #endregion
     }
 }

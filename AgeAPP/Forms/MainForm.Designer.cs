@@ -50,8 +50,8 @@ namespace AgeAPP
             panel2 = new Panel();
             ToolTips = new ToolTip(components);
             FilterPlayerTextBox = new TextBox();
-            label3 = new Label();
-            button1 = new Button();
+            AgeAppLabel = new Label();
+            HelpButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -63,6 +63,7 @@ namespace AgeAPP
             // dataGridViewPlayers
             // 
             dataGridViewPlayers.AllowUserToAddRows = false;
+            dataGridViewPlayers.AllowUserToDeleteRows = false;
             dataGridViewPlayers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewPlayers.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
             dataGridViewPlayers.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
@@ -76,6 +77,7 @@ namespace AgeAPP
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             dataGridViewPlayers.DefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewPlayers.Location = new Point(12, 52);
+            dataGridViewPlayers.MultiSelect = false;
             dataGridViewPlayers.Name = "dataGridViewPlayers";
             dataGridViewPlayers.ReadOnly = true;
             dataGridViewPlayers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -88,6 +90,7 @@ namespace AgeAPP
             SplitButton.BackColor = Color.Black;
             SplitButton.BackgroundImage = Properties.Resources.button_wide_normal;
             SplitButton.BackgroundImageLayout = ImageLayout.Stretch;
+            SplitButton.FlatStyle = FlatStyle.Flat;
             SplitButton.Font = new Font("Arial", 14.25F);
             SplitButton.ForeColor = SystemColors.Control;
             SplitButton.Location = new Point(22, 50);
@@ -157,6 +160,7 @@ namespace AgeAPP
             MatchesButton.BackgroundImage = Properties.Resources.button_wide_normal;
             MatchesButton.BackgroundImageLayout = ImageLayout.Stretch;
             MatchesButton.Enabled = false;
+            MatchesButton.FlatStyle = FlatStyle.Flat;
             MatchesButton.Font = new Font("Arial", 14.25F);
             MatchesButton.ForeColor = SystemColors.Control;
             MatchesButton.Location = new Point(22, 101);
@@ -174,6 +178,7 @@ namespace AgeAPP
             AdminPanelButton.BackgroundImage = Properties.Resources.button_wide_normal;
             AdminPanelButton.BackgroundImageLayout = ImageLayout.Stretch;
             AdminPanelButton.Enabled = false;
+            AdminPanelButton.FlatStyle = FlatStyle.Flat;
             AdminPanelButton.Font = new Font("Arial", 14.25F);
             AdminPanelButton.ForeColor = SystemColors.Control;
             AdminPanelButton.Location = new Point(22, 211);
@@ -189,6 +194,7 @@ namespace AgeAPP
             LoginButton.AutoSize = true;
             LoginButton.BackgroundImage = Properties.Resources.button_wide_normal;
             LoginButton.BackgroundImageLayout = ImageLayout.Stretch;
+            LoginButton.FlatStyle = FlatStyle.Flat;
             LoginButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LoginButton.ForeColor = SystemColors.Control;
             LoginButton.Location = new Point(167, 450);
@@ -221,6 +227,7 @@ namespace AgeAPP
             // dataGridViewMaps
             // 
             dataGridViewMaps.AllowUserToAddRows = false;
+            dataGridViewMaps.AllowUserToDeleteRows = false;
             dataGridViewMaps.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewMaps.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
             dataGridViewMaps.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
@@ -234,6 +241,7 @@ namespace AgeAPP
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridViewMaps.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewMaps.Location = new Point(438, 52);
+            dataGridViewMaps.MultiSelect = false;
             dataGridViewMaps.Name = "dataGridViewMaps";
             dataGridViewMaps.ReadOnly = true;
             dataGridViewMaps.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -292,41 +300,41 @@ namespace AgeAPP
             FilterPlayerTextBox.TabIndex = 6;
             FilterPlayerTextBox.TextChanged += FilterPlayerTextBox_TextChanged;
             // 
-            // label3
+            // AgeAppLabel
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Black;
-            label3.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(869, 19);
-            label3.Name = "label3";
-            label3.Size = new Size(136, 27);
-            label3.TabIndex = 4;
-            label3.Text = "Interno App";
+            AgeAppLabel.AutoSize = true;
+            AgeAppLabel.BackColor = Color.Black;
+            AgeAppLabel.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AgeAppLabel.ForeColor = Color.White;
+            AgeAppLabel.Location = new Point(869, 19);
+            AgeAppLabel.Name = "AgeAppLabel";
+            AgeAppLabel.Size = new Size(191, 27);
+            AgeAppLabel.TabIndex = 4;
+            AgeAppLabel.Text = "Interno App V5.3";
             // 
-            // button1
+            // HelpButton
             // 
-            button1.AutoSize = true;
-            button1.BackgroundImage = Properties.Resources.Help_icon;
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(1103, 17);
-            button1.Name = "button1";
-            button1.Size = new Size(34, 29);
-            button1.TabIndex = 4;
-            button1.UseVisualStyleBackColor = true;
+            HelpButton.AutoSize = true;
+            HelpButton.BackgroundImage = Properties.Resources.Help_icon;
+            HelpButton.BackgroundImageLayout = ImageLayout.Stretch;
+            HelpButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            HelpButton.Location = new Point(1107, 17);
+            HelpButton.Name = "HelpButton";
+            HelpButton.Size = new Size(30, 29);
+            HelpButton.TabIndex = 4;
+            HelpButton.UseVisualStyleBackColor = true;
             // 
             // FMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Civ_details_bg;
+            BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1149, 577);
             Controls.Add(FilterPlayerTextBox);
             Controls.Add(panel2);
-            Controls.Add(button1);
-            Controls.Add(label3);
+            Controls.Add(HelpButton);
+            Controls.Add(AgeAppLabel);
             Controls.Add(panel1);
             Controls.Add(dataGridViewMaps);
             Controls.Add(dataGridViewPlayers);
@@ -369,7 +377,7 @@ namespace AgeAPP
         private ToolTip ToolTips;
         private TextBox FilterPlayerTextBox;
         private PictureBox pictureBox2;
-        private Label label3;
-        private Button button1;
+        private Label AgeAppLabel;
+        private Button HelpButton;
     }
 }

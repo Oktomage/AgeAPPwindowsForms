@@ -105,6 +105,7 @@
             // 
             ApplyResultButton.BackgroundImage = Properties.Resources.button_wide_normal;
             ApplyResultButton.BackgroundImageLayout = ImageLayout.Stretch;
+            ApplyResultButton.FlatStyle = FlatStyle.Flat;
             ApplyResultButton.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ApplyResultButton.ForeColor = SystemColors.Control;
             ApplyResultButton.Location = new Point(362, 268);

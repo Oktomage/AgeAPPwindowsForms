@@ -9,6 +9,7 @@ namespace AgeAPP
         // Serviços
         public FiresharpData Data_service = new FiresharpData();
         private MainFunctions local_Main_functions_service = new MainFunctions();
+        private Main_classes local_Main_classes = new Main_classes();
 
         // Local data
         private List<Player> allPlayers = new List<Player>();
@@ -22,6 +23,8 @@ namespace AgeAPP
         {
             // Cria pastas necessárias
             local_Main_functions_service.Create_Required_folders();
+
+            AgeAppLabel.Text = "Interno app v" + local_Main_classes.App_Version;
 
             // Tentar persistencia de login
             Data_service.Local_Admin_Logged = local_Main_functions_service.Load_session();
@@ -49,8 +52,14 @@ namespace AgeAPP
             UpdateDataGridViewPlayers();
             UpdateDataGridViewMaps();
 
-            //
+            // Escreve tooltips
             Write_toolTips();
+
+            // Verifica atualizações
+            bool has_updates = await Data_service.Check_for_updates();
+
+            if(has_updates)
+                MessageBox.Show("Existe uma atualização obrigatória do aplicativo pendente !", "Atualização", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void Write_toolTips()
@@ -62,6 +71,7 @@ namespace AgeAPP
             ToolTips.SetToolTip(LoginButton, "Abre a janela de login de administradores.");
             ToolTips.SetToolTip(AdminConnectedLabel, "Mostra o admin conectado atualmente.");
             ToolTips.SetToolTip(FilterPlayerTextBox, "Filtra a lista de jogadores pelo nome.");
+            ToolTips.SetToolTip(HelpButton, "Mostra um breve tutorial do aplicativo.");
         }
 
         private async Task UpdateLocalData()
@@ -98,8 +108,17 @@ namespace AgeAPP
             loginForm.ShowDialog();
         }
 
-        private void AdminPanelButton_Click(object sender, EventArgs e)
+        private async void AdminPanelButton_Click(object sender, EventArgs e)
         {
+            // Verifica atualizações
+            bool has_updates = await Data_service.Check_for_updates();
+
+            if (has_updates)
+            {
+                MessageBox.Show("Existe uma atualização obrigatória do aplicativo pendente !", "Atualização", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             AdminPanelForm adminForm = new AdminPanelForm(Data_service);
             adminForm.ShowDialog();
         }
@@ -127,6 +146,7 @@ namespace AgeAPP
             if (Data_service.Admin_LoggedIn)
             {
                 LoginButton.Enabled = false;
+                LoginButton.Visible = false;
                 AdminPanelButton.Enabled = true;
 
                 AdminConnectedLabel.Text = $"Conectado como: {Data_service.Local_Admin_Logged.Name}";
@@ -134,6 +154,7 @@ namespace AgeAPP
             else
             {
                 LoginButton.Enabled = true;
+                LoginButton.Visible = true;
                 AdminPanelButton.Enabled = false;
 
                 AdminConnectedLabel.Text = "Nenhum admin conectado";
