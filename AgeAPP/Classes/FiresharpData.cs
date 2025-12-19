@@ -3,9 +3,7 @@ using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Newtonsoft.Json;
-using System.ComponentModel;
-using static AgeAPP.Classes.FiresharpData;
-using static AgeAPP.Classes.MainFunctions;
+using static AgeAPP.Classes.Main_classes;
 
 namespace AgeAPP.Classes
 {
@@ -113,21 +111,7 @@ namespace AgeAPP.Classes
             File.WriteAllText(backupFilePath, formattedJson);
         }
 
-        public class Player
-        {
-            public int Id { get; set; } = 0;
-            public string Name { get; set; } = "system_error";
-            public int Rating { get; set; } = 0;
-            public int Matches { get; set; } = 0;
-            public int Wins { get; set; } = 0;
-            public float WinRate { get; set; }
-
-            [Browsable(false)]
-            public string Last_time_played { get; set; }
-
-            [Browsable(false)]
-            public Dictionary<string, FavoriteMap> Favorite_maps { get; set; } = new Dictionary<string, FavoriteMap>();
-        }
+        // PLAYERS
 
         public async Task<List<Player>> GetAllPlayers()
         {
@@ -187,17 +171,8 @@ namespace AgeAPP.Classes
             await client.DeleteAsync($"players/{player.Name}");
         }
 
-        public class FavoriteMap
-        {
-            public string Name { get; set; }
-            public int Times_played { get; set; }
-        }
-        public class Map
-        {
-            public string Name { get; set; }
-            public int Matches { get; set; }
-            public int Type { get; set; }
-        }
+        // MAPS
+
         public async Task<List<Map>> GetAllMaps()
         {
             FirebaseResponse response = await client.GetAsync("maps");
@@ -232,19 +207,8 @@ namespace AgeAPP.Classes
             await client.DeleteAsync($"maps/{map.Name}");
         }
 
-        public class Log
-        {
-            public string Author_name { get; set; }
-            public string Date { get; set; }
-            public List<Player> All_players { get; set; } = new List<Player>();
-            public List<Player> TeamA_players { get; set; } = new List<Player>();
-            public List<Player> TeamB_players { get; set; } = new List<Player>();
-            public int Expected_rating_changes { get; set; }
-            public Map Played_map { get; set; }
-            public string Role { get; set; } = "default";
-            public string Content { get; set; }
-            public MatchResult Match_result { get; set; }
-        }
+        // LOGS
+
         public async Task Post_log_on_dataBase(Log log)
         {
             await client.PushAsync($"logs/{log.Author_name}/{log.Role}", log);

@@ -1,7 +1,7 @@
 ﻿using AgeAPP.Classes;
 using System.Text.Json;
-using static AgeAPP.Classes.FiresharpData;
 using static AgeAPP.Classes.MainFunctions;
+using static AgeAPP.Classes.Main_classes;
 
 namespace AgeAPP.Forms
 {
@@ -114,7 +114,7 @@ namespace AgeAPP.Forms
                 log.TeamB_players == null ||
                 log.Match_result == null)
             {
-                MessageBox.Show("Log inválido.");
+                MessageBox.Show("Log inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

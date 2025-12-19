@@ -1,6 +1,7 @@
 using AgeAPP.Classes;
 using AgeAPP.Forms;
 using static AgeAPP.Classes.FiresharpData;
+using static AgeAPP.Classes.Main_classes;
 
 namespace AgeAPP
 {
@@ -49,8 +50,6 @@ namespace AgeAPP
 
             // Atualiza a tabela inicial
             await UpdateLocalData();
-            UpdateDataGridViewPlayers();
-            UpdateDataGridViewMaps();
 
             // Escreve tooltips
             Write_toolTips();
@@ -79,12 +78,18 @@ namespace AgeAPP
         {
             // Get updated data
             allPlayers = await Data_service.GetAllPlayers();
+
+            UpdateDataGridViewPlayers();
+            UpdateDataGridViewMaps();
         }
 
         private void UpdateDataGridViewPlayers()
         {
             dataGridViewPlayers.DataSource = null;
             dataGridViewPlayers.DataSource = allPlayers;
+
+            GridStyleController.FixPlayersHeaderNames(dataGridViewPlayers);
+            GridStyleController.ApplyWinRateColoring(dataGridViewPlayers);
         }
 
         private async void UpdateDataGridViewMaps()
@@ -127,9 +132,6 @@ namespace AgeAPP
         private async void ForceGridRefreshButton_Click(object sender, EventArgs e)
         {
             await UpdateLocalData();
-
-            UpdateDataGridViewPlayers();
-            UpdateDataGridViewMaps();
         }
 
         private void AdminConnectedLabel_Click(object sender, EventArgs e)
@@ -144,7 +146,7 @@ namespace AgeAPP
                 "2. Histórico de Partidas: Acesse o histórico completo de partidas para analisar desempenhos anteriores.\n\n" +
                 "3. Painel de Administração: Faça login como administrador para gerenciar jogadores, mapas e visualizar logs de atividades.\n\n" +
                 "4. Filtragem de Jogadores: Utilize a caixa de filtro para encontrar rapidamente jogadores pelo nome.\n\n" +
-                "5. Atualizações: Mantenha o aplicativo atualizado para garantir acesso às últimas funcionalidades e melhorias.", 
+                "5. Atualizações: Mantenha o aplicativo atualizado para garantir acesso às últimas funcionalidades e melhorias.",
                 "Ajuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -195,5 +197,6 @@ namespace AgeAPP
         }
 
         #endregion
+
     }
 }

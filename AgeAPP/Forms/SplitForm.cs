@@ -1,6 +1,5 @@
 ﻿using AgeAPP.Classes;
-using static AgeAPP.Classes.FiresharpData;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
+using static AgeAPP.Classes.Main_classes;
 
 namespace AgeAPP.Forms
 {
@@ -50,6 +49,9 @@ namespace AgeAPP.Forms
         {
             dataGridViewPlayers.DataSource = null;
             dataGridViewPlayers.DataSource = allPlayers;
+
+            GridStyleController.FixPlayersHeaderNames(dataGridViewPlayers);
+            GridStyleController.ApplyWinRateColoring(dataGridViewPlayers);
         }
 
         #region Action Methods
@@ -234,6 +236,7 @@ namespace AgeAPP.Forms
             }
 
             Clipboard.SetText(TextBoxTeam1.Text);
+            System.Media.SystemSounds.Exclamation.Play();
         }
 
         private void CopyTeamBTextButton_Click(object sender, EventArgs e)
@@ -245,6 +248,7 @@ namespace AgeAPP.Forms
             }
 
             Clipboard.SetText(TextBoxTeam2.Text);
+            System.Media.SystemSounds.Exclamation.Play();
         }
 
         private void CopyMapTextButton_Click(object sender, EventArgs e)
@@ -256,7 +260,7 @@ namespace AgeAPP.Forms
             }
 
             Clipboard.SetText(TextBoxMap.Text);
-            //MessageBox.Show("Texto copiado para a área de transferência!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            System.Media.SystemSounds.Exclamation.Play();
         }
 
         #endregion

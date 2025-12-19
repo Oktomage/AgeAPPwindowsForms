@@ -1,6 +1,6 @@
 ﻿using AgeAPP.Classes;
-using System.Threading.Tasks;
 using static AgeAPP.Classes.FiresharpData;
+using static AgeAPP.Classes.Main_classes;
 
 namespace AgeAPP.Forms
 {
@@ -31,7 +31,7 @@ namespace AgeAPP.Forms
             // Desabilita botão
             CreateButton.Enabled = false;
 
-            var newMap = new FiresharpData.Map
+            var newMap = new Map
             {
                 Name = TextBoxMapName.Text,
                 Matches = 0,

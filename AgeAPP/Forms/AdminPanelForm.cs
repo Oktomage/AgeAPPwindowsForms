@@ -1,5 +1,6 @@
 ﻿using AgeAPP.Classes;
 using static AgeAPP.Classes.FiresharpData;
+using static AgeAPP.Classes.Main_classes;
 
 namespace AgeAPP.Forms
 {
@@ -48,6 +49,9 @@ namespace AgeAPP.Forms
         {
             dataGridViewPlayers.DataSource = null;
             dataGridViewPlayers.DataSource = allPlayers;
+
+            GridStyleController.FixPlayersHeaderNames(dataGridViewPlayers);
+            GridStyleController.ApplyWinRateColoring(dataGridViewPlayers);
         }
 
         private void dataGridViewPlayers_SelectionChanged(object sender, EventArgs e)
