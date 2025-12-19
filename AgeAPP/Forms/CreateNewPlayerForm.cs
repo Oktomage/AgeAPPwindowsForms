@@ -21,6 +21,8 @@ namespace AgeAPP.Forms
 
             var maps = await local_Data_service.GetAllMaps();
             dataGridViewMaps.DataSource = maps;
+
+            GridStyleController.ApplyTheme(dataGridViewMaps);
         }
 
         private async void CreateButton_Click(object sender, EventArgs e)

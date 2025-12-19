@@ -41,6 +41,8 @@ namespace AgeAPP.Forms
             // 
             // panel1
             // 
+            panel1.BackgroundImage = Properties.Resources.Civ_details_bg;
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(TextBoxPassword);
@@ -55,6 +57,8 @@ namespace AgeAPP.Forms
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Black;
+            label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(12, 61);
             label2.Name = "label2";
             label2.Size = new Size(39, 15);
@@ -64,6 +68,8 @@ namespace AgeAPP.Forms
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Black;
+            label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(12, 11);
             label1.Name = "label1";
             label1.Size = new Size(40, 15);
@@ -99,7 +105,7 @@ namespace AgeAPP.Forms
             LogInButton.Name = "LogInButton";
             LogInButton.Size = new Size(113, 45);
             LogInButton.TabIndex = 3;
-            LogInButton.Text = "Logar";
+            LogInButton.Text = "Entrar";
             LogInButton.UseVisualStyleBackColor = true;
             LogInButton.Click += LogInButton_Click;
             // 

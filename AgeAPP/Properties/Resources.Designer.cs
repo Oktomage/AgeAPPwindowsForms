@@ -93,6 +93,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aoe2_de_uhd_2 {
+            get {
+                object obj = ResourceManager.GetObject("aoe2-de-uhd-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_wide_normal {
             get {
                 object obj = ResourceManager.GetObject("button_wide_normal", resourceCulture);

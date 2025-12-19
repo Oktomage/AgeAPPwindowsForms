@@ -249,7 +249,6 @@ namespace AgeAPP.Classes
             return result;
         }
 
-
         public int Calculate_expected_rating_changes(int teamRatingA, int teamRatingB)
         {
             int BASE_DELTA = 20;

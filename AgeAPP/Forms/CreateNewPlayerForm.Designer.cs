@@ -44,6 +44,8 @@
             // 
             // panel1
             // 
+            panel1.BackgroundImage = Properties.Resources.aoe2_de_uhd_2;
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(dataGridViewMaps);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label3);
@@ -82,7 +84,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Black;
             label2.Font = new Font("Arial", 9F);
+            label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(12, 61);
             label2.Name = "label2";
             label2.Size = new Size(43, 15);
@@ -92,7 +96,9 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Black;
             label3.Font = new Font("Arial", 9F);
+            label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(241, 11);
             label3.Name = "label3";
             label3.Size = new Size(170, 15);
@@ -102,7 +108,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Black;
             label1.Font = new Font("Arial", 9F);
+            label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(12, 11);
             label1.Name = "label1";
             label1.Size = new Size(41, 15);

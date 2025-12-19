@@ -4,7 +4,7 @@ namespace AgeAPP.Classes
 {
     public class Main_classes
     {
-        public string App_Version = "5.3.0";
+        public string App_Version = "5.4.0";
 
         public class Player
         {
