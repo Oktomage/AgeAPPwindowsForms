@@ -31,6 +31,7 @@ namespace AgeAPP.Forms
         {
             ToolTips.SetToolTip(DeleteSelectedPlayerButton, "Deleta o jogador selecionado permanentemente do banco de dados.");
             ToolTips.SetToolTip(ChangeSelectedPlayerRating, "Aplica a mudança de rating para o jogador selecionado.");
+            ToolTips.SetToolTip(RemoveFavoriteMapFromPlayerButton, "Remove o mapa favorito selecionado da lista de mapas favoritos do jogador.");
             ToolTips.SetToolTip(ChangePlayerFavoriteMapsButton, "Abre a janela para editar os mapas favoritos do jogador selecionado.");
             ToolTips.SetToolTip(DuplicateSelectedPlayerButton, "Cria uma cópia do jogador selecionado.");
             ToolTips.SetToolTip(ApplyMatchResultButton, "Abre a janela para aplicar o resultado de uma partida entre dois times.");
@@ -167,6 +168,11 @@ namespace AgeAPP.Forms
         private void SelectedPlayerLabel_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"Você está olhando o jogador: {selectedPlayer.Name}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void RemoveFavoriteMapFromPlayerButton_Click(object sender, EventArgs e)
+        {
+
         }
 
         #endregion

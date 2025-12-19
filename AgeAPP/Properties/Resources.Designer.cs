@@ -233,6 +233,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mvp {
+            get {
+                object obj = ResourceManager.GetObject("mvp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap news_splash {
             get {
                 object obj = ResourceManager.GetObject("news_splash", resourceCulture);
@@ -346,6 +356,36 @@ namespace AgeAPP.Properties {
         internal static System.Drawing.Bitmap SignOut_icon {
             get {
                 object obj = ResourceManager.GetObject("SignOut_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap star {
+            get {
+                object obj = ResourceManager.GetObject("star", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap team_shield_01 {
+            get {
+                object obj = ResourceManager.GetObject("team_shield_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap team_shield_02 {
+            get {
+                object obj = ResourceManager.GetObject("team_shield_02", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

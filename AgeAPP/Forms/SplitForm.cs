@@ -128,6 +128,7 @@ namespace AgeAPP.Forms
 
             // Salvar log
             Request_save_splitLog(teamA, teamB, selectedMap);
+            System.Media.SystemSounds.Exclamation.Play();
         }
 
         private void Request_save_splitLog(List<Player> teamA, List<Player> teamB, Map playedMap)

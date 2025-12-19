@@ -38,13 +38,13 @@
             label1 = new Label();
             TextBoxTeam1 = new TextBox();
             TextBoxTeam2 = new TextBox();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
             TextBoxMap = new TextBox();
             ListBoxRoom = new ListBox();
             label5 = new Label();
             panel2 = new Panel();
+            pictureBox4 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
             CopyMapTextButton = new Button();
             CopyTeamBTextButton = new Button();
             CopyTeamATextButton = new Button();
@@ -59,6 +59,9 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -141,71 +144,36 @@
             // TextBoxTeam1
             // 
             TextBoxTeam1.Font = new Font("Arial", 16F);
-            TextBoxTeam1.Location = new Point(3, 27);
+            TextBoxTeam1.Location = new Point(47, 3);
             TextBoxTeam1.Name = "TextBoxTeam1";
             TextBoxTeam1.PlaceholderText = "Time A";
             TextBoxTeam1.ReadOnly = true;
-            TextBoxTeam1.Size = new Size(495, 32);
+            TextBoxTeam1.Size = new Size(451, 32);
             TextBoxTeam1.TabIndex = 6;
             // 
             // TextBoxTeam2
             // 
             TextBoxTeam2.Font = new Font("Arial", 16F);
-            TextBoxTeam2.Location = new Point(3, 80);
+            TextBoxTeam2.Location = new Point(47, 55);
             TextBoxTeam2.Name = "TextBoxTeam2";
             TextBoxTeam2.PlaceholderText = "Time B";
             TextBoxTeam2.ReadOnly = true;
-            TextBoxTeam2.Size = new Size(495, 32);
+            TextBoxTeam2.Size = new Size(451, 32);
             TextBoxTeam2.TabIndex = 7;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Black;
-            label2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(3, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(44, 15);
-            label2.TabIndex = 8;
-            label2.Text = "Time A";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Black;
-            label3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(3, 62);
-            label3.Name = "label3";
-            label3.Size = new Size(46, 15);
-            label3.TabIndex = 8;
-            label3.Text = "Time B";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Black;
-            label4.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(3, 126);
-            label4.Name = "label4";
-            label4.Size = new Size(37, 15);
-            label4.TabIndex = 8;
-            label4.Text = "Mapa";
             // 
             // TextBoxMap
             // 
             TextBoxMap.Font = new Font("Arial", 16F);
-            TextBoxMap.Location = new Point(3, 144);
+            TextBoxMap.Location = new Point(50, 143);
             TextBoxMap.Name = "TextBoxMap";
             TextBoxMap.PlaceholderText = "Mapa ex: { Floresta negra }";
             TextBoxMap.ReadOnly = true;
-            TextBoxMap.Size = new Size(307, 32);
+            TextBoxMap.Size = new Size(330, 32);
             TextBoxMap.TabIndex = 7;
             // 
             // ListBoxRoom
             // 
+            ListBoxRoom.BackColor = Color.PaleGoldenrod;
             ListBoxRoom.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ListBoxRoom.FormattingEnabled = true;
             ListBoxRoom.Location = new Point(0, 25);
@@ -231,25 +199,55 @@
             // 
             panel2.BackColor = Color.Transparent;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(pictureBox4);
+            panel2.Controls.Add(pictureBox3);
+            panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(CopyMapTextButton);
             panel2.Controls.Add(CopyTeamBTextButton);
             panel2.Controls.Add(CopyTeamATextButton);
-            panel2.Controls.Add(label2);
             panel2.Controls.Add(TextBoxTeam1);
-            panel2.Controls.Add(label4);
             panel2.Controls.Add(TextBoxTeam2);
-            panel2.Controls.Add(label3);
             panel2.Controls.Add(TextBoxMap);
             panel2.Location = new Point(474, 257);
             panel2.Name = "panel2";
             panel2.Size = new Size(543, 181);
             panel2.TabIndex = 10;
             // 
+            // pictureBox4
+            // 
+            pictureBox4.BackgroundImage = Properties.Resources.star;
+            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.Location = new Point(3, 137);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(41, 39);
+            pictureBox4.TabIndex = 10;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackgroundImage = Properties.Resources.team_shield_02;
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.Location = new Point(3, 55);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(41, 46);
+            pictureBox3.TabIndex = 10;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImage = Properties.Resources.team_shield_01;
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Location = new Point(3, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(41, 46);
+            pictureBox2.TabIndex = 10;
+            pictureBox2.TabStop = false;
+            // 
             // CopyMapTextButton
             // 
             CopyMapTextButton.BackgroundImage = Properties.Resources.Link_icon;
             CopyMapTextButton.BackgroundImageLayout = ImageLayout.Stretch;
-            CopyMapTextButton.Location = new Point(316, 144);
+            CopyMapTextButton.Location = new Point(386, 143);
             CopyMapTextButton.Name = "CopyMapTextButton";
             CopyMapTextButton.Size = new Size(34, 32);
             CopyMapTextButton.TabIndex = 9;
@@ -260,7 +258,7 @@
             // 
             CopyTeamBTextButton.BackgroundImage = Properties.Resources.Link_icon;
             CopyTeamBTextButton.BackgroundImageLayout = ImageLayout.Stretch;
-            CopyTeamBTextButton.Location = new Point(504, 80);
+            CopyTeamBTextButton.Location = new Point(504, 55);
             CopyTeamBTextButton.Name = "CopyTeamBTextButton";
             CopyTeamBTextButton.Size = new Size(34, 32);
             CopyTeamBTextButton.TabIndex = 9;
@@ -271,7 +269,7 @@
             // 
             CopyTeamATextButton.BackgroundImage = Properties.Resources.Link_icon;
             CopyTeamATextButton.BackgroundImageLayout = ImageLayout.Stretch;
-            CopyTeamATextButton.Location = new Point(504, 27);
+            CopyTeamATextButton.Location = new Point(504, 3);
             CopyTeamATextButton.Name = "CopyTeamATextButton";
             CopyTeamATextButton.Size = new Size(34, 32);
             CopyTeamATextButton.TabIndex = 9;
@@ -335,9 +333,9 @@
             RoomSizeLabel.ForeColor = SystemColors.Control;
             RoomSizeLabel.Location = new Point(94, 203);
             RoomSizeLabel.Name = "RoomSizeLabel";
-            RoomSizeLabel.Size = new Size(29, 32);
+            RoomSizeLabel.Size = new Size(114, 32);
             RoomSizeLabel.TabIndex = 8;
-            RoomSizeLabel.Text = "0";
+            RoomSizeLabel.Text = "Sala 0/8";
             // 
             // label6
             // 
@@ -384,6 +382,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
@@ -398,10 +399,7 @@
         private TextBox TextBoxTeam1;
         private TextBox TextBoxTeam2;
         private Label label1;
-        private Label label2;
-        private Label label3;
         private PictureBox pictureBox1;
-        private Label label4;
         private TextBox TextBoxMap;
         private ListBox ListBoxRoom;
         private Label label5;
@@ -416,5 +414,8 @@
         private Button RemovePlayerFromTheRoomButton;
         private Label RoomSizeLabel;
         private ToolTip ToolTips;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
     }
 }

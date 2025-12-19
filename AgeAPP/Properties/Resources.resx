@@ -148,6 +148,9 @@
   <data name="ant_mainmenu_hr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\ant_mainmenu_hr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="team_shield_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\team_shield_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Panel_bg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\news_splash_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -156,6 +159,9 @@
   </data>
   <data name="remove_iron_4k_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\remove_iron_4k_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="team_shield_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\team_shield_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dark_mode_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Dark_mode_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -171,6 +177,9 @@
   </data>
   <data name="mainmenu_paphos_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\mainmenu_paphos_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aoe2-de-uhd-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\aoe2-de-uhd-2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Civ-details-bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Civ-details-bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,6 +202,9 @@
   <data name="Hand_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Hand_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="seperator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\seperator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,7 +217,7 @@
   <data name="seperator2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\seperator2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="aoe2-de-uhd-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\aoe2-de-uhd-2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mvp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\mvp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
