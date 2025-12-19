@@ -196,15 +196,6 @@ namespace AgeAPP.Classes
 
         #region Match results Methods 
 
-        public class MatchResult
-        {
-            public List<Player> TeamA { get; set; } = new List<Player>();
-            public List<Player> TeamB { get; set; } = new List<Player>();
-            public int DeltaRating { get; set; }
-            public bool TeamAWon { get; set; }
-            public string PlayedMap_name { get; set; }
-            public DateTime MatchDate { get; set; }
-        }
         public MatchResult Get_match_result(List<Player> teamA, List<Player> teamB, bool teamAWon, string map_name)
         {
             MatchResult result = new MatchResult();
@@ -256,6 +247,21 @@ namespace AgeAPP.Classes
             List<Player> all_updated_players = teamA.Concat(teamB).ToList();
 
             return result;
+        }
+
+
+        public int Calculate_expected_rating_changes(int teamRatingA, int teamRatingB)
+        {
+            int BASE_DELTA = 20;
+            int diff = teamRatingA - teamRatingB;
+
+            // vantagem esperada
+            float expectedA = 1f / (1f + (float)Math.Pow(10, -diff / 400f));
+
+            // valor esperado de mudança de rating
+            int expectedDeltaA = (int)Math.Round(BASE_DELTA * (1f - expectedA));
+
+            return expectedDeltaA;
         }
 
         private int Calculate_rating_changes(int teamRatingA, int teamRatingB, bool teamAWon)

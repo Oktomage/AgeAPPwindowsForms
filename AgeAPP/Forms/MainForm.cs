@@ -64,6 +64,7 @@ namespace AgeAPP
         private void Write_toolTips()
         {
             ToolTips.SetToolTip(ForceGridRefreshButton, "Força a atualização das tabelas de jogadores e mapas.");
+            ToolTips.SetToolTip(ToggleAppThemeButton, "Alterna entre tema claro e escuro.");
             ToolTips.SetToolTip(SplitButton, "Abre a janela de divisão de times.");
             ToolTips.SetToolTip(MatchesButton, "Abre a janela de histórico de partidas.");
             ToolTips.SetToolTip(AdminPanelButton, "Abre o painel de administração (requer login).");
@@ -132,6 +133,15 @@ namespace AgeAPP
         private async void ForceGridRefreshButton_Click(object sender, EventArgs e)
         {
             await UpdateLocalData();
+        }
+
+        private void ToggleAppThemeButton_Click(object sender, EventArgs e)
+        {
+            // Alterna tema das grids
+            GridStyleController.ToggleTheme();
+
+            GridStyleController.ApplyTheme(dataGridViewPlayers);
+            GridStyleController.ApplyTheme(dataGridViewMaps);
         }
 
         private void AdminConnectedLabel_Click(object sender, EventArgs e)

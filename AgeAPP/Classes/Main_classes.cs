@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using static AgeAPP.Classes.MainFunctions;
 
 namespace AgeAPP.Classes
 {
@@ -47,6 +46,16 @@ namespace AgeAPP.Classes
             public string Role { get; set; } = "default";
             public string Content { get; set; }
             public MatchResult Match_result { get; set; }
+        }
+
+        public class MatchResult
+        {
+            public List<Player> TeamA { get; set; } = new List<Player>();
+            public List<Player> TeamB { get; set; } = new List<Player>();
+            public int DeltaRating { get; set; }
+            public bool TeamAWon { get; set; }
+            public string PlayedMap_name { get; set; }
+            public DateTime MatchDate { get; set; }
         }
     }
 }

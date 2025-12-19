@@ -52,6 +52,8 @@ namespace AgeAPP.Forms
 
             GridStyleController.FixPlayersHeaderNames(dataGridViewPlayers);
             GridStyleController.ApplyWinRateColoring(dataGridViewPlayers);
+
+            GridStyleController.ApplyTheme(dataGridViewPlayers);
         }
 
         #region Action Methods
@@ -190,6 +192,7 @@ namespace AgeAPP.Forms
                 return;
 
             Add_player_to_room(player);
+            System.Media.SystemSounds.Exclamation.Play();
         }
 
         private void RemovePlayerFromTheRoomButton_Click(object sender, EventArgs e)
@@ -201,6 +204,7 @@ namespace AgeAPP.Forms
             }
 
             Remove_player_from_the_room();
+            System.Media.SystemSounds.Exclamation.Play();
         }
 
         #endregion

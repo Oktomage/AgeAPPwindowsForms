@@ -50,6 +50,7 @@
             label4 = new Label();
             ToolTips = new ToolTip(components);
             FilterPlayerTextBox = new TextBox();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -62,7 +63,7 @@
             dataGridViewPlayers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewPlayers.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
             dataGridViewPlayers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewPlayers.Location = new Point(12, 10);
+            dataGridViewPlayers.Location = new Point(12, 55);
             dataGridViewPlayers.MultiSelect = false;
             dataGridViewPlayers.Name = "dataGridViewPlayers";
             dataGridViewPlayers.ReadOnly = true;
@@ -76,7 +77,7 @@
             dataGridViewPlayers.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewPlayers.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewPlayers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewPlayers.Size = new Size(456, 443);
+            dataGridViewPlayers.Size = new Size(456, 398);
             dataGridViewPlayers.TabIndex = 1;
             dataGridViewPlayers.SelectionChanged += dataGridViewPlayers_SelectionChanged;
             // 
@@ -309,6 +310,19 @@
             FilterPlayerTextBox.TabIndex = 7;
             FilterPlayerTextBox.TextChanged += FilterPlayerTextBox_TextChanged;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Black;
+            label5.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.Control;
+            label5.Location = new Point(12, 20);
+            label5.Name = "label5";
+            label5.Size = new Size(237, 32);
+            label5.TabIndex = 2;
+            label5.Text = "Lista de jogadores";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // AdminPanelForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -321,6 +335,7 @@
             Controls.Add(panel1);
             Controls.Add(dataGridViewPlayers);
             Controls.Add(label4);
+            Controls.Add(label5);
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -359,5 +374,6 @@
         private ToolTip ToolTips;
         private TextBox FilterPlayerTextBox;
         private Button DuplicateSelectedPlayerButton;
+        private Label label5;
     }
 }

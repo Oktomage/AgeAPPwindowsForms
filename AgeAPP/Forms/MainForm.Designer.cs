@@ -53,6 +53,7 @@ namespace AgeAPP
             FilterPlayerTextBox = new TextBox();
             AgeAppLabel = new Label();
             HelpButton = new Button();
+            ToggleAppThemeButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -297,6 +298,7 @@ namespace AgeAPP
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(label1);
             panel2.Controls.Add(label2);
+            panel2.Controls.Add(ToggleAppThemeButton);
             panel2.Controls.Add(ForceGridRefreshButton);
             panel2.Location = new Point(12, 9);
             panel2.Name = "panel2";
@@ -343,6 +345,19 @@ namespace AgeAPP
             HelpButton.TabIndex = 4;
             HelpButton.UseVisualStyleBackColor = true;
             HelpButton.Click += HelpButton_Click;
+            // 
+            // ToggleAppThemeButton
+            // 
+            ToggleAppThemeButton.AutoSize = true;
+            ToggleAppThemeButton.BackgroundImage = Properties.Resources.Dark_mode_icon;
+            ToggleAppThemeButton.BackgroundImageLayout = ImageLayout.Stretch;
+            ToggleAppThemeButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ToggleAppThemeButton.Location = new Point(771, 1);
+            ToggleAppThemeButton.Name = "ToggleAppThemeButton";
+            ToggleAppThemeButton.Size = new Size(31, 29);
+            ToggleAppThemeButton.TabIndex = 4;
+            ToggleAppThemeButton.UseVisualStyleBackColor = true;
+            ToggleAppThemeButton.Click += ToggleAppThemeButton_Click;
             // 
             // FMain
             // 
@@ -400,5 +415,6 @@ namespace AgeAPP
         private Label AgeAppLabel;
         private Button HelpButton;
         private Button SignOutButton;
+        private Button ToggleAppThemeButton;
     }
 }

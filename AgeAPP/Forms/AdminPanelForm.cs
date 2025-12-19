@@ -52,6 +52,8 @@ namespace AgeAPP.Forms
 
             GridStyleController.FixPlayersHeaderNames(dataGridViewPlayers);
             GridStyleController.ApplyWinRateColoring(dataGridViewPlayers);
+
+            GridStyleController.ApplyTheme(dataGridViewPlayers);
         }
 
         private void dataGridViewPlayers_SelectionChanged(object sender, EventArgs e)
