@@ -216,7 +216,7 @@ namespace AgeAPP.Classes
             int teamBRating = teamB.Sum(p => p.Rating);
 
             // Calcula valor da mudança de rating
-            int ratingDelta = Calculate_rating_delta_changes(teamARating, teamBRating, teamAWon);
+            int ratingDelta = Calculate_rating_changes(teamARating, teamBRating, teamAWon);
 
             result.DeltaRating = ratingDelta;
 
@@ -257,9 +257,9 @@ namespace AgeAPP.Classes
             return result;
         }
 
-        private int Calculate_rating_delta_changes(int teamRatingA, int teamRatingB, bool teamAWon)
+        private int Calculate_rating_changes(int teamRatingA, int teamRatingB, bool teamAWon)
         {
-             int BASE_DELTA = 20;
+            int BASE_DELTA = 20;
 
             int diff = teamRatingA - teamRatingB;
 

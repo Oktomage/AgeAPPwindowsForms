@@ -239,6 +239,7 @@ namespace AgeAPP.Classes
             public List<Player> All_players { get; set; } = new List<Player>();
             public List<Player> TeamA_players { get; set; } = new List<Player>();
             public List<Player> TeamB_players { get; set; } = new List<Player>();
+            public int Expected_rating_changes { get; set; }
             public Map Played_map { get; set; }
             public string Role { get; set; } = "default";
             public string Content { get; set; }

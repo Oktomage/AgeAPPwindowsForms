@@ -234,7 +234,6 @@ namespace AgeAPP.Forms
             }
 
             Clipboard.SetText(TextBoxTeam1.Text);
-            MessageBox.Show("Texto copiado para a área de transferência!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void CopyTeamBTextButton_Click(object sender, EventArgs e)
@@ -246,7 +245,6 @@ namespace AgeAPP.Forms
             }
 
             Clipboard.SetText(TextBoxTeam2.Text);
-            MessageBox.Show("Texto copiado para a área de transferência!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void CopyMapTextButton_Click(object sender, EventArgs e)
@@ -258,7 +256,7 @@ namespace AgeAPP.Forms
             }
 
             Clipboard.SetText(TextBoxMap.Text);
-            MessageBox.Show("Texto copiado para a área de transferência!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show("Texto copiado para a área de transferência!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         #endregion

@@ -43,8 +43,8 @@ namespace AgeAPP.Forms
 
             dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
             {
-                HeaderText = "",
-                Width = 20
+                DataPropertyName = "Rating_changes",
+                HeaderText = "Changes"
             });
 
             dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
@@ -65,6 +65,8 @@ namespace AgeAPP.Forms
             public string TeamA { get; set; }
             public int RatingA { get; set; }
 
+            public string Rating_changes { get; set; }
+
             public string TeamB { get; set; }
             public int RatingB { get; set; }
         }
@@ -73,6 +75,8 @@ namespace AgeAPP.Forms
             var rows = new List<MatchRowView>();
 
             int max = Math.Max(log.TeamA_players.Count, log.TeamB_players.Count);
+            int delta = log.Match_result.DeltaRating;
+            bool teamAWon = log.Match_result.TeamAWon;
 
             for (int i = 0; i < max; i++)
             {
@@ -85,6 +89,8 @@ namespace AgeAPP.Forms
                     RatingA = i < log.TeamA_players.Count
                         ? log.TeamA_players[i].Rating
                         : 0,
+
+                    Rating_changes = $"+-{delta}",
 
                     TeamB = i < log.TeamB_players.Count
                         ? log.TeamB_players[i].Name
@@ -105,7 +111,8 @@ namespace AgeAPP.Forms
             if (log == null ||
                 log.All_players == null ||
                 log.TeamA_players == null ||
-                log.TeamB_players == null)
+                log.TeamB_players == null ||
+                log.Match_result == null)
             {
                 MessageBox.Show("Log inválido.");
                 return;

@@ -55,6 +55,14 @@ namespace AgeAPP.Forms
 
             await local_Data_service.Add_new_player(newPlayer);
 
+            await local_Data_service.Post_log_on_dataBase(new Log
+            {
+                Author_name = local_Data_service.Local_Admin_Logged.Name,
+                Role = "Player_changes",
+                Date = DateTime.Now.ToString(),
+                Content = $"Criou um novo jogador, {newPlayer.Name}."
+            });
+
             // Fecha o formulário após a criação do jogador
             this.DialogResult = DialogResult.OK;
             this.Close();
