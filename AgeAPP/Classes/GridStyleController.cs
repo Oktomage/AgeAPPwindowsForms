@@ -48,8 +48,8 @@ namespace AgeAPP.Classes
             grid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 220, 220);
             grid.DefaultCellStyle.SelectionForeColor = Color.Black;
 
-            grid.ColumnHeadersDefaultCellStyle.BackColor = Color.Gainsboro;
-            grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            grid.ColumnHeadersDefaultCellStyle.BackColor = Color.Gray;
+            grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
             grid.GridColor = Color.LightGray;
             grid.EnableHeadersVisualStyles = false;

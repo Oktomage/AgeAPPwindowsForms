@@ -49,11 +49,11 @@ namespace AgeAPP
             label1 = new Label();
             label2 = new Label();
             panel2 = new Panel();
+            ToggleAppThemeButton = new Button();
             ToolTips = new ToolTip(components);
             FilterPlayerTextBox = new TextBox();
             AgeAppLabel = new Label();
             HelpButton = new Button();
-            ToggleAppThemeButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -305,6 +305,19 @@ namespace AgeAPP
             panel2.Size = new Size(846, 37);
             panel2.TabIndex = 5;
             // 
+            // ToggleAppThemeButton
+            // 
+            ToggleAppThemeButton.AutoSize = true;
+            ToggleAppThemeButton.BackgroundImage = Properties.Resources.Dark_mode_icon;
+            ToggleAppThemeButton.BackgroundImageLayout = ImageLayout.Stretch;
+            ToggleAppThemeButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ToggleAppThemeButton.Location = new Point(771, 1);
+            ToggleAppThemeButton.Name = "ToggleAppThemeButton";
+            ToggleAppThemeButton.Size = new Size(31, 29);
+            ToggleAppThemeButton.TabIndex = 4;
+            ToggleAppThemeButton.UseVisualStyleBackColor = true;
+            ToggleAppThemeButton.Click += ToggleAppThemeButton_Click;
+            // 
             // ToolTips
             // 
             ToolTips.AutoPopDelay = 5000;
@@ -345,19 +358,6 @@ namespace AgeAPP
             HelpButton.TabIndex = 4;
             HelpButton.UseVisualStyleBackColor = true;
             HelpButton.Click += HelpButton_Click;
-            // 
-            // ToggleAppThemeButton
-            // 
-            ToggleAppThemeButton.AutoSize = true;
-            ToggleAppThemeButton.BackgroundImage = Properties.Resources.Dark_mode_icon;
-            ToggleAppThemeButton.BackgroundImageLayout = ImageLayout.Stretch;
-            ToggleAppThemeButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ToggleAppThemeButton.Location = new Point(771, 1);
-            ToggleAppThemeButton.Name = "ToggleAppThemeButton";
-            ToggleAppThemeButton.Size = new Size(31, 29);
-            ToggleAppThemeButton.TabIndex = 4;
-            ToggleAppThemeButton.UseVisualStyleBackColor = true;
-            ToggleAppThemeButton.Click += ToggleAppThemeButton_Click;
             // 
             // FMain
             // 

@@ -51,6 +51,9 @@ namespace AgeAPP
             // Atualiza a tabela inicial
             await UpdateLocalData();
 
+            GridStyleController.ApplyTheme(dataGridViewPlayers);
+            GridStyleController.ApplyTheme(dataGridViewMaps);
+
             // Escreve tooltips
             Write_toolTips();
 

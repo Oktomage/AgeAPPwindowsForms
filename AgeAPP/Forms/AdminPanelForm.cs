@@ -31,6 +31,7 @@ namespace AgeAPP.Forms
         {
             ToolTips.SetToolTip(DeleteSelectedPlayerButton, "Deleta o jogador selecionado permanentemente do banco de dados.");
             ToolTips.SetToolTip(ChangeSelectedPlayerRating, "Aplica a mudança de rating para o jogador selecionado.");
+            ToolTips.SetToolTip(ChangePlayerFavoriteMapsButton, "Abre a janela para editar os mapas favoritos do jogador selecionado.");
             ToolTips.SetToolTip(DuplicateSelectedPlayerButton, "Cria uma cópia do jogador selecionado.");
             ToolTips.SetToolTip(ApplyMatchResultButton, "Abre a janela para aplicar o resultado de uma partida entre dois times.");
             ToolTips.SetToolTip(CreateNewPlayerButton, "Abre a janela para criar um novo jogador.");

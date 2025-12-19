@@ -32,7 +32,7 @@ namespace AgeAPP.Forms
             dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "TeamA",
-                HeaderText = "Time A"
+                HeaderText = "TimeA"
             });
 
             dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
@@ -44,13 +44,13 @@ namespace AgeAPP.Forms
             dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "Rating_changes",
-                HeaderText = "Changes"
+                HeaderText = "Valor da partida"
             });
 
             dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "TeamB",
-                HeaderText = "Time B"
+                HeaderText = "TimeB"
             });
 
             dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
@@ -58,6 +58,8 @@ namespace AgeAPP.Forms
                 DataPropertyName = "RatingB",
                 HeaderText = "Rating"
             });
+
+            GridStyleController.ApplyTheme(dataGridViewMatchLog);
         }
 
         public class MatchRowView
@@ -75,8 +77,10 @@ namespace AgeAPP.Forms
             var rows = new List<MatchRowView>();
 
             int max = Math.Max(log.TeamA_players.Count, log.TeamB_players.Count);
-            int delta = log.Match_result.DeltaRating;
-            bool teamAWon = log.Match_result.TeamAWon;
+
+            int teamRatingA = log.TeamA_players.Sum(p => p.Rating);
+            int teamRatingB = log.TeamB_players.Sum(p => p.Rating);
+            int delta = local_Main_functions_service.Calculate_expected_rating_changes(teamRatingA, teamRatingB);
 
             for (int i = 0; i < max; i++)
             {
@@ -111,8 +115,7 @@ namespace AgeAPP.Forms
             if (log == null ||
                 log.All_players == null ||
                 log.TeamA_players == null ||
-                log.TeamB_players == null ||
-                log.Match_result == null)
+                log.TeamB_players == null)
             {
                 MessageBox.Show("Log inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -127,6 +130,16 @@ namespace AgeAPP.Forms
         }
 
         #region BUTTONS
+
+        private void HelpButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1. Clique em 'Procurar Log' para selecionar um arquivo de log de partida no formato JSON.\n\n" +
+                "2. Após selecionar o log, os detalhes da partida serão exibidos na tabela abaixo.\n\n" +
+                "3. Selecione o time vencedor na caixa de seleção 'Time Vencedor'.\n\n" +
+                "4. Clique em 'Aplicar Resultado' para atualizar os ratings dos jogadores e salvar o resultado da partida no banco de dados.\n\n" +
+                "5. Confirme a ação na janela de confirmação que aparecerá.\n\n" +
+                "Observação: Certifique-se de que o log selecionado seja válido e contenha todas as informações necessárias.", "Ajuda - Aplicar Resultado da Partida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
         private void FindLogButton_Click(object sender, EventArgs e)
         {
@@ -144,7 +157,7 @@ namespace AgeAPP.Forms
 
                 Log log = JsonSerializer.Deserialize<Log>(json);
 
-                if(log == null)
+                if (log == null)
                 {
                     MessageBox.Show("Log inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -209,7 +222,7 @@ namespace AgeAPP.Forms
                 Content = $"Lançou um resultado de partida",
                 Match_result = match_result
             });
-            
+
 
             // Fechar painel
             this.Close();

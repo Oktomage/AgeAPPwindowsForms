@@ -40,7 +40,7 @@
             FindLogButton = new Button();
             OpenFileDialog = new OpenFileDialog();
             PlayedMapLabel = new Label();
-            button1 = new Button();
+            HelpButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMatchLog).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -65,7 +65,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridViewMatchLog.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewMatchLog.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewMatchLog.Size = new Size(344, 267);
+            dataGridViewMatchLog.Size = new Size(344, 228);
             dataGridViewMatchLog.TabIndex = 2;
             // 
             // label1
@@ -109,7 +109,7 @@
             ApplyResultButton.FlatStyle = FlatStyle.Flat;
             ApplyResultButton.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ApplyResultButton.ForeColor = SystemColors.Control;
-            ApplyResultButton.Location = new Point(362, 268);
+            ApplyResultButton.Location = new Point(362, 229);
             ApplyResultButton.Name = "ApplyResultButton";
             ApplyResultButton.Size = new Size(187, 47);
             ApplyResultButton.TabIndex = 6;
@@ -145,9 +145,9 @@
             FindLogButton.BackgroundImage = Properties.Resources.Open_folder_icon;
             FindLogButton.BackgroundImageLayout = ImageLayout.Stretch;
             FindLogButton.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FindLogButton.Location = new Point(163, 11);
+            FindLogButton.Location = new Point(150, 7);
             FindLogButton.Name = "FindLogButton";
-            FindLogButton.Size = new Size(38, 34);
+            FindLogButton.Size = new Size(38, 38);
             FindLogButton.TabIndex = 6;
             FindLogButton.UseVisualStyleBackColor = true;
             FindLogButton.Click += FindLogButton_Click;
@@ -162,22 +162,23 @@
             PlayedMapLabel.BackColor = Color.Black;
             PlayedMapLabel.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PlayedMapLabel.ForeColor = SystemColors.Control;
-            PlayedMapLabel.Location = new Point(12, 324);
+            PlayedMapLabel.Location = new Point(12, 279);
             PlayedMapLabel.Name = "PlayedMapLabel";
             PlayedMapLabel.Size = new Size(189, 33);
             PlayedMapLabel.TabIndex = 4;
             PlayedMapLabel.Text = "Mapa: { Null }";
             // 
-            // button1
+            // HelpButton
             // 
-            button1.BackgroundImage = Properties.Resources.Help_icon;
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(318, 11);
-            button1.Name = "button1";
-            button1.Size = new Size(38, 34);
-            button1.TabIndex = 6;
-            button1.UseVisualStyleBackColor = true;
+            HelpButton.BackgroundImage = Properties.Resources.Help_icon;
+            HelpButton.BackgroundImageLayout = ImageLayout.Stretch;
+            HelpButton.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            HelpButton.Location = new Point(318, 7);
+            HelpButton.Name = "HelpButton";
+            HelpButton.Size = new Size(38, 38);
+            HelpButton.TabIndex = 6;
+            HelpButton.UseVisualStyleBackColor = true;
+            HelpButton.Click += HelpButton_Click;
             // 
             // ApplyMatchResultForm
             // 
@@ -185,9 +186,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Holidays_1920x1080;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(567, 364);
+            ClientSize = new Size(567, 321);
             Controls.Add(TeamVictoriousBox);
-            Controls.Add(button1);
+            Controls.Add(HelpButton);
             Controls.Add(FindLogButton);
             Controls.Add(ApplyResultButton);
             Controls.Add(pictureBox2);
@@ -223,6 +224,6 @@
         private Button FindLogButton;
         private OpenFileDialog OpenFileDialog;
         private Label PlayedMapLabel;
-        private Button button1;
+        private Button HelpButton;
     }
 }
