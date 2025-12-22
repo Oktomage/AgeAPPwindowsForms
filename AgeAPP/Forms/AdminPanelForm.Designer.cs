@@ -36,18 +36,14 @@
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             DuplicateSelectedPlayerButton = new Button();
-            DeleteSelectedPlayerButton = new Button();
             ChangeSelectedPlayerRating = new Button();
             SelectedPlayerRatingTextBox = new TextBox();
+            DeleteSelectedPlayerButton = new Button();
             label1 = new Label();
             panel3 = new Panel();
-            MapTypeComboBox = new ComboBox();
+            EditPlayerFavoriteMapsButton = new Button();
             FavoriteMapListBox = new ListBox();
-            label6 = new Label();
             label3 = new Label();
-            button1 = new Button();
-            RemoveFavoriteMapFromPlayerButton = new Button();
-            ChangePlayerFavoriteMapsButton = new Button();
             label2 = new Label();
             CreateNewPlayerButton = new Button();
             panel2 = new Panel();
@@ -86,7 +82,7 @@
             dataGridViewPlayers.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewPlayers.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewPlayers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewPlayers.Size = new Size(456, 398);
+            dataGridViewPlayers.Size = new Size(456, 473);
             dataGridViewPlayers.TabIndex = 1;
             dataGridViewPlayers.SelectionChanged += dataGridViewPlayers_SelectionChanged;
             // 
@@ -110,15 +106,15 @@
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(DuplicateSelectedPlayerButton);
-            panel1.Controls.Add(DeleteSelectedPlayerButton);
             panel1.Controls.Add(ChangeSelectedPlayerRating);
             panel1.Controls.Add(SelectedPlayerRatingTextBox);
+            panel1.Controls.Add(DeleteSelectedPlayerButton);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(SelectedPlayerLabel);
             panel1.Controls.Add(panel3);
             panel1.Location = new Point(474, 55);
             panel1.Name = "panel1";
-            panel1.Size = new Size(358, 604);
+            panel1.Size = new Size(358, 473);
             panel1.TabIndex = 3;
             // 
             // pictureBox2
@@ -138,24 +134,11 @@
             DuplicateSelectedPlayerButton.BackgroundImage = Properties.Resources.Duplicate_icon;
             DuplicateSelectedPlayerButton.BackgroundImageLayout = ImageLayout.Stretch;
             DuplicateSelectedPlayerButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DuplicateSelectedPlayerButton.Location = new Point(225, 539);
+            DuplicateSelectedPlayerButton.Location = new Point(223, 408);
             DuplicateSelectedPlayerButton.Name = "DuplicateSelectedPlayerButton";
             DuplicateSelectedPlayerButton.Size = new Size(61, 58);
             DuplicateSelectedPlayerButton.TabIndex = 4;
             DuplicateSelectedPlayerButton.UseVisualStyleBackColor = false;
-            // 
-            // DeleteSelectedPlayerButton
-            // 
-            DeleteSelectedPlayerButton.BackColor = Color.Transparent;
-            DeleteSelectedPlayerButton.BackgroundImage = Properties.Resources.Kill_icon;
-            DeleteSelectedPlayerButton.BackgroundImageLayout = ImageLayout.Stretch;
-            DeleteSelectedPlayerButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DeleteSelectedPlayerButton.Location = new Point(292, 539);
-            DeleteSelectedPlayerButton.Name = "DeleteSelectedPlayerButton";
-            DeleteSelectedPlayerButton.Size = new Size(61, 58);
-            DeleteSelectedPlayerButton.TabIndex = 4;
-            DeleteSelectedPlayerButton.UseVisualStyleBackColor = false;
-            DeleteSelectedPlayerButton.Click += DeleteSelectedPlayerButton_Click;
             // 
             // ChangeSelectedPlayerRating
             // 
@@ -179,6 +162,19 @@
             SelectedPlayerRatingTextBox.TabIndex = 3;
             SelectedPlayerRatingTextBox.KeyPress += SelectedPlayerRatingTextBox_KeyPress;
             // 
+            // DeleteSelectedPlayerButton
+            // 
+            DeleteSelectedPlayerButton.BackColor = Color.Transparent;
+            DeleteSelectedPlayerButton.BackgroundImage = Properties.Resources.Kill_icon;
+            DeleteSelectedPlayerButton.BackgroundImageLayout = ImageLayout.Stretch;
+            DeleteSelectedPlayerButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DeleteSelectedPlayerButton.Location = new Point(290, 408);
+            DeleteSelectedPlayerButton.Name = "DeleteSelectedPlayerButton";
+            DeleteSelectedPlayerButton.Size = new Size(61, 58);
+            DeleteSelectedPlayerButton.TabIndex = 4;
+            DeleteSelectedPlayerButton.UseVisualStyleBackColor = false;
+            DeleteSelectedPlayerButton.Click += DeleteSelectedPlayerButton_Click;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -195,28 +191,30 @@
             // 
             panel3.BackColor = Color.Transparent;
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(MapTypeComboBox);
+            panel3.Controls.Add(EditPlayerFavoriteMapsButton);
             panel3.Controls.Add(FavoriteMapListBox);
-            panel3.Controls.Add(label6);
             panel3.Controls.Add(label3);
-            panel3.Controls.Add(button1);
-            panel3.Controls.Add(RemoveFavoriteMapFromPlayerButton);
-            panel3.Controls.Add(ChangePlayerFavoriteMapsButton);
             panel3.Location = new Point(3, 137);
             panel3.Name = "panel3";
-            panel3.Size = new Size(348, 396);
+            panel3.Size = new Size(348, 265);
             panel3.TabIndex = 6;
             // 
-            // MapTypeComboBox
+            // EditPlayerFavoriteMapsButton
             // 
-            MapTypeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            MapTypeComboBox.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            MapTypeComboBox.FormattingEnabled = true;
-            MapTypeComboBox.Items.AddRange(new object[] { "Padrão", "QS", "Nomade", "Arena", "Hibrido", "Agua" });
-            MapTypeComboBox.Location = new Point(9, 188);
-            MapTypeComboBox.Name = "MapTypeComboBox";
-            MapTypeComboBox.Size = new Size(223, 30);
-            MapTypeComboBox.TabIndex = 6;
+            EditPlayerFavoriteMapsButton.Anchor = AnchorStyles.Top;
+            EditPlayerFavoriteMapsButton.BackColor = Color.Transparent;
+            EditPlayerFavoriteMapsButton.BackgroundImage = Properties.Resources.button_wide_normal;
+            EditPlayerFavoriteMapsButton.BackgroundImageLayout = ImageLayout.Stretch;
+            EditPlayerFavoriteMapsButton.FlatStyle = FlatStyle.Flat;
+            EditPlayerFavoriteMapsButton.Font = new Font("Arial", 12F);
+            EditPlayerFavoriteMapsButton.ForeColor = SystemColors.Control;
+            EditPlayerFavoriteMapsButton.Location = new Point(9, 203);
+            EditPlayerFavoriteMapsButton.Name = "EditPlayerFavoriteMapsButton";
+            EditPlayerFavoriteMapsButton.Size = new Size(134, 39);
+            EditPlayerFavoriteMapsButton.TabIndex = 4;
+            EditPlayerFavoriteMapsButton.Text = "Editar";
+            EditPlayerFavoriteMapsButton.UseVisualStyleBackColor = false;
+            EditPlayerFavoriteMapsButton.Click += EditPlayerFavoriteMapsButton_Click;
             // 
             // FavoriteMapListBox
             // 
@@ -224,20 +222,9 @@
             FavoriteMapListBox.FormattingEnabled = true;
             FavoriteMapListBox.Location = new Point(9, 31);
             FavoriteMapListBox.Name = "FavoriteMapListBox";
-            FavoriteMapListBox.Size = new Size(273, 130);
+            FavoriteMapListBox.Size = new Size(273, 166);
             FavoriteMapListBox.TabIndex = 5;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Black;
-            label6.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = SystemColors.Control;
-            label6.Location = new Point(8, 167);
-            label6.Name = "label6";
-            label6.Size = new Size(180, 18);
-            label6.TabIndex = 2;
-            label6.Text = "Lista de todos os mapas";
+            FavoriteMapListBox.DrawItem += FavoriteMapListBox_DrawItem;
             // 
             // label3
             // 
@@ -250,43 +237,6 @@
             label3.Size = new Size(119, 18);
             label3.TabIndex = 2;
             label3.Text = "Mapas favoritos";
-            // 
-            // button1
-            // 
-            button1.BackgroundImage = Properties.Resources.add_iron_4k_normal;
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(237, 182);
-            button1.Name = "button1";
-            button1.Size = new Size(36, 36);
-            button1.TabIndex = 4;
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += RemoveFavoriteMapFromPlayerButton_Click;
-            // 
-            // RemoveFavoriteMapFromPlayerButton
-            // 
-            RemoveFavoriteMapFromPlayerButton.BackgroundImage = Properties.Resources.remove_iron_4k_normal;
-            RemoveFavoriteMapFromPlayerButton.BackgroundImageLayout = ImageLayout.Stretch;
-            RemoveFavoriteMapFromPlayerButton.FlatStyle = FlatStyle.Flat;
-            RemoveFavoriteMapFromPlayerButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            RemoveFavoriteMapFromPlayerButton.Location = new Point(279, 182);
-            RemoveFavoriteMapFromPlayerButton.Name = "RemoveFavoriteMapFromPlayerButton";
-            RemoveFavoriteMapFromPlayerButton.Size = new Size(36, 36);
-            RemoveFavoriteMapFromPlayerButton.TabIndex = 4;
-            RemoveFavoriteMapFromPlayerButton.UseVisualStyleBackColor = true;
-            RemoveFavoriteMapFromPlayerButton.Click += RemoveFavoriteMapFromPlayerButton_Click;
-            // 
-            // ChangePlayerFavoriteMapsButton
-            // 
-            ChangePlayerFavoriteMapsButton.BackgroundImage = Properties.Resources.Hand_icon;
-            ChangePlayerFavoriteMapsButton.BackgroundImageLayout = ImageLayout.Stretch;
-            ChangePlayerFavoriteMapsButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ChangePlayerFavoriteMapsButton.Location = new Point(306, 354);
-            ChangePlayerFavoriteMapsButton.Name = "ChangePlayerFavoriteMapsButton";
-            ChangePlayerFavoriteMapsButton.Size = new Size(37, 37);
-            ChangePlayerFavoriteMapsButton.TabIndex = 4;
-            ChangePlayerFavoriteMapsButton.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -399,7 +349,7 @@
             // FilterPlayerTextBox
             // 
             FilterPlayerTextBox.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FilterPlayerTextBox.Location = new Point(12, 459);
+            FilterPlayerTextBox.Location = new Point(12, 534);
             FilterPlayerTextBox.Name = "FilterPlayerTextBox";
             FilterPlayerTextBox.PlaceholderText = "Filtrar jogador ex: Kakashi";
             FilterPlayerTextBox.Size = new Size(200, 22);
@@ -425,7 +375,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.admin_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1125, 671);
+            ClientSize = new Size(1125, 565);
             Controls.Add(FilterPlayerTextBox);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -474,12 +424,8 @@
         private TextBox FilterPlayerTextBox;
         private Button DuplicateSelectedPlayerButton;
         private Label label5;
-        private Button ChangePlayerFavoriteMapsButton;
         private Panel panel3;
         private PictureBox pictureBox2;
-        private Button RemoveFavoriteMapFromPlayerButton;
-        private ComboBox MapTypeComboBox;
-        private Button button1;
-        private Label label6;
+        private Button EditPlayerFavoriteMapsButton;
     }
 }

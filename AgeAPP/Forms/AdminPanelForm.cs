@@ -24,6 +24,9 @@ namespace AgeAPP.Forms
             // Atualiza a tabela inicial
             await UpdateLocalData();
 
+            FavoriteMapListBox.DrawMode = DrawMode.OwnerDrawFixed;
+            FavoriteMapListBox.ItemHeight = 50; // espaço pra imagem
+
             Write_toolTips();
         }
 
@@ -31,8 +34,7 @@ namespace AgeAPP.Forms
         {
             ToolTips.SetToolTip(DeleteSelectedPlayerButton, "Deleta o jogador selecionado permanentemente do banco de dados.");
             ToolTips.SetToolTip(ChangeSelectedPlayerRating, "Aplica a mudança de rating para o jogador selecionado.");
-            ToolTips.SetToolTip(RemoveFavoriteMapFromPlayerButton, "Remove o mapa favorito selecionado da lista de mapas favoritos do jogador.");
-            ToolTips.SetToolTip(ChangePlayerFavoriteMapsButton, "Abre a janela para editar os mapas favoritos do jogador selecionado.");
+            ToolTips.SetToolTip(EditPlayerFavoriteMapsButton, "Abre a janela para editar os mapas favoritos do jogador selecionado.");
             ToolTips.SetToolTip(DuplicateSelectedPlayerButton, "Cria uma cópia do jogador selecionado.");
             ToolTips.SetToolTip(ApplyMatchResultButton, "Abre a janela para aplicar o resultado de uma partida entre dois times.");
             ToolTips.SetToolTip(CreateNewPlayerButton, "Abre a janela para criar um novo jogador.");
@@ -78,7 +80,9 @@ namespace AgeAPP.Forms
                 {
                     foreach (FavoriteMap map in selectedPlayer.Favorite_maps.Values)
                     {
-                        FavoriteMapListBox.Items.Add($"{map.Name} - Jogado {map.Times_played} vezes");
+                        //FavoriteMapListBox.Items.Add($"{map.Name} - Jogado {map.Times_played} vezes");
+
+                        FavoriteMapListBox.Items.Add(map);
                     }
                 }
             }
@@ -170,9 +174,58 @@ namespace AgeAPP.Forms
             MessageBox.Show($"Você está olhando o jogador: {selectedPlayer.Name}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void RemoveFavoriteMapFromPlayerButton_Click(object sender, EventArgs e)
+        private void FavoriteMapListBox_DrawItem(object sender, DrawItemEventArgs e)
         {
+            if (e.Index < 0) return;
 
+            e.DrawBackground();
+
+            var listBox = (ListBox)sender;
+            var item = (FavoriteMap)listBox.Items[e.Index];
+            Image thumbnail = Properties.Resources.UnkownMap;
+
+            // Área da imagem
+            Rectangle imgRect = new Rectangle(
+                e.Bounds.X + 5,
+                e.Bounds.Y + 5,
+                40,
+                40
+            );
+
+            // Área do texto
+            Rectangle textRect = new Rectangle(
+                imgRect.Right + 10,
+                e.Bounds.Y + 15,
+                e.Bounds.Width - imgRect.Right - 10,
+                20
+            );
+
+            // Desenha imagem
+            if (thumbnail != null)
+                e.Graphics.DrawImage(thumbnail, imgRect);
+
+            // Cor do texto
+            Color textColor = (e.State & DrawItemState.Selected) == DrawItemState.Selected
+                ? Color.White
+                : Color.Black;
+
+            TextRenderer.DrawText(
+                e.Graphics,
+                item.Name,
+                e.Font,
+                textRect,
+                textColor,
+                TextFormatFlags.VerticalCenter | TextFormatFlags.Left
+            );
+
+            e.DrawFocusRectangle();
+        }
+
+        private void EditPlayerFavoriteMapsButton_Click(object sender, EventArgs e)
+        {
+            EditPlayerFavoriteMapForm edit_player_maps_form = new EditPlayerFavoriteMapForm(local_Data_service, selectedPlayer);
+
+            edit_player_maps_form.ShowDialog(this);
         }
 
         #endregion
