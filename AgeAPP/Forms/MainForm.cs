@@ -90,7 +90,27 @@ namespace AgeAPP
         private void UpdateDataGridViewPlayers()
         {
             dataGridViewPlayers.DataSource = null;
-            dataGridViewPlayers.DataSource = allPlayers;
+
+            switch(Show_only_active_players)
+            {
+                case true:
+                    List<Player> active_players = new List<Player>();
+
+                    foreach(var player in allPlayers)
+                    {
+                        if(player.Last_time_played != null)
+                        {
+                            active_players.Add(player);
+                        }
+                    }
+
+                    dataGridViewPlayers.DataSource = active_players;
+                    break;
+
+                case false:
+                    dataGridViewPlayers.DataSource = allPlayers;
+                    break;
+            }
 
             GridStyleController.FixPlayersHeaderNames(dataGridViewPlayers);
             GridStyleController.ApplyWinRateColoring(dataGridViewPlayers);
@@ -211,5 +231,15 @@ namespace AgeAPP
 
         #endregion
 
+        #region CHECK BOXES
+
+        private async void ShowOnlyActivePlayersCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Show_only_active_players = ShowOnlyActivePlayersCheckBox.Checked;
+
+            await UpdateLocalData();
+        }
+
+        #endregion
     }
 }

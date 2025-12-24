@@ -21,7 +21,19 @@ namespace AgeAPP.Forms
 
         private void EditPlayerFavoriteMapForm_Load(object sender, EventArgs e)
         {
+            FavoriteMapListBox.DrawMode = DrawMode.OwnerDrawFixed;
+            FavoriteMapListBox.ItemHeight = 50; // espaço pra imagem
+
             UpdateUI();
+            Write_toolTips();
+        }
+
+        private void Write_toolTips()
+        {
+            ToolTips.SetToolTip(ConfirmButton, "Confirmar alteração.");
+            ToolTips.SetToolTip(dataGridViewMaps, "Selecione os mapas que deseja atribuir ao jogador.");
+            ToolTips.SetToolTip(FavoriteMapListBox, "Esses são os mapas favoritados atuais do jogador.");
+            ToolTips.SetToolTip(HelpButton, "Mostra pequeno tutorial de como utilizar esta ferramenta.");
         }
 
         private async void UpdateUI()
@@ -33,53 +45,16 @@ namespace AgeAPP.Forms
 
             GridStyleController.ApplyTheme(dataGridViewMaps);
 
+            // Se tiver maps favoritos, mostra na lista
+            FavoriteMapListBox.Items.Clear();
 
-        }
-
-        private void ConfirmButton_Click(object sender, EventArgs e)
-        {
-            if (TextBoxPlayerName.Text == "" || TextBoxPlayerRating.Text == "")
+            if (selectedPlayer.Favorite_maps != null && selectedPlayer.Favorite_maps.Count > 0)
             {
-                MessageBox.Show("Por favor, preencha todos os campos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                foreach (FavoriteMap map in selectedPlayer.Favorite_maps.Values)
+                {
+                    FavoriteMapListBox.Items.Add(map);
+                }
             }
-
-            var selectedFavorite_maps = dataGridViewMaps.SelectedRows
-                .Cast<DataGridViewRow>()
-                .Select(r => r.DataBoundItem as Map)
-                .Where(p => p != null)
-                .ToList();
-
-            Player newPlayer = new Player
-            {
-                Id = 0, // O ID será atribuído automaticamente pelo serviço de dados
-                Name = TextBoxPlayerName.Text.Trim().ToLower(),
-                Rating = int.Parse(TextBoxPlayerRating.Text),
-                Matches = 0,
-                Wins = 0,
-                WinRate = 0f,
-                Favorite_maps = selectedFavorite_maps.ToDictionary(
-                    map => map.Name,
-                    map => new FavoriteMap
-                    {
-                        Name = map.Name,
-                        Times_played = 0
-                    })
-            };
-
-            await local_Data_service.Add_new_player(newPlayer);
-
-            await local_Data_service.Post_log_on_dataBase(new Log
-            {
-                Author_name = local_Data_service.Local_Admin_Logged.Name,
-                Role = "Player_changes",
-                Date = DateTime.Now.ToString(),
-                Content = $"Criou um novo jogador, {newPlayer.Name}."
-            });
-
-            // Fecha o formulário após a criação do jogador
-            this.DialogResult = DialogResult.OK;
-            this.Close();
         }
 
         private void FavoriteMapListBox_DrawItem(object sender, DrawItemEventArgs e)
@@ -127,6 +102,53 @@ namespace AgeAPP.Forms
             );
 
             e.DrawFocusRectangle();
+        }
+
+        private async void ConfirmButton_Click(object sender, EventArgs e)
+        {
+            if (selectedPlayer == null)
+            {
+                MessageBox.Show("Jogador inválido !", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var selectedFavorite_maps = dataGridViewMaps.SelectedRows
+                .Cast<DataGridViewRow>()
+                .Select(r => r.DataBoundItem as Map)
+                .Where(p => p != null)
+                .ToList();
+
+            selectedPlayer.Favorite_maps.Clear();
+
+            foreach (var map in selectedFavorite_maps)
+            {
+                FavoriteMap new_fav_map = new FavoriteMap();
+                new_fav_map.Name = map.Name;
+                new_fav_map.Times_played = 0;
+
+                selectedPlayer.Favorite_maps.Add(map.Name, new_fav_map);
+            }
+
+            await local_Data_service.Overwrite_player(selectedPlayer);
+
+            await local_Data_service.Post_log_on_dataBase(new Log
+            {
+                Author_name = local_Data_service.Local_Admin_Logged.Name,
+                Role = "Player_changes",
+                Date = DateTime.Now.ToString(),
+                Content = $"Alterou os mapas favoritdos do jogador, {selectedPlayer.Name}."
+            });
+
+            // Fecha o formulário após a criação do jogador
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+
+        private void HelpButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Selecione os mapas que deseja aplicar ao jogador na tabela da esquerda \n\n" +
+                "A lista na direita mostra os mapas atuais do jogador, se ele tiver algum !", "Ajuda", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
     }
 }

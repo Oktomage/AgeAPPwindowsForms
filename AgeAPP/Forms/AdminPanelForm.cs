@@ -92,7 +92,7 @@ namespace AgeAPP.Forms
 
         private void ApplyMatchResultButton_Click(object sender, EventArgs e)
         {
-            ApplyMatchResultForm match_result_form = new ApplyMatchResultForm(local_Data_service);
+            ApplyMatchResultForm match_result_form = new ApplyMatchResultForm(local_Data_service, null);
 
             match_result_form.ShowDialog(this);
         }
@@ -221,11 +221,14 @@ namespace AgeAPP.Forms
             e.DrawFocusRectangle();
         }
 
-        private void EditPlayerFavoriteMapsButton_Click(object sender, EventArgs e)
+        private async void EditPlayerFavoriteMapsButton_Click(object sender, EventArgs e)
         {
             EditPlayerFavoriteMapForm edit_player_maps_form = new EditPlayerFavoriteMapForm(local_Data_service, selectedPlayer);
 
-            edit_player_maps_form.ShowDialog(this);
+            if(edit_player_maps_form.ShowDialog(this) == DialogResult.OK)
+            {
+                await UpdateLocalData();
+            }
         }
 
         #endregion

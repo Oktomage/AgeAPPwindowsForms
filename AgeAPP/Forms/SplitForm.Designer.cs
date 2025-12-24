@@ -44,6 +44,7 @@
             panel2 = new Panel();
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
+            ToApplyResultFormButton = new Button();
             pictureBox2 = new PictureBox();
             CopyMapTextButton = new Button();
             CopyTeamBTextButton = new Button();
@@ -201,6 +202,7 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(pictureBox3);
+            panel2.Controls.Add(ToApplyResultFormButton);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(CopyMapTextButton);
             panel2.Controls.Add(CopyTeamBTextButton);
@@ -232,6 +234,23 @@
             pictureBox3.Size = new Size(41, 46);
             pictureBox3.TabIndex = 10;
             pictureBox3.TabStop = false;
+            // 
+            // ToApplyResultFormButton
+            // 
+            ToApplyResultFormButton.BackColor = Color.Transparent;
+            ToApplyResultFormButton.BackgroundImage = Properties.Resources.button_wide_normal;
+            ToApplyResultFormButton.BackgroundImageLayout = ImageLayout.Stretch;
+            ToApplyResultFormButton.Enabled = false;
+            ToApplyResultFormButton.FlatStyle = FlatStyle.Flat;
+            ToApplyResultFormButton.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ToApplyResultFormButton.ForeColor = SystemColors.Control;
+            ToApplyResultFormButton.Location = new Point(438, 143);
+            ToApplyResultFormButton.Name = "ToApplyResultFormButton";
+            ToApplyResultFormButton.Size = new Size(100, 32);
+            ToApplyResultFormButton.TabIndex = 0;
+            ToApplyResultFormButton.Text = "Aplicar...";
+            ToApplyResultFormButton.UseVisualStyleBackColor = false;
+            ToApplyResultFormButton.Click += ToApplyResultFormButton_Click;
             // 
             // pictureBox2
             // 
@@ -417,5 +436,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
+        private Button ToApplyResultFormButton;
     }
 }

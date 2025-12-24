@@ -14,10 +14,13 @@ namespace AgeAPP.Forms
         // Local data
         private Log selected_log;
 
-        public ApplyMatchResultForm(FiresharpData data_service)
+        public ApplyMatchResultForm(FiresharpData data_service, Log persistent_log)
         {
             InitializeComponent();
             local_Data_service = data_service;
+
+            selected_log = persistent_log;
+            UpdateUIbased_on_log(selected_log);
         }
 
         private async void ApplyMatchResultForm_Load(object sender, EventArgs e)

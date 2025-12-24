@@ -54,6 +54,7 @@ namespace AgeAPP
             FilterPlayerTextBox = new TextBox();
             AgeAppLabel = new Label();
             HelpButton = new Button();
+            ShowOnlyActivePlayersCheckBox = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -359,6 +360,20 @@ namespace AgeAPP
             HelpButton.UseVisualStyleBackColor = true;
             HelpButton.Click += HelpButton_Click;
             // 
+            // ShowOnlyActivePlayersCheckBox
+            // 
+            ShowOnlyActivePlayersCheckBox.AutoSize = true;
+            ShowOnlyActivePlayersCheckBox.BackColor = Color.Black;
+            ShowOnlyActivePlayersCheckBox.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ShowOnlyActivePlayersCheckBox.ForeColor = SystemColors.Control;
+            ShowOnlyActivePlayersCheckBox.Location = new Point(220, 551);
+            ShowOnlyActivePlayersCheckBox.Name = "ShowOnlyActivePlayersCheckBox";
+            ShowOnlyActivePlayersCheckBox.Size = new Size(206, 19);
+            ShowOnlyActivePlayersCheckBox.TabIndex = 7;
+            ShowOnlyActivePlayersCheckBox.Text = "Mostrar apenas jogadores ativos";
+            ShowOnlyActivePlayersCheckBox.UseVisualStyleBackColor = false;
+            ShowOnlyActivePlayersCheckBox.CheckedChanged += ShowOnlyActivePlayersCheckBox_CheckedChanged;
+            // 
             // FMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -366,6 +381,7 @@ namespace AgeAPP
             BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1149, 577);
+            Controls.Add(ShowOnlyActivePlayersCheckBox);
             Controls.Add(FilterPlayerTextBox);
             Controls.Add(panel2);
             Controls.Add(HelpButton);
@@ -416,5 +432,6 @@ namespace AgeAPP
         private Button HelpButton;
         private Button SignOutButton;
         private Button ToggleAppThemeButton;
+        private CheckBox ShowOnlyActivePlayersCheckBox;
     }
 }

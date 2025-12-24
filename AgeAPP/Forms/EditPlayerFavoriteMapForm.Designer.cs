@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditPlayerFavoriteMapForm));
             dataGridViewMaps = new DataGridView();
@@ -35,12 +36,13 @@
             FavoriteMapListBox = new ListBox();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             ConfirmButton = new Button();
             panel1 = new Panel();
+            ToolTips = new ToolTip(components);
+            HelpButton = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -110,16 +112,6 @@
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.BackgroundImage = Properties.Resources.Arrow2_icon;
-            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Location = new Point(381, 129);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(78, 73);
-            pictureBox2.TabIndex = 8;
-            pictureBox2.TabStop = false;
-            // 
             // ConfirmButton
             // 
             ConfirmButton.Anchor = AnchorStyles.Top;
@@ -142,10 +134,41 @@
             panel1.BackColor = Color.Transparent;
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(ConfirmButton);
+            panel1.Controls.Add(label2);
             panel1.Location = new Point(381, 208);
             panel1.Name = "panel1";
             panel1.Size = new Size(357, 92);
             panel1.TabIndex = 10;
+            // 
+            // ToolTips
+            // 
+            ToolTips.AutoPopDelay = 5000;
+            ToolTips.InitialDelay = 300;
+            ToolTips.ReshowDelay = 100;
+            // 
+            // HelpButton
+            // 
+            HelpButton.BackgroundImage = Properties.Resources.Help_icon;
+            HelpButton.BackgroundImageLayout = ImageLayout.Stretch;
+            HelpButton.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            HelpButton.Location = new Point(710, 5);
+            HelpButton.Name = "HelpButton";
+            HelpButton.Size = new Size(28, 28);
+            HelpButton.TabIndex = 11;
+            HelpButton.UseVisualStyleBackColor = true;
+            HelpButton.Click += HelpButton_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.Control;
+            label2.Location = new Point(-2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(335, 18);
+            label2.TabIndex = 5;
+            label2.Text = "Selecione multiplos mapas segurando o CTRL.";
             // 
             // EditPlayerFavoriteMapForm
             // 
@@ -154,7 +177,7 @@
             BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(747, 309);
-            Controls.Add(pictureBox2);
+            Controls.Add(HelpButton);
             Controls.Add(pictureBox1);
             Controls.Add(FavoriteMapListBox);
             Controls.Add(dataGridViewMaps);
@@ -170,8 +193,8 @@
             Load += EditPlayerFavoriteMapForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -183,8 +206,10 @@
         private ListBox FavoriteMapListBox;
         private Label label1;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private Button ConfirmButton;
         private Panel panel1;
+        private ToolTip ToolTips;
+        private Button HelpButton;
+        private Label label2;
     }
 }

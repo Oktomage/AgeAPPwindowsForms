@@ -12,6 +12,7 @@ namespace AgeAPP.Forms
         // Local data
         private List<Player> room_players = new List<Player>();
         private List<Player> allPlayers = new List<Player>();
+        private Log current_log = new Log();
 
         public SplitForm(FiresharpData Data_service)
         {
@@ -37,6 +38,10 @@ namespace AgeAPP.Forms
             ToolTips.SetToolTip(RemovePlayerFromTheRoomButton, "Remove o jogador selecionado da sala.");
             ToolTips.SetToolTip(ListBoxRoom, "Duplo clique para remover o jogador da sala.");
             ToolTips.SetToolTip(dataGridViewPlayers, "Duplo clique em um jogador para adicioná-lo à sala.");
+            ToolTips.SetToolTip(CopyTeamATextButton, "Copia o texto do time A.");
+            ToolTips.SetToolTip(CopyTeamBTextButton, "Copia o texto do time B.");
+            ToolTips.SetToolTip(CopyMapTextButton, "Copia o texto do mapa favorito.");
+            ToolTips.SetToolTip(ToApplyResultFormButton, "Vai para tela de aplicar resultados.");
         }
 
         private async Task UpdateLocalData()
@@ -68,7 +73,7 @@ namespace AgeAPP.Forms
             }
             else
                 MessageBox.Show("Este jogador já está na sala.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        
+
             // Atualiza tamanho da sala
             RoomSizeLabel.Text = $"Sala: {room_players.Count}/8";
         }
@@ -126,12 +131,15 @@ namespace AgeAPP.Forms
             TextBoxTeam1.Text = BuildTeamLine("TIME A", teamA);
             TextBoxTeam2.Text = BuildTeamLine("TIME B", teamB);
 
+            ToApplyResultFormButton.Enabled = true;
+
             // Salvar log
-            Request_save_splitLog(teamA, teamB, selectedMap);
+            current_log = Request_save_splitLog(teamA, teamB, selectedMap);
+
             System.Media.SystemSounds.Exclamation.Play();
         }
 
-        private void Request_save_splitLog(List<Player> teamA, List<Player> teamB, Map playedMap)
+        private Log Request_save_splitLog(List<Player> teamA, List<Player> teamB, Map playedMap)
         {
             Log log = new Log
             {
@@ -146,6 +154,8 @@ namespace AgeAPP.Forms
 
             // Salvar
             Main_functions_service.Save_log_to_file(log);
+
+            return log;
         }
 
         private void dataGridViewPlayers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -266,6 +276,14 @@ namespace AgeAPP.Forms
 
             Clipboard.SetText(TextBoxMap.Text);
             System.Media.SystemSounds.Exclamation.Play();
+        }
+
+        private void ToApplyResultFormButton_Click(object sender, EventArgs e)
+        {
+            ApplyMatchResultForm match_result_form = new ApplyMatchResultForm(local_Data_service, current_log);
+
+            match_result_form.ShowDialog(this);
+            this.Close();
         }
 
         #endregion
