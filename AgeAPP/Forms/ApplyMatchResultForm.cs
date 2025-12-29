@@ -19,15 +19,21 @@ namespace AgeAPP.Forms
             InitializeComponent();
             local_Data_service = data_service;
 
-            if(persistent_log != null)
+            if (persistent_log != null)
             {
                 selected_log = persistent_log;
                 UpdateUIbased_on_log(selected_log);
             }
+
+            GridStyleController.ApplyTheme(dataGridViewMaps);
+
+            UpdateDataGridViewMaps();
         }
 
-        private async void ApplyMatchResultForm_Load(object sender, EventArgs e)
+        private void ApplyMatchResultForm_Load(object sender, EventArgs e)
         {
+            Write_toolTips();
+
             // Configura ComboBox
             TeamVictoriousBox.SelectedIndex = 0;
 
@@ -66,6 +72,22 @@ namespace AgeAPP.Forms
             });
 
             GridStyleController.ApplyTheme(dataGridViewMatchLog);
+        }
+
+        private void Write_toolTips()
+        {
+            ToolTips.SetToolTip(HelpButton, "Mostra um pequeno tutorial.");
+            ToolTips.SetToolTip(FindLogsButton, "Abre o seletor de arquivos, dentro da pasta de registros de logs.");
+            ToolTips.SetToolTip(ChangeMapButton, "Muda o mapa do log, para o mapa selecionado na lista.");
+            ToolTips.SetToolTip(ApplyResultButton, "Aplica o resultado do log no banco.");
+        }
+
+        private async void UpdateDataGridViewMaps()
+        {
+            dataGridViewMaps.DataSource = null;
+
+            var maps = await local_Data_service.GetAllMaps();
+            dataGridViewMaps.DataSource = maps;
         }
 
         public class MatchRowView

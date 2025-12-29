@@ -133,6 +133,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Change_map_icon {
+            get {
+                object obj = ResourceManager.GetObject("Change_map_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Civ_details_bg {
             get {
                 object obj = ResourceManager.GetObject("Civ-details-bg", resourceCulture);
