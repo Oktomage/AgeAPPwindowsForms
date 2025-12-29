@@ -231,8 +231,9 @@
             ChangeMapButton.Name = "ChangeMapButton";
             ChangeMapButton.Size = new Size(187, 47);
             ChangeMapButton.TabIndex = 6;
-            ChangeMapButton.Text = "Trocar";
+            ChangeMapButton.Text = "Trocar mapa";
             ChangeMapButton.UseVisualStyleBackColor = true;
+            ChangeMapButton.Click += ChangeMapButton_Click;
             // 
             // pictureBox3
             // 

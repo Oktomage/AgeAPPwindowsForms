@@ -1,7 +1,7 @@
 ﻿using AgeAPP.Classes;
 using System.Text.Json;
-using static AgeAPP.Classes.MainFunctions;
 using static AgeAPP.Classes.Main_classes;
+using static AgeAPP.Classes.MainFunctions;
 
 namespace AgeAPP.Forms
 {
@@ -236,6 +236,7 @@ namespace AgeAPP.Forms
             foreach (var player in match_result.TeamB)
                 await local_Data_service.Overwrite_player(player);
 
+            // Aplicar mudanças no mapa
             Map played_map = await local_Data_service.Get_map(match_result.PlayedMap_name);
             played_map.Matches += 1;
 
@@ -251,11 +252,35 @@ namespace AgeAPP.Forms
                 Match_result = match_result
             });
 
-
             // Fechar painel
             this.Close();
         }
 
         #endregion
+
+        private void ChangeMapButton_Click(object sender, EventArgs e)
+        {
+            if(selected_log == null)
+            {
+                MessageBox.Show("Selecione um log primeiro.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (dataGridViewMaps.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um mapa primeiro.");
+                return;
+            }
+
+            var selectedMap = dataGridViewMaps.SelectedRows[0].DataBoundItem as Map;
+
+            if (selectedMap == null)
+                return;
+
+            selected_log.Played_map = selectedMap;
+            PlayedMapLabel.Text = selected_log.Played_map != null ? $"Mapa: {selected_log.Played_map.Name}" : "Desconhecido";
+
+            System.Media.SystemSounds.Exclamation.Play();
+        }
     }
 }
