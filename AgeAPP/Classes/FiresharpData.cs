@@ -9,9 +9,6 @@ namespace AgeAPP.Classes
 {
     public class FiresharpData
     {
-        // Serviços
-        private Main_classes local_Main_classes = new Main_classes();
-
         // Conexão Firesharp
         public static string DataBasePath = "https://ageappv2-default-rtdb.firebaseio.com/";
 
@@ -80,20 +77,14 @@ namespace AgeAPP.Classes
                 MessageBox.Show("Connection to database successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
         }
 
-        public async Task<bool> Check_for_updates()
+        public async Task<AgeApp_settings.Settings> Get_appSettings ()
         {
-            FirebaseResponse response = await client.GetAsync($"/version");
+            FirebaseResponse response = await client.GetAsync("settings");
 
             if (response.Body == "null")
-                return false;
+                return null;
 
-            string onlineVersion = response.ResultAs<string>().Trim();
-            string localVersion = local_Main_classes.App_Version;
-
-            Version vOnline = new Version(onlineVersion);
-            Version vLocal = new Version(localVersion);
-
-            return vOnline > vLocal;
+            return response.ResultAs<AgeApp_settings.Settings>();
         }
 
         public void Download_dataBase_Backup()

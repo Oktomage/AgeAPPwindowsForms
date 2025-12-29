@@ -19,8 +19,11 @@ namespace AgeAPP.Forms
             InitializeComponent();
             local_Data_service = data_service;
 
-            selected_log = persistent_log;
-            UpdateUIbased_on_log(selected_log);
+            if(persistent_log != null)
+            {
+                selected_log = persistent_log;
+                UpdateUIbased_on_log(selected_log);
+            }
         }
 
         private async void ApplyMatchResultForm_Load(object sender, EventArgs e)

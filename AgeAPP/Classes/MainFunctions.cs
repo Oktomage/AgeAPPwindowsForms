@@ -1,4 +1,5 @@
-﻿using static AgeAPP.Classes.FiresharpData;
+﻿using FireSharp.Response;
+using static AgeAPP.Classes.FiresharpData;
 using static AgeAPP.Classes.Main_classes;
 
 namespace AgeAPP.Classes
@@ -18,6 +19,17 @@ namespace AgeAPP.Classes
             Directory.CreateDirectory(DataFolder_path);
             Directory.CreateDirectory(LogsFolder_path);
             Directory.CreateDirectory(BackupsFolder_path);
+        }
+
+        public bool Check_for_updates()
+        {
+            string onlineVersion = FMain.AgeApp_settings_service.Lastest_appVersion.Trim();
+            string localVersion = Local_app_Version;
+
+            Version vOnline = new Version(onlineVersion);
+            Version vLocal = new Version(localVersion);
+
+            return vOnline > vLocal;
         }
 
         class SessionData
@@ -251,21 +263,21 @@ namespace AgeAPP.Classes
 
         public int Calculate_expected_rating_changes(int teamRatingA, int teamRatingB)
         {
-            int BASE_DELTA = 20;
+            int K_FACTOR = FMain.AgeApp_settings_service.Kfactor;
             int diff = teamRatingA - teamRatingB;
 
             // vantagem esperada
             float expectedA = 1f / (1f + (float)Math.Pow(10, -diff / 400f));
 
             // valor esperado de mudança de rating
-            int expectedDeltaA = (int)Math.Round(BASE_DELTA * (1f - expectedA));
+            int expectedDeltaA = (int)Math.Round(K_FACTOR * (1f - expectedA));
 
             return expectedDeltaA;
         }
 
         private int Calculate_rating_changes(int teamRatingA, int teamRatingB, bool teamAWon)
         {
-            int BASE_DELTA = 20;
+            int K_FACTOR = FMain.AgeApp_settings_service.Kfactor;
 
             int diff = teamRatingA - teamRatingB;
 
@@ -274,7 +286,7 @@ namespace AgeAPP.Classes
 
             float scoreA = teamAWon ? 1f : 0f;
 
-            int deltaA = (int)Math.Round(BASE_DELTA * (scoreA - expectedA));
+            int deltaA = (int)Math.Round(K_FACTOR * (scoreA - expectedA));
 
             return deltaA;
         }

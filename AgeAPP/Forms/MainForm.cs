@@ -1,5 +1,6 @@
 using AgeAPP.Classes;
 using AgeAPP.Forms;
+using System.Globalization;
 using static AgeAPP.Classes.FiresharpData;
 using static AgeAPP.Classes.Main_classes;
 
@@ -8,7 +9,8 @@ namespace AgeAPP
     public partial class FMain : Form
     {
         // Serviços
-        public FiresharpData Data_service = new FiresharpData();
+        public static FiresharpData Data_service = new FiresharpData();
+        public static AgeApp_settings AgeApp_settings_service = new AgeApp_settings();
         private MainFunctions local_Main_functions_service = new MainFunctions();
         private Main_classes local_Main_classes = new Main_classes();
 
@@ -25,7 +27,7 @@ namespace AgeAPP
             // Cria pastas necessárias
             local_Main_functions_service.Create_Required_folders();
 
-            AgeAppLabel.Text = "Interno app v" + local_Main_classes.App_Version;
+            AgeAppLabel.Text = "Interno app v" + Local_app_Version;
 
             // Tentar persistencia de login
             Data_service.Local_Admin_Logged = local_Main_functions_service.Load_session();
@@ -45,6 +47,9 @@ namespace AgeAPP
             else
                 Data_service.Connect_to_firesharp("user");
 
+            // Pega settings do app direto do banco
+            AgeApp_settings_service.Get_settings();
+
             // Baixa backup
             Data_service.Download_dataBase_Backup();
 
@@ -58,7 +63,7 @@ namespace AgeAPP
             Write_toolTips();
 
             // Verifica atualizações
-            bool has_updates = await Data_service.Check_for_updates();
+            bool has_updates = local_Main_functions_service.Check_for_updates();
 
             if (has_updates)
                 MessageBox.Show("Existe uma atualização obrigatória do aplicativo pendente !", "Atualização", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -89,22 +94,28 @@ namespace AgeAPP
 
         private void UpdateDataGridViewPlayers()
         {
+            DateTime limitDate = DateTime.Now.AddDays(-30);
+
             dataGridViewPlayers.DataSource = null;
 
             switch(Show_only_active_players)
             {
                 case true:
-                    List<Player> active_players = new List<Player>();
+                    List<Player> activePlayers = allPlayers
+                        .Where(p =>
+                            !string.IsNullOrWhiteSpace(p.Last_time_played) &&
+                            DateTime.TryParseExact(
+                                p.Last_time_played,
+                                "dd/MM/yyyy HH:mm",
+                                CultureInfo.InvariantCulture,
+                                DateTimeStyles.None,
+                                out DateTime lastPlayed
+                            ) &&
+                            lastPlayed.Date >= limitDate
+                        )
+                        .ToList();
 
-                    foreach(var player in allPlayers)
-                    {
-                        if(player.Last_time_played != null)
-                        {
-                            active_players.Add(player);
-                        }
-                    }
-
-                    dataGridViewPlayers.DataSource = active_players;
+                    dataGridViewPlayers.DataSource = activePlayers;
                     break;
 
                 case false:
@@ -138,10 +149,10 @@ namespace AgeAPP
             loginForm.ShowDialog();
         }
 
-        private async void AdminPanelButton_Click(object sender, EventArgs e)
+        private void AdminPanelButton_Click(object sender, EventArgs e)
         {
             // Verifica atualizações
-            bool has_updates = await Data_service.Check_for_updates();
+            bool has_updates = local_Main_functions_service.Check_for_updates();
 
             if (has_updates)
             {
