@@ -35,11 +35,12 @@
             // FlowLayouPanel
             // 
             FlowLayouPanel.AutoScroll = true;
+            FlowLayouPanel.BackColor = Color.Black;
             FlowLayouPanel.Dock = DockStyle.Fill;
             FlowLayouPanel.FlowDirection = FlowDirection.TopDown;
             FlowLayouPanel.Location = new Point(0, 0);
             FlowLayouPanel.Name = "FlowLayouPanel";
-            FlowLayouPanel.Size = new Size(913, 846);
+            FlowLayouPanel.Size = new Size(614, 846);
             FlowLayouPanel.TabIndex = 0;
             FlowLayouPanel.WrapContents = false;
             // 
@@ -47,7 +48,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(913, 846);
+            ClientSize = new Size(614, 846);
             Controls.Add(FlowLayouPanel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");

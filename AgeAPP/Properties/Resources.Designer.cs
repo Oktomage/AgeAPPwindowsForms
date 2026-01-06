@@ -123,6 +123,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap battle_event_icon {
+            get {
+                object obj = ResourceManager.GetObject("battle_event_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_wide_normal {
             get {
                 object obj = ResourceManager.GetObject("button_wide_normal", resourceCulture);
@@ -143,6 +153,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Change_rating {
+            get {
+                object obj = ResourceManager.GetObject("Change_rating", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Civ_details_bg {
             get {
                 object obj = ResourceManager.GetObject("Civ-details-bg", resourceCulture);
@@ -156,6 +176,16 @@ namespace AgeAPP.Properties {
         internal static System.Drawing.Bitmap Dark_mode_icon {
             get {
                 object obj = ResourceManager.GetObject("Dark_mode_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Defeat_icon {
+            get {
+                object obj = ResourceManager.GetObject("Defeat_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -426,6 +456,16 @@ namespace AgeAPP.Properties {
         internal static System.Drawing.Bitmap UnkownMap {
             get {
                 object obj = ResourceManager.GetObject("UnkownMap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Winner_icon {
+            get {
+                object obj = ResourceManager.GetObject("Winner_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
