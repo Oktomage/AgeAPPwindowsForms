@@ -109,5 +109,41 @@ namespace AgeAPP.Classes
                     e.CellStyle.ForeColor = Color.Green;
             };
         }
+
+        public static void FixMapsHeaderNames(DataGridView grid)
+        {
+            RenameColumn(grid, "Name", "Nome");
+            RenameColumn(grid, "Matches", "Partidas");
+            RenameColumn(grid, "Type", "Tipo");
+        }
+
+        private static readonly Dictionary<int, string> MapTypeNames = new()
+        {
+            { 0, "Padrão" },
+            { 1, "QS" },
+            { 2, "Nômade" },
+            { 3, "Arena" },
+            { 4, "Híbrido" },
+            { 5, "Água" }
+        };
+
+        public static void ApplyMapTypeFormatting(DataGridView grid, string columnName = "Type")
+        {
+            grid.CellFormatting += (s, e) =>
+            {
+                if (grid.Columns[e.ColumnIndex].Name != columnName)
+                    return;
+
+                if (e.Value == null)
+                    return;
+
+                if (int.TryParse(e.Value.ToString(), out int typeId) &&
+                    MapTypeNames.TryGetValue(typeId, out string typeName))
+                {
+                    e.Value = typeName;
+                    e.FormattingApplied = true;
+                }
+            };
+        }
     }
 }

@@ -133,6 +133,9 @@ namespace AgeAPP
 
             var maps = await Data_service.GetAllMaps();
             dataGridViewMaps.DataSource = maps;
+
+            GridStyleController.FixMapsHeaderNames(dataGridViewMaps);
+            GridStyleController.ApplyMapTypeFormatting(dataGridViewMaps);
         }
 
         #region BUTTONS

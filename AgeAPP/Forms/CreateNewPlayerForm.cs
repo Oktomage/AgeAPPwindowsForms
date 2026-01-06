@@ -23,6 +23,8 @@ namespace AgeAPP.Forms
             dataGridViewMaps.DataSource = maps;
 
             GridStyleController.ApplyTheme(dataGridViewMaps);
+            GridStyleController.FixMapsHeaderNames(dataGridViewMaps);
+            GridStyleController.ApplyMapTypeFormatting(dataGridViewMaps);
         }
 
         private async void CreateButton_Click(object sender, EventArgs e)

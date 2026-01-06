@@ -26,6 +26,8 @@ namespace AgeAPP.Forms
             }
 
             GridStyleController.ApplyTheme(dataGridViewMaps);
+            GridStyleController.FixMapsHeaderNames(dataGridViewMaps);
+            GridStyleController.ApplyMapTypeFormatting(dataGridViewMaps);
 
             UpdateDataGridViewMaps();
         }

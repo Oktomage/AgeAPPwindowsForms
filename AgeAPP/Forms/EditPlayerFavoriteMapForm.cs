@@ -44,6 +44,8 @@ namespace AgeAPP.Forms
             dataGridViewMaps.DataSource = maps;
 
             GridStyleController.ApplyTheme(dataGridViewMaps);
+            GridStyleController.FixMapsHeaderNames(dataGridViewMaps);
+            GridStyleController.ApplyMapTypeFormatting(dataGridViewMaps);
 
             // Se tiver maps favoritos, mostra na lista
             FavoriteMapListBox.Items.Clear();
