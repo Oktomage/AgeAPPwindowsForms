@@ -39,6 +39,8 @@ namespace AgeAPP.Classes
             public string Password { get; set; }
         }
 
+        // CONNECTION
+
         public Admin Try_login(string username, string password)
         {
             var admin = Admins.FirstOrDefault(a =>
@@ -203,6 +205,20 @@ namespace AgeAPP.Classes
         public async Task Post_log_on_dataBase(Log log)
         {
             await client.PushAsync($"logs/{log.Author_name}/{log.Role}", log);
+        }
+
+        public async Task<List<Log>> GetMatchHistory(string admin)
+        {
+            var response = await client.GetAsync($"logs/{admin}/Match_results");
+
+            if (response.Body == "null")
+                return new List<Log>();
+
+            var data = JsonConvert.DeserializeObject<Dictionary<string, Log>>(response.Body);
+
+            return data.Values
+                       .OrderByDescending(x => x.Match_result.MatchDate)
+                       .ToList();
         }
     }
 }

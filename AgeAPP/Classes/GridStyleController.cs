@@ -28,6 +28,7 @@ namespace AgeAPP.Classes
         private static void ApplyDark(DataGridView grid)
         {
             grid.BackgroundColor = Color.FromArgb(18, 18, 18);
+
             grid.DefaultCellStyle.BackColor = Color.FromArgb(30, 30, 30);
             grid.DefaultCellStyle.ForeColor = Color.White;
             grid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(45, 45, 45);
@@ -36,6 +37,11 @@ namespace AgeAPP.Classes
             grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(25, 25, 25);
             grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
+            grid.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(25, 25, 25);
+            grid.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+            grid.RowHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(45, 45, 45);
+            grid.RowHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+
             grid.GridColor = Color.FromArgb(50, 50, 50);
             grid.EnableHeadersVisualStyles = false;
         }
@@ -43,15 +49,24 @@ namespace AgeAPP.Classes
         private static void ApplyLight(DataGridView grid)
         {
             grid.BackgroundColor = Color.White;
+
             grid.DefaultCellStyle.BackColor = Color.White;
             grid.DefaultCellStyle.ForeColor = Color.Black;
             grid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 220, 220);
             grid.DefaultCellStyle.SelectionForeColor = Color.Black;
 
-            grid.ColumnHeadersDefaultCellStyle.BackColor = Color.Gray;
-            grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            // Column Header
+            grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
+            grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
-            grid.GridColor = Color.LightGray;
+            // Row Header (combinando com o header)
+            grid.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
+            grid.RowHeadersDefaultCellStyle.ForeColor = Color.Black;
+            grid.RowHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(210, 210, 210);
+            grid.RowHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
+
+            grid.GridColor = Color.FromArgb(225, 225, 225);
+
             grid.EnableHeadersVisualStyles = false;
         }
 

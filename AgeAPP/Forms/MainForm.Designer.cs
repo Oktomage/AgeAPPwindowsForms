@@ -178,7 +178,6 @@ namespace AgeAPP
             MatchesButton.BackColor = Color.Transparent;
             MatchesButton.BackgroundImage = Properties.Resources.button_wide_normal;
             MatchesButton.BackgroundImageLayout = ImageLayout.Stretch;
-            MatchesButton.Enabled = false;
             MatchesButton.FlatStyle = FlatStyle.Flat;
             MatchesButton.Font = new Font("Arial", 14.25F);
             MatchesButton.ForeColor = SystemColors.Control;
@@ -188,7 +187,7 @@ namespace AgeAPP
             MatchesButton.TabIndex = 2;
             MatchesButton.Text = "Histórico de partidas";
             MatchesButton.UseVisualStyleBackColor = false;
-            MatchesButton.Click += AdminPanelButton_Click;
+            MatchesButton.Click += MatchesButton_Click;
             // 
             // AdminPanelButton
             // 

@@ -98,7 +98,7 @@ namespace AgeAPP
 
             dataGridViewPlayers.DataSource = null;
 
-            switch(Show_only_active_players)
+            switch (Show_only_active_players)
             {
                 case true:
                     List<Player> activePlayers = allPlayers
@@ -162,6 +162,12 @@ namespace AgeAPP
 
             AdminPanelForm adminForm = new AdminPanelForm(Data_service);
             adminForm.ShowDialog();
+        }
+
+        private void MatchesButton_Click(object sender, EventArgs e)
+        {
+            MatchesHistoryForm historyForm = new MatchesHistoryForm(Data_service);
+            historyForm.ShowDialog();
         }
 
         private async void ForceGridRefreshButton_Click(object sender, EventArgs e)

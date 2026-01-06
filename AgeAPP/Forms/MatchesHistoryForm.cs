@@ -1,23 +1,33 @@
-﻿using static AgeAPP.Classes.FiresharpData;
+﻿using AgeAPP.Cards;
+using AgeAPP.Classes;
+using System.Windows.Forms;
+using static AgeAPP.Classes.FiresharpData;
 using static AgeAPP.Classes.Main_classes;
 
 namespace AgeAPP.Forms
 {
     public partial class MatchesHistoryForm : Form
     {
-        public MatchesHistoryForm()
+        // Serviços
+        private FiresharpData local_Data_service;
+
+        public MatchesHistoryForm(FiresharpData Data_service)
         {
             InitializeComponent();
 
+            local_Data_service = Data_service;
+
             // Configuração do layout
-            FlowLayouPanel.FlowDirection = FlowDirection.TopDown;
-            FlowLayouPanel.WrapContents = false;
+            FlowLayouPanel.Dock = DockStyle.Fill;
             FlowLayouPanel.AutoScroll = true;
+            FlowLayouPanel.WrapContents = false;
+            FlowLayouPanel.FlowDirection = FlowDirection.TopDown;
+            FlowLayouPanel.Padding = new Padding(10);
         }
 
-        private void MatchesHistoryForm_Load(object sender, EventArgs e)
+        private async void MatchesHistoryForm_Load(object sender, EventArgs e)
         {
-            LoadMatchHistory();
+            await Load_history();
         }
 
         public class MatchHistory
@@ -38,39 +48,21 @@ namespace AgeAPP.Forms
             public List<Player> TeamB { get; set; } = new();
         }
 
-        private List<MatchHistory> GetMatchHistory()
+        private async Task Load_history()
         {
-            return new List<MatchHistory>
-    {
-        new MatchHistory
-        {
-            MapName = "Arabia",
-            MatchDate = DateTime.Now,
-            DeltaRating = +32,
-            MapImagePath = @"Maps\arabia.png"
-        },
-        new MatchHistory
-        {
-            MapName = "Arena",
-            MatchDate = DateTime.Now.AddDays(-1),
-            DeltaRating = -18,
-            MapImagePath = @"Maps\arena.png"
-        }
-    };
-        }
+            var logs = await local_Data_service.GetMatchHistory("oldtime");
 
-        private void LoadMatchHistory()
-        {
+            FlowLayouPanel.SuspendLayout();
             FlowLayouPanel.Controls.Clear();
 
-            List<MatchHistory> history = GetMatchHistory();
-
-            /*
-            foreach (var match in history)
+            foreach (var log in logs)
             {
-                var card = new MatchHistoryCard(match);
-                flowLayoutPanelHistory.Controls.Add(card);
-            }*/
+                var card = new MatchHistoryCard();
+                card.Bind(log);
+                FlowLayouPanel.Controls.Add(card);
+            }
+
+            FlowLayouPanel.ResumeLayout();
         }
     }
 }
