@@ -224,7 +224,10 @@ namespace AgeAPP.Forms
             if (result != DialogResult.Yes)
                 return;
 
+            // Desabilita o botão (EVITAR DUPLICAÇÃO)
             ApplyResultButton.Enabled = false;
+
+            var progressTask = FakeProgress();
 
             // Aplicar resultado da partida
             MatchResult match_result = local_Main_functions_service.Get_match_result(selected_log.TeamA_players, selected_log.TeamB_players, teamAWon, selected_log.Played_map?.Name ?? "Desconhecido");
@@ -251,6 +254,12 @@ namespace AgeAPP.Forms
                 Content = $"Lançou um resultado de partida",
                 Match_result = match_result
             });
+
+            // Garante que a barra terminou
+            await progressTask;
+
+            ProgressBar.Value = 100;
+            await Task.Delay(200);
 
             // Fechar painel
             this.Close();
@@ -281,6 +290,21 @@ namespace AgeAPP.Forms
             PlayedMapLabel.Text = selected_log.Played_map != null ? $"Mapa: {selected_log.Played_map.Name}" : "Desconhecido";
 
             System.Media.SystemSounds.Exclamation.Play();
+        }
+
+        private async Task FakeProgress(int durationMs = 1200)
+        {
+            ProgressBar.Visible = true;
+            ProgressBar.Value = 0;
+
+            int steps = 20;
+            int delay = durationMs / steps;
+
+            for (int i = 1; i <= steps; i++)
+            {
+                ProgressBar.Value = i * (100 / steps);
+                await Task.Delay(delay);
+            }
         }
     }
 }

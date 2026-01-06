@@ -220,5 +220,22 @@ namespace AgeAPP.Classes
                        .OrderByDescending(x => x.Match_result.MatchDate)
                        .ToList();
         }
+
+        public async Task<List<Log>> GetGlobalMatchHistory(List<string> admins)
+        {
+            var allLogs = new List<Log>();
+
+            foreach (var admin in admins)
+            {
+                var logs = await GetMatchHistory(admin);
+                allLogs.AddRange(logs);
+            }
+
+            return allLogs
+                .Where(l => l.Match_result != null)
+                .OrderByDescending(l => l.Match_result.MatchDate)
+                .Take(100) // LIMITE AQUI
+                .ToList();
+        }
     }
 }

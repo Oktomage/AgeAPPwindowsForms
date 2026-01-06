@@ -23,14 +23,14 @@ namespace AgeAPP.Cards
             {
                 case true:
                     // Time A venceu
-                    FillListView(ListViewWinnerTeam, CurrentResult.TeamA);
-                    FillListView(ListViewLoserTeam, CurrentResult.TeamB);
+                    FillListView(ListViewWinnerTeam, CurrentResult.TeamA, true);
+                    FillListView(ListViewLoserTeam, CurrentResult.TeamB, false);
                     break;
 
                 case false:
                     // Time B venceu
-                    FillListView(ListViewWinnerTeam, CurrentResult.TeamB);
-                    FillListView(ListViewLoserTeam, CurrentResult.TeamA);
+                    FillListView(ListViewWinnerTeam, CurrentResult.TeamB, true);
+                    FillListView(ListViewLoserTeam, CurrentResult.TeamA, false);
                     break;
             }
 
@@ -54,14 +54,16 @@ namespace AgeAPP.Cards
             lv.Columns.Add("", lv.Width - 4); // coluna única
         }
 
-        private void FillListView(ListView listView, IEnumerable<Player> players)
+        private void FillListView(ListView listView, IEnumerable<Player> players, bool winnerTeam = false)
         {
             listView.Items.Clear();
             ConfigureListView(listView);
 
+            string ratingChangeSyntax = winnerTeam ? "+" : "-";
+
             foreach (var player in players)
             {
-                var item = new ListViewItem($"{player.Name} [{player.Rating}] ({CurrentResult.DeltaRating})");
+                var item = new ListViewItem($"{player.Name} ({player.Rating} {ratingChangeSyntax}{MathF.Abs(CurrentResult.DeltaRating)})");
                 item.SubItems.Add(player.Rating.ToString());
 
                 listView.Items.Add(item);

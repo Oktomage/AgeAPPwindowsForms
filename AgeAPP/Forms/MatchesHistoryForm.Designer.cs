@@ -55,7 +55,7 @@
             MaximizeBox = false;
             Name = "MatchesHistoryForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Registros";
+            Text = "Histórico";
             Load += MatchesHistoryForm_Load;
             ResumeLayout(false);
         }

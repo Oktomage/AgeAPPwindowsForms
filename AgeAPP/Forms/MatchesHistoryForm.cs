@@ -50,7 +50,17 @@ namespace AgeAPP.Forms
 
         private async Task Load_history()
         {
-            var logs = await local_Data_service.GetMatchHistory("oldtime");
+            var admins = new List<string>
+            {
+                "oldtime",
+                "pedreiro",
+                "biel",
+                "gomes",
+                "kakashi",
+                "snow"
+            };
+
+            var logs = await local_Data_service.GetGlobalMatchHistory(admins);
 
             FlowLayouPanel.SuspendLayout();
             FlowLayouPanel.Controls.Clear();
