@@ -78,6 +78,7 @@ namespace AgeAPP
             ToolTips.SetToolTip(AdminPanelButton, "Abre o painel de administração (requer login).");
             ToolTips.SetToolTip(LoginButton, "Abre a janela de login de administradores.");
             ToolTips.SetToolTip(AdminConnectedLabel, "Mostra o admin conectado atualmente.");
+            ToolTips.SetToolTip(SettingsButton, "Abre o menu de configurações do app.");
             ToolTips.SetToolTip(FilterPlayerTextBox, "Filtra a lista de jogadores pelo nome.");
             ToolTips.SetToolTip(HelpButton, "Mostra um breve tutorial do aplicativo.");
             ToolTips.SetToolTip(SignOutButton, "Desconecta o admin atualmente conectado.");

@@ -55,6 +55,7 @@ namespace AgeAPP
             AgeAppLabel = new Label();
             HelpButton = new Button();
             ShowOnlyActivePlayersCheckBox = new CheckBox();
+            SettingsButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -116,6 +117,7 @@ namespace AgeAPP
             panel1.Controls.Add(SignOutButton);
             panel1.Controls.Add(AdminConnectedLabel);
             panel1.Controls.Add(MatchesButton);
+            panel1.Controls.Add(SettingsButton);
             panel1.Controls.Add(AdminPanelButton);
             panel1.Controls.Add(LoginButton);
             panel1.Controls.Add(SplitButton);
@@ -373,6 +375,23 @@ namespace AgeAPP
             ShowOnlyActivePlayersCheckBox.UseVisualStyleBackColor = false;
             ShowOnlyActivePlayersCheckBox.CheckedChanged += ShowOnlyActivePlayersCheckBox_CheckedChanged;
             // 
+            // SettingsButton
+            // 
+            SettingsButton.AutoSize = true;
+            SettingsButton.BackColor = Color.Transparent;
+            SettingsButton.BackgroundImage = Properties.Resources.button_wide_normal;
+            SettingsButton.BackgroundImageLayout = ImageLayout.Stretch;
+            SettingsButton.Enabled = false;
+            SettingsButton.FlatStyle = FlatStyle.Flat;
+            SettingsButton.Font = new Font("Arial", 14.25F);
+            SettingsButton.ForeColor = SystemColors.Control;
+            SettingsButton.Location = new Point(22, 262);
+            SettingsButton.Name = "SettingsButton";
+            SettingsButton.Size = new Size(227, 45);
+            SettingsButton.TabIndex = 3;
+            SettingsButton.Text = "Configurações";
+            SettingsButton.UseVisualStyleBackColor = false;
+            // 
             // FMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -432,5 +451,6 @@ namespace AgeAPP
         private Button SignOutButton;
         private Button ToggleAppThemeButton;
         private CheckBox ShowOnlyActivePlayersCheckBox;
+        private Button SettingsButton;
     }
 }
