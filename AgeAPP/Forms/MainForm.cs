@@ -1,6 +1,8 @@
+using AgeAPP.Cards;
 using AgeAPP.Classes;
 using AgeAPP.Forms;
 using System.Globalization;
+using System.Windows.Forms;
 using static AgeAPP.Classes.FiresharpData;
 using static AgeAPP.Classes.Main_classes;
 
@@ -56,7 +58,6 @@ namespace AgeAPP
             // Atualiza a tabela inicial
             await UpdateLocalData();
 
-            GridStyleController.ApplyTheme(dataGridViewPlayers);
             GridStyleController.ApplyTheme(dataGridViewMaps);
 
             // Escreve tooltips
@@ -89,44 +90,56 @@ namespace AgeAPP
             // Get updated data
             allPlayers = await Data_service.GetAllPlayers();
 
-            UpdateDataGridViewPlayers();
             UpdateDataGridViewMaps();
+            UpdatePlayersFlow();
         }
 
-        private void UpdateDataGridViewPlayers()
+        private List<Player> GetActivePlayers()
         {
             DateTime limitDate = DateTime.Now.AddDays(-30);
 
-            dataGridViewPlayers.DataSource = null;
+            List<Player> activePlayers = allPlayers
+                                    .Where(p =>
+                                        !string.IsNullOrWhiteSpace(p.Last_time_played) &&
+                                        DateTime.TryParseExact(
+                                            p.Last_time_played,
+                                            "dd/MM/yyyy HH:mm",
+                                            CultureInfo.InvariantCulture,
+                                            DateTimeStyles.None,
+                                            out DateTime lastPlayed
+                                        ) &&
+                                        lastPlayed.Date >= limitDate
+                                    )
+                                    .ToList();
 
-            switch (Show_only_active_players)
+            return activePlayers;
+        }
+
+        private void UpdatePlayersFlow()
+        {
+            FlowLayoutPlayers.AutoScroll = true;
+            FlowLayoutPlayers.WrapContents = false;
+            FlowLayoutPlayers.FlowDirection = FlowDirection.TopDown;
+
+            FlowLayoutPlayers.SuspendLayout();
+            FlowLayoutPlayers.Controls.Clear();
+
+            IEnumerable<Player> source = Show_only_active_players ? GetActivePlayers() : allPlayers;
+
+            foreach (var player in source)
             {
-                case true:
-                    List<Player> activePlayers = allPlayers
-                        .Where(p =>
-                            !string.IsNullOrWhiteSpace(p.Last_time_played) &&
-                            DateTime.TryParseExact(
-                                p.Last_time_played,
-                                "dd/MM/yyyy HH:mm",
-                                CultureInfo.InvariantCulture,
-                                DateTimeStyles.None,
-                                out DateTime lastPlayed
-                            ) &&
-                            lastPlayed.Date >= limitDate
-                        )
-                        .ToList();
+                var card = new PlayerCard();
+                card.Bind(player);
 
-                    dataGridViewPlayers.DataSource = activePlayers;
-                    break;
+                // Fix Width
+                card.Width = FlowLayoutPlayers.ClientSize.Width - 25;
 
-                case false:
-                    dataGridViewPlayers.DataSource = allPlayers;
-                    break;
+                FlowLayoutPlayers.Controls.Add(card);
             }
 
-            GridStyleController.FixPlayersHeaderNames(dataGridViewPlayers);
-            GridStyleController.ApplyWinRateColoring(dataGridViewPlayers);
+            FlowLayoutPlayers.ResumeLayout();
         }
+
 
         private async void UpdateDataGridViewMaps()
         {
@@ -184,7 +197,6 @@ namespace AgeAPP
             // Alterna tema das grids
             GridStyleController.ToggleTheme();
 
-            GridStyleController.ApplyTheme(dataGridViewPlayers);
             GridStyleController.ApplyTheme(dataGridViewMaps);
         }
 
@@ -240,13 +252,13 @@ namespace AgeAPP
 
             if (string.IsNullOrEmpty(search))
             {
-                dataGridViewPlayers.DataSource = allPlayers;
+                //dataGridViewPlayers.DataSource = allPlayers;
             }
             else
             {
-                dataGridViewPlayers.DataSource = allPlayers
-                    .Where(p => p.Name.ToLower().Contains(search))
-                    .ToList();
+                //dataGridViewPlayers.DataSource = allPlayers
+                    //.Where(p => p.Name.ToLower().Contains(search))
+                    //.ToList();
             }
         }
 

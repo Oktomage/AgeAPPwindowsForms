@@ -31,9 +31,7 @@ namespace AgeAPP
         {
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
-            dataGridViewPlayers = new DataGridView();
             SplitButton = new Button();
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
@@ -41,6 +39,7 @@ namespace AgeAPP
             SignOutButton = new Button();
             AdminConnectedLabel = new Label();
             MatchesButton = new Button();
+            SettingsButton = new Button();
             AdminPanelButton = new Button();
             LoginButton = new Button();
             ForceGridRefreshButton = new Button();
@@ -55,40 +54,13 @@ namespace AgeAPP
             AgeAppLabel = new Label();
             HelpButton = new Button();
             ShowOnlyActivePlayersCheckBox = new CheckBox();
-            SettingsButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
+            FlowLayoutPlayers = new FlowLayoutPanel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // dataGridViewPlayers
-            // 
-            dataGridViewPlayers.AllowUserToAddRows = false;
-            dataGridViewPlayers.AllowUserToDeleteRows = false;
-            dataGridViewPlayers.AllowUserToResizeColumns = false;
-            dataGridViewPlayers.AllowUserToResizeRows = false;
-            dataGridViewPlayers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewPlayers.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
-            dataGridViewPlayers.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewPlayers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridViewPlayers.DefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewPlayers.Location = new Point(12, 52);
-            dataGridViewPlayers.MultiSelect = false;
-            dataGridViewPlayers.Name = "dataGridViewPlayers";
-            dataGridViewPlayers.ReadOnly = true;
-            dataGridViewPlayers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewPlayers.Size = new Size(420, 492);
-            dataGridViewPlayers.TabIndex = 0;
             // 
             // SplitButton
             // 
@@ -191,6 +163,23 @@ namespace AgeAPP
             MatchesButton.UseVisualStyleBackColor = false;
             MatchesButton.Click += MatchesButton_Click;
             // 
+            // SettingsButton
+            // 
+            SettingsButton.AutoSize = true;
+            SettingsButton.BackColor = Color.Transparent;
+            SettingsButton.BackgroundImage = Properties.Resources.button_wide_normal;
+            SettingsButton.BackgroundImageLayout = ImageLayout.Stretch;
+            SettingsButton.Enabled = false;
+            SettingsButton.FlatStyle = FlatStyle.Flat;
+            SettingsButton.Font = new Font("Arial", 14.25F);
+            SettingsButton.ForeColor = SystemColors.Control;
+            SettingsButton.Location = new Point(22, 262);
+            SettingsButton.Name = "SettingsButton";
+            SettingsButton.Size = new Size(227, 45);
+            SettingsButton.TabIndex = 3;
+            SettingsButton.Text = "Configurações";
+            SettingsButton.UseVisualStyleBackColor = false;
+            // 
             // AdminPanelButton
             // 
             AdminPanelButton.AutoSize = true;
@@ -254,14 +243,14 @@ namespace AgeAPP
             dataGridViewMaps.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
             dataGridViewMaps.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewMaps.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridViewMaps.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridViewMaps.DefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewMaps.Location = new Point(438, 52);
             dataGridViewMaps.MultiSelect = false;
             dataGridViewMaps.Name = "dataGridViewMaps";
@@ -375,22 +364,15 @@ namespace AgeAPP
             ShowOnlyActivePlayersCheckBox.UseVisualStyleBackColor = false;
             ShowOnlyActivePlayersCheckBox.CheckedChanged += ShowOnlyActivePlayersCheckBox_CheckedChanged;
             // 
-            // SettingsButton
+            // FlowLayoutPlayers
             // 
-            SettingsButton.AutoSize = true;
-            SettingsButton.BackColor = Color.Transparent;
-            SettingsButton.BackgroundImage = Properties.Resources.button_wide_normal;
-            SettingsButton.BackgroundImageLayout = ImageLayout.Stretch;
-            SettingsButton.Enabled = false;
-            SettingsButton.FlatStyle = FlatStyle.Flat;
-            SettingsButton.Font = new Font("Arial", 14.25F);
-            SettingsButton.ForeColor = SystemColors.Control;
-            SettingsButton.Location = new Point(22, 262);
-            SettingsButton.Name = "SettingsButton";
-            SettingsButton.Size = new Size(227, 45);
-            SettingsButton.TabIndex = 3;
-            SettingsButton.Text = "Configurações";
-            SettingsButton.UseVisualStyleBackColor = false;
+            FlowLayoutPlayers.AutoScroll = true;
+            FlowLayoutPlayers.BackColor = SystemColors.ControlDark;
+            FlowLayoutPlayers.Location = new Point(12, 52);
+            FlowLayoutPlayers.Margin = new Padding(0, 0, 0, 10);
+            FlowLayoutPlayers.Name = "FlowLayoutPlayers";
+            FlowLayoutPlayers.Size = new Size(420, 492);
+            FlowLayoutPlayers.TabIndex = 8;
             // 
             // FMain
             // 
@@ -399,6 +381,7 @@ namespace AgeAPP
             BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1149, 577);
+            Controls.Add(FlowLayoutPlayers);
             Controls.Add(ShowOnlyActivePlayersCheckBox);
             Controls.Add(FilterPlayerTextBox);
             Controls.Add(panel2);
@@ -406,7 +389,6 @@ namespace AgeAPP
             Controls.Add(AgeAppLabel);
             Controls.Add(panel1);
             Controls.Add(dataGridViewMaps);
-            Controls.Add(dataGridViewPlayers);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -415,7 +397,6 @@ namespace AgeAPP
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AgeAPP - SOBERANO";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -428,8 +409,6 @@ namespace AgeAPP
         }
 
         #endregion
-
-        private DataGridView dataGridViewPlayers;
         private Button SplitButton;
         private Panel panel1;
         private Button LoginButton;
@@ -452,5 +431,6 @@ namespace AgeAPP
         private Button ToggleAppThemeButton;
         private CheckBox ShowOnlyActivePlayersCheckBox;
         private Button SettingsButton;
+        private FlowLayoutPanel FlowLayoutPlayers;
     }
 }

@@ -50,6 +50,7 @@
             // MapNameLabel
             // 
             MapNameLabel.AutoSize = true;
+            MapNameLabel.BackColor = Color.Black;
             MapNameLabel.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             MapNameLabel.ForeColor = Color.White;
             MapNameLabel.Location = new Point(161, 3);
@@ -74,9 +75,10 @@
             // DateLabel
             // 
             DateLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            DateLabel.BackColor = Color.Black;
             DateLabel.Font = new Font("Arial", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             DateLabel.ForeColor = Color.White;
-            DateLabel.Location = new Point(452, 8);
+            DateLabel.Location = new Point(452, 3);
             DateLabel.Name = "DateLabel";
             DateLabel.Size = new Size(118, 24);
             DateLabel.TabIndex = 0;
@@ -187,7 +189,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DimGray;
+            BackColor = Color.FromArgb(64, 64, 64);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox3);

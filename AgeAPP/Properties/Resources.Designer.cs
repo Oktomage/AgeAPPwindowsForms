@@ -103,6 +103,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aoe2_de_uhd_21 {
+            get {
+                object obj = ResourceManager.GetObject("aoe2-de-uhd-21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Arrow_icon {
             get {
                 object obj = ResourceManager.GetObject("Arrow_icon", resourceCulture);
@@ -343,6 +353,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PR1_001 {
+            get {
+                object obj = ResourceManager.GetObject("PR1-001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Refresh_data_icon {
             get {
                 object obj = ResourceManager.GetObject("Refresh_data_icon", resourceCulture);
@@ -456,6 +476,16 @@ namespace AgeAPP.Properties {
         internal static System.Drawing.Bitmap UnkownMap {
             get {
                 object obj = ResourceManager.GetObject("UnkownMap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap what_is_the_most_epic_match_battle_you_had_in_aoe_ii_v0_lpqjbc995aub1 {
+            get {
+                object obj = ResourceManager.GetObject("what-is-the-most-epic-match-battle-you-had-in-aoe-ii-v0-lpqjbc995aub1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
