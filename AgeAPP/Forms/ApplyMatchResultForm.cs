@@ -26,8 +26,6 @@ namespace AgeAPP.Forms
             }
 
             GridStyleController.ApplyTheme(dataGridViewMaps);
-            GridStyleController.FixMapsHeaderNames(dataGridViewMaps);
-            GridStyleController.ApplyMapTypeFormatting(dataGridViewMaps);
 
             UpdateDataGridViewMaps();
         }
@@ -90,6 +88,9 @@ namespace AgeAPP.Forms
 
             var maps = await local_Data_service.GetAllMaps();
             dataGridViewMaps.DataSource = maps;
+
+            GridStyleController.FixMapsHeaderNames(dataGridViewMaps);
+            GridStyleController.ApplyMapTypeFormatting(dataGridViewMaps);
         }
 
         public class MatchRowView

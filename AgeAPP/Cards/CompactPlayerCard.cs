@@ -27,6 +27,9 @@ namespace AgeAPP.Cards
             // Rating
             PlayerRatingLabel.Text = $"({player.Rating})";
 
+            // Rank
+            LeaderboardRankLabel.Text = $"#{player.Id}";
+
             /*
             // Partidas e vitórias
             PlayerMatchesLabel.Text = $"Partidas: {player.Matches} | Vitórias: {player.Wins}";

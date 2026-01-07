@@ -6,7 +6,7 @@ namespace AgeAPP.Classes
     {
         public static string Local_app_Version = "5.4.2";
         public static bool Show_only_active_players = false;
-        public static bool Show_expanded_players_list = true;
+        public static bool Show_expanded_players_list = false;
 
         public class Player
         {

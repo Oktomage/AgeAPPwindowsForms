@@ -32,6 +32,7 @@
             PlayerRatingLabel = new Label();
             PlayerNameLabel = new Label();
             pictureBox1 = new PictureBox();
+            LeaderboardRankLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)AvatarPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -62,7 +63,7 @@
             PlayerNameLabel.AutoSize = true;
             PlayerNameLabel.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             PlayerNameLabel.ForeColor = SystemColors.Control;
-            PlayerNameLabel.Location = new Point(45, 9);
+            PlayerNameLabel.Location = new Point(109, 9);
             PlayerNameLabel.Name = "PlayerNameLabel";
             PlayerNameLabel.Size = new Size(94, 24);
             PlayerNameLabel.TabIndex = 13;
@@ -72,17 +73,29 @@
             // 
             pictureBox1.BackgroundImage = Properties.Resources.PR1_001;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Location = new Point(67, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(36, 30);
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
+            // 
+            // LeaderboardRankLabel
+            // 
+            LeaderboardRankLabel.AutoSize = true;
+            LeaderboardRankLabel.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LeaderboardRankLabel.ForeColor = SystemColors.Control;
+            LeaderboardRankLabel.Location = new Point(3, 9);
+            LeaderboardRankLabel.Name = "LeaderboardRankLabel";
+            LeaderboardRankLabel.Size = new Size(58, 24);
+            LeaderboardRankLabel.TabIndex = 10;
+            LeaderboardRankLabel.Text = "#100";
             // 
             // CompactPlayerCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
+            Controls.Add(LeaderboardRankLabel);
             Controls.Add(PlayerRatingLabel);
             Controls.Add(PlayerNameLabel);
             Controls.Add(pictureBox1);
@@ -101,5 +114,6 @@
         private Label PlayerRatingLabel;
         private Label PlayerNameLabel;
         private PictureBox pictureBox1;
+        private Label LeaderboardRankLabel;
     }
 }
