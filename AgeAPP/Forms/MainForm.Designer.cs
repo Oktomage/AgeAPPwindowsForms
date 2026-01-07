@@ -48,6 +48,7 @@ namespace AgeAPP
             label1 = new Label();
             label2 = new Label();
             panel2 = new Panel();
+            ExpandPlayersViewButton = new Button();
             ToggleAppThemeButton = new Button();
             ToolTips = new ToolTip(components);
             FilterPlayerTextBox = new TextBox();
@@ -288,13 +289,28 @@ namespace AgeAPP
             panel2.BackColor = SystemColors.ActiveCaptionText;
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(label1);
+            panel2.Controls.Add(ShowOnlyActivePlayersCheckBox);
             panel2.Controls.Add(label2);
+            panel2.Controls.Add(ExpandPlayersViewButton);
             panel2.Controls.Add(ToggleAppThemeButton);
             panel2.Controls.Add(ForceGridRefreshButton);
             panel2.Location = new Point(12, 9);
             panel2.Name = "panel2";
             panel2.Size = new Size(846, 37);
             panel2.TabIndex = 5;
+            // 
+            // ExpandPlayersViewButton
+            // 
+            ExpandPlayersViewButton.AutoSize = true;
+            ExpandPlayersViewButton.BackgroundImage = Properties.Resources.collapse_icon2;
+            ExpandPlayersViewButton.BackgroundImageLayout = ImageLayout.Stretch;
+            ExpandPlayersViewButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ExpandPlayersViewButton.Location = new Point(387, 3);
+            ExpandPlayersViewButton.Name = "ExpandPlayersViewButton";
+            ExpandPlayersViewButton.Size = new Size(31, 29);
+            ExpandPlayersViewButton.TabIndex = 4;
+            ExpandPlayersViewButton.UseVisualStyleBackColor = true;
+            ExpandPlayersViewButton.Click += ExpandPlayersViewButton_Click;
             // 
             // ToggleAppThemeButton
             // 
@@ -323,6 +339,7 @@ namespace AgeAPP
             FilterPlayerTextBox.PlaceholderText = "Filtrar jogador ex: Kakashi";
             FilterPlayerTextBox.Size = new Size(200, 22);
             FilterPlayerTextBox.TabIndex = 6;
+            FilterPlayerTextBox.Visible = false;
             FilterPlayerTextBox.TextChanged += FilterPlayerTextBox_TextChanged;
             // 
             // AgeAppLabel
@@ -356,7 +373,7 @@ namespace AgeAPP
             ShowOnlyActivePlayersCheckBox.BackColor = Color.Black;
             ShowOnlyActivePlayersCheckBox.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ShowOnlyActivePlayersCheckBox.ForeColor = SystemColors.Control;
-            ShowOnlyActivePlayersCheckBox.Location = new Point(220, 551);
+            ShowOnlyActivePlayersCheckBox.Location = new Point(136, 11);
             ShowOnlyActivePlayersCheckBox.Name = "ShowOnlyActivePlayersCheckBox";
             ShowOnlyActivePlayersCheckBox.Size = new Size(206, 19);
             ShowOnlyActivePlayersCheckBox.TabIndex = 7;
@@ -380,9 +397,8 @@ namespace AgeAPP
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1149, 577);
+            ClientSize = new Size(1149, 551);
             Controls.Add(FlowLayoutPlayers);
-            Controls.Add(ShowOnlyActivePlayersCheckBox);
             Controls.Add(FilterPlayerTextBox);
             Controls.Add(panel2);
             Controls.Add(HelpButton);
@@ -432,5 +448,6 @@ namespace AgeAPP
         private CheckBox ShowOnlyActivePlayersCheckBox;
         private Button SettingsButton;
         private FlowLayoutPanel FlowLayoutPlayers;
+        private Button ExpandPlayersViewButton;
     }
 }

@@ -154,6 +154,9 @@
   <data name="ant_mainmenu_hr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\ant_mainmenu_hr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="what-is-the-most-epic-match-battle-you-had-in-aoe-ii-v0-lpqjbc995aub1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\what-is-the-most-epic-match-battle-you-had-in-aoe-ii-v0-lpqjbc995aub1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="team_shield_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\team_shield_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,14 +172,17 @@
   <data name="team_shield_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\team_shield_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Winner_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Winner_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Arrow2_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Arrow2_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="seperator2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\seperator2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Winner_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Winner_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="aoe2-de-uhd-21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\aoe2-de-uhd-2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dark_mode_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Dark_mode_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,6 +232,9 @@
   <data name="Change_rating" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Change_rating.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="collapse_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\collapse_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -244,10 +253,7 @@
   <data name="Change_map_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Change_map_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="aoe2-de-uhd-21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\aoe2-de-uhd-2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="what-is-the-most-epic-match-battle-you-had-in-aoe-ii-v0-lpqjbc995aub1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\what-is-the-most-epic-match-battle-you-had-in-aoe-ii-v0-lpqjbc995aub1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="collapse_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\collapse_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

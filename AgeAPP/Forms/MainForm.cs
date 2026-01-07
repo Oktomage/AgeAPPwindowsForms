@@ -72,6 +72,7 @@ namespace AgeAPP
 
         private void Write_toolTips()
         {
+            ToolTips.SetToolTip(ExpandPlayersViewButton, "Expandir/Compactar a lista de jogadores.");
             ToolTips.SetToolTip(ForceGridRefreshButton, "Força a atualização das tabelas de jogadores e mapas.");
             ToolTips.SetToolTip(ToggleAppThemeButton, "Alterna entre tema claro e escuro.");
             ToolTips.SetToolTip(SplitButton, "Abre a janela de divisão de times.");
@@ -128,8 +129,21 @@ namespace AgeAPP
 
             foreach (var player in source)
             {
-                var card = new PlayerCard();
-                card.Bind(player);
+                UserControl card;
+
+                switch (Show_expanded_players_list)
+                {
+                    case true:
+                        card = new PlayerCard();
+                        break;
+
+                    case false:
+                        card = new CompactPlayerCard();
+                        break;
+                }
+
+                dynamic bindableCard = card;
+                bindableCard.Bind(player);
 
                 // Fix Width
                 card.Width = FlowLayoutPlayers.ClientSize.Width - 25;
@@ -216,6 +230,13 @@ namespace AgeAPP
                 "Ajuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private async void ExpandPlayersViewButton_Click(object sender, EventArgs e)
+        {
+            Show_expanded_players_list = !Show_expanded_players_list;
+
+            await UpdateLocalData();
+        }
+
         #endregion
 
         #region TIMERS
@@ -257,8 +278,8 @@ namespace AgeAPP
             else
             {
                 //dataGridViewPlayers.DataSource = allPlayers
-                    //.Where(p => p.Name.ToLower().Contains(search))
-                    //.ToList();
+                //.Where(p => p.Name.ToLower().Contains(search))
+                //.ToList();
             }
         }
 
