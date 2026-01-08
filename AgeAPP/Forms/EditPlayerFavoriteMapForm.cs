@@ -138,7 +138,7 @@ namespace AgeAPP.Forms
                 Author_name = local_Data_service.Local_Admin_Logged.Name,
                 Role = "Player_changes",
                 Date = DateTime.Now.ToString(),
-                Content = $"Alterou os mapas favoritdos do jogador, {selectedPlayer.Name}."
+                Content = $"Alterou os mapas favoritos do jogador: {selectedPlayer.Name}."
             });
 
             // Fecha o formulário após a criação do jogador

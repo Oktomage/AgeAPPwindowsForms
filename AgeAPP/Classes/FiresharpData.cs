@@ -237,5 +237,27 @@ namespace AgeAPP.Classes
                 .Take(100) // LIMITE AQUI
                 .ToList();
         }
+
+        public async Task<List<Log>> GetGlobalAdminLogs(List<string> admins)
+        {
+            var allLogs = new List<Log>();
+
+            foreach (var admin in admins)
+            {
+                foreach (var role in new[] { "Player_changes", "Map_changes" })
+                {
+                    var res = await client.GetAsync($"logs/{admin}/{role}");
+                    if (res.Body == "null") continue;
+
+                    var data = JsonConvert.DeserializeObject<Dictionary<string, Log>>(res.Body);
+                    allLogs.AddRange(data.Values);
+                }
+            }
+
+            return allLogs
+                .OrderByDescending(l => DateTime.Parse(l.Date))
+                .Take(100)
+                .ToList();
+        }
     }
 }

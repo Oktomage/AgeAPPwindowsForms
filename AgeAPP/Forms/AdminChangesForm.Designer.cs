@@ -36,23 +36,26 @@
             // FlowLayoutPanel
             // 
             FlowLayoutPanel.BackColor = Color.Black;
+            FlowLayoutPanel.Dock = DockStyle.Bottom;
             FlowLayoutPanel.Location = new Point(0, 48);
+            FlowLayoutPanel.Margin = new Padding(10);
             FlowLayoutPanel.Name = "FlowLayoutPanel";
-            FlowLayoutPanel.Size = new Size(655, 476);
+            FlowLayoutPanel.Size = new Size(504, 476);
             FlowLayoutPanel.TabIndex = 0;
             // 
             // panel1
             // 
-            panel1.Location = new Point(0, 1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(655, 49);
+            panel1.Size = new Size(504, 41);
             panel1.TabIndex = 1;
             // 
             // AdminChangesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(655, 524);
+            ClientSize = new Size(504, 524);
             Controls.Add(panel1);
             Controls.Add(FlowLayoutPanel);
             Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -62,6 +65,7 @@
             Name = "AdminChangesForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Histórico ADMIN";
+            Load += AdminChangesForm_Load;
             ResumeLayout(false);
         }
 

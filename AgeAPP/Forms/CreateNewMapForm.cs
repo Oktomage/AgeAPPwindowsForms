@@ -45,7 +45,7 @@ namespace AgeAPP.Forms
                 Author_name = local_Data_service.Local_Admin_Logged.Name,
                 Role = "Map_changes",
                 Date = DateTime.Now.ToString(),
-                Content = $"Criou um novo mapa, {newMap.Name}."
+                Content = $"Criou um novo mapa: {newMap.Name}."
             });
 
             // Fechar form

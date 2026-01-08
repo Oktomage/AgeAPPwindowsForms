@@ -65,7 +65,7 @@ namespace AgeAPP.Forms
                 Author_name = local_Data_service.Local_Admin_Logged.Name,
                 Role = "Player_changes",
                 Date = DateTime.Now.ToString(),
-                Content = $"Criou um novo jogador, {newPlayer.Name}."
+                Content = $"Criou um novo jogador: {newPlayer.Name}."
             });
 
             // Fecha o formulário após a criação do jogador
