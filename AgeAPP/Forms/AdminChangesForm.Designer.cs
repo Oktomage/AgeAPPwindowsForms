@@ -37,10 +37,10 @@
             // 
             FlowLayoutPanel.BackColor = Color.Black;
             FlowLayoutPanel.Dock = DockStyle.Bottom;
-            FlowLayoutPanel.Location = new Point(0, 48);
+            FlowLayoutPanel.Location = new Point(0, 44);
             FlowLayoutPanel.Margin = new Padding(10);
             FlowLayoutPanel.Name = "FlowLayoutPanel";
-            FlowLayoutPanel.Size = new Size(504, 476);
+            FlowLayoutPanel.Size = new Size(504, 690);
             FlowLayoutPanel.TabIndex = 0;
             // 
             // panel1
@@ -55,7 +55,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(504, 524);
+            ClientSize = new Size(504, 734);
             Controls.Add(panel1);
             Controls.Add(FlowLayoutPanel);
             Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);

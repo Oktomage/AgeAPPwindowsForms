@@ -19,6 +19,25 @@ namespace AgeAPP.Cards
 
             // Rank
             LeaderboardRankLabel.Text = $"#{player.Id}";
+            
+            switch(player.Id)
+            {
+                case 1:
+                    LeaderboardRankLabel.ForeColor = Color.Cyan;
+                    break;
+
+                case 2:
+                    LeaderboardRankLabel.ForeColor = Color.Gold;
+                    break;
+
+                case 3:
+                    LeaderboardRankLabel.ForeColor = Color.Brown;
+                    break;
+
+                default:
+                    LeaderboardRankLabel.ForeColor = Color.White;
+                    break;
+            }
 
             /*
             // Partidas e vitórias

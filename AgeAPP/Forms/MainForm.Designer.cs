@@ -48,13 +48,13 @@ namespace AgeAPP
             label1 = new Label();
             label2 = new Label();
             panel2 = new Panel();
+            ShowOnlyActivePlayersCheckBox = new CheckBox();
             ExpandPlayersViewButton = new Button();
             ToggleAppThemeButton = new Button();
             ToolTips = new ToolTip(components);
             FilterPlayerTextBox = new TextBox();
             AgeAppLabel = new Label();
             HelpButton = new Button();
-            ShowOnlyActivePlayersCheckBox = new CheckBox();
             FlowLayoutPlayers = new FlowLayoutPanel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -299,6 +299,20 @@ namespace AgeAPP
             panel2.Size = new Size(846, 37);
             panel2.TabIndex = 5;
             // 
+            // ShowOnlyActivePlayersCheckBox
+            // 
+            ShowOnlyActivePlayersCheckBox.AutoSize = true;
+            ShowOnlyActivePlayersCheckBox.BackColor = Color.Black;
+            ShowOnlyActivePlayersCheckBox.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ShowOnlyActivePlayersCheckBox.ForeColor = SystemColors.Control;
+            ShowOnlyActivePlayersCheckBox.Location = new Point(136, 11);
+            ShowOnlyActivePlayersCheckBox.Name = "ShowOnlyActivePlayersCheckBox";
+            ShowOnlyActivePlayersCheckBox.Size = new Size(206, 19);
+            ShowOnlyActivePlayersCheckBox.TabIndex = 7;
+            ShowOnlyActivePlayersCheckBox.Text = "Mostrar apenas jogadores ativos";
+            ShowOnlyActivePlayersCheckBox.UseVisualStyleBackColor = false;
+            ShowOnlyActivePlayersCheckBox.CheckedChanged += ShowOnlyActivePlayersCheckBox_CheckedChanged;
+            // 
             // ExpandPlayersViewButton
             // 
             ExpandPlayersViewButton.AutoSize = true;
@@ -367,20 +381,6 @@ namespace AgeAPP
             HelpButton.UseVisualStyleBackColor = true;
             HelpButton.Click += HelpButton_Click;
             // 
-            // ShowOnlyActivePlayersCheckBox
-            // 
-            ShowOnlyActivePlayersCheckBox.AutoSize = true;
-            ShowOnlyActivePlayersCheckBox.BackColor = Color.Black;
-            ShowOnlyActivePlayersCheckBox.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ShowOnlyActivePlayersCheckBox.ForeColor = SystemColors.Control;
-            ShowOnlyActivePlayersCheckBox.Location = new Point(136, 11);
-            ShowOnlyActivePlayersCheckBox.Name = "ShowOnlyActivePlayersCheckBox";
-            ShowOnlyActivePlayersCheckBox.Size = new Size(206, 19);
-            ShowOnlyActivePlayersCheckBox.TabIndex = 7;
-            ShowOnlyActivePlayersCheckBox.Text = "Mostrar apenas jogadores ativos";
-            ShowOnlyActivePlayersCheckBox.UseVisualStyleBackColor = false;
-            ShowOnlyActivePlayersCheckBox.CheckedChanged += ShowOnlyActivePlayersCheckBox_CheckedChanged;
-            // 
             // FlowLayoutPlayers
             // 
             FlowLayoutPlayers.AutoScroll = true;
@@ -388,6 +388,7 @@ namespace AgeAPP
             FlowLayoutPlayers.Location = new Point(12, 52);
             FlowLayoutPlayers.Margin = new Padding(0, 0, 0, 10);
             FlowLayoutPlayers.Name = "FlowLayoutPlayers";
+            FlowLayoutPlayers.Padding = new Padding(3);
             FlowLayoutPlayers.Size = new Size(420, 492);
             FlowLayoutPlayers.TabIndex = 8;
             // 

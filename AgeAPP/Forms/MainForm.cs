@@ -147,7 +147,7 @@ namespace AgeAPP
                 bindableCard.Bind(player);
 
                 // Fix Width
-                card.Width = FlowLayoutPlayers.ClientSize.Width - 25;
+                //card.Width = FlowLayoutPlayers.ClientSize.Width - 25;
 
                 FlowLayoutPlayers.Controls.Add(card);
             }

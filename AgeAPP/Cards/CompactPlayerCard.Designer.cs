@@ -52,7 +52,7 @@
             PlayerRatingLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             PlayerRatingLabel.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PlayerRatingLabel.ForeColor = SystemColors.Control;
-            PlayerRatingLabel.Location = new Point(370, 9);
+            PlayerRatingLabel.Location = new Point(311, 9);
             PlayerRatingLabel.Name = "PlayerRatingLabel";
             PlayerRatingLabel.Size = new Size(76, 24);
             PlayerRatingLabel.TabIndex = 10;
@@ -101,7 +101,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(AvatarPictureBox);
             Name = "CompactPlayerCard";
-            Size = new Size(449, 40);
+            Size = new Size(390, 40);
             ((System.ComponentModel.ISupportInitialize)AvatarPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
