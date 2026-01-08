@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static AgeAPP.Classes.Main_classes;
+﻿using static AgeAPP.Classes.Main_classes;
 
 namespace AgeAPP.Cards
 {
@@ -33,22 +23,6 @@ namespace AgeAPP.Cards
             /*
             // Partidas e vitórias
             PlayerMatchesLabel.Text = $"Partidas: {player.Matches} | Vitórias: {player.Wins}";
-
-            // Win rate
-            double winRate = player.Matches > 0
-                ? (double)player.Wins / player.Matches * 100
-                : 0;
-
-            PlayerWinRateLabel.Text = $"[{winRate:0}%]";
-
-            // Cor do win rate
-            if (winRate < 50)
-                PlayerWinRateLabel.ForeColor = Color.IndianRed;
-            else if (winRate == 50)
-                PlayerWinRateLabel.ForeColor = Color.Goldenrod;
-            else
-                PlayerWinRateLabel.ForeColor = Color.LimeGreen;
-            */
 
             /*
             // Avatar

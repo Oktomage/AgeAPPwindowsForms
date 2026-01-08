@@ -15,7 +15,7 @@ namespace AgeAPP.Cards
         public void Bind(Main_classes.Log log)
         {
             MapNameLabel.Text = log.Match_result.PlayedMap_name;
-            DateLabel.Text = log.Match_result.MatchDate.ToString("dd/MM/yyyy");
+            DateLabel.Text = log.Match_result.MatchDate.ToString("dd/MM/yyyy HH:mm");
 
             CurrentResult = log.Match_result;
 
@@ -38,8 +38,7 @@ namespace AgeAPP.Cards
 
             DeltaRatingLabel.Text = $": {MathF.Abs(delta).ToString()}";
 
-            //DeltaRatingLabel.Text = delta > 0 ? $"Rating: +{delta}" : $"Rating: {delta.ToString()}";
-            //DeltaRatingLabel.ForeColor = delta >= 0 ? Color.LimeGreen : Color.IndianRed;
+            LogAuthorLabel.Text = $"Registro de: {log.Author_name}";
         }
 
         private void ConfigureListView(ListView lv)

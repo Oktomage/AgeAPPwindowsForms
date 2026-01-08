@@ -48,6 +48,7 @@
             CreateNewPlayerButton = new Button();
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
+            AdminChangesButton = new Button();
             CreateNewMapButton = new Button();
             ApplyMatchResultButton = new Button();
             label4 = new Label();
@@ -274,12 +275,13 @@
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(AdminChangesButton);
             panel2.Controls.Add(CreateNewMapButton);
             panel2.Controls.Add(CreateNewPlayerButton);
             panel2.Controls.Add(ApplyMatchResultButton);
             panel2.Location = new Point(851, 55);
             panel2.Name = "panel2";
-            panel2.Size = new Size(265, 230);
+            panel2.Size = new Size(265, 288);
             panel2.TabIndex = 5;
             // 
             // pictureBox1
@@ -292,6 +294,23 @@
             pictureBox1.Size = new Size(252, 41);
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
+            // 
+            // AdminChangesButton
+            // 
+            AdminChangesButton.Anchor = AnchorStyles.Top;
+            AdminChangesButton.BackColor = Color.Transparent;
+            AdminChangesButton.BackgroundImage = Properties.Resources.button_wide_normal;
+            AdminChangesButton.BackgroundImageLayout = ImageLayout.Stretch;
+            AdminChangesButton.FlatStyle = FlatStyle.Flat;
+            AdminChangesButton.Font = new Font("Arial", 12F);
+            AdminChangesButton.ForeColor = SystemColors.Control;
+            AdminChangesButton.Location = new Point(3, 227);
+            AdminChangesButton.Name = "AdminChangesButton";
+            AdminChangesButton.Size = new Size(255, 53);
+            AdminChangesButton.TabIndex = 4;
+            AdminChangesButton.Text = "Histórico dos admins";
+            AdminChangesButton.UseVisualStyleBackColor = false;
+            AdminChangesButton.Click += AdminChangesButton_Click;
             // 
             // CreateNewMapButton
             // 
@@ -427,5 +446,6 @@
         private Panel panel3;
         private PictureBox pictureBox2;
         private Button EditPlayerFavoriteMapsButton;
+        private Button AdminChangesButton;
     }
 }

@@ -39,6 +39,7 @@ namespace AgeAPP.Forms
             ToolTips.SetToolTip(ApplyMatchResultButton, "Abre a janela para aplicar o resultado de uma partida entre dois times.");
             ToolTips.SetToolTip(CreateNewPlayerButton, "Abre a janela para criar um novo jogador.");
             ToolTips.SetToolTip(CreateNewMapButton, "Abre a janela para criar um novo mapa.");
+            ToolTips.SetToolTip(AdminChangesButton, "Abre o histórico de mudanças feitas pelos admins.");
         }
 
         private async Task UpdateLocalData()
@@ -115,6 +116,13 @@ namespace AgeAPP.Forms
             {
                 await UpdateLocalData();
             }
+        }
+
+        private void AdminChangesButton_Click(object sender, EventArgs e)
+        {
+            AdminChangesForm adminChangesForm = new AdminChangesForm(local_Data_service);
+
+            adminChangesForm.ShowDialog(this);
         }
 
         #endregion
@@ -225,7 +233,7 @@ namespace AgeAPP.Forms
         {
             EditPlayerFavoriteMapForm edit_player_maps_form = new EditPlayerFavoriteMapForm(local_Data_service, selectedPlayer);
 
-            if(edit_player_maps_form.ShowDialog(this) == DialogResult.OK)
+            if (edit_player_maps_form.ShowDialog(this) == DialogResult.OK)
             {
                 await UpdateLocalData();
             }
