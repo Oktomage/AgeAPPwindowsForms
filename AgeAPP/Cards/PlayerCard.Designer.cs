@@ -39,7 +39,7 @@
             // 
             // AvatarPictureBox
             // 
-            AvatarPictureBox.BackgroundImage = Properties.Resources.PR1_001;
+            AvatarPictureBox.BackgroundImage = Properties.Resources.Player_icon1;
             AvatarPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
             AvatarPictureBox.Location = new Point(3, 3);
             AvatarPictureBox.Name = "AvatarPictureBox";

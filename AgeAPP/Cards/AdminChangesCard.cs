@@ -19,17 +19,17 @@ namespace AgeAPP.Cards
             switch (log.Role)
             {
                 case "Player_changes":
-                    //RoleIcon.Image = Properties.Resources.player_icon;
+                    ChangeIconPictureBox.BackgroundImage = Properties.Resources.Player_icon1;
                     ChangeTitleLabel.Text = "Alteração de jogador";
                     break;
 
                 case "Map_changes":
-                    //RoleIcon.Image = Properties.Resources.map_icon;
+                    ChangeIconPictureBox.BackgroundImage = Properties.Resources.UnkownMap;
                     ChangeTitleLabel.Text = "Alteração de mapa";
                     break;
 
                 case "Match_results":
-                    //RoleIcon.Image = Properties.Resources.match_icon;
+                    ChangeIconPictureBox.BackgroundImage = Properties.Resources.UnkownMap;
                     ChangeTitleLabel.Text = "Resultado de partida";
                     break;
 

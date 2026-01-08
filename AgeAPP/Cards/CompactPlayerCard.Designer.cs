@@ -39,7 +39,7 @@
             // 
             // AvatarPictureBox
             // 
-            AvatarPictureBox.BackgroundImage = Properties.Resources.PR1_001;
+            AvatarPictureBox.BackgroundImage = Properties.Resources.Player_icon1;
             AvatarPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
             AvatarPictureBox.Location = new Point(-117, 45);
             AvatarPictureBox.Name = "AvatarPictureBox";
@@ -71,7 +71,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.PR1_001;
+            pictureBox1.BackgroundImage = Properties.Resources.Player_icon1;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(67, 3);
             pictureBox1.Name = "pictureBox1";

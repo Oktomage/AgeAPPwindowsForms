@@ -363,9 +363,9 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PR1_001 {
+        internal static System.Drawing.Bitmap Player_icon1 {
             get {
-                object obj = ResourceManager.GetObject("PR1-001", resourceCulture);
+                object obj = ResourceManager.GetObject("Player_icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

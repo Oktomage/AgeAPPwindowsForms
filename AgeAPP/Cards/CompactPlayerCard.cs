@@ -23,11 +23,11 @@ namespace AgeAPP.Cards
             switch(player.Id)
             {
                 case 1:
-                    LeaderboardRankLabel.ForeColor = Color.Cyan;
+                    LeaderboardRankLabel.ForeColor = Color.Gold;
                     break;
 
                 case 2:
-                    LeaderboardRankLabel.ForeColor = Color.Gold;
+                    LeaderboardRankLabel.ForeColor = Color.LightGray;
                     break;
 
                 case 3:

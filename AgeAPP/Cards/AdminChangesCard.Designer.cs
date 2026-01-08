@@ -33,17 +33,19 @@
             DateLabel = new Label();
             ContentTextBox = new RichTextBox();
             label1 = new Label();
+            ChangeIconPictureBox = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)ChangeIconPictureBox).BeginInit();
             SuspendLayout();
             // 
             // ChangeTitleLabel
             // 
             ChangeTitleLabel.AutoSize = true;
             ChangeTitleLabel.BackColor = Color.Black;
-            ChangeTitleLabel.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ChangeTitleLabel.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ChangeTitleLabel.ForeColor = SystemColors.Control;
-            ChangeTitleLabel.Location = new Point(3, 0);
+            ChangeTitleLabel.Location = new Point(56, 6);
             ChangeTitleLabel.Name = "ChangeTitleLabel";
-            ChangeTitleLabel.Size = new Size(186, 24);
+            ChangeTitleLabel.Size = new Size(142, 18);
             ChangeTitleLabel.TabIndex = 0;
             ChangeTitleLabel.Text = "Mudança em mapa";
             // 
@@ -66,7 +68,7 @@
             DateLabel.BackColor = Color.Transparent;
             DateLabel.Font = new Font("Arial", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
             DateLabel.ForeColor = SystemColors.Control;
-            DateLabel.Location = new Point(3, 24);
+            DateLabel.Location = new Point(56, 30);
             DateLabel.Name = "DateLabel";
             DateLabel.Size = new Size(79, 16);
             DateLabel.TabIndex = 0;
@@ -101,11 +103,22 @@
             label1.TabIndex = 0;
             label1.Text = "Descrição:";
             // 
+            // ChangeIconPictureBox
+            // 
+            ChangeIconPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            ChangeIconPictureBox.BorderStyle = BorderStyle.FixedSingle;
+            ChangeIconPictureBox.Location = new Point(3, 6);
+            ChangeIconPictureBox.Name = "ChangeIconPictureBox";
+            ChangeIconPictureBox.Size = new Size(47, 40);
+            ChangeIconPictureBox.TabIndex = 2;
+            ChangeIconPictureBox.TabStop = false;
+            // 
             // AdminChangesCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
+            Controls.Add(ChangeIconPictureBox);
             Controls.Add(ContentTextBox);
             Controls.Add(label1);
             Controls.Add(AuthorLabel);
@@ -114,6 +127,7 @@
             Margin = new Padding(0, 0, 0, 10);
             Name = "AdminChangesCard";
             Size = new Size(486, 74);
+            ((System.ComponentModel.ISupportInitialize)ChangeIconPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -125,5 +139,6 @@
         private Label DateLabel;
         private RichTextBox ContentTextBox;
         private Label label1;
+        private PictureBox ChangeIconPictureBox;
     }
 }
