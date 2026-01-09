@@ -18,6 +18,9 @@ namespace AgeAPP.Classes
             public float WinRate { get; set; }
 
             [Browsable(false)]
+            public string AvatarId { get; set; } = "Player_icon1";
+
+            [Browsable(false)]
             public string Last_time_played { get; set; }
 
             [Browsable(false)]

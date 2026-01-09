@@ -253,4 +253,55 @@
   <data name="collapse_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\collapse_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Player_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR1-002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR3-002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR3-012.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR3-023.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR4-028.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR5-002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR7-035.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR3-031.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR3-035.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR3-010.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR3-019.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR3-004.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR2-001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR5-064.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR5-066.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon17" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR5-048.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR5-096.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

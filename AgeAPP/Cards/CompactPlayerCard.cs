@@ -24,18 +24,22 @@ namespace AgeAPP.Cards
             {
                 case 1:
                     LeaderboardRankLabel.ForeColor = Color.Gold;
+                    LeaderboardRankLabel.Font = new Font(LeaderboardRankLabel.Font.FontFamily, 16f, LeaderboardRankLabel.Font.Style);
                     break;
 
                 case 2:
                     LeaderboardRankLabel.ForeColor = Color.LightGray;
+                    LeaderboardRankLabel.Font = new Font(LeaderboardRankLabel.Font.FontFamily, 16f, LeaderboardRankLabel.Font.Style);
                     break;
 
                 case 3:
                     LeaderboardRankLabel.ForeColor = Color.Brown;
+                    LeaderboardRankLabel.Font = new Font(LeaderboardRankLabel.Font.FontFamily, 16f, LeaderboardRankLabel.Font.Style);
                     break;
 
                 default:
                     LeaderboardRankLabel.ForeColor = Color.White;
+                    LeaderboardRankLabel.Font = new Font(LeaderboardRankLabel.Font.FontFamily, 12f, LeaderboardRankLabel.Font.Style);
                     break;
             }
 

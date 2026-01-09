@@ -20,7 +20,7 @@ namespace AgeAPP.Forms
 
         }
 
-        private void LogInButton_Click(object sender, EventArgs e)
+        private async void LogInButton_Click(object sender, EventArgs e)
         {
             string user = TextBoxLoginName.Text.Trim();
             string pass = TextBoxPassword.Text;

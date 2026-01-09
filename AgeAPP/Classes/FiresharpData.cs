@@ -3,6 +3,7 @@ using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Newtonsoft.Json;
+using static AgeAPP.Classes.FiresharpData;
 using static AgeAPP.Classes.Main_classes;
 
 namespace AgeAPP.Classes
@@ -24,19 +25,35 @@ namespace AgeAPP.Classes
         public bool Admin_LoggedIn = false;
         public Admin Local_Admin_Logged;
 
-        public List<Admin> Admins = new List<Admin>
-        {
-            new Admin { Name = "pedreiro", Password = "chapeudecouro" },
-            new Admin { Name = "gomes", Password = "calvo" },
-            new Admin { Name = "oldtime", Password = "artemis" },
-            new Admin { Name = "biel", Password = "amointerno" },
-            new Admin { Name = "kakashi", Password = "artuzao" },
-            new Admin { Name = "snow", Password = "neve" }
-        };
+        public List<Admin> Admins = new List<Admin>();
         public class Admin
         {
             public string Name { get; set; }
             public string Password { get; set; }
+            public string Last_sessionDate { get; set; }
+        }
+
+        public async Task Save_adminAccounts_on_dataBase()
+        {
+            foreach (var admin in Admins)
+            {
+                await client.SetAsync($"accounts/{admin.Name.ToLower()}", admin);
+            }
+        }
+
+        public async Task Request_adminAccounts()
+        {
+            var response = await client.GetAsync("accounts");
+
+            if (response.Body == "null")
+            {
+                Admins = new List<Admin>();
+                return;
+            }
+
+            var data = JsonConvert.DeserializeObject<Dictionary<string, Admin>>(response.Body);
+
+            Admins = data.Values.ToList();
         }
 
         // CONNECTION
@@ -48,6 +65,7 @@ namespace AgeAPP.Classes
                 a.Password == password
             );
 
+            // Sucesso
             if (admin != null)
             {
                 Local_Admin_Logged = admin;
@@ -56,6 +74,12 @@ namespace AgeAPP.Classes
             }
 
             return null;
+        }
+
+        public async Task Save_admin_login_on_dataBase()
+        {
+            Local_Admin_Logged.Last_sessionDate = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            await client.SetAsync($"accounts/{Local_Admin_Logged.Name.ToLower()}", Local_Admin_Logged);
         }
 
         public void Connect_to_firesharp(string mode)
