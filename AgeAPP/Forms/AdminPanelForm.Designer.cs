@@ -91,6 +91,7 @@
             // 
             SelectedPlayerLabel.AutoSize = true;
             SelectedPlayerLabel.BackColor = Color.Black;
+            SelectedPlayerLabel.Cursor = Cursors.Hand;
             SelectedPlayerLabel.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SelectedPlayerLabel.ForeColor = SystemColors.Control;
             SelectedPlayerLabel.Location = new Point(55, 17);
@@ -123,6 +124,7 @@
             AvatarPictureBox.BackColor = Color.Transparent;
             AvatarPictureBox.BackgroundImage = Properties.Resources.Player_icon1;
             AvatarPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            AvatarPictureBox.Cursor = Cursors.Hand;
             AvatarPictureBox.Location = new Point(13, 17);
             AvatarPictureBox.Name = "AvatarPictureBox";
             AvatarPictureBox.Size = new Size(37, 41);

@@ -60,7 +60,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(923, 345);
+            panel1.Size = new Size(917, 348);
             panel1.TabIndex = 1;
             // 
             // AvatarsLayoutPanel
@@ -181,7 +181,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(923, 345);
+            ClientSize = new Size(917, 348);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");

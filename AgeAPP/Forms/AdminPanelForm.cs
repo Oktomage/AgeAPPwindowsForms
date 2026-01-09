@@ -130,9 +130,14 @@ namespace AgeAPP.Forms
 
         #region PLAYER PANEL BUTTONS
 
-        private void AvatarPictureBox_Click(object sender, EventArgs e)
+        private async void AvatarPictureBox_Click(object sender, EventArgs e)
         {
+            using (EditPlayerAvatarForm editForm = new EditPlayerAvatarForm(local_Data_service, selectedPlayer))
+            {
+                editForm.ShowDialog(this);
+            }
 
+            await UpdateLocalData();
         }
 
         private void SelectedPlayerRatingTextBox_KeyPress(object sender, KeyPressEventArgs e)

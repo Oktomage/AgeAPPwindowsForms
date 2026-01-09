@@ -87,6 +87,8 @@ namespace AgeAPP.Forms
             }
         }
 
+        #region EVENTS
+
         private void OnAvatarSelected(PictureBox pic)
         {
             // Limpa seleção
@@ -100,5 +102,7 @@ namespace AgeAPP.Forms
 
             System.Media.SystemSounds.Beep.Play();
         }
+
+        #endregion
     }
 }
