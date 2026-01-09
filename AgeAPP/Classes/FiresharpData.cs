@@ -79,6 +79,7 @@ namespace AgeAPP.Classes
         public async Task Save_admin_login_on_dataBase()
         {
             Local_Admin_Logged.Last_sessionDate = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+
             await client.SetAsync($"accounts/{Local_Admin_Logged.Name.ToLower()}", Local_Admin_Logged);
         }
 

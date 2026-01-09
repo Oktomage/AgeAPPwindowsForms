@@ -18,7 +18,6 @@ namespace AgeAPP.Forms
             FlowLayoutPanel.AutoScroll = true;
             FlowLayoutPanel.WrapContents = false;
             FlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
-            FlowLayoutPanel.Padding = new Padding(10);
         }
 
         private async void AdminChangesForm_Load(object sender, EventArgs e)

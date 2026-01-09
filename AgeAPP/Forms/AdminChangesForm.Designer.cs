@@ -39,6 +39,7 @@
             FlowLayoutPanel.Location = new Point(0, 0);
             FlowLayoutPanel.Margin = new Padding(10);
             FlowLayoutPanel.Name = "FlowLayoutPanel";
+            FlowLayoutPanel.Padding = new Padding(5);
             FlowLayoutPanel.Size = new Size(504, 734);
             FlowLayoutPanel.TabIndex = 0;
             // 

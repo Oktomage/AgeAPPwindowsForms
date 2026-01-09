@@ -56,7 +56,7 @@
             AuthorLabel.BackColor = Color.Transparent;
             AuthorLabel.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AuthorLabel.ForeColor = SystemColors.Control;
-            AuthorLabel.Location = new Point(3, 59);
+            AuthorLabel.Location = new Point(3, 56);
             AuthorLabel.Name = "AuthorLabel";
             AuthorLabel.Size = new Size(81, 15);
             AuthorLabel.TabIndex = 0;
