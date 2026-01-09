@@ -73,6 +73,7 @@ namespace AgeAPP.Forms
             {
                 SelectedPlayerLabel.Text = $"{selectedPlayer.Name} - [{selectedPlayer.Rating}]";
                 SelectedPlayerRatingTextBox.Text = selectedPlayer.Rating.ToString();
+                AvatarPictureBox.BackgroundImage = MainFunctions.LoadAvatar(selectedPlayer.AvatarId);
 
                 // Se tiver maps favoritos, mostra na lista
                 FavoriteMapListBox.Items.Clear();
@@ -129,6 +130,11 @@ namespace AgeAPP.Forms
 
         #region PLAYER PANEL BUTTONS
 
+        private void AvatarPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void SelectedPlayerRatingTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permite apenas números e teclas de controle (Backspace, Delete)
@@ -171,7 +177,7 @@ namespace AgeAPP.Forms
                 Author_name = local_Data_service.Local_Admin_Logged.Name,
                 Role = "Player_changes",
                 Date = DateTime.Now.ToString(),
-                Content = $"Deletou o jogador {selectedPlayer.Name}"
+                Content = $"Deletou o jogador: {selectedPlayer.Name}"
             });
 
             await UpdateLocalData();

@@ -62,7 +62,7 @@ namespace AgeAPP.Cards
 
             foreach (var player in players)
             {
-                var item = new ListViewItem($"{player.Name} ({player.Rating} {ratingChangeSyntax}{MathF.Abs(CurrentResult.DeltaRating)})");
+                var item = new ListViewItem($"{player.Name} {player.Rating} ({ratingChangeSyntax}{MathF.Abs(CurrentResult.DeltaRating)})");
                 item.SubItems.Add(player.Rating.ToString());
 
                 listView.Items.Add(item);

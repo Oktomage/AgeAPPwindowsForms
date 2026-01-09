@@ -304,4 +304,52 @@
   <data name="Player_icon18" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\usericons\PR5-096.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Player_icon19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\flamengo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\sportfc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="player_icon21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\bope.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\cruzeiro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon23" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\pt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\bolsonaro.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\neymar2011.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\trump.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\maduro.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon28" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\gruNegao.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon29" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\soldierScary.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\trashBin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\proerd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\goleiroBruno.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon33" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\corinthians.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon34" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\bagre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

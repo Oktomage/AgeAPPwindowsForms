@@ -34,7 +34,7 @@
             dataGridViewPlayers = new DataGridView();
             SelectedPlayerLabel = new Label();
             panel1 = new Panel();
-            pictureBox2 = new PictureBox();
+            AvatarPictureBox = new PictureBox();
             DuplicateSelectedPlayerButton = new Button();
             ChangeSelectedPlayerRating = new Button();
             SelectedPlayerRatingTextBox = new TextBox();
@@ -57,7 +57,7 @@
             label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AvatarPictureBox).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -105,7 +105,7 @@
             panel1.BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(AvatarPictureBox);
             panel1.Controls.Add(DuplicateSelectedPlayerButton);
             panel1.Controls.Add(ChangeSelectedPlayerRating);
             panel1.Controls.Add(SelectedPlayerRatingTextBox);
@@ -118,16 +118,17 @@
             panel1.Size = new Size(358, 473);
             panel1.TabIndex = 3;
             // 
-            // pictureBox2
+            // AvatarPictureBox
             // 
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.BackgroundImage = Properties.Resources.mvp;
-            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Location = new Point(13, 17);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(37, 41);
-            pictureBox2.TabIndex = 7;
-            pictureBox2.TabStop = false;
+            AvatarPictureBox.BackColor = Color.Transparent;
+            AvatarPictureBox.BackgroundImage = Properties.Resources.Player_icon1;
+            AvatarPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            AvatarPictureBox.Location = new Point(13, 17);
+            AvatarPictureBox.Name = "AvatarPictureBox";
+            AvatarPictureBox.Size = new Size(37, 41);
+            AvatarPictureBox.TabIndex = 7;
+            AvatarPictureBox.TabStop = false;
+            AvatarPictureBox.Click += AvatarPictureBox_Click;
             // 
             // DuplicateSelectedPlayerButton
             // 
@@ -412,7 +413,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AvatarPictureBox).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
@@ -444,7 +445,7 @@
         private Button DuplicateSelectedPlayerButton;
         private Label label5;
         private Panel panel3;
-        private PictureBox pictureBox2;
+        private PictureBox AvatarPictureBox;
         private Button EditPlayerFavoriteMapsButton;
         private Button AdminChangesButton;
     }
