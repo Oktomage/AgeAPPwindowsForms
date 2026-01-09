@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgeAPP.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,17 +62,8 @@ namespace AgeAPP.Cards
                 PlayerLastMatchDateLabel.Text = "Última partida: —";
             }
 
-            /*
             // Avatar
-            if (!string.IsNullOrWhiteSpace(player.AvatarPath) &&
-                File.Exists(player.AvatarPath))
-            {
-                AvatarPictureBox.Image = Image.FromFile(player.AvatarPath);
-            }
-            else
-            {
-                AvatarPictureBox.Image = Properties.Resources.default_avatar;
-            }*/
+            AvatarPictureBox.BackgroundImage = MainFunctions.LoadAvatar(player.AvatarId);
         }
     }
 }

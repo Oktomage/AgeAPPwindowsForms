@@ -7,7 +7,9 @@ namespace AgeAPP.Forms
     public partial class CreateNewPlayerForm : Form
     {
         // Serviços
-        private FiresharpData local_Data_service = new FiresharpData();
+        private FiresharpData local_Data_service;
+
+        private string selectedAvatarName = "Player_icon1";
 
         public CreateNewPlayerForm(FiresharpData data_service)
         {
@@ -25,6 +27,8 @@ namespace AgeAPP.Forms
             GridStyleController.ApplyTheme(dataGridViewMaps);
             GridStyleController.FixMapsHeaderNames(dataGridViewMaps);
             GridStyleController.ApplyMapTypeFormatting(dataGridViewMaps);
+
+            MainFunctions.LoadAvatarsOnLayoutPanel(AvatarsLayoutPanel, OnAvatarSelected);
         }
 
         private async void CreateButton_Click(object sender, EventArgs e)
@@ -55,7 +59,8 @@ namespace AgeAPP.Forms
                     {
                         Name = map.Name,
                         Times_played = 0
-                    })
+                    }),
+                AvatarId = selectedAvatarName
             };
 
             await local_Data_service.Add_new_player(newPlayer);
@@ -80,6 +85,20 @@ namespace AgeAPP.Forms
             {
                 e.Handled = true;
             }
+        }
+
+        private void OnAvatarSelected(PictureBox pic)
+        {
+            // Limpa seleção
+            foreach (Control c in AvatarsLayoutPanel.Controls)
+                c.BackColor = Color.Transparent;
+
+            // Marca selecionado
+            pic.BackColor = Color.Gold;
+
+            selectedAvatarName = pic.Tag.ToString();
+
+            System.Media.SystemSounds.Beep.Play();
         }
     }
 }

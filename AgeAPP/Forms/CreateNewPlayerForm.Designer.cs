@@ -31,8 +31,10 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateNewPlayerForm));
             panel1 = new Panel();
+            AvatarsLayoutPanel = new FlowLayoutPanel();
             dataGridViewMaps = new DataGridView();
             label2 = new Label();
+            label4 = new Label();
             label3 = new Label();
             label1 = new Label();
             TextBoxPlayerRating = new TextBox();
@@ -46,8 +48,10 @@
             // 
             panel1.BackgroundImage = Properties.Resources.aoe2_de_uhd_2;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(AvatarsLayoutPanel);
             panel1.Controls.Add(dataGridViewMaps);
             panel1.Controls.Add(label2);
+            panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(TextBoxPlayerRating);
@@ -56,8 +60,18 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(622, 307);
+            panel1.Size = new Size(923, 345);
             panel1.TabIndex = 1;
+            // 
+            // AvatarsLayoutPanel
+            // 
+            AvatarsLayoutPanel.AutoScroll = true;
+            AvatarsLayoutPanel.BackColor = SystemColors.ControlDark;
+            AvatarsLayoutPanel.Location = new Point(610, 29);
+            AvatarsLayoutPanel.Name = "AvatarsLayoutPanel";
+            AvatarsLayoutPanel.Padding = new Padding(5);
+            AvatarsLayoutPanel.Size = new Size(301, 264);
+            AvatarsLayoutPanel.TabIndex = 5;
             // 
             // dataGridViewMaps
             // 
@@ -92,6 +106,18 @@
             label2.Size = new Size(43, 15);
             label2.TabIndex = 2;
             label2.Text = "Rating";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Black;
+            label4.Font = new Font("Arial", 9F);
+            label4.ForeColor = SystemColors.Control;
+            label4.Location = new Point(610, 11);
+            label4.Name = "label4";
+            label4.Size = new Size(170, 15);
+            label4.TabIndex = 2;
+            label4.Text = "Selecione o avatar do jogador";
             // 
             // label3
             // 
@@ -143,7 +169,7 @@
             CreateButton.FlatStyle = FlatStyle.Flat;
             CreateButton.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             CreateButton.ForeColor = SystemColors.Control;
-            CreateButton.Location = new Point(89, 249);
+            CreateButton.Location = new Point(765, 298);
             CreateButton.Name = "CreateButton";
             CreateButton.Size = new Size(146, 44);
             CreateButton.TabIndex = 3;
@@ -155,7 +181,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(622, 307);
+            ClientSize = new Size(923, 345);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -180,5 +206,7 @@
         private Button CreateButton;
         private DataGridView dataGridViewMaps;
         private Label label3;
+        private Label label4;
+        private FlowLayoutPanel AvatarsLayoutPanel;
     }
 }

@@ -28,24 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            AvatarPictureBox = new PictureBox();
             PlayerRatingLabel = new Label();
             PlayerNameLabel = new Label();
-            pictureBox1 = new PictureBox();
+            AvatarPictureBox = new PictureBox();
             LeaderboardRankLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)AvatarPictureBox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // AvatarPictureBox
-            // 
-            AvatarPictureBox.BackgroundImage = Properties.Resources.Player_icon1;
-            AvatarPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-            AvatarPictureBox.Location = new Point(-117, 45);
-            AvatarPictureBox.Name = "AvatarPictureBox";
-            AvatarPictureBox.Size = new Size(60, 60);
-            AvatarPictureBox.TabIndex = 2;
-            AvatarPictureBox.TabStop = false;
             // 
             // PlayerRatingLabel
             // 
@@ -69,15 +57,15 @@
             PlayerNameLabel.TabIndex = 13;
             PlayerNameLabel.Text = "pedreiro";
             // 
-            // pictureBox1
+            // AvatarPictureBox
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.Player_icon1;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(67, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(36, 30);
-            pictureBox1.TabIndex = 8;
-            pictureBox1.TabStop = false;
+            AvatarPictureBox.BackgroundImage = Properties.Resources.Player_icon1;
+            AvatarPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            AvatarPictureBox.Location = new Point(67, 3);
+            AvatarPictureBox.Name = "AvatarPictureBox";
+            AvatarPictureBox.Size = new Size(36, 30);
+            AvatarPictureBox.TabIndex = 8;
+            AvatarPictureBox.TabStop = false;
             // 
             // LeaderboardRankLabel
             // 
@@ -98,22 +86,19 @@
             Controls.Add(LeaderboardRankLabel);
             Controls.Add(PlayerRatingLabel);
             Controls.Add(PlayerNameLabel);
-            Controls.Add(pictureBox1);
             Controls.Add(AvatarPictureBox);
             Name = "CompactPlayerCard";
             Size = new Size(390, 40);
             ((System.ComponentModel.ISupportInitialize)AvatarPictureBox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox AvatarPictureBox;
         private Label PlayerRatingLabel;
         private Label PlayerNameLabel;
-        private PictureBox pictureBox1;
+        private PictureBox AvatarPictureBox;
         private Label LeaderboardRankLabel;
     }
 }

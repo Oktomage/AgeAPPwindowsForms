@@ -1,4 +1,6 @@
-﻿using FireSharp.Response;
+﻿using AgeAPP.Properties;
+using System.Collections;
+using System.Globalization;
 using static AgeAPP.Classes.FiresharpData;
 using static AgeAPP.Classes.Main_classes;
 
@@ -304,6 +306,87 @@ namespace AgeAPP.Classes
             string json = System.Text.Json.JsonSerializer.Serialize(log, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
 
             File.WriteAllText(logFilePath, json);
+        }
+
+        #endregion
+
+        #region Avatars
+
+        private static Dictionary<string, Image> AvatarCache;
+
+        private static void EnsureAvatarCache()
+        {
+            if (AvatarCache != null)
+                return;
+
+            AvatarCache = new Dictionary<string, Image>();
+
+            var resources = Properties.Resources.ResourceManager.GetResourceSet(
+                CultureInfo.CurrentCulture,
+                true,
+                true
+            );
+
+            foreach (DictionaryEntry entry in resources)
+            {
+                if (entry.Value is Image image)
+                {
+                    string key = entry.Key.ToString();
+                    AvatarCache[key] = image;
+                }
+            }
+        }
+
+        public static void LoadAvatarsOnLayoutPanel(FlowLayoutPanel panel, Action<PictureBox> onAvatarClick)
+        {
+            EnsureAvatarCache();
+
+            panel.Controls.Clear();
+
+            var resources = Properties.Resources.ResourceManager.GetResourceSet(
+                CultureInfo.CurrentCulture,
+                true,
+                true
+            );
+
+            foreach (var kv in AvatarCache)
+            {
+                string resourceName = kv.Key;
+                Image image = kv.Value;
+
+                // 🔹 Filtro por padrão
+                if (!resourceName.StartsWith("Player_icon"))
+                    continue;
+
+                var pic = new PictureBox
+                {
+                    Width = 64,
+                    Height = 64,
+                    SizeMode = PictureBoxSizeMode.Zoom,
+                    Image = image,
+                    Cursor = Cursors.Hand,
+                    Tag = resourceName,
+                    Margin = new Padding(8),
+                    BorderStyle = BorderStyle.FixedSingle
+                };
+
+                //  Evento desacoplado
+                pic.Click += (s, e) => onAvatarClick((PictureBox)s);
+
+                panel.Controls.Add(pic);
+            }
+        }
+
+        public static Image LoadAvatar(string avatarId)
+        {
+            EnsureAvatarCache();
+
+            if (string.IsNullOrWhiteSpace(avatarId))
+                return Properties.Resources.Player_icon1;
+
+            return AvatarCache.TryGetValue(avatarId, out var image)
+                ? image
+                : Properties.Resources.Player_icon1;
         }
 
         #endregion
