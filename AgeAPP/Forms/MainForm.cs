@@ -227,7 +227,7 @@ namespace AgeAPP
 
         private void AdminConnectedLabel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Informações sobre o admin conectado atualmente.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Você está conectado ao banco de dados.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void HelpButton_Click(object sender, EventArgs e)
@@ -237,7 +237,8 @@ namespace AgeAPP
                 "2. Histórico de Partidas: Acesse o histórico completo de partidas para analisar desempenhos anteriores.\n\n" +
                 "3. Painel de Administração: Faça login como administrador para gerenciar jogadores, mapas e visualizar logs de atividades.\n\n" +
                 "4. Filtragem de Jogadores: Utilize a caixa de filtro para encontrar rapidamente jogadores pelo nome.\n\n" +
-                "5. Atualizações: Mantenha o aplicativo atualizado para garantir acesso às últimas funcionalidades e melhorias.",
+                "5. Configurações: Mostra as atuais configurações do aplicativo. \n\n" + 
+                "6. Atualizações: Mantenha o aplicativo atualizado para garantir acesso às últimas funcionalidades e melhorias.",
                 "Ajuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
