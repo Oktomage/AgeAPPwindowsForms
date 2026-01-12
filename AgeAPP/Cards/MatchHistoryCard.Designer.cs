@@ -100,7 +100,7 @@
             // 
             // ListViewWinnerTeam
             // 
-            ListViewWinnerTeam.BackColor = Color.FromArgb(192, 255, 192);
+            ListViewWinnerTeam.BackColor = SystemColors.ActiveCaptionText;
             ListViewWinnerTeam.Font = new Font("Arial", 9F);
             ListViewWinnerTeam.Location = new Point(170, 60);
             ListViewWinnerTeam.Name = "ListViewWinnerTeam";
@@ -122,7 +122,7 @@
             // 
             // ListViewLoserTeam
             // 
-            ListViewLoserTeam.BackColor = Color.FromArgb(255, 192, 192);
+            ListViewLoserTeam.BackColor = SystemColors.ActiveCaptionText;
             ListViewLoserTeam.Font = new Font("Arial", 9F);
             ListViewLoserTeam.Location = new Point(406, 60);
             ListViewLoserTeam.Name = "ListViewLoserTeam";

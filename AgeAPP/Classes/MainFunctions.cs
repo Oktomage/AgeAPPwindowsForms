@@ -212,85 +212,171 @@ namespace AgeAPP.Classes
 
         public MatchResult Get_match_result(List<Player> teamA, List<Player> teamB, bool teamAWon, string map_name)
         {
-            MatchResult result = new MatchResult();
+            MatchResult result = new MatchResult
+            {
+                TeamAWon = teamAWon,
+                MatchDate = DateTime.Now,
+                PlayedMap_name = map_name,
+                RatingChangesPerPlayer = new Dictionary<string, int>()
+            };
+            // Rating médio dos times
+            int avgRatingA = (int)teamA.Average(p => p.Rating);
+            int avgRatingB = (int)teamB.Average(p => p.Rating);
 
-            result.TeamAWon = teamAWon;
-            result.MatchDate = DateTime.Now;
-            result.PlayedMap_name = map_name;
-
-            int teamARating = teamA.Sum(p => p.Rating);
-            int teamBRating = teamB.Sum(p => p.Rating);
-
-            // Calcula valor da mudança de rating
-            int ratingDelta = Calculate_rating_changes(teamARating, teamBRating, teamAWon);
-
-            result.DeltaRating = ratingDelta;
-
-            // Aplica mudanças nos jogadores
+            // 🔹 TIME A
             foreach (var player in teamA)
             {
                 result.TeamA.Add(player);
 
                 player.Matches += 1;
-
                 if (teamAWon)
-                {
                     player.Wins += 1;
-                }
 
-                // Aplica mudança de dados
-                player.Rating += ratingDelta;
+                int delta = CalculateIndividualDelta(
+                    player.Rating,
+                    avgRatingB,
+                    teamAWon
+                );
+
+                player.Rating += delta;
                 player.Last_time_played = DateTime.Now.ToString("g");
+
+                result.RatingChangesPerPlayer[player.Name] = delta;
             }
+
+            // 🔹 TIME B
             foreach (var player in teamB)
             {
                 result.TeamB.Add(player);
 
                 player.Matches += 1;
-
                 if (!teamAWon)
-                {
                     player.Wins += 1;
-                }
 
-                // Aplica mudança de dados
-                player.Rating -= ratingDelta;
+                int delta = CalculateIndividualDelta(
+                    player.Rating,
+                    avgRatingA,
+                    !teamAWon
+                );
+
+                player.Rating += delta;
                 player.Last_time_played = DateTime.Now.ToString("g");
-            }
 
-            List<Player> all_updated_players = teamA.Concat(teamB).ToList();
+                result.RatingChangesPerPlayer[player.Name] = delta;
+            }
 
             return result;
         }
 
-        public int Calculate_expected_rating_changes(int teamRatingA, int teamRatingB)
+        public Dictionary<string, int> CalculatePreviewIndividualChanges(List<Player> teamA, List<Player> teamB, bool teamAWon)
         {
-            int K_FACTOR = FMain.AgeApp_settings_service.Kfactor;
-            int diff = teamRatingA - teamRatingB;
+            var preview = new Dictionary<string, int>();
 
-            // vantagem esperada
-            float expectedA = 1f / (1f + (float)Math.Pow(10, -diff / 400f));
+            if (teamA.Count == 0 || teamB.Count == 0)
+                return preview;
 
-            // valor esperado de mudança de rating
-            int expectedDeltaA = (int)Math.Round(K_FACTOR * (1f - expectedA));
+            int avgRatingA = (int)teamA.Average(p => p.Rating);
+            int avgRatingB = (int)teamB.Average(p => p.Rating);
 
-            return expectedDeltaA;
+            // 🔹 Preview Time A
+            foreach (var player in teamA)
+            {
+                int delta = CalculateIndividualDelta(
+                    player.Rating,
+                    avgRatingB,
+                    teamAWon
+                );
+
+                preview[player.Name] = delta;
+            }
+
+            // 🔹 Preview Time B
+            foreach (var player in teamB)
+            {
+                int delta = CalculateIndividualDelta(
+                    player.Rating,
+                    avgRatingA,
+                    !teamAWon
+                );
+
+                preview[player.Name] = delta;
+            }
+
+            return preview;
         }
 
+        private int CalculateIndividualDelta(int playerRating, int opponentAvgRating, bool playerWon)
+        {
+            int K = FMain.AgeApp_settings_service.Kfactor;
+
+            float expected = 1f / (1f + (float)Math.Pow(10, (opponentAvgRating - playerRating) / 400f));
+
+            float score = playerWon ? 1f : 0f;
+
+            return (int)Math.Round(K * (score - expected));
+        }
+
+        /*
         private int Calculate_rating_changes(int teamRatingA, int teamRatingB, bool teamAWon)
         {
-            int K_FACTOR = FMain.AgeApp_settings_service.Kfactor;
+            int Kfactor = FMain.AgeApp_settings_service.Kfactor;
 
             int diff = teamRatingA - teamRatingB;
 
-            // vantagem esperada
             float expectedA = 1f / (1f + (float)Math.Pow(10, -diff / 400f));
-
             float scoreA = teamAWon ? 1f : 0f;
 
-            int deltaA = (int)Math.Round(K_FACTOR * (scoreA - expectedA));
+            double diffFactor = Math.Clamp(
+                Math.Abs(diff) / 400.0,
+                1.0,
+                2.5
+            );
+
+            int deltaA = (int)Math.Round(
+                Kfactor * diffFactor * (scoreA - expectedA)
+            );
 
             return deltaA;
+        }*/
+
+        private Dictionary<string, int> CalculateIndividualRatingChanges(List<Player> team, int teamDelta)
+        {
+            var result = new Dictionary<string, int>();
+
+            if (team.Count == 0 || teamDelta == 0)
+                return result;
+
+            double avgRating = team.Average(p => p.Rating);
+
+            var weights = team.ToDictionary(
+                p => p.Name,
+                p => p.Rating / avgRating
+            );
+
+            double totalWeight = weights.Values.Sum();
+
+            int distributed = 0;
+
+            foreach (var kv in weights)
+            {
+                int delta = (int)Math.Round(teamDelta * (kv.Value / totalWeight));
+                result[kv.Key] = delta;
+                distributed += delta;
+            }
+
+            // Ajuste de arredondamento
+            int diff = teamDelta - distributed;
+            if (diff != 0)
+            {
+                string adjustPlayer = team
+                    .OrderBy(p => p.Rating)
+                    .First()
+                    .Name;
+
+                result[adjustPlayer] += diff;
+            }
+
+            return result;
         }
 
         #endregion

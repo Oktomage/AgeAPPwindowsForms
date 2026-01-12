@@ -109,7 +109,7 @@ namespace AgeAPP
 
         private List<Player> GetActivePlayers()
         {
-            DateTime limitDate = DateTime.Now.AddDays(-30);
+            DateTime limitDate = DateTime.Now.AddDays(-AgeApp_settings_service.maxInactiveDays);
 
             List<Player> activePlayers = allPlayers
                                     .Where(p =>

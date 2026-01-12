@@ -19,24 +19,18 @@ namespace AgeAPP.Cards
 
             CurrentResult = log.Match_result;
 
-            switch(CurrentResult.TeamAWon)
+            var deltas = CurrentResult.RatingChangesPerPlayer;
+
+            if (CurrentResult.TeamAWon)
             {
-                case true:
-                    // Time A venceu
-                    FillListView(ListViewWinnerTeam, CurrentResult.TeamA, true);
-                    FillListView(ListViewLoserTeam, CurrentResult.TeamB, false);
-                    break;
-
-                case false:
-                    // Time B venceu
-                    FillListView(ListViewWinnerTeam, CurrentResult.TeamB, true);
-                    FillListView(ListViewLoserTeam, CurrentResult.TeamA, false);
-                    break;
+                FillListView(ListViewWinnerTeam, CurrentResult.TeamA, deltas);
+                FillListView(ListViewLoserTeam, CurrentResult.TeamB, deltas);
             }
-
-            int delta = log.Match_result.DeltaRating;
-
-            DeltaRatingLabel.Text = $": {MathF.Abs(delta).ToString()}";
+            else
+            {
+                FillListView(ListViewWinnerTeam, CurrentResult.TeamB, deltas);
+                FillListView(ListViewLoserTeam, CurrentResult.TeamA, deltas);
+            }
 
             LogAuthorLabel.Text = $"Registro de: {log.Author_name}";
         }
@@ -53,17 +47,25 @@ namespace AgeAPP.Cards
             lv.Columns.Add("", lv.Width - 4); // coluna única
         }
 
-        private void FillListView(ListView listView, IEnumerable<Player> players, bool winnerTeam = false)
+        private void FillListView(ListView listView, IEnumerable<Player> players, Dictionary<string, int> ratingChanges)
         {
             listView.Items.Clear();
             ConfigureListView(listView);
 
-            string ratingChangeSyntax = winnerTeam ? "+" : "-";
-
             foreach (var player in players)
             {
-                var item = new ListViewItem($"{player.Name} {player.Rating} ({ratingChangeSyntax}{MathF.Abs(CurrentResult.DeltaRating)})");
-                item.SubItems.Add(player.Rating.ToString());
+                int delta = 0;
+
+                if (ratingChanges != null &&
+                    ratingChanges.TryGetValue(player.Name, out int value))
+                {
+                    delta = value;
+                }
+
+                string deltaText = delta > 0 ? $"+{delta}" : delta.ToString();
+
+                var item = new ListViewItem($"{player.Name} ({deltaText})");
+                item.ForeColor = delta >= 0 ? Color.LimeGreen : Color.IndianRed;
 
                 listView.Items.Add(item);
             }

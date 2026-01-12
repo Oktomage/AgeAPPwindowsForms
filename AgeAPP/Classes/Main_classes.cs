@@ -46,7 +46,7 @@ namespace AgeAPP.Classes
             public List<Player> All_players { get; set; } = new List<Player>();
             public List<Player> TeamA_players { get; set; } = new List<Player>();
             public List<Player> TeamB_players { get; set; } = new List<Player>();
-            public int Expected_rating_changes { get; set; }
+            public Dictionary<string, int> ExpectedRatingChanges { get; set; }
             public Map Played_map { get; set; }
             public string Role { get; set; } = "default";
             public string Content { get; set; }
@@ -57,7 +57,7 @@ namespace AgeAPP.Classes
         {
             public List<Player> TeamA { get; set; } = new List<Player>();
             public List<Player> TeamB { get; set; } = new List<Player>();
-            public int DeltaRating { get; set; }
+            public Dictionary<string, int> RatingChangesPerPlayer { get; set; }
             public bool TeamAWon { get; set; }
             public string PlayedMap_name { get; set; }
             public DateTime MatchDate { get; set; }

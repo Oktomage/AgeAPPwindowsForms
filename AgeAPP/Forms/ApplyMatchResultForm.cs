@@ -55,8 +55,8 @@ namespace AgeAPP.Forms
 
             dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "Rating_changes",
-                HeaderText = "Valor da partida"
+                DataPropertyName = "RatingChangeA",
+                HeaderText = "Δ"
             });
 
             dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
@@ -69,6 +69,12 @@ namespace AgeAPP.Forms
             {
                 DataPropertyName = "RatingB",
                 HeaderText = "Rating"
+            });
+
+            dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "RatingChangeB",
+                HeaderText = "Δ"
             });
 
             GridStyleController.ApplyTheme(dataGridViewMatchLog);
@@ -98,10 +104,16 @@ namespace AgeAPP.Forms
             public string TeamA { get; set; }
             public int RatingA { get; set; }
 
-            public string Rating_changes { get; set; }
+            public string RatingChangeA { get; set; }
+            public string RatingChangeB { get; set; }
 
             public string TeamB { get; set; }
             public int RatingB { get; set; }
+        }
+
+        private string FormatDelta(int value)
+        {
+            return value > 0 ? $"+{value}" : value.ToString();
         }
         private List<MatchRowView> BuildMatchRows(Log log)
         {
@@ -109,32 +121,45 @@ namespace AgeAPP.Forms
 
             int max = Math.Max(log.TeamA_players.Count, log.TeamB_players.Count);
 
-            int teamRatingA = log.TeamA_players.Sum(p => p.Rating);
-            int teamRatingB = log.TeamB_players.Sum(p => p.Rating);
-            int delta = local_Main_functions_service.Calculate_expected_rating_changes(teamRatingA, teamRatingB);
+            bool teamAWon = TeamVictoriousBox.SelectedItem?.ToString() == "Team A";
+
+            // 🔹 PREVIEW individual
+            var previewChanges = local_Main_functions_service
+                .CalculatePreviewIndividualChanges(
+                    log.TeamA_players,
+                    log.TeamB_players,
+                    teamAWon
+                );
 
             for (int i = 0; i < max; i++)
             {
-                rows.Add(new MatchRowView
+                var row = new MatchRowView();
+
+                if (i < log.TeamA_players.Count)
                 {
-                    TeamA = i < log.TeamA_players.Count
-                        ? log.TeamA_players[i].Name
-                        : "",
+                    var pA = log.TeamA_players[i];
+                    row.TeamA = pA.Name;
+                    row.RatingA = pA.Rating;
 
-                    RatingA = i < log.TeamA_players.Count
-                        ? log.TeamA_players[i].Rating
-                        : 0,
+                    row.RatingChangeA =
+                        previewChanges.TryGetValue(pA.Name, out int deltaA)
+                        ? FormatDelta(deltaA)
+                        : "0";
+                }
 
-                    Rating_changes = $"+-{delta}",
+                if (i < log.TeamB_players.Count)
+                {
+                    var pB = log.TeamB_players[i];
+                    row.TeamB = pB.Name;
+                    row.RatingB = pB.Rating;
 
-                    TeamB = i < log.TeamB_players.Count
-                        ? log.TeamB_players[i].Name
-                        : "",
+                    row.RatingChangeB =
+                        previewChanges.TryGetValue(pB.Name, out int deltaB)
+                        ? FormatDelta(deltaB)
+                        : "0";
+                }
 
-                    RatingB = i < log.TeamB_players.Count
-                        ? log.TeamB_players[i].Rating
-                        : 0
-                });
+                rows.Add(row);
             }
 
             return rows;
@@ -161,6 +186,12 @@ namespace AgeAPP.Forms
         }
 
         #region BUTTONS
+
+        private void TeamVictoriousBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (selected_log != null)
+                UpdateUIbased_on_log(selected_log);
+        }
 
         private void HelpButton_Click(object sender, EventArgs e)
         {
@@ -272,7 +303,7 @@ namespace AgeAPP.Forms
 
         private void ChangeMapButton_Click(object sender, EventArgs e)
         {
-            if(selected_log == null)
+            if (selected_log == null)
             {
                 MessageBox.Show("Selecione um log primeiro.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
