@@ -83,7 +83,7 @@ namespace AgeAPP
 
         private void Write_toolTips()
         {
-            ToolTips.SetToolTip(ShowOnlyActivePlayersCheckBox, "Mostrar apenas jogadores ativos há cerca de 30 dias.");
+            ToolTips.SetToolTip(ShowOnlyActivePlayersCheckBox, $"Mostrar apenas jogadores ativos há cerca de {AgeApp_settings_service.maxInactiveDays} dias.");
             ToolTips.SetToolTip(ExpandPlayersViewButton, "Expandir/Compactar a lista de jogadores.");
             ToolTips.SetToolTip(ForceGridRefreshButton, "Força a atualização das tabelas de jogadores e mapas.");
             ToolTips.SetToolTip(ToggleAppThemeButton, "Alterna entre tema claro e escuro.");
