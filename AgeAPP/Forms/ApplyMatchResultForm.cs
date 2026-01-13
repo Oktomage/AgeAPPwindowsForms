@@ -55,7 +55,7 @@ namespace AgeAPP.Forms
 
             dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "RatingChangeA",
+                DataPropertyName = "DeltaRatingChangeA",
                 HeaderText = "Δ"
             });
 
@@ -73,9 +73,10 @@ namespace AgeAPP.Forms
 
             dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "RatingChangeB",
+                DataPropertyName = "DeltaRatingChangeB",
                 HeaderText = "Δ"
             });
+
 
             GridStyleController.ApplyTheme(dataGridViewMatchLog);
         }
@@ -103,18 +104,14 @@ namespace AgeAPP.Forms
         {
             public string TeamA { get; set; }
             public int RatingA { get; set; }
+            public string DeltaRatingChangeA { get; set; }
 
-            public string RatingChangeA { get; set; }
-            public string RatingChangeB { get; set; }
 
             public string TeamB { get; set; }
             public int RatingB { get; set; }
+            public string DeltaRatingChangeB { get; set; }
         }
 
-        private string FormatDelta(int value)
-        {
-            return value > 0 ? $"+{value}" : value.ToString();
-        }
         private List<MatchRowView> BuildMatchRows(Log log)
         {
             var rows = new List<MatchRowView>();
@@ -123,13 +120,16 @@ namespace AgeAPP.Forms
 
             bool teamAWon = TeamVictoriousBox.SelectedItem?.ToString() == "Team A";
 
-            // 🔹 PREVIEW individual
-            var previewChanges = local_Main_functions_service
-                .CalculatePreviewIndividualChanges(
-                    log.TeamA_players,
-                    log.TeamB_players,
-                    teamAWon
-                );
+            int teamARating = log.TeamA_players.Sum(p => p.Rating);
+            int teamBRating = log.TeamB_players.Sum(p => p.Rating);
+
+            int deltaTeamA = local_Main_functions_service
+                .Calculate_rating_changes(teamARating, teamBRating, teamAWon);
+
+            int deltaTeamB = -deltaTeamA;
+
+            string deltaAFormatted = deltaTeamA > 0 ? $"+{deltaTeamA}" : deltaTeamA.ToString();
+            string deltaBFormatted = deltaTeamB > 0 ? $"+{deltaTeamB}" : deltaTeamB.ToString();
 
             for (int i = 0; i < max; i++)
             {
@@ -140,11 +140,7 @@ namespace AgeAPP.Forms
                     var pA = log.TeamA_players[i];
                     row.TeamA = pA.Name;
                     row.RatingA = pA.Rating;
-
-                    row.RatingChangeA =
-                        previewChanges.TryGetValue(pA.Name, out int deltaA)
-                        ? FormatDelta(deltaA)
-                        : "0";
+                    row.DeltaRatingChangeA = deltaAFormatted;
                 }
 
                 if (i < log.TeamB_players.Count)
@@ -152,11 +148,7 @@ namespace AgeAPP.Forms
                     var pB = log.TeamB_players[i];
                     row.TeamB = pB.Name;
                     row.RatingB = pB.Rating;
-
-                    row.RatingChangeB =
-                        previewChanges.TryGetValue(pB.Name, out int deltaB)
-                        ? FormatDelta(deltaB)
-                        : "0";
+                    row.DeltaRatingChangeB = deltaBFormatted;
                 }
 
                 rows.Add(row);

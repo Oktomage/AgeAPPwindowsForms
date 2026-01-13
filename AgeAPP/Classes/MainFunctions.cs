@@ -31,7 +31,7 @@ namespace AgeAPP.Classes
             Version vOnline = new Version(onlineVersion);
             Version vLocal = new Version(localVersion);
 
-            return vOnline != vLocal;
+            return vOnline > vLocal;
         }
 
         class SessionData
@@ -216,14 +216,24 @@ namespace AgeAPP.Classes
             {
                 TeamAWon = teamAWon,
                 MatchDate = DateTime.Now,
-                PlayedMap_name = map_name,
-                RatingChangesPerPlayer = new Dictionary<string, int>()
+                PlayedMap_name = map_name
             };
-            // Rating médio dos times
-            int avgRatingA = (int)teamA.Average(p => p.Rating);
-            int avgRatingB = (int)teamB.Average(p => p.Rating);
 
-            // 🔹 TIME A
+            int teamARating = teamA.Sum(p => p.Rating);
+            int teamBRating = teamB.Sum(p => p.Rating);
+
+            // 🔹 Delta do Time A
+            int deltaTeamA = Calculate_rating_changes(
+                teamARating,
+                teamBRating,
+                teamAWon
+            );
+
+            int deltaTeamB = -deltaTeamA;
+
+            result.DeltaRating = Math.Abs(deltaTeamA);
+
+            // 🔹 Aplica no Time A
             foreach (var player in teamA)
             {
                 result.TeamA.Add(player);
@@ -232,19 +242,11 @@ namespace AgeAPP.Classes
                 if (teamAWon)
                     player.Wins += 1;
 
-                int delta = CalculateIndividualDelta(
-                    player.Rating,
-                    avgRatingB,
-                    teamAWon
-                );
-
-                player.Rating += delta;
+                player.Rating += deltaTeamA;
                 player.Last_time_played = DateTime.Now.ToString("g");
-
-                result.RatingChangesPerPlayer[player.Name] = delta;
             }
 
-            // 🔹 TIME B
+            // 🔹 Aplica no Time B
             foreach (var player in teamB)
             {
                 result.TeamB.Add(player);
@@ -253,21 +255,14 @@ namespace AgeAPP.Classes
                 if (!teamAWon)
                     player.Wins += 1;
 
-                int delta = CalculateIndividualDelta(
-                    player.Rating,
-                    avgRatingA,
-                    !teamAWon
-                );
-
-                player.Rating += delta;
+                player.Rating += deltaTeamB;
                 player.Last_time_played = DateTime.Now.ToString("g");
-
-                result.RatingChangesPerPlayer[player.Name] = delta;
             }
 
             return result;
         }
 
+        /*
         public Dictionary<string, int> CalculatePreviewIndividualChanges(List<Player> teamA, List<Player> teamB, bool teamAWon)
         {
             var preview = new Dictionary<string, int>();
@@ -315,9 +310,9 @@ namespace AgeAPP.Classes
 
             return (int)Math.Round(K * (score - expected));
         }
-
-        /*
-        private int Calculate_rating_changes(int teamRatingA, int teamRatingB, bool teamAWon)
+        */
+        
+        public int Calculate_rating_changes(int teamRatingA, int teamRatingB, bool teamAWon)
         {
             int Kfactor = FMain.AgeApp_settings_service.Kfactor;
 
@@ -337,8 +332,9 @@ namespace AgeAPP.Classes
             );
 
             return deltaA;
-        }*/
+        }
 
+        /*
         private Dictionary<string, int> CalculateIndividualRatingChanges(List<Player> team, int teamDelta)
         {
             var result = new Dictionary<string, int>();
@@ -378,7 +374,8 @@ namespace AgeAPP.Classes
 
             return result;
         }
-
+        */
+        
         #endregion
 
         #region Log Methods

@@ -19,18 +19,23 @@ namespace AgeAPP.Cards
 
             CurrentResult = log.Match_result;
 
-            var deltas = CurrentResult.RatingChangesPerPlayer;
+            int delta = Math.Abs(CurrentResult.DeltaRating);
 
-            if (CurrentResult.TeamAWon)
-            {
-                FillListView(ListViewWinnerTeam, CurrentResult.TeamA, deltas);
-                FillListView(ListViewLoserTeam, CurrentResult.TeamB, deltas);
-            }
-            else
-            {
-                FillListView(ListViewWinnerTeam, CurrentResult.TeamB, deltas);
-                FillListView(ListViewLoserTeam, CurrentResult.TeamA, deltas);
-            }
+            // Time A
+            FillListView(
+                ListViewTeamA,
+                CurrentResult.TeamA,
+                CurrentResult.TeamAWon ? +delta : -delta
+            );
+
+            // Time B
+            FillListView(
+                ListViewTeamB,
+                CurrentResult.TeamB,
+                CurrentResult.TeamAWon ? -delta : +delta
+            );
+
+            UpdateWinnerIcons(CurrentResult.TeamAWon);
 
             LogAuthorLabel.Text = $"Registro de: {log.Author_name}";
         }
@@ -47,28 +52,29 @@ namespace AgeAPP.Cards
             lv.Columns.Add("", lv.Width - 4); // coluna única
         }
 
-        private void FillListView(ListView listView, IEnumerable<Player> players, Dictionary<string, int> ratingChanges)
+        private void FillListView(ListView listView, IEnumerable<Player> players, int delta)
         {
             listView.Items.Clear();
             ConfigureListView(listView);
 
+            string deltaText = delta > 0 ? $"+{delta}" : delta.ToString();
+            Color color = delta >= 0 ? Color.LimeGreen : Color.IndianRed;
+
             foreach (var player in players)
             {
-                int delta = 0;
-
-                if (ratingChanges != null &&
-                    ratingChanges.TryGetValue(player.Name, out int value))
+                var item = new ListViewItem($"{player.Name} ({deltaText})")
                 {
-                    delta = value;
-                }
-
-                string deltaText = delta > 0 ? $"+{delta}" : delta.ToString();
-
-                var item = new ListViewItem($"{player.Name} ({deltaText})");
-                item.ForeColor = delta >= 0 ? Color.LimeGreen : Color.IndianRed;
+                    ForeColor = color
+                };
 
                 listView.Items.Add(item);
             }
+        }
+
+        private void UpdateWinnerIcons(bool teamAWon)
+        {
+            TeamAsymbolPictureBox.BackgroundImage = teamAWon ? Properties.Resources.Winner_icon : Properties.Resources.Defeat_icon;
+            TeamBsymbolPictureBox.BackgroundImage = teamAWon ? Properties.Resources.Defeat_icon : Properties.Resources.Winner_icon;
         }
     }
 }
