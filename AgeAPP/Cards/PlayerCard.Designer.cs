@@ -50,33 +50,33 @@
             // PlayerNameLabel
             // 
             PlayerNameLabel.AutoSize = true;
-            PlayerNameLabel.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PlayerNameLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             PlayerNameLabel.ForeColor = SystemColors.Control;
-            PlayerNameLabel.Location = new Point(69, 3);
+            PlayerNameLabel.Location = new Point(69, 0);
             PlayerNameLabel.Name = "PlayerNameLabel";
-            PlayerNameLabel.Size = new Size(94, 24);
+            PlayerNameLabel.Size = new Size(96, 30);
             PlayerNameLabel.TabIndex = 1;
             PlayerNameLabel.Text = "pedreiro";
             // 
             // PlayerRatingLabel
             // 
             PlayerRatingLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            PlayerRatingLabel.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PlayerRatingLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PlayerRatingLabel.ForeColor = SystemColors.Control;
-            PlayerRatingLabel.Location = new Point(311, 3);
+            PlayerRatingLabel.Location = new Point(661, 3);
             PlayerRatingLabel.Name = "PlayerRatingLabel";
-            PlayerRatingLabel.Size = new Size(76, 24);
+            PlayerRatingLabel.Size = new Size(76, 32);
             PlayerRatingLabel.TabIndex = 1;
             PlayerRatingLabel.Text = "(2000)";
             // 
             // PlayerLastMatchDateLabel
             // 
             PlayerLastMatchDateLabel.AutoSize = true;
-            PlayerLastMatchDateLabel.Font = new Font("Arial", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            PlayerLastMatchDateLabel.Font = new Font("Segoe UI", 8.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             PlayerLastMatchDateLabel.ForeColor = SystemColors.Control;
-            PlayerLastMatchDateLabel.Location = new Point(69, 48);
+            PlayerLastMatchDateLabel.Location = new Point(71, 50);
             PlayerLastMatchDateLabel.Name = "PlayerLastMatchDateLabel";
-            PlayerLastMatchDateLabel.Size = new Size(152, 15);
+            PlayerLastMatchDateLabel.Size = new Size(139, 13);
             PlayerLastMatchDateLabel.TabIndex = 1;
             PlayerLastMatchDateLabel.Text = "Ultima partida: 30/12/2025";
             // 
@@ -84,22 +84,22 @@
             // 
             PlayerWinRateLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             PlayerWinRateLabel.AutoSize = true;
-            PlayerWinRateLabel.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PlayerWinRateLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PlayerWinRateLabel.ForeColor = SystemColors.Control;
-            PlayerWinRateLabel.Location = new Point(329, 27);
+            PlayerWinRateLabel.Location = new Point(674, 35);
             PlayerWinRateLabel.Name = "PlayerWinRateLabel";
-            PlayerWinRateLabel.Size = new Size(38, 15);
+            PlayerWinRateLabel.Size = new Size(37, 15);
             PlayerWinRateLabel.TabIndex = 1;
             PlayerWinRateLabel.Text = "[42%]";
             // 
             // PlayerMatchesLabel
             // 
             PlayerMatchesLabel.AutoSize = true;
-            PlayerMatchesLabel.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PlayerMatchesLabel.Font = new Font("Segoe UI", 8.25F);
             PlayerMatchesLabel.ForeColor = SystemColors.Control;
-            PlayerMatchesLabel.Location = new Point(69, 33);
+            PlayerMatchesLabel.Location = new Point(71, 37);
             PlayerMatchesLabel.Name = "PlayerMatchesLabel";
-            PlayerMatchesLabel.Size = new Size(157, 15);
+            PlayerMatchesLabel.Size = new Size(144, 13);
             PlayerMatchesLabel.TabIndex = 1;
             PlayerMatchesLabel.Text = "Partidas: 999 | Vitórias: 500";
             // 
@@ -115,7 +115,7 @@
             Controls.Add(PlayerNameLabel);
             Controls.Add(AvatarPictureBox);
             Name = "PlayerCard";
-            Size = new Size(390, 68);
+            Size = new Size(740, 68);
             ((System.ComponentModel.ISupportInitialize)AvatarPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();

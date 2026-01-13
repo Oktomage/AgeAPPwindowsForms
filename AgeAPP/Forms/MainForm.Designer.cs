@@ -84,9 +84,9 @@ namespace AgeAPP
             // 
             // panel1
             // 
-            panel1.BackgroundImage = Properties.Resources.news_splash;
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel1.BackColor = Color.Transparent;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(SignOutButton);
@@ -96,7 +96,7 @@ namespace AgeAPP
             panel1.Controls.Add(AdminPanelButton);
             panel1.Controls.Add(LoginButton);
             panel1.Controls.Add(SplitButton);
-            panel1.Location = new Point(500, 52);
+            panel1.Location = new Point(871, 52);
             panel1.Name = "panel1";
             panel1.Size = new Size(268, 492);
             panel1.TabIndex = 2;
@@ -228,7 +228,7 @@ namespace AgeAPP
             ForceGridRefreshButton.BackgroundImage = Properties.Resources.Refresh_icon;
             ForceGridRefreshButton.BackgroundImageLayout = ImageLayout.Stretch;
             ForceGridRefreshButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ForceGridRefreshButton.Location = new Point(442, 1);
+            ForceGridRefreshButton.Location = new Point(807, 5);
             ForceGridRefreshButton.Name = "ForceGridRefreshButton";
             ForceGridRefreshButton.Size = new Size(31, 29);
             ForceGridRefreshButton.TabIndex = 4;
@@ -259,7 +259,7 @@ namespace AgeAPP
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             dataGridViewMaps.DefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewMaps.Location = new Point(921, 47);
+            dataGridViewMaps.Location = new Point(748, 614);
             dataGridViewMaps.MultiSelect = false;
             dataGridViewMaps.Name = "dataGridViewMaps";
             dataGridViewMaps.ReadOnly = true;
@@ -282,25 +282,26 @@ namespace AgeAPP
             // panel2
             // 
             panel2.BackColor = SystemColors.ActiveCaptionText;
-            panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(label1);
             panel2.Controls.Add(ShowOnlyActivePlayersCheckBox);
             panel2.Controls.Add(ToggleAppThemeButton);
             panel2.Controls.Add(ForceGridRefreshButton);
             panel2.Location = new Point(12, 9);
             panel2.Name = "panel2";
-            panel2.Size = new Size(485, 37);
+            panel2.Size = new Size(846, 37);
             panel2.TabIndex = 5;
             // 
             // ShowOnlyActivePlayersCheckBox
             // 
             ShowOnlyActivePlayersCheckBox.AutoSize = true;
             ShowOnlyActivePlayersCheckBox.BackColor = Color.Black;
-            ShowOnlyActivePlayersCheckBox.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ShowOnlyActivePlayersCheckBox.Checked = true;
+            ShowOnlyActivePlayersCheckBox.CheckState = CheckState.Checked;
+            ShowOnlyActivePlayersCheckBox.Font = new Font("Segoe UI", 8.25F);
             ShowOnlyActivePlayersCheckBox.ForeColor = SystemColors.Control;
             ShowOnlyActivePlayersCheckBox.Location = new Point(88, 11);
             ShowOnlyActivePlayersCheckBox.Name = "ShowOnlyActivePlayersCheckBox";
-            ShowOnlyActivePlayersCheckBox.Size = new Size(206, 19);
+            ShowOnlyActivePlayersCheckBox.Size = new Size(194, 17);
             ShowOnlyActivePlayersCheckBox.TabIndex = 7;
             ShowOnlyActivePlayersCheckBox.Text = "Mostrar apenas jogadores ativos";
             ShowOnlyActivePlayersCheckBox.UseVisualStyleBackColor = false;
@@ -313,7 +314,7 @@ namespace AgeAPP
             ToggleAppThemeButton.BackgroundImage = Properties.Resources.Dark_mode_icon;
             ToggleAppThemeButton.BackgroundImageLayout = ImageLayout.Stretch;
             ToggleAppThemeButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ToggleAppThemeButton.Location = new Point(405, 1);
+            ToggleAppThemeButton.Location = new Point(770, 5);
             ToggleAppThemeButton.Name = "ToggleAppThemeButton";
             ToggleAppThemeButton.Size = new Size(31, 29);
             ToggleAppThemeButton.TabIndex = 4;
@@ -352,23 +353,25 @@ namespace AgeAPP
             // 
             // AgeAppLabel
             // 
+            AgeAppLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             AgeAppLabel.AutoSize = true;
-            AgeAppLabel.BackColor = Color.Black;
-            AgeAppLabel.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AgeAppLabel.BackColor = Color.Transparent;
+            AgeAppLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AgeAppLabel.ForeColor = Color.White;
-            AgeAppLabel.Location = new Point(505, 19);
+            AgeAppLabel.Location = new Point(871, 10);
             AgeAppLabel.Name = "AgeAppLabel";
-            AgeAppLabel.Size = new Size(211, 27);
+            AgeAppLabel.Size = new Size(212, 32);
             AgeAppLabel.TabIndex = 4;
             AgeAppLabel.Text = "Interno App V5.4.3";
             // 
             // HelpButton
             // 
+            HelpButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             HelpButton.AutoSize = true;
             HelpButton.BackgroundImage = Properties.Resources.Help_icon;
             HelpButton.BackgroundImageLayout = ImageLayout.Stretch;
             HelpButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            HelpButton.Location = new Point(738, 17);
+            HelpButton.Location = new Point(1109, 12);
             HelpButton.Name = "HelpButton";
             HelpButton.Size = new Size(30, 29);
             HelpButton.TabIndex = 4;
@@ -378,21 +381,21 @@ namespace AgeAPP
             // FlowLayoutPlayers
             // 
             FlowLayoutPlayers.AutoScroll = true;
-            FlowLayoutPlayers.BackColor = SystemColors.ControlDark;
+            FlowLayoutPlayers.BackColor = Color.Transparent;
+            FlowLayoutPlayers.BackgroundImageLayout = ImageLayout.None;
             FlowLayoutPlayers.Location = new Point(77, 52);
             FlowLayoutPlayers.Margin = new Padding(0, 0, 0, 10);
             FlowLayoutPlayers.Name = "FlowLayoutPlayers";
             FlowLayoutPlayers.Padding = new Padding(3);
-            FlowLayoutPlayers.Size = new Size(420, 492);
+            FlowLayoutPlayers.Size = new Size(781, 492);
             FlowLayoutPlayers.TabIndex = 8;
             // 
             // panel3
             // 
             panel3.Anchor = AnchorStyles.Left;
             panel3.BackColor = SystemColors.ActiveCaptionText;
-            panel3.BorderStyle = BorderStyle.Fixed3D;
             panel3.Controls.Add(ExpandPlayersViewButton);
-            panel3.Location = new Point(12, 52);
+            panel3.Location = new Point(12, 53);
             panel3.Name = "panel3";
             panel3.Size = new Size(62, 492);
             panel3.TabIndex = 0;
@@ -403,7 +406,7 @@ namespace AgeAPP
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(780, 554);
+            ClientSize = new Size(1151, 556);
             Controls.Add(panel3);
             Controls.Add(FlowLayoutPlayers);
             Controls.Add(FilterPlayerTextBox);

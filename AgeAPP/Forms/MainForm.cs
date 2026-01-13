@@ -95,7 +95,7 @@ namespace AgeAPP
             ToolTips.SetToolTip(SettingsButton, "Abre o menu de configurações do app.");
             ToolTips.SetToolTip(FilterPlayerTextBox, "Filtra a lista de jogadores pelo nome.");
             ToolTips.SetToolTip(HelpButton, "Mostra um breve tutorial do aplicativo.");
-            ToolTips.SetToolTip(SignOutButton, "Desconecta o admin atualmente conectado.");
+            ToolTips.SetToolTip(SignOutButton, "Desconecta o usuario atualmente conectado.");
         }
 
         private async Task UpdateLocalData()
