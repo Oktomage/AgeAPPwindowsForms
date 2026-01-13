@@ -31,7 +31,7 @@ namespace AgeAPP.Classes
             Version vOnline = new Version(onlineVersion);
             Version vLocal = new Version(localVersion);
 
-            return vOnline > vLocal;
+            return vOnline != vLocal;
         }
 
         class SessionData

@@ -8,6 +8,14 @@ namespace AgeAPP.Classes
         public static bool Show_only_active_players = false;
         public static bool Show_expanded_players_list = false;
 
+        public class Account()
+        {
+            public string Username { get; set; } = "NaN";
+            public string Password { get; set; } = "NaN";
+            public string Last_sessionDate { get; set; }
+            public bool IsAdmin { get; set; } = false;
+        }
+
         public class Player
         {
             public int Id { get; set; } = 0;
