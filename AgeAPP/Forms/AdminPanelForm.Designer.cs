@@ -55,12 +55,14 @@
             ToolTips = new ToolTip(components);
             FilterPlayerTextBox = new TextBox();
             label5 = new Label();
+            panel4 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)AvatarPictureBox).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridViewPlayers
@@ -68,6 +70,8 @@
             dataGridViewPlayers.AllowUserToAddRows = false;
             dataGridViewPlayers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewPlayers.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
+            dataGridViewPlayers.BackgroundColor = Color.Black;
+            dataGridViewPlayers.BorderStyle = BorderStyle.None;
             dataGridViewPlayers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewPlayers.Location = new Point(12, 55);
             dataGridViewPlayers.MultiSelect = false;
@@ -92,20 +96,19 @@
             SelectedPlayerLabel.AutoSize = true;
             SelectedPlayerLabel.BackColor = Color.Black;
             SelectedPlayerLabel.Cursor = Cursors.Hand;
-            SelectedPlayerLabel.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SelectedPlayerLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SelectedPlayerLabel.ForeColor = SystemColors.Control;
-            SelectedPlayerLabel.Location = new Point(55, 17);
+            SelectedPlayerLabel.Location = new Point(72, 12);
             SelectedPlayerLabel.Name = "SelectedPlayerLabel";
-            SelectedPlayerLabel.Size = new Size(75, 27);
+            SelectedPlayerLabel.Size = new Size(80, 32);
             SelectedPlayerLabel.TabIndex = 2;
             SelectedPlayerLabel.Text = "Nome";
             SelectedPlayerLabel.Click += SelectedPlayerLabel_Click;
             // 
             // panel1
             // 
-            panel1.BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
+            panel1.BackColor = Color.Black;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(AvatarPictureBox);
             panel1.Controls.Add(DuplicateSelectedPlayerButton);
             panel1.Controls.Add(ChangeSelectedPlayerRating);
@@ -116,7 +119,7 @@
             panel1.Controls.Add(panel3);
             panel1.Location = new Point(474, 55);
             panel1.Name = "panel1";
-            panel1.Size = new Size(358, 473);
+            panel1.Size = new Size(371, 473);
             panel1.TabIndex = 3;
             // 
             // AvatarPictureBox
@@ -125,9 +128,9 @@
             AvatarPictureBox.BackgroundImage = Properties.Resources.Player_icon1;
             AvatarPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
             AvatarPictureBox.Cursor = Cursors.Hand;
-            AvatarPictureBox.Location = new Point(13, 17);
+            AvatarPictureBox.Location = new Point(12, 12);
             AvatarPictureBox.Name = "AvatarPictureBox";
-            AvatarPictureBox.Size = new Size(37, 41);
+            AvatarPictureBox.Size = new Size(52, 56);
             AvatarPictureBox.TabIndex = 7;
             AvatarPictureBox.TabStop = false;
             AvatarPictureBox.Click += AvatarPictureBox_Click;
@@ -149,7 +152,7 @@
             ChangeSelectedPlayerRating.BackgroundImage = Properties.Resources.Hand_icon2;
             ChangeSelectedPlayerRating.BackgroundImageLayout = ImageLayout.Stretch;
             ChangeSelectedPlayerRating.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ChangeSelectedPlayerRating.Location = new Point(137, 84);
+            ChangeSelectedPlayerRating.Location = new Point(137, 97);
             ChangeSelectedPlayerRating.Name = "ChangeSelectedPlayerRating";
             ChangeSelectedPlayerRating.Size = new Size(37, 35);
             ChangeSelectedPlayerRating.TabIndex = 4;
@@ -159,7 +162,7 @@
             // SelectedPlayerRatingTextBox
             // 
             SelectedPlayerRatingTextBox.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SelectedPlayerRatingTextBox.Location = new Point(12, 84);
+            SelectedPlayerRatingTextBox.Location = new Point(12, 97);
             SelectedPlayerRatingTextBox.Name = "SelectedPlayerRatingTextBox";
             SelectedPlayerRatingTextBox.PlaceholderText = "Rating";
             SelectedPlayerRatingTextBox.Size = new Size(119, 35);
@@ -183,24 +186,23 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Black;
-            label1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(12, 63);
+            label1.Location = new Point(12, 73);
             label1.Name = "label1";
-            label1.Size = new Size(53, 18);
+            label1.Size = new Size(58, 21);
             label1.TabIndex = 2;
-            label1.Text = "Rating";
+            label1.Text = "Rating:";
             // 
             // panel3
             // 
             panel3.BackColor = Color.Transparent;
-            panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(EditPlayerFavoriteMapsButton);
             panel3.Controls.Add(FavoriteMapListBox);
             panel3.Controls.Add(label3);
-            panel3.Location = new Point(3, 137);
+            panel3.Location = new Point(3, 167);
             panel3.Name = "panel3";
-            panel3.Size = new Size(348, 265);
+            panel3.Size = new Size(348, 211);
             panel3.TabIndex = 6;
             // 
             // EditPlayerFavoriteMapsButton
@@ -210,9 +212,9 @@
             EditPlayerFavoriteMapsButton.BackgroundImage = Properties.Resources.button_wide_normal;
             EditPlayerFavoriteMapsButton.BackgroundImageLayout = ImageLayout.Stretch;
             EditPlayerFavoriteMapsButton.FlatStyle = FlatStyle.Flat;
-            EditPlayerFavoriteMapsButton.Font = new Font("Arial", 12F);
+            EditPlayerFavoriteMapsButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             EditPlayerFavoriteMapsButton.ForeColor = SystemColors.Control;
-            EditPlayerFavoriteMapsButton.Location = new Point(9, 203);
+            EditPlayerFavoriteMapsButton.Location = new Point(7, 160);
             EditPlayerFavoriteMapsButton.Name = "EditPlayerFavoriteMapsButton";
             EditPlayerFavoriteMapsButton.Size = new Size(134, 39);
             EditPlayerFavoriteMapsButton.TabIndex = 4;
@@ -224,9 +226,9 @@
             // 
             FavoriteMapListBox.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FavoriteMapListBox.FormattingEnabled = true;
-            FavoriteMapListBox.Location = new Point(9, 31);
+            FavoriteMapListBox.Location = new Point(8, 24);
             FavoriteMapListBox.Name = "FavoriteMapListBox";
-            FavoriteMapListBox.Size = new Size(273, 166);
+            FavoriteMapListBox.Size = new Size(273, 130);
             FavoriteMapListBox.TabIndex = 5;
             FavoriteMapListBox.DrawItem += FavoriteMapListBox_DrawItem;
             // 
@@ -234,23 +236,23 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Black;
-            label3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(9, 7);
+            label3.Location = new Point(7, 0);
             label3.Name = "label3";
-            label3.Size = new Size(119, 18);
+            label3.Size = new Size(124, 21);
             label3.TabIndex = 2;
-            label3.Text = "Mapas favoritos";
+            label3.Text = "Mapas favoritos:";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Black;
-            label2.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Segoe UI", 20.25F);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(474, 17);
+            label2.Location = new Point(474, 5);
             label2.Name = "label2";
-            label2.Size = new Size(224, 32);
+            label2.Size = new Size(228, 37);
             label2.TabIndex = 2;
             label2.Text = "Painel do jogador";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -262,11 +264,11 @@
             CreateNewPlayerButton.BackgroundImage = Properties.Resources.button_wide_normal;
             CreateNewPlayerButton.BackgroundImageLayout = ImageLayout.Stretch;
             CreateNewPlayerButton.FlatStyle = FlatStyle.Flat;
-            CreateNewPlayerButton.Font = new Font("Arial", 12F);
+            CreateNewPlayerButton.Font = new Font("Segoe UI", 12F);
             CreateNewPlayerButton.ForeColor = SystemColors.Control;
-            CreateNewPlayerButton.Location = new Point(3, 109);
+            CreateNewPlayerButton.Location = new Point(3, 107);
             CreateNewPlayerButton.Name = "CreateNewPlayerButton";
-            CreateNewPlayerButton.Size = new Size(255, 53);
+            CreateNewPlayerButton.Size = new Size(255, 54);
             CreateNewPlayerButton.TabIndex = 4;
             CreateNewPlayerButton.Text = "Registrar novo jogador";
             CreateNewPlayerButton.UseVisualStyleBackColor = false;
@@ -274,9 +276,8 @@
             // 
             // panel2
             // 
-            panel2.BackgroundImage = Properties.Resources.aoe2_de_uhd_2;
+            panel2.BackColor = Color.Transparent;
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
-            panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(AdminChangesButton);
             panel2.Controls.Add(CreateNewMapButton);
@@ -284,7 +285,7 @@
             panel2.Controls.Add(ApplyMatchResultButton);
             panel2.Location = new Point(851, 55);
             panel2.Name = "panel2";
-            panel2.Size = new Size(265, 288);
+            panel2.Size = new Size(265, 473);
             panel2.TabIndex = 5;
             // 
             // pictureBox1
@@ -305,11 +306,11 @@
             AdminChangesButton.BackgroundImage = Properties.Resources.button_wide_normal;
             AdminChangesButton.BackgroundImageLayout = ImageLayout.Stretch;
             AdminChangesButton.FlatStyle = FlatStyle.Flat;
-            AdminChangesButton.Font = new Font("Arial", 12F);
+            AdminChangesButton.Font = new Font("Segoe UI", 12F);
             AdminChangesButton.ForeColor = SystemColors.Control;
             AdminChangesButton.Location = new Point(3, 227);
             AdminChangesButton.Name = "AdminChangesButton";
-            AdminChangesButton.Size = new Size(255, 53);
+            AdminChangesButton.Size = new Size(255, 54);
             AdminChangesButton.TabIndex = 4;
             AdminChangesButton.Text = "Histórico dos admins";
             AdminChangesButton.UseVisualStyleBackColor = false;
@@ -322,11 +323,11 @@
             CreateNewMapButton.BackgroundImage = Properties.Resources.button_wide_normal;
             CreateNewMapButton.BackgroundImageLayout = ImageLayout.Stretch;
             CreateNewMapButton.FlatStyle = FlatStyle.Flat;
-            CreateNewMapButton.Font = new Font("Arial", 12F);
+            CreateNewMapButton.Font = new Font("Segoe UI", 12F);
             CreateNewMapButton.ForeColor = SystemColors.Control;
-            CreateNewMapButton.Location = new Point(3, 168);
+            CreateNewMapButton.Location = new Point(3, 167);
             CreateNewMapButton.Name = "CreateNewMapButton";
-            CreateNewMapButton.Size = new Size(255, 53);
+            CreateNewMapButton.Size = new Size(255, 54);
             CreateNewMapButton.TabIndex = 4;
             CreateNewMapButton.Text = "Registrar novo mapa";
             CreateNewMapButton.UseVisualStyleBackColor = false;
@@ -339,11 +340,11 @@
             ApplyMatchResultButton.BackgroundImage = Properties.Resources.button_wide_normal;
             ApplyMatchResultButton.BackgroundImageLayout = ImageLayout.Stretch;
             ApplyMatchResultButton.FlatStyle = FlatStyle.Flat;
-            ApplyMatchResultButton.Font = new Font("Arial", 12F);
+            ApplyMatchResultButton.Font = new Font("Segoe UI", 12F);
             ApplyMatchResultButton.ForeColor = SystemColors.Control;
-            ApplyMatchResultButton.Location = new Point(3, 50);
+            ApplyMatchResultButton.Location = new Point(3, 47);
             ApplyMatchResultButton.Name = "ApplyMatchResultButton";
-            ApplyMatchResultButton.Size = new Size(255, 53);
+            ApplyMatchResultButton.Size = new Size(255, 54);
             ApplyMatchResultButton.TabIndex = 4;
             ApplyMatchResultButton.Text = "Aplicar resultado de partida";
             ApplyMatchResultButton.UseVisualStyleBackColor = false;
@@ -353,11 +354,11 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Black;
-            label4.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Segoe UI", 20.25F);
             label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(851, 17);
+            label4.Location = new Point(851, 5);
             label4.Name = "label4";
-            label4.Size = new Size(231, 32);
+            label4.Size = new Size(230, 37);
             label4.TabIndex = 2;
             label4.Text = "Painel de controle";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -382,14 +383,26 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Black;
-            label5.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Segoe UI", 20.25F);
             label5.ForeColor = SystemColors.Control;
-            label5.Location = new Point(12, 20);
+            label5.Location = new Point(12, 5);
             label5.Name = "label5";
-            label5.Size = new Size(237, 32);
+            label5.Size = new Size(234, 37);
             label5.TabIndex = 2;
             label5.Text = "Lista de jogadores";
             label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Black;
+            panel4.Controls.Add(label2);
+            panel4.Controls.Add(label5);
+            panel4.Controls.Add(label4);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(1125, 49);
+            panel4.TabIndex = 8;
             // 
             // AdminPanelForm
             // 
@@ -398,13 +411,11 @@
             BackgroundImage = Properties.Resources.admin_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1125, 565);
+            Controls.Add(panel4);
             Controls.Add(FilterPlayerTextBox);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(dataGridViewPlayers);
-            Controls.Add(label4);
-            Controls.Add(label5);
-            Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -420,6 +431,8 @@
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -450,5 +463,6 @@
         private PictureBox AvatarPictureBox;
         private Button EditPlayerFavoriteMapsButton;
         private Button AdminChangesButton;
+        private Panel panel4;
     }
 }
