@@ -1,5 +1,6 @@
 ﻿using AgeAPP.Classes;
 using static AgeAPP.Classes.Main_classes;
+using static AgeAPP.Classes.MainFunctions;
 
 namespace AgeAPP.Cards
 {
@@ -35,6 +36,7 @@ namespace AgeAPP.Cards
                 CurrentResult.TeamAWon ? -delta : +delta
             );
 
+            MapPictureBox.BackgroundImage = MapImageDictionary.Get(CurrentResult.PlayedMap_name);
             UpdateWinnerIcons(CurrentResult.TeamAWon);
 
             LogAuthorLabel.Text = $"Registro de: {log.Author_name}";

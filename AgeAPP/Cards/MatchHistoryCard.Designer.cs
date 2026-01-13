@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             MapNameLabel = new Label();
-            pictureBox1 = new PictureBox();
+            MapPictureBox = new PictureBox();
             DateLabel = new Label();
             DeltaRatingLabel = new Label();
             ListViewTeamA = new ListView();
@@ -41,7 +41,7 @@
             TeamBsymbolPictureBox = new PictureBox();
             pictureBox5 = new PictureBox();
             LogAuthorLabel = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MapPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TeamAsymbolPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TeamBsymbolPictureBox).BeginInit();
@@ -61,17 +61,17 @@
             MapNameLabel.Text = "Floresta negra";
             MapNameLabel.TextAlign = ContentAlignment.TopCenter;
             // 
-            // pictureBox1
+            // MapPictureBox
             // 
-            pictureBox1.Anchor = AnchorStyles.Top;
-            pictureBox1.BackgroundImage = Properties.Resources.UnkownMap;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new Point(3, 8);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(152, 133);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            MapPictureBox.Anchor = AnchorStyles.Top;
+            MapPictureBox.BackgroundImage = Properties.Resources.UnkownMap;
+            MapPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            MapPictureBox.BorderStyle = BorderStyle.FixedSingle;
+            MapPictureBox.Location = new Point(3, 8);
+            MapPictureBox.Name = "MapPictureBox";
+            MapPictureBox.Size = new Size(152, 133);
+            MapPictureBox.TabIndex = 1;
+            MapPictureBox.TabStop = false;
             // 
             // DateLabel
             // 
@@ -209,7 +209,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(ListViewTeamB);
             Controls.Add(ListViewTeamA);
-            Controls.Add(pictureBox1);
+            Controls.Add(MapPictureBox);
             Controls.Add(label2);
             Controls.Add(LogAuthorLabel);
             Controls.Add(label1);
@@ -219,7 +219,7 @@
             Margin = new Padding(0, 0, 0, 10);
             Name = "MatchHistoryCard";
             Size = new Size(573, 202);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MapPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)TeamAsymbolPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)TeamBsymbolPictureBox).EndInit();
@@ -231,7 +231,7 @@
         #endregion
 
         private Label MapNameLabel;
-        private PictureBox pictureBox1;
+        private PictureBox MapPictureBox;
         private Label DateLabel;
         private Label DeltaRatingLabel;
         private ListView ListViewTeamA;

@@ -400,4 +400,91 @@
   <data name="Player_icon50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\usericons\eneas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rm_african_clearing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_african_clearing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_arabia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_arabia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_team-islands" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_team-islands.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_arena" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_arena.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_black-forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_black-forest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_acropolis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_acropolis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_enclosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_enclosed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_steppe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_steppe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_qs_runestones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_qs_runestones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_megarandom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_megarandom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_hideout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_hideout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_land_nomad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_land_nomad.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_haboob" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_haboob.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_hamburger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_hamburger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_highland" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_highland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_nomad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_nomad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_glade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_glade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_golden-pit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_golden-pit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_lombardia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_lombardia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_four-lakes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_four-lakes.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_frigid_lake" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_frigid_lake.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_michi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_michi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_migration" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_migration.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_islands" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_islands.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_fortress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_fortress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_baltic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_baltic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_atacama" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_atacama.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_oasis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_oasis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_gold-rush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_gold-rush.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

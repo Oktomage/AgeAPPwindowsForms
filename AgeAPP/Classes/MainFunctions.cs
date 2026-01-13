@@ -1,6 +1,7 @@
 ﻿using AgeAPP.Properties;
 using System.Collections;
 using System.Globalization;
+using System.Reflection;
 using static AgeAPP.Classes.FiresharpData;
 using static AgeAPP.Classes.Main_classes;
 
@@ -470,6 +471,60 @@ namespace AgeAPP.Classes
             return AvatarCache.TryGetValue(avatarId, out var image)
                 ? image
                 : Properties.Resources.Player_icon1;
+        }
+
+        #endregion
+
+        #region Maps
+
+        public static class MapImageDictionary
+        {
+            private static readonly Dictionary<string, Image> _mapImages =
+                new(StringComparer.OrdinalIgnoreCase)
+                {
+                // === RM ===
+                { "arabia", Properties.Resources.rm_arabia },
+                { "atacama", Properties.Resources.rm_atacama },
+                { "floresta negra", Properties.Resources.rm_black_forest },
+                { "clareira africana", Properties.Resources.rm_african_clearing },
+                { "ilhas de equipe", Properties.Resources.rm_team_islands },
+                { "megarandom", Properties.Resources.rm_megarandom },
+                { "acropole", Properties.Resources.rm_acropolis },
+                { "reclusao", Properties.Resources.rm_enclosed },
+                { "esconderijo", Properties.Resources.rm_hideout },
+                { "pedras runicas", Properties.Resources.rm_qs_runestones },
+                { "estepe", Properties.Resources.rm_steppe },
+                { "nomade de terra", Properties.Resources.rm_land_nomad },
+                { "haboob", Properties.Resources.rm_haboob },
+                { "terras altas", Properties.Resources.rm_highland },
+                { "hamburguer", Properties.Resources.rm_hamburger },
+                { "arena", Properties.Resources.rm_arena },
+                { "clareira", Properties.Resources.rm_glade },
+                { "nomade", Properties.Resources.rm_nomad },
+                { "buraco do ouro", Properties.Resources.rm_golden_pit},
+                { "lombardia", Properties.Resources.rm_lombardia },
+                { "quatro lagos", Properties.Resources.rm_four_lakes },
+                { "lago gelido", Properties.Resources.rm_frigid_lake },
+                { "michi", Properties.Resources.rm_michi },
+                { "baltico", Properties.Resources.rm_baltic },
+                { "migraçao", Properties.Resources.rm_migration },
+                { "febre do ouro", Properties.Resources.rm_gold_rush },
+                { "ilhas", Properties.Resources.rm_islands },
+                { "oasis", Properties.Resources.rm_oasis },
+                { "fortaleza", Properties.Resources.rm_fortress },
+                { "unknown", Properties.Resources.UnkownMap },
+                };
+
+            public static Image Get(string mapName)
+            {
+                if (string.IsNullOrWhiteSpace(mapName))
+                    return Properties.Resources.UnkownMap;
+
+                if (_mapImages.TryGetValue(mapName.Trim(), out var image))
+                    return image;
+
+                return Properties.Resources.UnkownMap;
+            }
         }
 
         #endregion
