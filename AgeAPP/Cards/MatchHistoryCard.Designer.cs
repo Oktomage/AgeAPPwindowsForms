@@ -41,6 +41,7 @@
             TeamBsymbolPictureBox = new PictureBox();
             pictureBox5 = new PictureBox();
             LogAuthorLabel = new Label();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)MapPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TeamAsymbolPictureBox).BeginInit();
@@ -52,11 +53,11 @@
             // 
             MapNameLabel.AutoSize = true;
             MapNameLabel.BackColor = Color.Black;
-            MapNameLabel.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            MapNameLabel.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             MapNameLabel.ForeColor = Color.White;
-            MapNameLabel.Location = new Point(161, 3);
+            MapNameLabel.Location = new Point(161, 2);
             MapNameLabel.Name = "MapNameLabel";
-            MapNameLabel.Size = new Size(178, 29);
+            MapNameLabel.Size = new Size(177, 32);
             MapNameLabel.TabIndex = 0;
             MapNameLabel.Text = "Floresta negra";
             MapNameLabel.TextAlign = ContentAlignment.TopCenter;
@@ -64,9 +65,9 @@
             // MapPictureBox
             // 
             MapPictureBox.Anchor = AnchorStyles.Top;
+            MapPictureBox.BackColor = Color.Transparent;
             MapPictureBox.BackgroundImage = Properties.Resources.UnkownMap;
             MapPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-            MapPictureBox.BorderStyle = BorderStyle.FixedSingle;
             MapPictureBox.Location = new Point(3, 8);
             MapPictureBox.Name = "MapPictureBox";
             MapPictureBox.Size = new Size(152, 133);
@@ -77,9 +78,9 @@
             // 
             DateLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             DateLabel.BackColor = Color.Black;
-            DateLabel.Font = new Font("Arial", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            DateLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             DateLabel.ForeColor = Color.White;
-            DateLabel.Location = new Point(381, 3);
+            DateLabel.Location = new Point(381, 8);
             DateLabel.Name = "DateLabel";
             DateLabel.Size = new Size(189, 24);
             DateLabel.TabIndex = 0;
@@ -89,11 +90,12 @@
             // DeltaRatingLabel
             // 
             DeltaRatingLabel.AutoSize = true;
-            DeltaRatingLabel.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DeltaRatingLabel.BackColor = Color.Black;
+            DeltaRatingLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DeltaRatingLabel.ForeColor = Color.White;
-            DeltaRatingLabel.Location = new Point(43, 143);
+            DeltaRatingLabel.Location = new Point(43, 145);
             DeltaRatingLabel.Name = "DeltaRatingLabel";
-            DeltaRatingLabel.Size = new Size(31, 33);
+            DeltaRatingLabel.Size = new Size(27, 32);
             DeltaRatingLabel.TabIndex = 0;
             DeltaRatingLabel.Text = "4";
             DeltaRatingLabel.TextAlign = ContentAlignment.TopCenter;
@@ -111,11 +113,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 9.75F);
+            label1.BackColor = Color.Black;
+            label1.Font = new Font("Segoe UI", 9.75F);
             label1.ForeColor = Color.White;
             label1.Location = new Point(170, 41);
             label1.Name = "label1";
-            label1.Size = new Size(47, 16);
+            label1.Size = new Size(48, 17);
             label1.TabIndex = 0;
             label1.Text = "Time A";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -133,11 +136,12 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Arial", 9.75F);
+            label2.BackColor = Color.Black;
+            label2.Font = new Font("Segoe UI", 9.75F);
             label2.ForeColor = Color.White;
             label2.Location = new Point(406, 41);
             label2.Name = "label2";
-            label2.Size = new Size(48, 16);
+            label2.Size = new Size(47, 17);
             label2.TabIndex = 0;
             label2.Text = "Time B";
             label2.TextAlign = ContentAlignment.TopCenter;
@@ -158,7 +162,7 @@
             TeamAsymbolPictureBox.BackColor = Color.Transparent;
             TeamAsymbolPictureBox.BackgroundImage = Properties.Resources.Winner_icon;
             TeamAsymbolPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-            TeamAsymbolPictureBox.Location = new Point(170, 142);
+            TeamAsymbolPictureBox.Location = new Point(289, 143);
             TeamAsymbolPictureBox.Name = "TeamAsymbolPictureBox";
             TeamAsymbolPictureBox.Size = new Size(38, 34);
             TeamAsymbolPictureBox.TabIndex = 3;
@@ -169,7 +173,7 @@
             TeamBsymbolPictureBox.BackColor = Color.Transparent;
             TeamBsymbolPictureBox.BackgroundImage = Properties.Resources.Defeat_icon;
             TeamBsymbolPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-            TeamBsymbolPictureBox.Location = new Point(525, 142);
+            TeamBsymbolPictureBox.Location = new Point(406, 142);
             TeamBsymbolPictureBox.Name = "TeamBsymbolPictureBox";
             TeamBsymbolPictureBox.Size = new Size(38, 34);
             TeamBsymbolPictureBox.TabIndex = 3;
@@ -189,20 +193,32 @@
             // LogAuthorLabel
             // 
             LogAuthorLabel.AutoSize = true;
-            LogAuthorLabel.Font = new Font("Arial", 9.75F);
+            LogAuthorLabel.BackColor = Color.Black;
+            LogAuthorLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LogAuthorLabel.ForeColor = Color.White;
             LogAuthorLabel.Location = new Point(3, 181);
             LogAuthorLabel.Name = "LogAuthorLabel";
-            LogAuthorLabel.Size = new Size(54, 16);
+            LogAuthorLabel.Size = new Size(58, 17);
             LogAuthorLabel.TabIndex = 0;
             LogAuthorLabel.Text = "Log por:";
             LogAuthorLabel.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Bottom;
+            panel1.BackColor = Color.White;
+            panel1.Location = new Point(0, 205);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(573, 5);
+            panel1.TabIndex = 4;
             // 
             // MatchHistoryCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
+            BackgroundImage = Properties.Resources.what_is_the_most_epic_match_battle_you_had_in_aoe_ii_v0_lpqjbc995aub1;
+            Controls.Add(panel1);
             Controls.Add(TeamBsymbolPictureBox);
             Controls.Add(pictureBox5);
             Controls.Add(TeamAsymbolPictureBox);
@@ -216,9 +232,9 @@
             Controls.Add(DateLabel);
             Controls.Add(DeltaRatingLabel);
             Controls.Add(MapNameLabel);
-            Margin = new Padding(0, 0, 0, 10);
+            Margin = new Padding(0, 0, 0, 15);
             Name = "MatchHistoryCard";
-            Size = new Size(573, 202);
+            Size = new Size(573, 210);
             ((System.ComponentModel.ISupportInitialize)MapPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)TeamAsymbolPictureBox).EndInit();
@@ -243,5 +259,6 @@
         private PictureBox TeamBsymbolPictureBox;
         private PictureBox pictureBox5;
         private Label LogAuthorLabel;
+        private Panel panel1;
     }
 }

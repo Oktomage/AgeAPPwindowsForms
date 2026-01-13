@@ -29,25 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatchesHistoryForm));
-            FlowLayouPanel = new FlowLayoutPanel();
+            FlowLayouPanel = new AgeAPP.Classes.SmoothFlowLayoutPanel();
             SuspendLayout();
             // 
             // FlowLayouPanel
             // 
-            FlowLayouPanel.AutoScroll = true;
-            FlowLayouPanel.BackColor = Color.Black;
-            FlowLayouPanel.Dock = DockStyle.Fill;
-            FlowLayouPanel.FlowDirection = FlowDirection.TopDown;
-            FlowLayouPanel.Location = new Point(0, 0);
+            FlowLayouPanel.BackColor = Color.Transparent;
+            FlowLayouPanel.Location = new Point(1, 2);
             FlowLayouPanel.Name = "FlowLayouPanel";
-            FlowLayouPanel.Size = new Size(614, 846);
+            FlowLayouPanel.Size = new Size(614, 844);
             FlowLayouPanel.TabIndex = 0;
-            FlowLayouPanel.WrapContents = false;
             // 
             // MatchesHistoryForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.admin_bg;
+            BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(614, 846);
             Controls.Add(FlowLayouPanel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -62,6 +60,6 @@
 
         #endregion
 
-        private FlowLayoutPanel FlowLayouPanel;
+        private Classes.SmoothFlowLayoutPanel FlowLayouPanel;
     }
 }

@@ -54,8 +54,8 @@ namespace AgeAPP
             FilterPlayerTextBox = new TextBox();
             AgeAppLabel = new Label();
             HelpButton = new Button();
-            FlowLayoutPlayers = new FlowLayoutPanel();
             panel3 = new Panel();
+            FlowLayoutPlayers = new AgeAPP.Classes.SmoothFlowLayoutPanel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -141,11 +141,11 @@ namespace AgeAPP
             AdminConnectedLabel.AutoSize = true;
             AdminConnectedLabel.BackColor = Color.Transparent;
             AdminConnectedLabel.Cursor = Cursors.Hand;
-            AdminConnectedLabel.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AdminConnectedLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AdminConnectedLabel.ForeColor = Color.White;
-            AdminConnectedLabel.Location = new Point(3, 467);
+            AdminConnectedLabel.Location = new Point(3, 468);
             AdminConnectedLabel.Name = "AdminConnectedLabel";
-            AdminConnectedLabel.Size = new Size(41, 16);
+            AdminConnectedLabel.Size = new Size(43, 17);
             AdminConnectedLabel.TabIndex = 4;
             AdminConnectedLabel.Text = "label1";
             AdminConnectedLabel.Click += AdminConnectedLabel_Click;
@@ -271,11 +271,11 @@ namespace AgeAPP
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Arial", 15.75F);
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(3, 6);
+            label1.Location = new Point(0, 3);
             label1.Name = "label1";
-            label1.Size = new Size(79, 24);
+            label1.Size = new Size(83, 30);
             label1.TabIndex = 3;
             label1.Text = "| Menu:";
             // 
@@ -378,18 +378,6 @@ namespace AgeAPP
             HelpButton.UseVisualStyleBackColor = true;
             HelpButton.Click += HelpButton_Click;
             // 
-            // FlowLayoutPlayers
-            // 
-            FlowLayoutPlayers.AutoScroll = true;
-            FlowLayoutPlayers.BackColor = Color.Transparent;
-            FlowLayoutPlayers.BackgroundImageLayout = ImageLayout.None;
-            FlowLayoutPlayers.Location = new Point(77, 52);
-            FlowLayoutPlayers.Margin = new Padding(0, 0, 0, 10);
-            FlowLayoutPlayers.Name = "FlowLayoutPlayers";
-            FlowLayoutPlayers.Padding = new Padding(3);
-            FlowLayoutPlayers.Size = new Size(781, 492);
-            FlowLayoutPlayers.TabIndex = 8;
-            // 
             // panel3
             // 
             panel3.Anchor = AnchorStyles.Left;
@@ -400,6 +388,14 @@ namespace AgeAPP
             panel3.Size = new Size(62, 492);
             panel3.TabIndex = 0;
             // 
+            // FlowLayoutPlayers
+            // 
+            FlowLayoutPlayers.BackColor = Color.Transparent;
+            FlowLayoutPlayers.Location = new Point(80, 53);
+            FlowLayoutPlayers.Name = "FlowLayoutPlayers";
+            FlowLayoutPlayers.Size = new Size(778, 492);
+            FlowLayoutPlayers.TabIndex = 8;
+            // 
             // FMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -407,8 +403,8 @@ namespace AgeAPP
             BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1151, 556);
-            Controls.Add(panel3);
             Controls.Add(FlowLayoutPlayers);
+            Controls.Add(panel3);
             Controls.Add(FilterPlayerTextBox);
             Controls.Add(panel2);
             Controls.Add(HelpButton);
@@ -458,8 +454,8 @@ namespace AgeAPP
         private Button ToggleAppThemeButton;
         private CheckBox ShowOnlyActivePlayersCheckBox;
         private Button SettingsButton;
-        private FlowLayoutPanel FlowLayoutPlayers;
         private Button ExpandPlayersViewButton;
         private Panel panel3;
+        private Classes.SmoothFlowLayoutPanel FlowLayoutPlayers;
     }
 }

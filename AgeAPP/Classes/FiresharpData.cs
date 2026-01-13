@@ -259,7 +259,7 @@ namespace AgeAPP.Classes
             return allLogs
                 .Where(l => l.Match_result != null)
                 .OrderByDescending(l => l.Match_result.MatchDate)
-                .Take(100) // LIMITE AQUI
+                .Take(30) // LIMITE AQUI
                 .ToList();
         }
 

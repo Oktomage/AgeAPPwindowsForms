@@ -29,17 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminChangesForm));
-            FlowLayoutPanel = new FlowLayoutPanel();
+            FlowLayoutPanel = new AgeAPP.Classes.SmoothFlowLayoutPanel();
             SuspendLayout();
             // 
             // FlowLayoutPanel
             // 
-            FlowLayoutPanel.BackColor = Color.Black;
+            FlowLayoutPanel.BackColor = Color.Transparent;
             FlowLayoutPanel.Dock = DockStyle.Fill;
             FlowLayoutPanel.Location = new Point(0, 0);
-            FlowLayoutPanel.Margin = new Padding(10);
             FlowLayoutPanel.Name = "FlowLayoutPanel";
-            FlowLayoutPanel.Padding = new Padding(5);
             FlowLayoutPanel.Size = new Size(504, 734);
             FlowLayoutPanel.TabIndex = 0;
             // 
@@ -47,6 +45,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.Holidays_1920x1080;
             ClientSize = new Size(504, 734);
             Controls.Add(FlowLayoutPanel);
             Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -62,6 +61,6 @@
 
         #endregion
 
-        private FlowLayoutPanel FlowLayoutPanel;
+        private Classes.SmoothFlowLayoutPanel FlowLayoutPanel;
     }
 }
