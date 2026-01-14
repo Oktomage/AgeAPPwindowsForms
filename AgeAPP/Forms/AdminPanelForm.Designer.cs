@@ -154,18 +154,18 @@
             ChangeSelectedPlayerRating.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ChangeSelectedPlayerRating.Location = new Point(137, 97);
             ChangeSelectedPlayerRating.Name = "ChangeSelectedPlayerRating";
-            ChangeSelectedPlayerRating.Size = new Size(37, 35);
+            ChangeSelectedPlayerRating.Size = new Size(39, 39);
             ChangeSelectedPlayerRating.TabIndex = 4;
             ChangeSelectedPlayerRating.UseVisualStyleBackColor = true;
             ChangeSelectedPlayerRating.Click += ChangeSelectedPlayerRating_Click;
             // 
             // SelectedPlayerRatingTextBox
             // 
-            SelectedPlayerRatingTextBox.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SelectedPlayerRatingTextBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SelectedPlayerRatingTextBox.Location = new Point(12, 97);
             SelectedPlayerRatingTextBox.Name = "SelectedPlayerRatingTextBox";
             SelectedPlayerRatingTextBox.PlaceholderText = "Rating";
-            SelectedPlayerRatingTextBox.Size = new Size(119, 35);
+            SelectedPlayerRatingTextBox.Size = new Size(119, 39);
             SelectedPlayerRatingTextBox.TabIndex = 3;
             SelectedPlayerRatingTextBox.KeyPress += SelectedPlayerRatingTextBox_KeyPress;
             // 
@@ -224,7 +224,7 @@
             // 
             // FavoriteMapListBox
             // 
-            FavoriteMapListBox.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FavoriteMapListBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FavoriteMapListBox.FormattingEnabled = true;
             FavoriteMapListBox.Location = new Point(8, 24);
             FavoriteMapListBox.Name = "FavoriteMapListBox";
@@ -371,11 +371,11 @@
             // 
             // FilterPlayerTextBox
             // 
-            FilterPlayerTextBox.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FilterPlayerTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FilterPlayerTextBox.Location = new Point(12, 534);
             FilterPlayerTextBox.Name = "FilterPlayerTextBox";
             FilterPlayerTextBox.PlaceholderText = "Filtrar jogador ex: Kakashi";
-            FilterPlayerTextBox.Size = new Size(200, 22);
+            FilterPlayerTextBox.Size = new Size(200, 25);
             FilterPlayerTextBox.TabIndex = 7;
             FilterPlayerTextBox.TextChanged += FilterPlayerTextBox_TextChanged;
             // 
