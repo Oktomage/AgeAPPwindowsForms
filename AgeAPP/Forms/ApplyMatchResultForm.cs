@@ -123,8 +123,7 @@ namespace AgeAPP.Forms
             int teamARating = log.TeamA_players.Sum(p => p.Rating);
             int teamBRating = log.TeamB_players.Sum(p => p.Rating);
 
-            int deltaTeamA = local_Main_functions_service
-                .Calculate_rating_changes(teamARating, teamBRating, teamAWon);
+            int deltaTeamA = local_Main_functions_service.Calculate_rating_changes(teamARating, teamBRating, teamAWon, log.TeamA_players.Count);
 
             int deltaTeamB = -deltaTeamA;
 

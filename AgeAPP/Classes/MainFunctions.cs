@@ -217,7 +217,8 @@ namespace AgeAPP.Classes
             {
                 TeamAWon = teamAWon,
                 MatchDate = DateTime.Now,
-                PlayedMap_name = map_name
+                PlayedMap_name = map_name,
+                MatchSize = teamA.Count
             };
 
             int teamARating = teamA.Sum(p => p.Rating);
@@ -227,8 +228,12 @@ namespace AgeAPP.Classes
             int deltaTeamA = Calculate_rating_changes(
                 teamARating,
                 teamBRating,
-                teamAWon
+                teamAWon,
+                result.MatchSize
             );
+
+            float sizeMultiplier = GetMatchSizeMultiplier(result.MatchSize);
+            deltaTeamA = (int)Math.Round(deltaTeamA * sizeMultiplier);
 
             int deltaTeamB = -deltaTeamA;
 
@@ -312,19 +317,42 @@ namespace AgeAPP.Classes
             return (int)Math.Round(K * (score - expected));
         }
         */
-        
-        public int Calculate_rating_changes(int teamRatingA, int teamRatingB, bool teamAWon)
+
+        private float GetMatchSizeMultiplier(int matchSize)
+        {
+            return matchSize switch
+            {
+                2 => 0.6f, // 2v2
+                3 => 1.0f, // 3v3
+                4 => 1.2f, // 4v4
+                _ => 1.0f
+            };
+        }
+
+        private float GetProbabilityDivisor(int matchSize)
+        {
+            return matchSize switch
+            {
+                2 => 400f, // 2v2
+                3 => 256f, // 3v3
+                4 => 128f, // 4v4
+                _ => 256f
+            };
+        }
+
+        public int Calculate_rating_changes(int teamRatingA, int teamRatingB, bool teamAWon, int matchSize)
         {
             int Kfactor = FMain.AgeApp_settings_service.Kfactor;
 
             int diff = teamRatingA - teamRatingB;
+            float probabilityDivisor = GetProbabilityDivisor(matchSize);
 
-            float expectedA = 1f / (1f + (float)Math.Pow(10, -diff / 400f));
+            float expectedA = 1f / (1f + (float)Math.Pow(10, -diff / probabilityDivisor));
             float scoreA = teamAWon ? 1f : 0f;
 
             double diffFactor = Math.Clamp(
-                Math.Abs(diff) / 400.0,
-                1.0,
+                Math.Abs(diff) / probabilityDivisor,
+                0.5,
                 2.5
             );
 
