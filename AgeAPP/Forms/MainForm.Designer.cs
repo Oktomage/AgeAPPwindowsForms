@@ -135,6 +135,7 @@ namespace AgeAPP
             SignOutButton.TabIndex = 4;
             SignOutButton.UseVisualStyleBackColor = true;
             SignOutButton.Visible = false;
+            SignOutButton.Click += SignOutButton_Click;
             // 
             // AdminConnectedLabel
             // 
@@ -145,9 +146,9 @@ namespace AgeAPP
             AdminConnectedLabel.ForeColor = Color.White;
             AdminConnectedLabel.Location = new Point(3, 468);
             AdminConnectedLabel.Name = "AdminConnectedLabel";
-            AdminConnectedLabel.Size = new Size(43, 17);
+            AdminConnectedLabel.Size = new Size(164, 17);
             AdminConnectedLabel.TabIndex = 4;
-            AdminConnectedLabel.Text = "label1";
+            AdminConnectedLabel.Text = "Nenhuma conta conectada";
             AdminConnectedLabel.Click += AdminConnectedLabel_Click;
             // 
             // MatchesButton

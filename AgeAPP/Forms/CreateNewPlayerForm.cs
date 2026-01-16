@@ -67,7 +67,7 @@ namespace AgeAPP.Forms
 
             await local_Data_service.Post_log_on_dataBase(new Log
             {
-                Author_name = local_Data_service.Local_Admin_Logged.Name,
+                Author_name = local_Data_service.LocalAccount.Username,
                 Role = "Player_changes",
                 Date = DateTime.Now.ToString(),
                 Content = $"Criou um novo jogador: {newPlayer.Name}."

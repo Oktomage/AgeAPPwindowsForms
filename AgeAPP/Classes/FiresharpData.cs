@@ -22,24 +22,10 @@ namespace AgeAPP.Classes
         public IFirebaseClient client;
 
         // Admin data
-        public bool Admin_LoggedIn = false;
-        public Admin Local_Admin_Logged;
+        public bool AccountLogged = false;
+        public Account LocalAccount;
 
-        public List<Admin> Admins = new List<Admin>();
-        public class Admin
-        {
-            public string Name { get; set; }
-            public string Password { get; set; }
-            public string Last_sessionDate { get; set; }
-        }
-
-        public async Task Save_adminAccounts_on_dataBase()
-        {
-            foreach (var admin in Admins)
-            {
-                await client.SetAsync($"accounts/{admin.Name.ToLower()}", admin);
-            }
-        }
+        public List<string> Admins_names = new List<string>();
 
         public async Task Request_adminAccounts()
         {
@@ -47,40 +33,53 @@ namespace AgeAPP.Classes
 
             if (response.Body == "null")
             {
-                Admins = new List<Admin>();
+                Admins_names = new List<string>();
                 return;
             }
 
-            var data = JsonConvert.DeserializeObject<Dictionary<string, Admin>>(response.Body);
+            var data = JsonConvert.DeserializeObject<Dictionary<string, Account>>(response.Body);
 
-            Admins = data.Values.ToList();
+            Admins_names = data
+                .Where(kvp => kvp.Value.IsAdmin)
+                .Select(kvp => kvp.Key) // nome do usuário
+                .ToList();
         }
 
         // CONNECTION
 
-        public Admin Try_login(string username, string password)
+        public async Task<Account?> Try_login(string username, string password)
         {
-            var admin = Admins.FirstOrDefault(a =>
-                a.Name.Equals(username, StringComparison.OrdinalIgnoreCase) &&
-                a.Password == password
-            );
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+                return null;
 
-            // Sucesso
-            if (admin != null)
-            {
-                Local_Admin_Logged = admin;
+            // 🔹 busca direta pela key
+            var response = await client.GetAsync($"accounts/{username}");
 
-                return admin;
-            }
+            if (response.Body == "null")
+                return null; // usuário não existe
 
-            return null;
+            var account = JsonConvert.DeserializeObject<Account>(response.Body);
+
+            if (account == null)
+                return null;
+
+            // 🔹 valida senha
+            if (account.Password != password)
+                return null;
+
+            // 🔹 garante username correto
+            account.Username = username;
+
+            LocalAccount = account;
+
+            return account;
         }
 
-        public async Task Save_admin_login_on_dataBase()
+        public async Task Register_account_login_on_dataBase()
         {
-            Local_Admin_Logged.Last_sessionDate = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            LocalAccount.Last_sessionDate = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
 
-            await client.SetAsync($"accounts/{Local_Admin_Logged.Name.ToLower()}", Local_Admin_Logged);
+            await client.SetAsync($"accounts/{LocalAccount.Username.ToLower()}", LocalAccount);
         }
 
         public void Connect_to_firesharp(string mode)
@@ -89,19 +88,15 @@ namespace AgeAPP.Classes
             {
                 case "admin":
                     config.AuthSecret = "a1EylzvxpigRZYBKsDl9pLQcRJxiTxpde53z5S4I";
-                    Admin_LoggedIn = true;
+                    AccountLogged = true;
                     break;
 
                 case "user":
-                    Admin_LoggedIn = false;
+                    AccountLogged = true;
                     break;
             }
 
             client = new FireSharp.FirebaseClient(config);
-
-            /*
-            if (client != null)
-                MessageBox.Show("Connection to database successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
         }
 
         public async Task<AgeApp_settings.Settings> Get_appSettings ()

@@ -131,7 +131,8 @@ namespace AgeAPP.Forms
             TextBoxTeam1.Text = BuildTeamLine("TIME A", teamA);
             TextBoxTeam2.Text = BuildTeamLine("TIME B", teamB);
 
-            ToApplyResultFormButton.Enabled = true;
+            if(local_Data_service.LocalAccount.IsAdmin)
+                ToApplyResultFormButton.Enabled = true;
 
             // Salvar log
             current_log = Request_save_splitLog(teamA, teamB, selectedMap);
@@ -143,7 +144,7 @@ namespace AgeAPP.Forms
         {
             Log log = new Log
             {
-                Author_name = local_Data_service.Local_Admin_Logged?.Name ?? "Sistema",
+                Author_name = local_Data_service.LocalAccount?.Username ?? "Sistema",
                 Date = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss"),
                 All_players = teamA.Concat(teamB).ToList(),
                 TeamA_players = teamA,

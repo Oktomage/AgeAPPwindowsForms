@@ -38,25 +38,22 @@ namespace AgeAPP
             await Data_service.Request_adminAccounts();
 
             // 🔹 3. Recupera sessão
-            Data_service.Local_Admin_Logged = local_Main_functions_service.Load_session();
+            Data_service.LocalAccount = local_Main_functions_service.Load_session();
 
-            if (Data_service.Local_Admin_Logged != null)
+            if (Data_service.LocalAccount != null)
             {
-                Admin adm = Data_service.Try_login(
-                    Data_service.Local_Admin_Logged.Name,
-                    Data_service.Local_Admin_Logged.Password
-                );
+                Account account = await Data_service.Try_login(Data_service.LocalAccount.Username, Data_service.LocalAccount.Password);
 
                 // 🔹 4. Se admin válido → reconecta como admin
-                if (adm != null)
+                if (account != null && account.IsAdmin)
                 {
                     Data_service.Connect_to_firesharp("admin");
-                    await Data_service.Save_admin_login_on_dataBase();
+                    await Data_service.Register_account_login_on_dataBase();
                 }
                 else
                 {
-                    local_Main_functions_service.Delete_session();
                     Data_service.Connect_to_firesharp("user");
+                    //local_Main_functions_service.Delete_session();
                 }
             }
 
@@ -237,7 +234,7 @@ namespace AgeAPP
                 "2. Histórico de Partidas: Acesse o histórico completo de partidas para analisar desempenhos anteriores.\n\n" +
                 "3. Painel de Administração: Faça login como administrador para gerenciar jogadores, mapas e visualizar logs de atividades.\n\n" +
                 "4. Filtragem de Jogadores: Utilize a caixa de filtro para encontrar rapidamente jogadores pelo nome.\n\n" +
-                "5. Configurações: Mostra as atuais configurações do aplicativo. \n\n" + 
+                "5. Configurações: Mostra as atuais configurações do aplicativo. \n\n" +
                 "6. Atualizações: Mantenha o aplicativo atualizado para garantir acesso às últimas funcionalidades e melhorias.",
                 "Ajuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -255,15 +252,20 @@ namespace AgeAPP
 
         private void ConnectionTimer_Tick(object sender, EventArgs e)
         {
+            if (Data_service.LocalAccount == null)
+                return;
+
             // Atualiza estado de login
-            if (Data_service.Admin_LoggedIn)
+            if (Data_service.AccountLogged)
             {
                 LoginButton.Enabled = false;
                 LoginButton.Visible = false;
                 SignOutButton.Visible = true;
-                AdminPanelButton.Enabled = true;
 
-                AdminConnectedLabel.Text = $"Conectado como: {Data_service.Local_Admin_Logged.Name}";
+                if (Data_service.LocalAccount.IsAdmin)
+                    AdminPanelButton.Enabled = true;
+
+                AdminConnectedLabel.Text = $"Conectado como: {Data_service.LocalAccount.Username}";
             }
             else
             {
@@ -272,7 +274,7 @@ namespace AgeAPP
                 SignOutButton.Visible = false;
                 AdminPanelButton.Enabled = false;
 
-                AdminConnectedLabel.Text = "Nenhum admin conectado";
+                AdminConnectedLabel.Text = "Nenhuma conta conectada";
             }
         }
 
@@ -307,5 +309,11 @@ namespace AgeAPP
         }
 
         #endregion
+
+        private void SignOutButton_Click(object sender, EventArgs e)
+        {
+            local_Main_functions_service.Delete_session();
+            Application.Restart();
+        }
     }
 }

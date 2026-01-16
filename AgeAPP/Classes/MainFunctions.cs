@@ -37,13 +37,13 @@ namespace AgeAPP.Classes
 
         class SessionData
         {
-            public Admin Local_admin { get; set; }
+            public Account Local_account { get; set; }
         }
-        public void Save_session(Admin local_admin)
+        public void Save_session(Account local_account)
         {
             SessionData session = new SessionData
             {
-                Local_admin = local_admin
+                Local_account = local_account
             };
 
             string json = System.Text.Json.JsonSerializer.Serialize(session);
@@ -51,7 +51,7 @@ namespace AgeAPP.Classes
             File.WriteAllText(Path.Combine(DataFolder_path, "session.json"), json);
         }
 
-        public Admin Load_session()
+        public Account Load_session()
         {
             string sessionFilePath = Path.Combine(DataFolder_path, "session.json");
 
@@ -62,7 +62,7 @@ namespace AgeAPP.Classes
 
             SessionData session = System.Text.Json.JsonSerializer.Deserialize<SessionData>(json);
 
-            return session.Local_admin;
+            return session.Local_account;
         }
 
         public void Delete_session()

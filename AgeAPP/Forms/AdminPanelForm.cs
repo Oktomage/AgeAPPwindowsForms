@@ -159,7 +159,7 @@ namespace AgeAPP.Forms
             await local_Data_service.Overwrite_playerData(selectedPlayer, "Rating", int.Parse(SelectedPlayerRatingTextBox.Text));
             await local_Data_service.Post_log_on_dataBase(new Log
             {
-                Author_name = local_Data_service.Local_Admin_Logged.Name,
+                Author_name = local_Data_service.LocalAccount.Username,
                 Role = "Player_changes",
                 Date = DateTime.Now.ToString(),
                 Content = $"Alterou o rating do jogador {selectedPlayer.Name} para {SelectedPlayerRatingTextBox.Text}"
@@ -179,7 +179,7 @@ namespace AgeAPP.Forms
             await local_Data_service.Delete_player(selectedPlayer);
             await local_Data_service.Post_log_on_dataBase(new Log
             {
-                Author_name = local_Data_service.Local_Admin_Logged.Name,
+                Author_name = local_Data_service.LocalAccount.Username,
                 Role = "Player_changes",
                 Date = DateTime.Now.ToString(),
                 Content = $"Deletou o jogador: {selectedPlayer.Name}"

@@ -12,6 +12,7 @@ namespace AgeAPP.Forms
         public LoginForm(FiresharpData Data_service)
         {
             InitializeComponent();
+
             local_data_service = Data_service;
         }
 
@@ -26,23 +27,28 @@ namespace AgeAPP.Forms
             string pass = TextBoxPassword.Text;
 
             // Tentar logar
-            Admin admin = local_data_service.Try_login(user, pass);
+            Main_classes.Account account = await local_data_service.Try_login(user, pass);
 
-            if (admin != null)
+            if (account != null && account.IsAdmin)
             {
-                // LogIn
-                local_data_service.Local_Admin_Logged = admin;
-
+                // Conectar Firesharp como admin
                 local_data_service.Connect_to_firesharp("admin");
 
                 // Savar sessão
-                local_main_functions_service.Save_session(admin);
+                local_main_functions_service.Save_session(account);
 
                 this.Close();
             }
-            else
+            else if(account == null)
             {
                 MessageBox.Show("Usuário ou senha inválidos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(local_data_service.LocalAccount != null)
+            {
+                // Savar sessão
+                local_main_functions_service.Save_session(account);
+
+                this.Close();
             }
         }
     }
