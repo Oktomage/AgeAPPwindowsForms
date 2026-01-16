@@ -41,8 +41,8 @@ namespace AgeAPP.Forms
             // 
             // panel1
             // 
-            panel1.BackgroundImage = Properties.Resources.Civ_details_bg;
-            panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.BackgroundImage = Properties.Resources.Holidays_1920x1080;
+            panel1.BackgroundImageLayout = ImageLayout.None;
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(TextBoxPassword);
@@ -51,15 +51,16 @@ namespace AgeAPP.Forms
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(245, 161);
+            panel1.Size = new Size(249, 191);
             panel1.TabIndex = 0;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Black;
+            label2.Font = new Font("Segoe UI", 9F);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(12, 61);
+            label2.Location = new Point(12, 74);
             label2.Name = "label2";
             label2.Size = new Size(39, 15);
             label2.TabIndex = 2;
@@ -69,6 +70,7 @@ namespace AgeAPP.Forms
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Black;
+            label1.Font = new Font("Segoe UI", 9F);
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(12, 11);
             label1.Name = "label1";
@@ -78,20 +80,20 @@ namespace AgeAPP.Forms
             // 
             // TextBoxPassword
             // 
-            TextBoxPassword.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TextBoxPassword.Location = new Point(12, 79);
+            TextBoxPassword.Font = new Font("Segoe UI", 14.25F);
+            TextBoxPassword.Location = new Point(12, 92);
             TextBoxPassword.Name = "TextBoxPassword";
             TextBoxPassword.PlaceholderText = "Senha de admin";
-            TextBoxPassword.Size = new Size(223, 29);
+            TextBoxPassword.Size = new Size(223, 33);
             TextBoxPassword.TabIndex = 2;
             // 
             // TextBoxLoginName
             // 
-            TextBoxLoginName.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TextBoxLoginName.Font = new Font("Segoe UI", 14.25F);
             TextBoxLoginName.Location = new Point(12, 29);
             TextBoxLoginName.Name = "TextBoxLoginName";
             TextBoxLoginName.PlaceholderText = "Nome de usuario";
-            TextBoxLoginName.Size = new Size(223, 29);
+            TextBoxLoginName.Size = new Size(223, 33);
             TextBoxLoginName.TabIndex = 1;
             // 
             // LogInButton
@@ -99,9 +101,9 @@ namespace AgeAPP.Forms
             LogInButton.BackgroundImage = Properties.Resources.button_wide_normal;
             LogInButton.BackgroundImageLayout = ImageLayout.Stretch;
             LogInButton.FlatStyle = FlatStyle.Flat;
-            LogInButton.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LogInButton.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LogInButton.ForeColor = SystemColors.Control;
-            LogInButton.Location = new Point(122, 113);
+            LogInButton.Location = new Point(122, 133);
             LogInButton.Name = "LogInButton";
             LogInButton.Size = new Size(113, 45);
             LogInButton.TabIndex = 3;
@@ -113,7 +115,7 @@ namespace AgeAPP.Forms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(245, 161);
+            ClientSize = new Size(249, 191);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");

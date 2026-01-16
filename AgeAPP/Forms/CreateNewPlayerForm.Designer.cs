@@ -47,7 +47,7 @@
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.aoe2_de_uhd_2;
-            panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.BackgroundImageLayout = ImageLayout.None;
             panel1.Controls.Add(AvatarsLayoutPanel);
             panel1.Controls.Add(dataGridViewMaps);
             panel1.Controls.Add(label2);
@@ -99,11 +99,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Black;
-            label2.Font = new Font("Arial", 9F);
+            label2.Font = new Font("Segoe UI", 9F);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(12, 61);
+            label2.Location = new Point(12, 74);
             label2.Name = "label2";
-            label2.Size = new Size(43, 15);
+            label2.Size = new Size(41, 15);
             label2.TabIndex = 2;
             label2.Text = "Rating";
             // 
@@ -111,11 +111,11 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Black;
-            label4.Font = new Font("Arial", 9F);
+            label4.Font = new Font("Segoe UI", 11.25F);
             label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(610, 11);
+            label4.Location = new Point(610, 9);
             label4.Name = "label4";
-            label4.Size = new Size(170, 15);
+            label4.Size = new Size(210, 20);
             label4.TabIndex = 2;
             label4.Text = "Selecione o avatar do jogador";
             // 
@@ -123,11 +123,11 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Black;
-            label3.Font = new Font("Arial", 9F);
+            label3.Font = new Font("Segoe UI", 11.25F);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(241, 11);
+            label3.Location = new Point(241, 9);
             label3.Name = "label3";
-            label3.Size = new Size(170, 15);
+            label3.Size = new Size(202, 20);
             label3.TabIndex = 2;
             label3.Text = "Selecione os mapas favoritos";
             // 
@@ -135,31 +135,31 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Black;
-            label1.Font = new Font("Arial", 9F);
+            label1.Font = new Font("Segoe UI", 9F);
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(12, 11);
             label1.Name = "label1";
-            label1.Size = new Size(41, 15);
+            label1.Size = new Size(40, 15);
             label1.TabIndex = 2;
             label1.Text = "Nome";
             // 
             // TextBoxPlayerRating
             // 
-            TextBoxPlayerRating.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TextBoxPlayerRating.Location = new Point(12, 79);
+            TextBoxPlayerRating.Font = new Font("Segoe UI", 14.25F);
+            TextBoxPlayerRating.Location = new Point(12, 92);
             TextBoxPlayerRating.Name = "TextBoxPlayerRating";
             TextBoxPlayerRating.PlaceholderText = "Rating do jogador";
-            TextBoxPlayerRating.Size = new Size(223, 29);
+            TextBoxPlayerRating.Size = new Size(223, 33);
             TextBoxPlayerRating.TabIndex = 2;
             TextBoxPlayerRating.KeyPress += TextBoxPlayerRating_KeyPress;
             // 
             // TextBoxPlayerName
             // 
-            TextBoxPlayerName.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TextBoxPlayerName.Font = new Font("Segoe UI", 14.25F);
             TextBoxPlayerName.Location = new Point(12, 29);
             TextBoxPlayerName.Name = "TextBoxPlayerName";
             TextBoxPlayerName.PlaceholderText = "Nome do jogador";
-            TextBoxPlayerName.Size = new Size(223, 29);
+            TextBoxPlayerName.Size = new Size(223, 33);
             TextBoxPlayerName.TabIndex = 1;
             // 
             // CreateButton
@@ -167,7 +167,7 @@
             CreateButton.BackgroundImage = Properties.Resources.button_wide_normal;
             CreateButton.BackgroundImageLayout = ImageLayout.Stretch;
             CreateButton.FlatStyle = FlatStyle.Flat;
-            CreateButton.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CreateButton.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             CreateButton.ForeColor = SystemColors.Control;
             CreateButton.Location = new Point(765, 298);
             CreateButton.Name = "CreateButton";

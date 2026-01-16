@@ -41,7 +41,7 @@
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.aoe2_de_uhd_2;
-            panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.BackgroundImageLayout = ImageLayout.Center;
             panel1.Controls.Add(MapTypeComboBox);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
@@ -50,29 +50,29 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(243, 271);
+            panel1.Size = new Size(243, 276);
             panel1.TabIndex = 2;
             // 
             // MapTypeComboBox
             // 
             MapTypeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            MapTypeComboBox.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MapTypeComboBox.Font = new Font("Segoe UI", 14.25F);
             MapTypeComboBox.FormattingEnabled = true;
             MapTypeComboBox.Items.AddRange(new object[] { "Padrão", "QS", "Nomade", "Arena", "Hibrido", "Agua" });
             MapTypeComboBox.Location = new Point(12, 88);
             MapTypeComboBox.Name = "MapTypeComboBox";
-            MapTypeComboBox.Size = new Size(223, 30);
+            MapTypeComboBox.Size = new Size(223, 33);
             MapTypeComboBox.TabIndex = 4;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Black;
-            label2.Font = new Font("Arial", 9F);
+            label2.Font = new Font("Segoe UI", 9F);
             label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(12, 70);
             label2.Name = "label2";
-            label2.Size = new Size(83, 15);
+            label2.Size = new Size(81, 15);
             label2.TabIndex = 2;
             label2.Text = "Tipo do mapa";
             // 
@@ -80,21 +80,21 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Black;
-            label1.Font = new Font("Arial", 9F);
+            label1.Font = new Font("Segoe UI", 9F);
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(12, 11);
             label1.Name = "label1";
-            label1.Size = new Size(41, 15);
+            label1.Size = new Size(40, 15);
             label1.TabIndex = 2;
             label1.Text = "Nome";
             // 
             // TextBoxMapName
             // 
-            TextBoxMapName.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TextBoxMapName.Font = new Font("Segoe UI", 14.25F);
             TextBoxMapName.Location = new Point(12, 29);
             TextBoxMapName.Name = "TextBoxMapName";
             TextBoxMapName.PlaceholderText = "Nome do mapa";
-            TextBoxMapName.Size = new Size(223, 29);
+            TextBoxMapName.Size = new Size(223, 33);
             TextBoxMapName.TabIndex = 1;
             // 
             // CreateButton
@@ -102,9 +102,9 @@
             CreateButton.BackgroundImage = Properties.Resources.button_wide_normal;
             CreateButton.BackgroundImageLayout = ImageLayout.Stretch;
             CreateButton.FlatStyle = FlatStyle.Flat;
-            CreateButton.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CreateButton.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             CreateButton.ForeColor = SystemColors.Control;
-            CreateButton.Location = new Point(89, 215);
+            CreateButton.Location = new Point(89, 224);
             CreateButton.Name = "CreateButton";
             CreateButton.Size = new Size(146, 44);
             CreateButton.TabIndex = 3;
@@ -116,7 +116,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(243, 271);
+            ClientSize = new Size(243, 276);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");

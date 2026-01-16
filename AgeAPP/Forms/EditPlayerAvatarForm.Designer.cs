@@ -48,11 +48,11 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Black;
-            label4.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.Control;
             label4.Location = new Point(12, 9);
             label4.Name = "label4";
-            label4.Size = new Size(262, 22);
+            label4.Size = new Size(264, 25);
             label4.TabIndex = 6;
             label4.Text = "Selecione o avatar do jogador";
             // 
@@ -61,11 +61,11 @@
             ConfirmButton.BackgroundImage = Properties.Resources.button_wide_normal;
             ConfirmButton.BackgroundImageLayout = ImageLayout.Stretch;
             ConfirmButton.FlatStyle = FlatStyle.Flat;
-            ConfirmButton.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ConfirmButton.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ConfirmButton.ForeColor = SystemColors.Control;
-            ConfirmButton.Location = new Point(378, 297);
+            ConfirmButton.Location = new Point(345, 297);
             ConfirmButton.Name = "ConfirmButton";
-            ConfirmButton.Size = new Size(146, 44);
+            ConfirmButton.Size = new Size(179, 44);
             ConfirmButton.TabIndex = 8;
             ConfirmButton.Text = "Confirmar";
             ConfirmButton.UseVisualStyleBackColor = true;

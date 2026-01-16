@@ -38,9 +38,9 @@
             pictureBox1 = new PictureBox();
             ConfirmButton = new Button();
             panel1 = new Panel();
+            label2 = new Label();
             ToolTips = new ToolTip(components);
             HelpButton = new Button();
-            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -72,21 +72,21 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Black;
-            label3.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI", 15.75F);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(12, 9);
+            label3.Location = new Point(12, 5);
             label3.Name = "label3";
-            label3.Size = new Size(288, 24);
+            label3.Size = new Size(281, 30);
             label3.TabIndex = 5;
             label3.Text = "Selecione os mapas favoritos";
             // 
             // FavoriteMapListBox
             // 
-            FavoriteMapListBox.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FavoriteMapListBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FavoriteMapListBox.FormattingEnabled = true;
             FavoriteMapListBox.Location = new Point(465, 36);
             FavoriteMapListBox.Name = "FavoriteMapListBox";
-            FavoriteMapListBox.Size = new Size(273, 166);
+            FavoriteMapListBox.Size = new Size(273, 151);
             FavoriteMapListBox.TabIndex = 7;
             FavoriteMapListBox.DrawItem += FavoriteMapListBox_DrawItem;
             // 
@@ -94,11 +94,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Black;
-            label1.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 15.75F);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(465, 9);
+            label1.Location = new Point(465, 5);
             label1.Name = "label1";
-            label1.Size = new Size(99, 24);
+            label1.Size = new Size(95, 30);
             label1.TabIndex = 5;
             label1.Text = "Favoritos";
             // 
@@ -119,9 +119,9 @@
             ConfirmButton.BackgroundImage = Properties.Resources.button_wide_normal;
             ConfirmButton.BackgroundImageLayout = ImageLayout.Stretch;
             ConfirmButton.FlatStyle = FlatStyle.Flat;
-            ConfirmButton.Font = new Font("Arial", 12F);
+            ConfirmButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ConfirmButton.ForeColor = SystemColors.Control;
-            ConfirmButton.Location = new Point(214, 46);
+            ConfirmButton.Location = new Point(216, 46);
             ConfirmButton.Name = "ConfirmButton";
             ConfirmButton.Size = new Size(134, 39);
             ConfirmButton.TabIndex = 9;
@@ -132,13 +132,24 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
-            panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(ConfirmButton);
             panel1.Controls.Add(label2);
             panel1.Location = new Point(381, 208);
             panel1.Name = "panel1";
             panel1.Size = new Size(357, 92);
             panel1.TabIndex = 10;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.Control;
+            label2.Location = new Point(3, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(329, 21);
+            label2.TabIndex = 5;
+            label2.Text = "Selecione multiplos mapas segurando o CTRL.";
             // 
             // ToolTips
             // 
@@ -157,18 +168,6 @@
             HelpButton.TabIndex = 11;
             HelpButton.UseVisualStyleBackColor = true;
             HelpButton.Click += HelpButton_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(-2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(335, 18);
-            label2.TabIndex = 5;
-            label2.Text = "Selecione multiplos mapas segurando o CTRL.";
             // 
             // EditPlayerFavoriteMapForm
             // 

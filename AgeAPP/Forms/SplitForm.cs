@@ -125,7 +125,7 @@ namespace AgeAPP.Forms
 
                 int total = team.Sum(p => p.Rating);
 
-                return $"{teamName}: {playersPart} - TOTAL: {total}";
+                return $"{teamName}: {playersPart} - MÉDIA: {total / team.Count}";
             }
 
             TextBoxTeam1.Text = BuildTeamLine("TIME A", teamA);
