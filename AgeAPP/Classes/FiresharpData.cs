@@ -21,7 +21,7 @@ namespace AgeAPP.Classes
 
         public IFirebaseClient client;
 
-        // Admin data
+        // Account data
         public bool AccountLogged = false;
         public Account LocalAccount;
 
