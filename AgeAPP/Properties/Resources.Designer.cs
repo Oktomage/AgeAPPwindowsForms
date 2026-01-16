@@ -223,6 +223,26 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delta {
+            get {
+                object obj = ResourceManager.GetObject("delta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delta2 {
+            get {
+                object obj = ResourceManager.GetObject("delta2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Duplicate_icon {
             get {
                 object obj = ResourceManager.GetObject("Duplicate_icon", resourceCulture);
@@ -1256,6 +1276,16 @@ namespace AgeAPP.Properties {
         internal static System.Drawing.Bitmap rm_qs_runestones {
             get {
                 object obj = ResourceManager.GetObject("rm_qs_runestones", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rm_socotra {
+            get {
+                object obj = ResourceManager.GetObject("rm_socotra", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

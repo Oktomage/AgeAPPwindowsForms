@@ -16,9 +16,13 @@ namespace AgeAPP.Cards
 {
     public partial class PlayerCard : UserControl
     {
+        private Color defaultBackColor;
+
         public PlayerCard()
         {
             InitializeComponent();
+
+            defaultBackColor = this.BackColor;
         }
 
         public void Bind(Player player)
@@ -65,5 +69,19 @@ namespace AgeAPP.Cards
             // Avatar
             AvatarPictureBox.BackgroundImage = MainFunctions.LoadAvatar(player.AvatarId);
         }
+
+        #region Mouse Events
+
+        private void PlayerCard_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(48, 48, 48);
+        }
+
+        private void PlayerCard_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = defaultBackColor;
+        }
+
+        #endregion
     }
 }

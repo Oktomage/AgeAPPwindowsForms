@@ -539,6 +539,7 @@ namespace AgeAPP.Classes
                 { "febre do ouro", Properties.Resources.rm_gold_rush },
                 { "ilhas", Properties.Resources.rm_islands },
                 { "oasis", Properties.Resources.rm_oasis },
+                { "socotra", Properties.Resources.rm_socotra },
                 { "fortaleza", Properties.Resources.rm_fortress },
                 { "unknown", Properties.Resources.UnkownMap },
                 };

@@ -392,9 +392,9 @@ namespace AgeAPP
             // FlowLayoutPlayers
             // 
             FlowLayoutPlayers.BackColor = Color.Transparent;
-            FlowLayoutPlayers.Location = new Point(80, 53);
+            FlowLayoutPlayers.Location = new Point(80, 55);
             FlowLayoutPlayers.Name = "FlowLayoutPlayers";
-            FlowLayoutPlayers.Size = new Size(778, 492);
+            FlowLayoutPlayers.Size = new Size(778, 490);
             FlowLayoutPlayers.TabIndex = 8;
             // 
             // FMain

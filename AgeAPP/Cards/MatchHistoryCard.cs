@@ -40,6 +40,8 @@ namespace AgeAPP.Cards
             UpdateWinnerIcons(CurrentResult.TeamAWon);
 
             LogAuthorLabel.Text = $"Registro de: {log.Author_name}";
+
+            DeltaRatingLabel.Text = $"{MathF.Abs(log.Match_result.DeltaRating)}";
         }
 
         private void ConfigureListView(ListView lv)

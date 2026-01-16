@@ -68,7 +68,7 @@
             MapPictureBox.BackColor = Color.Transparent;
             MapPictureBox.BackgroundImage = Properties.Resources.UnkownMap;
             MapPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-            MapPictureBox.Location = new Point(3, 8);
+            MapPictureBox.Location = new Point(3, 30);
             MapPictureBox.Name = "MapPictureBox";
             MapPictureBox.Size = new Size(152, 133);
             MapPictureBox.TabIndex = 1;
@@ -93,7 +93,7 @@
             DeltaRatingLabel.BackColor = Color.Black;
             DeltaRatingLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DeltaRatingLabel.ForeColor = Color.White;
-            DeltaRatingLabel.Location = new Point(43, 145);
+            DeltaRatingLabel.Location = new Point(43, 171);
             DeltaRatingLabel.Name = "DeltaRatingLabel";
             DeltaRatingLabel.Size = new Size(27, 32);
             DeltaRatingLabel.TabIndex = 0;
@@ -149,9 +149,9 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.BackgroundImage = Properties.Resources.star;
+            pictureBox2.BackgroundImage = Properties.Resources.delta2;
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Location = new Point(3, 144);
+            pictureBox2.Location = new Point(3, 168);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(34, 34);
             pictureBox2.TabIndex = 3;
@@ -196,7 +196,7 @@
             LogAuthorLabel.BackColor = Color.Black;
             LogAuthorLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LogAuthorLabel.ForeColor = Color.White;
-            LogAuthorLabel.Location = new Point(3, 181);
+            LogAuthorLabel.Location = new Point(3, 8);
             LogAuthorLabel.Name = "LogAuthorLabel";
             LogAuthorLabel.Size = new Size(58, 17);
             LogAuthorLabel.TabIndex = 0;
@@ -207,7 +207,7 @@
             // 
             panel1.Anchor = AnchorStyles.Bottom;
             panel1.BackColor = Color.White;
-            panel1.Location = new Point(0, 205);
+            panel1.Location = new Point(0, 208);
             panel1.Name = "panel1";
             panel1.Size = new Size(573, 5);
             panel1.TabIndex = 4;
@@ -234,7 +234,7 @@
             Controls.Add(MapNameLabel);
             Margin = new Padding(0, 0, 0, 15);
             Name = "MatchHistoryCard";
-            Size = new Size(573, 210);
+            Size = new Size(573, 213);
             ((System.ComponentModel.ISupportInitialize)MapPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)TeamAsymbolPictureBox).EndInit();
