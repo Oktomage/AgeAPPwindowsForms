@@ -131,7 +131,7 @@ namespace AgeAPP.Forms
             TextBoxTeam1.Text = BuildTeamLine("TIME A", teamA);
             TextBoxTeam2.Text = BuildTeamLine("TIME B", teamB);
 
-            if(local_Data_service.LocalAccount.IsAdmin)
+            if(local_Data_service.LocalAccount != null && local_Data_service.LocalAccount.IsAdmin)
                 ToApplyResultFormButton.Enabled = true;
 
             // Salvar log
