@@ -224,7 +224,6 @@ namespace AgeAPP.Classes
             int teamARating = teamA.Sum(p => p.Rating);
             int teamBRating = teamB.Sum(p => p.Rating);
 
-            // 🔹 Delta do Time A
             int deltaTeamA = Calculate_rating_changes(
                 teamARating,
                 teamBRating,
@@ -235,9 +234,11 @@ namespace AgeAPP.Classes
             float sizeMultiplier = GetMatchSizeMultiplier(result.MatchSize);
             deltaTeamA = (int)Math.Round(deltaTeamA * sizeMultiplier);
 
-            int deltaTeamB = -deltaTeamA;
+            // ✅ CORREÇÃO AQUI
+            int perPlayerDeltaA = (int)Math.Round(deltaTeamA / (float)teamA.Count);
+            int perPlayerDeltaB = -perPlayerDeltaA;
 
-            result.DeltaRating = Math.Abs(deltaTeamA);
+            result.DeltaRating = Math.Abs(perPlayerDeltaA);
 
             // 🔹 Aplica no Time A
             foreach (var player in teamA)
@@ -248,7 +249,7 @@ namespace AgeAPP.Classes
                 if (teamAWon)
                     player.Wins += 1;
 
-                player.Rating += deltaTeamA;
+                player.Rating += perPlayerDeltaA;
                 player.Last_time_played = DateTime.Now.ToString("g");
             }
 
@@ -261,12 +262,13 @@ namespace AgeAPP.Classes
                 if (!teamAWon)
                     player.Wins += 1;
 
-                player.Rating += deltaTeamB;
+                player.Rating += perPlayerDeltaB;
                 player.Last_time_played = DateTime.Now.ToString("g");
             }
 
             return result;
         }
+
 
         /*
         public Dictionary<string, int> CalculatePreviewIndividualChanges(List<Player> teamA, List<Player> teamB, bool teamAWon)
@@ -318,15 +320,49 @@ namespace AgeAPP.Classes
         }
         */
 
+        public int CalculatePerPlayerDelta(List<Player> teamA, List<Player> teamB, bool teamAWon)
+        {
+            int teamARating = teamA.Sum(p => p.Rating);
+            int teamBRating = teamB.Sum(p => p.Rating);
+
+            int matchSize = teamA.Count;
+
+            int deltaTeamA = Calculate_rating_changes(
+                teamARating,
+                teamBRating,
+                teamAWon,
+                matchSize
+            );
+
+            float sizeMultiplier = GetMatchSizeMultiplier(matchSize);
+            deltaTeamA = (int)Math.Round(deltaTeamA * sizeMultiplier);
+
+            // 🔹 divide por jogador
+            return (int)Math.Round(deltaTeamA / (float)matchSize);
+        }
+
         private float GetMatchSizeMultiplier(int matchSize)
         {
-            return matchSize switch
+            string GetMatchSizeKey(int matchSize)
             {
-                2 => 0.6f, // 2v2
-                3 => 1.0f, // 3v3
-                4 => 1.2f, // 4v4
-                _ => 1.0f
-            };
+                return matchSize switch
+                {
+                    1 => "1v1",
+                    2 => "2v2",
+                    3 => "3v3",
+                    4 => "4v4",
+                    _ => "FFA"
+                };
+            }
+
+            string key = GetMatchSizeKey(matchSize);
+
+            var multipliers = FMain.AgeApp_settings_service.MatchSize_multipliers;
+
+            if (multipliers != null && multipliers.TryGetValue(key, out float value))
+                return value;
+
+            return 1.0f; // fallback seguro
         }
 
         private float GetProbabilityDivisor(int matchSize)

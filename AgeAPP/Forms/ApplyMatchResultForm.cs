@@ -123,12 +123,17 @@ namespace AgeAPP.Forms
             int teamARating = log.TeamA_players.Sum(p => p.Rating);
             int teamBRating = log.TeamB_players.Sum(p => p.Rating);
 
-            int deltaTeamA = local_Main_functions_service.Calculate_rating_changes(teamARating, teamBRating, teamAWon, log.TeamA_players.Count);
+            int perPlayerDeltaA =
+                local_Main_functions_service.CalculatePerPlayerDelta(
+                    log.TeamA_players,
+                    log.TeamB_players,
+                    teamAWon
+                );
 
-            int deltaTeamB = -deltaTeamA;
+            int perPlayerDeltaB = -perPlayerDeltaA;
 
-            string deltaAFormatted = deltaTeamA > 0 ? $"+{deltaTeamA}" : deltaTeamA.ToString();
-            string deltaBFormatted = deltaTeamB > 0 ? $"+{deltaTeamB}" : deltaTeamB.ToString();
+            string deltaAFormatted = perPlayerDeltaA > 0 ? $"+{perPlayerDeltaA}" : perPlayerDeltaA.ToString();
+            string deltaBFormatted = perPlayerDeltaB > 0 ? $"+{perPlayerDeltaB}" : perPlayerDeltaB.ToString();
 
             for (int i = 0; i < max; i++)
             {

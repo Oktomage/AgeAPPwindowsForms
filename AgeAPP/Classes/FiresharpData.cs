@@ -99,6 +99,28 @@ namespace AgeAPP.Classes
             client = new FireSharp.FirebaseClient(config);
         }
 
+        public async Task InitializeSettingsIfMissing()
+        {
+            var response = await client.GetAsync("settings");
+
+            var defaultSettings = new AgeApp_settings.Settings
+            {
+                Kfactor = 26,
+                Version = "5.4.4",
+                maxInactiveDays = 10,
+                MatchSize_multipliers = new Dictionary<string, float>
+                {
+                    { "1v1", 1.0f },
+                    { "2v2", 2.0f },
+                    { "3v3", 2.75f },
+                    { "4v4", 3.5f },
+                    { "FFA", 1.0f }
+                }
+            };
+
+            await client.SetAsync("settings", defaultSettings);
+        } // DEBUG PURPOSES ONLY
+
         public async Task<AgeApp_settings.Settings> Get_appSettings ()
         {
             FirebaseResponse response = await client.GetAsync("settings");

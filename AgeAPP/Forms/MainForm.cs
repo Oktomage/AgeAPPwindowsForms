@@ -58,7 +58,7 @@ namespace AgeAPP
             }
 
             // Pega settings do app direto do banco
-            AgeApp_settings_service.Get_settings();
+            await AgeApp_settings_service.Get_settings();
 
             // Baixa backup
             Data_service.Download_dataBase_Backup();
