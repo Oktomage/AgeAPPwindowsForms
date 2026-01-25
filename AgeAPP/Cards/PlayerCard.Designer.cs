@@ -128,8 +128,6 @@
             Margin = new Padding(3, 3, 3, 10);
             Name = "PlayerCard";
             Size = new Size(740, 68);
-            MouseEnter += PlayerCard_MouseEnter;
-            MouseLeave += PlayerCard_MouseLeave;
             ((System.ComponentModel.ISupportInitialize)AvatarPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();

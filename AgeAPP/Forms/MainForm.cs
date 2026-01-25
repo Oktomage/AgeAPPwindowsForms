@@ -61,7 +61,8 @@ namespace AgeAPP
             await AgeApp_settings_service.Get_settings();
 
             // Baixa backup
-            Data_service.Download_dataBase_Backup();
+            if(Data_service.LocalAccount.IsAdmin)
+                Data_service.Download_dataBase_Backup();
 
             // Atualiza a tabela inicial
             await UpdateLocalData();
