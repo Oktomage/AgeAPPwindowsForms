@@ -216,8 +216,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(64, 64, 64);
-            BackgroundImage = Properties.Resources.what_is_the_most_epic_match_battle_you_had_in_aoe_ii_v0_lpqjbc995aub1;
+            BackColor = Color.Transparent;
+            BackgroundImageLayout = ImageLayout.None;
             Controls.Add(panel1);
             Controls.Add(TeamBsymbolPictureBox);
             Controls.Add(pictureBox5);

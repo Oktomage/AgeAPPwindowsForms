@@ -137,26 +137,22 @@ namespace AgeAPP
 
             IEnumerable<Player> source = Show_only_active_players ? GetActivePlayers() : allPlayers;
 
-            foreach (var player in source)
+            var list = source.ToList();
+
+            for (int i = 0; i < list.Count; i++)
             {
+                var player = list[i];
+                int rank = i + 1;
+
                 UserControl card;
 
-                switch (Show_expanded_players_list)
-                {
-                    case true:
-                        card = new PlayerCard();
-                        break;
-
-                    case false:
-                        card = new CompactPlayerCard();
-                        break;
-                }
+                if (Show_expanded_players_list)
+                    card = new PlayerCard();
+                else
+                    card = new CompactPlayerCard();
 
                 dynamic bindableCard = card;
-                bindableCard.Bind(player);
-
-                // Fix Width
-                //card.Width = FlowLayoutPlayers.ClientSize.Width - 25;
+                bindableCard.Bind(player, rank); // passa o rank correto
 
                 FlowLayoutPlayers.Controls.Add(card);
             }

@@ -11,6 +11,8 @@ namespace AgeAPP.Forms
         // Serviços
         private FiresharpData local_Data_service;
 
+        private int maxItemsToShow = 10;
+
         public MatchesHistoryForm(FiresharpData Data_service)
         {
             InitializeComponent();
@@ -18,7 +20,7 @@ namespace AgeAPP.Forms
             local_Data_service = Data_service;
 
             // Configuração do layout
-            FlowLayouPanel.Dock = DockStyle.Fill;
+            FlowLayouPanel.Dock = DockStyle.Bottom;
             FlowLayouPanel.AutoScroll = true;
             FlowLayouPanel.WrapContents = false;
             FlowLayouPanel.FlowDirection = FlowDirection.TopDown;
@@ -27,6 +29,20 @@ namespace AgeAPP.Forms
 
         private async void MatchesHistoryForm_Load(object sender, EventArgs e)
         {
+            ListSizeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            ListSizeComboBox.Items.Clear();
+            ListSizeComboBox.Items.AddRange(new object[]
+            {
+                10,
+                20,
+                30,
+                50,
+                100
+            });
+
+            ListSizeComboBox.SelectedItem = 10;
+
             await Load_history();
         }
 
@@ -65,7 +81,12 @@ namespace AgeAPP.Forms
             FlowLayouPanel.SuspendLayout();
             FlowLayouPanel.Controls.Clear();
 
-            foreach (var log in logs)
+            var limitedLogs = logs
+                .OrderByDescending(l => l.Date)
+                .Take(maxItemsToShow)
+                .ToList();
+
+            foreach (var log in limitedLogs)
             {
                 var card = new MatchHistoryCard();
                 card.Bind(log);
@@ -73,6 +94,16 @@ namespace AgeAPP.Forms
             }
 
             FlowLayouPanel.ResumeLayout();
+        }
+
+        private async void ListSizeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListSizeComboBox.SelectedItem is int value)
+            {
+                maxItemsToShow = value;
+
+                await Load_history();
+            }
         }
     }
 }

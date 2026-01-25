@@ -13,7 +13,7 @@ namespace AgeAPP.Cards
             HoverStyles.CardHover(this);
         }
 
-        public void Bind(Player player)
+        public void Bind(Player player, int rank)
         {
             // Nome
             PlayerNameLabel.Text = player.Name;

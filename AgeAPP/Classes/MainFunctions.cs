@@ -577,6 +577,7 @@ namespace AgeAPP.Classes
                 { "oasis", Properties.Resources.rm_oasis },
                 { "socotra", Properties.Resources.rm_socotra },
                 { "fortaleza", Properties.Resources.rm_fortress },
+                { "escandinavia", Properties.Resources.rm_scandinavia },
                 { "unknown", Properties.Resources.UnkownMap },
                 };
 

@@ -12,7 +12,7 @@ namespace AgeAPP.Cards
             HoverStyles.CardHover(this);
         }
 
-        public void Bind(Player player)
+        public void Bind(Player player, int rank)
         {
             // Nome
             PlayerNameLabel.Text = player.Name;
@@ -21,28 +21,24 @@ namespace AgeAPP.Cards
             PlayerRatingLabel.Text = $"({player.Rating})";
 
             // Rank
-            LeaderboardRankLabel.Text = $"#{player.Id}";
+            LeaderboardRankLabel.Text = $"#{rank}";
 
-            switch (player.Id)
+            switch (rank)
             {
                 case 1:
                     LeaderboardRankLabel.ForeColor = Color.Gold;
-                    LeaderboardRankLabel.Font = new Font(LeaderboardRankLabel.Font.FontFamily, 16f, LeaderboardRankLabel.Font.Style);
+                    LeaderboardRankLabel.Font = new Font(LeaderboardRankLabel.Font.FontFamily, 16f, FontStyle.Bold);
                     break;
 
                 case 2:
-                    LeaderboardRankLabel.ForeColor = Color.White;
-                    LeaderboardRankLabel.Font = new Font(LeaderboardRankLabel.Font.FontFamily, 16f, LeaderboardRankLabel.Font.Style);
-                    break;
-
                 case 3:
-                    LeaderboardRankLabel.ForeColor = Color.White;
-                    LeaderboardRankLabel.Font = new Font(LeaderboardRankLabel.Font.FontFamily, 16f, LeaderboardRankLabel.Font.Style);
+                    LeaderboardRankLabel.ForeColor = Color.WhiteSmoke;
+                    LeaderboardRankLabel.Font = new Font(LeaderboardRankLabel.Font.FontFamily, 14f, FontStyle.Bold);
                     break;
 
                 default:
                     LeaderboardRankLabel.ForeColor = Color.White;
-                    LeaderboardRankLabel.Font = new Font(LeaderboardRankLabel.Font.FontFamily, 12f, LeaderboardRankLabel.Font.Style);
+                    LeaderboardRankLabel.Font = new Font(LeaderboardRankLabel.Font.FontFamily, 12f, FontStyle.Regular);
                     break;
             }
 
