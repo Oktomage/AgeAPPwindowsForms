@@ -33,6 +33,7 @@
             panel1 = new Panel();
             ListSizeComboBox = new ComboBox();
             label1 = new Label();
+            LoadingLabel = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,6 +50,7 @@
             // 
             panel1.BackColor = Color.Black;
             panel1.Controls.Add(ListSizeComboBox);
+            panel1.Controls.Add(LoadingLabel);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -80,6 +82,18 @@
             label1.TabIndex = 0;
             label1.Text = "Tamanho da lista:";
             // 
+            // LoadingLabel
+            // 
+            LoadingLabel.AutoSize = true;
+            LoadingLabel.BackColor = Color.Transparent;
+            LoadingLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LoadingLabel.ForeColor = Color.White;
+            LoadingLabel.Location = new Point(478, 6);
+            LoadingLabel.Name = "LoadingLabel";
+            LoadingLabel.Size = new Size(124, 25);
+            LoadingLabel.TabIndex = 0;
+            LoadingLabel.Text = "Carregando...";
+            // 
             // MatchesHistoryForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -107,5 +121,6 @@
         private Panel panel1;
         private Label label1;
         private ComboBox ListSizeComboBox;
+        private Label LoadingLabel;
     }
 }

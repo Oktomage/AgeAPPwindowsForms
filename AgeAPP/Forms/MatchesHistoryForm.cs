@@ -66,6 +66,9 @@ namespace AgeAPP.Forms
 
         private async Task Load_history()
         {
+            LoadingLabel.Visible = true;
+            ListSizeComboBox.Enabled = false;
+
             var admins = new List<string>
             {
                 "oldtime",
@@ -94,6 +97,9 @@ namespace AgeAPP.Forms
             }
 
             FlowLayouPanel.ResumeLayout();
+
+            ListSizeComboBox.Enabled = true;
+            LoadingLabel.Visible = false;
         }
 
         private async void ListSizeComboBox_SelectedIndexChanged(object sender, EventArgs e)

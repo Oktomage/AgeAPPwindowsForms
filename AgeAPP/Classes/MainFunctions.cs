@@ -224,21 +224,17 @@ namespace AgeAPP.Classes
             int teamARating = teamA.Sum(p => p.Rating);
             int teamBRating = teamB.Sum(p => p.Rating);
 
-            int deltaTeamA = Calculate_rating_changes(
+            int perPlayerDeltaA = Calculate_rating_changes(
                 teamARating,
                 teamBRating,
                 teamAWon,
                 result.MatchSize
             );
 
-            float sizeMultiplier = GetMatchSizeMultiplier(result.MatchSize);
-            deltaTeamA = (int)Math.Round(deltaTeamA * sizeMultiplier);
-
-            // ✅ CORREÇÃO AQUI
-            int perPlayerDeltaA = (int)Math.Round(deltaTeamA / (float)teamA.Count);
             int perPlayerDeltaB = -perPlayerDeltaA;
 
-            result.DeltaRating = Math.Abs(perPlayerDeltaA);
+            result.PerPlayerDelta = perPlayerDeltaA;
+            result.DeltaRating = Math.Abs(perPlayerDeltaA); // só para UI / cards
 
             // 🔹 Aplica no Time A
             foreach (var player in teamA)
@@ -267,78 +263,6 @@ namespace AgeAPP.Classes
             }
 
             return result;
-        }
-
-
-        /*
-        public Dictionary<string, int> CalculatePreviewIndividualChanges(List<Player> teamA, List<Player> teamB, bool teamAWon)
-        {
-            var preview = new Dictionary<string, int>();
-
-            if (teamA.Count == 0 || teamB.Count == 0)
-                return preview;
-
-            int avgRatingA = (int)teamA.Average(p => p.Rating);
-            int avgRatingB = (int)teamB.Average(p => p.Rating);
-
-            // 🔹 Preview Time A
-            foreach (var player in teamA)
-            {
-                int delta = CalculateIndividualDelta(
-                    player.Rating,
-                    avgRatingB,
-                    teamAWon
-                );
-
-                preview[player.Name] = delta;
-            }
-
-            // 🔹 Preview Time B
-            foreach (var player in teamB)
-            {
-                int delta = CalculateIndividualDelta(
-                    player.Rating,
-                    avgRatingA,
-                    !teamAWon
-                );
-
-                preview[player.Name] = delta;
-            }
-
-            return preview;
-        }
-
-        private int CalculateIndividualDelta(int playerRating, int opponentAvgRating, bool playerWon)
-        {
-            int K = FMain.AgeApp_settings_service.Kfactor;
-
-            float expected = 1f / (1f + (float)Math.Pow(10, (opponentAvgRating - playerRating) / 400f));
-
-            float score = playerWon ? 1f : 0f;
-
-            return (int)Math.Round(K * (score - expected));
-        }
-        */
-
-        public int CalculatePerPlayerDelta(List<Player> teamA, List<Player> teamB, bool teamAWon)
-        {
-            int teamARating = teamA.Sum(p => p.Rating);
-            int teamBRating = teamB.Sum(p => p.Rating);
-
-            int matchSize = teamA.Count;
-
-            int deltaTeamA = Calculate_rating_changes(
-                teamARating,
-                teamBRating,
-                teamAWon,
-                matchSize
-            );
-
-            float sizeMultiplier = GetMatchSizeMultiplier(matchSize);
-            deltaTeamA = (int)Math.Round(deltaTeamA * sizeMultiplier);
-
-            // 🔹 divide por jogador
-            return (int)Math.Round(deltaTeamA / (float)matchSize);
         }
 
         private float GetMatchSizeMultiplier(int matchSize)
@@ -378,68 +302,27 @@ namespace AgeAPP.Classes
 
         public int Calculate_rating_changes(int teamRatingA, int teamRatingB, bool teamAWon, int matchSize)
         {
-            int Kfactor = FMain.AgeApp_settings_service.Kfactor;
+            int baseK = FMain.AgeApp_settings_service.Kfactor;
+            float sizeMultiplier = GetMatchSizeMultiplier(matchSize);
+
+            // K efetivo já considera o tamanho da partida
+            float effectiveK = baseK * sizeMultiplier;
 
             int diff = teamRatingA - teamRatingB;
-            float probabilityDivisor = GetProbabilityDivisor(matchSize);
+            float divisor = GetProbabilityDivisor(matchSize);
 
-            float expectedA = 1f / (1f + (float)Math.Pow(10, -diff / probabilityDivisor));
+            float expectedA = 1f / (1f + MathF.Pow(10, -diff / divisor));
             float scoreA = teamAWon ? 1f : 0f;
 
-            double diffFactor = Math.Clamp(
-                Math.Abs(diff) / probabilityDivisor,
-                0.5,
-                2.5
+            // ✅ delta já é POR JOGADOR
+            int deltaPerPlayer = (int)Math.Round(
+                effectiveK * (scoreA - expectedA)
             );
 
-            int deltaA = (int)Math.Round(
-                Kfactor * diffFactor * (scoreA - expectedA)
-            );
+            deltaPerPlayer = Math.Clamp(deltaPerPlayer, -FMain.AgeApp_settings_service.maxRatingDelta, FMain.AgeApp_settings_service.maxRatingDelta);
 
-            return deltaA;
+            return deltaPerPlayer;
         }
-
-        /*
-        private Dictionary<string, int> CalculateIndividualRatingChanges(List<Player> team, int teamDelta)
-        {
-            var result = new Dictionary<string, int>();
-
-            if (team.Count == 0 || teamDelta == 0)
-                return result;
-
-            double avgRating = team.Average(p => p.Rating);
-
-            var weights = team.ToDictionary(
-                p => p.Name,
-                p => p.Rating / avgRating
-            );
-
-            double totalWeight = weights.Values.Sum();
-
-            int distributed = 0;
-
-            foreach (var kv in weights)
-            {
-                int delta = (int)Math.Round(teamDelta * (kv.Value / totalWeight));
-                result[kv.Key] = delta;
-                distributed += delta;
-            }
-
-            // Ajuste de arredondamento
-            int diff = teamDelta - distributed;
-            if (diff != 0)
-            {
-                string adjustPlayer = team
-                    .OrderBy(p => p.Rating)
-                    .First()
-                    .Name;
-
-                result[adjustPlayer] += diff;
-            }
-
-            return result;
-        }
-        */
         
         #endregion
 

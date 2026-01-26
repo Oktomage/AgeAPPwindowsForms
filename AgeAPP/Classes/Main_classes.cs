@@ -33,6 +33,20 @@ namespace AgeAPP.Classes
 
             [Browsable(false)]
             public Dictionary<string, FavoriteMap> Favorite_maps { get; set; } = new Dictionary<string, FavoriteMap>();
+
+            public Player Clone()
+            {
+                return new Player
+                {
+                    Name = this.Name,
+                    Rating = this.Rating,
+                    Wins = this.Wins,
+                    Matches = this.Matches,
+                    Last_time_played = this.Last_time_played,
+                    AvatarId = this.AvatarId,
+                    Id = this.Id
+                };
+            }
         }
 
         public class FavoriteMap
@@ -66,6 +80,7 @@ namespace AgeAPP.Classes
             public List<Player> TeamB { get; set; } = new List<Player>();
             public int MatchSize { get; set; } = 2; //2 = 2v2, 3 = 3v3, 4 = 4v4
             public int DeltaRating { get; set; }
+            public int PerPlayerDelta { get; set; }
             public bool TeamAWon { get; set; }
             public string PlayedMap_name { get; set; }
             public DateTime MatchDate { get; set; }

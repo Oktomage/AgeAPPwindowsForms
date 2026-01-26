@@ -120,16 +120,25 @@ namespace AgeAPP.Forms
 
             bool teamAWon = TeamVictoriousBox.SelectedItem?.ToString() == "Team A";
 
-            int teamARating = log.TeamA_players.Sum(p => p.Rating);
-            int teamBRating = log.TeamB_players.Sum(p => p.Rating);
+            //  CLONE DOS JOGADORES (preview NÃO pode alterar estado real)
+            var teamAClone = log.TeamA_players
+                .Select(p => p.Clone())
+                .ToList();
 
-            int perPlayerDeltaA =
-                local_Main_functions_service.CalculatePerPlayerDelta(
-                    log.TeamA_players,
-                    log.TeamB_players,
-                    teamAWon
+            var teamBClone = log.TeamB_players
+                .Select(p => p.Clone())
+                .ToList();
+
+            //  CALCULA UMA ÚNICA VEZ, USANDO O MÉTODO REAL
+            MatchResult previewResult =
+                local_Main_functions_service.Get_match_result(
+                    teamAClone,
+                    teamBClone,
+                    teamAWon,
+                    log.Played_map?.Name ?? "Preview"
                 );
 
+            int perPlayerDeltaA = previewResult.PerPlayerDelta;
             int perPlayerDeltaB = -perPlayerDeltaA;
 
             string deltaAFormatted = perPlayerDeltaA > 0 ? $"+{perPlayerDeltaA}" : perPlayerDeltaA.ToString();
