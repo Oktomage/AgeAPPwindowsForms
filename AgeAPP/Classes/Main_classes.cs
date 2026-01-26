@@ -85,5 +85,10 @@ namespace AgeAPP.Classes
             public string PlayedMap_name { get; set; }
             public DateTime MatchDate { get; set; }
         }
+
+        public class Updates
+        {
+            public string ChangeLogs { get; set; }
+        }
     }
 }

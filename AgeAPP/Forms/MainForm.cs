@@ -59,9 +59,10 @@ namespace AgeAPP
 
             // Pega settings do app direto do banco
             await AgeApp_settings_service.Get_settings();
+            await AgeApp_settings_service.Get_updatesInfo();
 
             // Baixa backup
-            if(Data_service.LocalAccount.IsAdmin)
+            if (Data_service.LocalAccount.IsAdmin)
                 Data_service.Download_dataBase_Backup();
 
             // Atualiza a tabela inicial
@@ -241,6 +242,20 @@ namespace AgeAPP
             Show_expanded_players_list = !Show_expanded_players_list;
 
             await UpdateLocalData();
+        }
+
+        private void NewsButton_Click(object sender, EventArgs e)
+        {
+            string formatted = AgeApp_settings_service.Updates_info.ChangeLogs
+            .Replace(" | ", Environment.NewLine)
+            .Replace("|", Environment.NewLine);
+
+            MessageBox.Show(
+                formatted,
+                "Novidades",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
         }
 
         #endregion

@@ -131,6 +131,16 @@ namespace AgeAPP.Classes
             return response.ResultAs<AgeApp_settings.Settings>();
         }
 
+        public async Task<Updates> Get_updatesInfo()
+        {
+            FirebaseResponse response = await client.GetAsync("updates");
+
+            if (response.Body == "null")
+                return null;
+
+            return response.ResultAs<Updates>();
+        }
+
         public void Download_dataBase_Backup()
         {
             var response = client.GetAsync("").Result;

@@ -37,13 +37,13 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             ConfirmButton = new Button();
-            panel1 = new Panel();
             label2 = new Label();
             ToolTips = new ToolTip(components);
             HelpButton = new Button();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // dataGridViewMaps
@@ -62,11 +62,13 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             dataGridViewMaps.DefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewMaps.Location = new Point(12, 36);
+            dataGridViewMaps.MultiSelect = false;
             dataGridViewMaps.Name = "dataGridViewMaps";
             dataGridViewMaps.ReadOnly = true;
             dataGridViewMaps.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewMaps.Size = new Size(363, 264);
             dataGridViewMaps.TabIndex = 6;
+            dataGridViewMaps.CellDoubleClick += dataGridViewMaps_CellDoubleClick;
             // 
             // label3
             // 
@@ -76,9 +78,9 @@
             label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(12, 5);
             label3.Name = "label3";
-            label3.Size = new Size(281, 30);
+            label3.Size = new Size(151, 30);
             label3.TabIndex = 5;
-            label3.Text = "Selecione os mapas favoritos";
+            label3.Text = "Lista de mapas";
             // 
             // FavoriteMapListBox
             // 
@@ -86,9 +88,10 @@
             FavoriteMapListBox.FormattingEnabled = true;
             FavoriteMapListBox.Location = new Point(465, 36);
             FavoriteMapListBox.Name = "FavoriteMapListBox";
-            FavoriteMapListBox.Size = new Size(273, 151);
+            FavoriteMapListBox.Size = new Size(273, 214);
             FavoriteMapListBox.TabIndex = 7;
             FavoriteMapListBox.DrawItem += FavoriteMapListBox_DrawItem;
+            FavoriteMapListBox.DoubleClick += FavoriteMapListBox_DoubleClick;
             // 
             // label1
             // 
@@ -98,9 +101,9 @@
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(465, 5);
             label1.Name = "label1";
-            label1.Size = new Size(95, 30);
+            label1.Size = new Size(118, 30);
             label1.TabIndex = 5;
-            label1.Text = "Favoritos";
+            label1.Text = "Favoritados";
             // 
             // pictureBox1
             // 
@@ -108,7 +111,7 @@
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(381, 36);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(78, 73);
+            pictureBox1.Size = new Size(78, 55);
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 
@@ -119,25 +122,15 @@
             ConfirmButton.BackgroundImage = Properties.Resources.button_wide_normal;
             ConfirmButton.BackgroundImageLayout = ImageLayout.Stretch;
             ConfirmButton.FlatStyle = FlatStyle.Flat;
-            ConfirmButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ConfirmButton.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ConfirmButton.ForeColor = SystemColors.Control;
-            ConfirmButton.Location = new Point(216, 46);
+            ConfirmButton.Location = new Point(574, 271);
             ConfirmButton.Name = "ConfirmButton";
-            ConfirmButton.Size = new Size(134, 39);
+            ConfirmButton.Size = new Size(166, 53);
             ConfirmButton.TabIndex = 9;
             ConfirmButton.Text = "Confirmar";
             ConfirmButton.UseVisualStyleBackColor = false;
             ConfirmButton.Click += ConfirmButton_Click;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(ConfirmButton);
-            panel1.Controls.Add(label2);
-            panel1.Location = new Point(381, 208);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(357, 92);
-            panel1.TabIndex = 10;
             // 
             // label2
             // 
@@ -145,11 +138,11 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(3, 0);
+            label2.Location = new Point(12, 303);
             label2.Name = "label2";
-            label2.Size = new Size(329, 21);
+            label2.Size = new Size(336, 21);
             label2.TabIndex = 5;
-            label2.Text = "Selecione multiplos mapas segurando o CTRL.";
+            label2.Text = "Clique duplo para adicionar ou remover mapas";
             // 
             // ToolTips
             // 
@@ -169,20 +162,32 @@
             HelpButton.UseVisualStyleBackColor = true;
             HelpButton.Click += HelpButton_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImage = Properties.Resources.Arrow2_icon;
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Location = new Point(381, 97);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(78, 55);
+            pictureBox2.TabIndex = 8;
+            pictureBox2.TabStop = false;
+            // 
             // EditPlayerFavoriteMapForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(747, 309);
+            BackgroundImageLayout = ImageLayout.None;
+            ClientSize = new Size(750, 334);
+            Controls.Add(ConfirmButton);
             Controls.Add(HelpButton);
+            Controls.Add(label2);
+            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(FavoriteMapListBox);
             Controls.Add(dataGridViewMaps);
             Controls.Add(label1);
             Controls.Add(label3);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -192,8 +197,7 @@
             Load += EditPlayerFavoriteMapForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -206,9 +210,9 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Button ConfirmButton;
-        private Panel panel1;
         private ToolTip ToolTips;
         private Button HelpButton;
         private Label label2;
+        private PictureBox pictureBox2;
     }
 }

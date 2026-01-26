@@ -33,6 +33,8 @@ namespace AgeAPP.Forms
             ToolTips.SetToolTip(ConfirmButton, "Confirmar alteração.");
             ToolTips.SetToolTip(dataGridViewMaps, "Selecione os mapas que deseja atribuir ao jogador.");
             ToolTips.SetToolTip(FavoriteMapListBox, "Esses são os mapas favoritados atuais do jogador.");
+            ToolTips.SetToolTip(dataGridViewMaps, "Duplo clique para adicionar aos favoritos");
+            ToolTips.SetToolTip(FavoriteMapListBox, "Duplo clique para remover dos favoritos");
             ToolTips.SetToolTip(HelpButton, "Mostra pequeno tutorial de como utilizar esta ferramenta.");
         }
 
@@ -73,8 +75,8 @@ namespace AgeAPP.Forms
             Rectangle imgRect = new Rectangle(
                 e.Bounds.X + 5,
                 e.Bounds.Y + 5,
-                40,
-                40
+                30,
+                30
             );
 
             // Área do texto
@@ -114,23 +116,6 @@ namespace AgeAPP.Forms
                 return;
             }
 
-            var selectedFavorite_maps = dataGridViewMaps.SelectedRows
-                .Cast<DataGridViewRow>()
-                .Select(r => r.DataBoundItem as Map)
-                .Where(p => p != null)
-                .ToList();
-
-            selectedPlayer.Favorite_maps.Clear();
-
-            foreach (var map in selectedFavorite_maps)
-            {
-                FavoriteMap new_fav_map = new FavoriteMap();
-                new_fav_map.Name = map.Name;
-                new_fav_map.Times_played = 0;
-
-                selectedPlayer.Favorite_maps.Add(map.Name, new_fav_map);
-            }
-
             await local_Data_service.Overwrite_player(selectedPlayer);
 
             await local_Data_service.Post_log_on_dataBase(new Log
@@ -146,11 +131,47 @@ namespace AgeAPP.Forms
             this.Close();
         }
 
-
         private void HelpButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Selecione os mapas que deseja aplicar ao jogador na tabela da esquerda \n\n" +
                 "A lista na direita mostra os mapas atuais do jogador, se ele tiver algum !", "Ajuda", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+        private void dataGridViewMaps_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            var map = dataGridViewMaps.Rows[e.RowIndex].DataBoundItem as Map;
+            if (map == null) return;
+
+            // Evita duplicar favorito
+            if (selectedPlayer.Favorite_maps.ContainsKey(map.Name))
+                return;
+
+            FavoriteMap fav = new FavoriteMap
+            {
+                Name = map.Name,
+                Times_played = 0
+            };
+
+            selectedPlayer.Favorite_maps.Add(map.Name, fav);
+            FavoriteMapListBox.Items.Add(fav);
+        }
+
+        private void FavoriteMapListBox_DoubleClick(object sender, EventArgs e)
+        {
+            if (FavoriteMapListBox.SelectedItem == null)
+                return;
+
+            var fav = FavoriteMapListBox.SelectedItem as FavoriteMap;
+            if (fav == null) return;
+
+            // Remove da lista visual
+            FavoriteMapListBox.Items.Remove(fav);
+
+            // Remove do dicionário
+            if (selectedPlayer.Favorite_maps.ContainsKey(fav.Name))
+                selectedPlayer.Favorite_maps.Remove(fav.Name);
         }
     }
 }

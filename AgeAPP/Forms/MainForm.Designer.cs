@@ -55,6 +55,7 @@ namespace AgeAPP
             AgeAppLabel = new Label();
             HelpButton = new Button();
             panel3 = new Panel();
+            NewsButton = new Button();
             FlowLayoutPlayers = new AgeAPP.Classes.SmoothFlowLayoutPanel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -327,8 +328,10 @@ namespace AgeAPP
             ExpandPlayersViewButton.AutoSize = true;
             ExpandPlayersViewButton.BackgroundImage = Properties.Resources.collapse_icon2;
             ExpandPlayersViewButton.BackgroundImageLayout = ImageLayout.Stretch;
+            ExpandPlayersViewButton.Cursor = Cursors.Hand;
+            ExpandPlayersViewButton.FlatStyle = FlatStyle.Flat;
             ExpandPlayersViewButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ExpandPlayersViewButton.Location = new Point(3, 3);
+            ExpandPlayersViewButton.Location = new Point(3, 12);
             ExpandPlayersViewButton.Name = "ExpandPlayersViewButton";
             ExpandPlayersViewButton.Size = new Size(50, 50);
             ExpandPlayersViewButton.TabIndex = 4;
@@ -383,11 +386,27 @@ namespace AgeAPP
             // 
             panel3.Anchor = AnchorStyles.Left;
             panel3.BackColor = SystemColors.ActiveCaptionText;
+            panel3.Controls.Add(NewsButton);
             panel3.Controls.Add(ExpandPlayersViewButton);
             panel3.Location = new Point(12, 53);
             panel3.Name = "panel3";
             panel3.Size = new Size(62, 492);
             panel3.TabIndex = 0;
+            // 
+            // NewsButton
+            // 
+            NewsButton.AutoSize = true;
+            NewsButton.BackgroundImage = Properties.Resources.news_icon;
+            NewsButton.BackgroundImageLayout = ImageLayout.Stretch;
+            NewsButton.Cursor = Cursors.Hand;
+            NewsButton.FlatStyle = FlatStyle.Flat;
+            NewsButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NewsButton.Location = new Point(3, 78);
+            NewsButton.Name = "NewsButton";
+            NewsButton.Size = new Size(50, 50);
+            NewsButton.TabIndex = 4;
+            NewsButton.UseVisualStyleBackColor = true;
+            NewsButton.Click += NewsButton_Click;
             // 
             // FlowLayoutPlayers
             // 
@@ -458,5 +477,6 @@ namespace AgeAPP
         private Button ExpandPlayersViewButton;
         private Panel panel3;
         private Classes.SmoothFlowLayoutPanel FlowLayoutPlayers;
+        private Button NewsButton;
     }
 }
