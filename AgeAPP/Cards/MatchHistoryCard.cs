@@ -61,12 +61,17 @@ namespace AgeAPP.Cards
             listView.Items.Clear();
             ConfigureListView(listView);
 
-            string deltaText = delta > 0 ? $"+{delta}" : delta.ToString();
             Color color = delta >= 0 ? Color.LimeGreen : Color.IndianRed;
+            string deltaText = delta > 0 ? $"+{delta}" : delta.ToString();
 
             foreach (var player in players)
             {
-                var item = new ListViewItem($"{player.Name} ({deltaText})")
+                int ratingAfter = player.Rating;
+                int ratingBefore = ratingAfter - delta;   
+                
+                string text = $"{player.Name} {ratingBefore} ({deltaText}) → {ratingAfter}";
+
+                var item = new ListViewItem(text)
                 {
                     ForeColor = color
                 };

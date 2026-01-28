@@ -32,8 +32,8 @@
             FlowLayouPanel = new AgeAPP.Classes.SmoothFlowLayoutPanel();
             panel1 = new Panel();
             ListSizeComboBox = new ComboBox();
-            label1 = new Label();
             LoadingLabel = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -43,7 +43,7 @@
             FlowLayouPanel.Dock = DockStyle.Bottom;
             FlowLayouPanel.Location = new Point(0, 44);
             FlowLayouPanel.Name = "FlowLayouPanel";
-            FlowLayouPanel.Size = new Size(614, 802);
+            FlowLayouPanel.Size = new Size(714, 802);
             FlowLayouPanel.TabIndex = 0;
             // 
             // panel1
@@ -55,7 +55,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(614, 38);
+            panel1.Size = new Size(714, 38);
             panel1.TabIndex = 0;
             // 
             // ListSizeComboBox
@@ -70,6 +70,19 @@
             ListSizeComboBox.TabIndex = 1;
             ListSizeComboBox.SelectedIndexChanged += ListSizeComboBox_SelectedIndexChanged;
             // 
+            // LoadingLabel
+            // 
+            LoadingLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            LoadingLabel.AutoSize = true;
+            LoadingLabel.BackColor = Color.Transparent;
+            LoadingLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LoadingLabel.ForeColor = Color.White;
+            LoadingLabel.Location = new Point(578, 6);
+            LoadingLabel.Name = "LoadingLabel";
+            LoadingLabel.Size = new Size(124, 25);
+            LoadingLabel.TabIndex = 0;
+            LoadingLabel.Text = "Carregando...";
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -82,25 +95,13 @@
             label1.TabIndex = 0;
             label1.Text = "Tamanho da lista:";
             // 
-            // LoadingLabel
-            // 
-            LoadingLabel.AutoSize = true;
-            LoadingLabel.BackColor = Color.Transparent;
-            LoadingLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LoadingLabel.ForeColor = Color.White;
-            LoadingLabel.Location = new Point(478, 6);
-            LoadingLabel.Name = "LoadingLabel";
-            LoadingLabel.Size = new Size(124, 25);
-            LoadingLabel.TabIndex = 0;
-            LoadingLabel.Text = "Carregando...";
-            // 
             // MatchesHistoryForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.admin_bg;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(614, 846);
+            ClientSize = new Size(714, 846);
             Controls.Add(panel1);
             Controls.Add(FlowLayouPanel);
             FormBorderStyle = FormBorderStyle.FixedSingle;

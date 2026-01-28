@@ -64,7 +64,7 @@
             // 
             // MapPictureBox
             // 
-            MapPictureBox.Anchor = AnchorStyles.Top;
+            MapPictureBox.Anchor = AnchorStyles.Left;
             MapPictureBox.BackColor = Color.Transparent;
             MapPictureBox.BackgroundImage = Properties.Resources.UnkownMap;
             MapPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
@@ -76,7 +76,7 @@
             // 
             // DateLabel
             // 
-            DateLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            DateLabel.Anchor = AnchorStyles.Left;
             DateLabel.BackColor = Color.Black;
             DateLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             DateLabel.ForeColor = Color.White;
@@ -106,7 +106,7 @@
             ListViewTeamA.Font = new Font("Arial", 9F);
             ListViewTeamA.Location = new Point(170, 60);
             ListViewTeamA.Name = "ListViewTeamA";
-            ListViewTeamA.Size = new Size(157, 81);
+            ListViewTeamA.Size = new Size(209, 81);
             ListViewTeamA.TabIndex = 2;
             ListViewTeamA.UseCompatibleStateImageBehavior = false;
             // 
@@ -127,9 +127,9 @@
             // 
             ListViewTeamB.BackColor = SystemColors.ActiveCaptionText;
             ListViewTeamB.Font = new Font("Arial", 9F);
-            ListViewTeamB.Location = new Point(406, 60);
+            ListViewTeamB.Location = new Point(458, 61);
             ListViewTeamB.Name = "ListViewTeamB";
-            ListViewTeamB.Size = new Size(157, 81);
+            ListViewTeamB.Size = new Size(209, 81);
             ListViewTeamB.TabIndex = 2;
             ListViewTeamB.UseCompatibleStateImageBehavior = false;
             // 
@@ -139,7 +139,7 @@
             label2.BackColor = Color.Black;
             label2.Font = new Font("Segoe UI", 9.75F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(406, 41);
+            label2.Location = new Point(458, 41);
             label2.Name = "label2";
             label2.Size = new Size(47, 17);
             label2.TabIndex = 0;
@@ -162,7 +162,7 @@
             TeamAsymbolPictureBox.BackColor = Color.Transparent;
             TeamAsymbolPictureBox.BackgroundImage = Properties.Resources.Winner_icon;
             TeamAsymbolPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-            TeamAsymbolPictureBox.Location = new Point(289, 143);
+            TeamAsymbolPictureBox.Location = new Point(341, 143);
             TeamAsymbolPictureBox.Name = "TeamAsymbolPictureBox";
             TeamAsymbolPictureBox.Size = new Size(38, 34);
             TeamAsymbolPictureBox.TabIndex = 3;
@@ -173,7 +173,7 @@
             TeamBsymbolPictureBox.BackColor = Color.Transparent;
             TeamBsymbolPictureBox.BackgroundImage = Properties.Resources.Defeat_icon;
             TeamBsymbolPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-            TeamBsymbolPictureBox.Location = new Point(406, 142);
+            TeamBsymbolPictureBox.Location = new Point(458, 143);
             TeamBsymbolPictureBox.Name = "TeamBsymbolPictureBox";
             TeamBsymbolPictureBox.Size = new Size(38, 34);
             TeamBsymbolPictureBox.TabIndex = 3;
@@ -184,7 +184,7 @@
             pictureBox5.BackColor = Color.Transparent;
             pictureBox5.BackgroundImage = Properties.Resources.battle_event_icon;
             pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox5.Location = new Point(333, 71);
+            pictureBox5.Location = new Point(385, 80);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(67, 61);
             pictureBox5.TabIndex = 3;
@@ -205,11 +205,11 @@
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Bottom;
             panel1.BackColor = Color.White;
+            panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(0, 208);
             panel1.Name = "panel1";
-            panel1.Size = new Size(573, 5);
+            panel1.Size = new Size(679, 5);
             panel1.TabIndex = 4;
             // 
             // MatchHistoryCard
@@ -234,7 +234,7 @@
             Controls.Add(MapNameLabel);
             Margin = new Padding(0, 0, 0, 15);
             Name = "MatchHistoryCard";
-            Size = new Size(573, 213);
+            Size = new Size(679, 213);
             ((System.ComponentModel.ISupportInitialize)MapPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)TeamAsymbolPictureBox).EndInit();
