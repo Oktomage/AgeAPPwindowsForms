@@ -29,7 +29,7 @@ namespace AgeAPP
             // Cria pastas necessárias
             local_Main_functions_service.Create_Required_folders();
 
-            AgeAppLabel.Text = "Interno app v" + Local_app_Version;
+            AgeAppLabel.Text = "Aoe2 Hub v" + Local_app_Version;
 
             // 🔹 1. Conecta como USER primeiro (client EXISTE)
             Data_service.Connect_to_firesharp("user");

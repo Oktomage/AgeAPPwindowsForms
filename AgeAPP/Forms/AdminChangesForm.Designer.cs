@@ -47,8 +47,10 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Holidays_1920x1080;
+            BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(504, 734);
             Controls.Add(FlowLayoutPanel);
+            DoubleBuffered = true;
             Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");

@@ -47,8 +47,9 @@ namespace AgeAPP
             dataGridViewMaps = new DataGridView();
             label1 = new Label();
             panel2 = new Panel();
-            ShowOnlyActivePlayersCheckBox = new CheckBox();
+            comboBox1 = new ComboBox();
             ToggleAppThemeButton = new Button();
+            ShowOnlyActivePlayersCheckBox = new CheckBox();
             ExpandPlayersViewButton = new Button();
             ToolTips = new ToolTip(components);
             FilterPlayerTextBox = new TextBox();
@@ -57,12 +58,14 @@ namespace AgeAPP
             panel3 = new Panel();
             NewsButton = new Button();
             FlowLayoutPlayers = new AgeAPP.Classes.SmoothFlowLayoutPanel();
+            panel4 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // SplitButton
@@ -284,8 +287,8 @@ namespace AgeAPP
             // panel2
             // 
             panel2.BackColor = SystemColors.ActiveCaptionText;
+            panel2.Controls.Add(comboBox1);
             panel2.Controls.Add(label1);
-            panel2.Controls.Add(ShowOnlyActivePlayersCheckBox);
             panel2.Controls.Add(ToggleAppThemeButton);
             panel2.Controls.Add(ForceGridRefreshButton);
             panel2.Location = new Point(12, 9);
@@ -293,21 +296,15 @@ namespace AgeAPP
             panel2.Size = new Size(846, 37);
             panel2.TabIndex = 5;
             // 
-            // ShowOnlyActivePlayersCheckBox
+            // comboBox1
             // 
-            ShowOnlyActivePlayersCheckBox.AutoSize = true;
-            ShowOnlyActivePlayersCheckBox.BackColor = Color.Black;
-            ShowOnlyActivePlayersCheckBox.Checked = true;
-            ShowOnlyActivePlayersCheckBox.CheckState = CheckState.Checked;
-            ShowOnlyActivePlayersCheckBox.Font = new Font("Segoe UI", 8.25F);
-            ShowOnlyActivePlayersCheckBox.ForeColor = SystemColors.Control;
-            ShowOnlyActivePlayersCheckBox.Location = new Point(88, 11);
-            ShowOnlyActivePlayersCheckBox.Name = "ShowOnlyActivePlayersCheckBox";
-            ShowOnlyActivePlayersCheckBox.Size = new Size(194, 17);
-            ShowOnlyActivePlayersCheckBox.TabIndex = 7;
-            ShowOnlyActivePlayersCheckBox.Text = "Mostrar apenas jogadores ativos";
-            ShowOnlyActivePlayersCheckBox.UseVisualStyleBackColor = false;
-            ShowOnlyActivePlayersCheckBox.CheckedChanged += ShowOnlyActivePlayersCheckBox_CheckedChanged;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Jogadores", "Mapas" });
+            comboBox1.Location = new Point(89, 9);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(135, 23);
+            comboBox1.TabIndex = 5;
             // 
             // ToggleAppThemeButton
             // 
@@ -323,6 +320,22 @@ namespace AgeAPP
             ToggleAppThemeButton.UseVisualStyleBackColor = true;
             ToggleAppThemeButton.Click += ToggleAppThemeButton_Click;
             // 
+            // ShowOnlyActivePlayersCheckBox
+            // 
+            ShowOnlyActivePlayersCheckBox.AutoSize = true;
+            ShowOnlyActivePlayersCheckBox.BackColor = Color.Black;
+            ShowOnlyActivePlayersCheckBox.Checked = true;
+            ShowOnlyActivePlayersCheckBox.CheckState = CheckState.Checked;
+            ShowOnlyActivePlayersCheckBox.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ShowOnlyActivePlayersCheckBox.ForeColor = SystemColors.Control;
+            ShowOnlyActivePlayersCheckBox.Location = new Point(12, 5);
+            ShowOnlyActivePlayersCheckBox.Name = "ShowOnlyActivePlayersCheckBox";
+            ShowOnlyActivePlayersCheckBox.Size = new Size(244, 24);
+            ShowOnlyActivePlayersCheckBox.TabIndex = 7;
+            ShowOnlyActivePlayersCheckBox.Text = "Mostrar apenas jogadores ativos";
+            ShowOnlyActivePlayersCheckBox.UseVisualStyleBackColor = false;
+            ShowOnlyActivePlayersCheckBox.CheckedChanged += ShowOnlyActivePlayersCheckBox_CheckedChanged;
+            // 
             // ExpandPlayersViewButton
             // 
             ExpandPlayersViewButton.AutoSize = true;
@@ -331,8 +344,10 @@ namespace AgeAPP
             ExpandPlayersViewButton.Cursor = Cursors.Hand;
             ExpandPlayersViewButton.FlatStyle = FlatStyle.Flat;
             ExpandPlayersViewButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ExpandPlayersViewButton.Location = new Point(3, 12);
+            ExpandPlayersViewButton.Location = new Point(7, 5);
+            ExpandPlayersViewButton.Margin = new Padding(5);
             ExpandPlayersViewButton.Name = "ExpandPlayersViewButton";
+            ExpandPlayersViewButton.Padding = new Padding(5);
             ExpandPlayersViewButton.Size = new Size(50, 50);
             ExpandPlayersViewButton.TabIndex = 4;
             ExpandPlayersViewButton.UseVisualStyleBackColor = true;
@@ -364,9 +379,9 @@ namespace AgeAPP
             AgeAppLabel.ForeColor = Color.White;
             AgeAppLabel.Location = new Point(871, 10);
             AgeAppLabel.Name = "AgeAppLabel";
-            AgeAppLabel.Size = new Size(212, 32);
+            AgeAppLabel.Size = new Size(189, 32);
             AgeAppLabel.TabIndex = 4;
-            AgeAppLabel.Text = "Interno App V5.4.3";
+            AgeAppLabel.Text = "Aoe2 Hub v5.4.3";
             // 
             // HelpButton
             // 
@@ -401,8 +416,10 @@ namespace AgeAPP
             NewsButton.Cursor = Cursors.Hand;
             NewsButton.FlatStyle = FlatStyle.Flat;
             NewsButton.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NewsButton.Location = new Point(3, 78);
+            NewsButton.Location = new Point(7, 65);
+            NewsButton.Margin = new Padding(5);
             NewsButton.Name = "NewsButton";
+            NewsButton.Padding = new Padding(5);
             NewsButton.Size = new Size(50, 50);
             NewsButton.TabIndex = 4;
             NewsButton.UseVisualStyleBackColor = true;
@@ -411,10 +428,20 @@ namespace AgeAPP
             // FlowLayoutPlayers
             // 
             FlowLayoutPlayers.BackColor = Color.Transparent;
-            FlowLayoutPlayers.Location = new Point(80, 55);
+            FlowLayoutPlayers.Location = new Point(80, 52);
             FlowLayoutPlayers.Name = "FlowLayoutPlayers";
-            FlowLayoutPlayers.Size = new Size(778, 490);
+            FlowLayoutPlayers.Size = new Size(778, 450);
             FlowLayoutPlayers.TabIndex = 8;
+            // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.Bottom;
+            panel4.BackColor = SystemColors.ActiveCaptionText;
+            panel4.Controls.Add(ShowOnlyActivePlayersCheckBox);
+            panel4.Location = new Point(80, 508);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(778, 37);
+            panel4.TabIndex = 9;
             // 
             // FMain
             // 
@@ -423,6 +450,7 @@ namespace AgeAPP
             BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1151, 556);
+            Controls.Add(panel4);
             Controls.Add(FlowLayoutPlayers);
             Controls.Add(panel3);
             Controls.Add(FilterPlayerTextBox);
@@ -437,7 +465,7 @@ namespace AgeAPP
             MaximizeBox = false;
             Name = "FMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AgeAPP - SOBERANO";
+            Text = "Aoe2 Hub";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -448,6 +476,8 @@ namespace AgeAPP
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -478,5 +508,7 @@ namespace AgeAPP
         private Panel panel3;
         private Classes.SmoothFlowLayoutPanel FlowLayoutPlayers;
         private Button NewsButton;
+        private Panel panel4;
+        private ComboBox comboBox1;
     }
 }

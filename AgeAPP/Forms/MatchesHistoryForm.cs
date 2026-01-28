@@ -69,17 +69,7 @@ namespace AgeAPP.Forms
             LoadingLabel.Visible = true;
             ListSizeComboBox.Enabled = false;
 
-            var admins = new List<string>
-            {
-                "oldtime",
-                "pedreiro",
-                "biel",
-                "gomes",
-                "kakashi",
-                "snow"
-            };
-
-            var logs = await local_Data_service.GetGlobalMatchHistory(admins);
+            var logs = await local_Data_service.GetGlobalMatchHistory(local_Data_service.Admins_names);
 
             FlowLayouPanel.SuspendLayout();
             FlowLayouPanel.Controls.Clear();

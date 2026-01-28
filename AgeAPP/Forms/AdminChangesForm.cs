@@ -27,17 +27,7 @@ namespace AgeAPP.Forms
 
         private async Task Load_history()
         {
-            var admins = new List<string>
-            {
-                "oldtime",
-                "pedreiro",
-                "biel",
-                "gomes",
-                "kakashi",
-                "snow"
-            };
-
-            var logs = await local_Data_service.GetGlobalAdminLogs(admins);
+            var logs = await local_Data_service.GetGlobalAdminLogs(local_Data_service.Admins_names);
 
             FlowLayoutPanel.SuspendLayout();
             FlowLayoutPanel.Controls.Clear();

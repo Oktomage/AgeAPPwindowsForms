@@ -27,14 +27,14 @@ namespace AgeAPP.Classes
 
         public List<string> Admins_names = new List<string>();
 
-        public async Task Request_adminAccounts()
+        public async Task<List<string>> Request_adminAccounts()
         {
             var response = await client.GetAsync("accounts");
 
             if (response.Body == "null")
             {
                 Admins_names = new List<string>();
-                return;
+                return Admins_names;
             }
 
             var data = JsonConvert.DeserializeObject<Dictionary<string, Account>>(response.Body);
@@ -43,6 +43,8 @@ namespace AgeAPP.Classes
                 .Where(kvp => kvp.Value.IsAdmin)
                 .Select(kvp => kvp.Key) // nome do usuário
                 .ToList();
+
+            return Admins_names;
         }
 
         // CONNECTION
