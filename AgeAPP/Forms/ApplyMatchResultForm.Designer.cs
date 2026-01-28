@@ -80,7 +80,7 @@
             ApplyResultButton.FlatStyle = FlatStyle.Flat;
             ApplyResultButton.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ApplyResultButton.ForeColor = SystemColors.Control;
-            ApplyResultButton.Location = new Point(0, 112);
+            ApplyResultButton.Location = new Point(0, 253);
             ApplyResultButton.Name = "ApplyResultButton";
             ApplyResultButton.Size = new Size(190, 47);
             ApplyResultButton.TabIndex = 6;
@@ -124,9 +124,9 @@
             PlayedMapLabel.ForeColor = SystemColors.Control;
             PlayedMapLabel.Location = new Point(362, 9);
             PlayedMapLabel.Name = "PlayedMapLabel";
-            PlayedMapLabel.Size = new Size(158, 32);
+            PlayedMapLabel.Size = new Size(237, 32);
             PlayedMapLabel.TabIndex = 4;
-            PlayedMapLabel.Text = "Mapa: { Null }";
+            PlayedMapLabel.Text = "Mapa: Desconhecido";
             // 
             // HelpButton
             // 

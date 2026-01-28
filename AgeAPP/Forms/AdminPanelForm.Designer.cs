@@ -409,7 +409,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.admin_bg;
-            BackgroundImageLayout = ImageLayout.Stretch;
+            BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1125, 565);
             Controls.Add(panel4);
             Controls.Add(FilterPlayerTextBox);
