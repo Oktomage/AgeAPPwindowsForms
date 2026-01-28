@@ -118,41 +118,260 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Player_icon45" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\spiderman1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Player_icon35" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\Stpauli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="collapse_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\collapse_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Player_icon30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\trashBin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon47" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\patrick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_four-lakes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_four-lakes.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Defeat_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Defeat_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR5-096.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR5-002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ant_mainmenu_hr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\ant_mainmenu_hr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aoe2-de-uhd-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\aoe2-de-uhd-2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rm_socotra" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Map_icons\rm_socotra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Player_icon46" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\spiderman2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Player_icon54" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\chadFinn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Arrow_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Arrow_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rm_acropolis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_acropolis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rm_nomad" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_nomad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UnkownMap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\cm_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Player_icon59" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\scaryMario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Player_icon11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR3-010.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rm_baltic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_baltic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="delta2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\delta2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Player_icon38" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\kakashi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rm_frigid_lake" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_frigid_lake.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="remove_iron_4k_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\remove_iron_4k_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="battle_event_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\battle_event_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR3-023.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_black-forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_black-forest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_mountain-pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_mountain-pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="what-is-the-most-epic-match-battle-you-had-in-aoe-ii-v0-lpqjbc995aub1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\what-is-the-most-epic-match-battle-you-had-in-aoe-ii-v0-lpqjbc995aub1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Player_icon46" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\spiderman2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Change_map_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Change_map_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mvp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\mvp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\flamengo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Winner_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Winner_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon34" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\bagre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="news_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\news_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_land_nomad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_land_nomad.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon44" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\gokuBald.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_wide_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\button_wide_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_qs_runestones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_qs_runestones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\bombeiro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="admin_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\admin_bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon36" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\santaCruz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\maduro.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mainmenu_paphos_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\mainmenu_paphos_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Refresh_data_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Refresh_data_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="news_splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\news_splash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Panel_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\pergaminho.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon61" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\kunglao2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shuffle_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Shuffle_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\bolsonaro.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Refresh_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Refresh_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Player_icon22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\usericons\cruzeiro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon38" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\kakashi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\proerd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon63" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\neoCortex.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon37" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\kunglao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\trump.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="remove_iron_4k_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\remove_iron_4k_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_steppe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_steppe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon45" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\spiderman1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_lombardia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_lombardia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_nomad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_nomad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Arrow_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Arrow_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon33" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\corinthians.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_migration" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_migration.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="collapse_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\collapse_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon39" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\gojo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon52" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\pistonCup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Delete_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_michi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_michi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="team_shield_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\team_shield_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Link_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Link_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR1-002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_islands" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_islands.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon51" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\memeMan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon53" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\baldGuy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hand_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Hand_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR5-066.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_fortress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_fortress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="seperator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\seperator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\neymar2011.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon62" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\massaCinzenta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\sportfc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\eneas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="player_icon21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\bope.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_atacama" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_atacama.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="team_shield_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\team_shield_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_megarandom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_megarandom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon58" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\shrekMotomoto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon59" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\scaryMario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="seperator_grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\seperator_grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_baltic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_baltic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Change_rating" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Change_rating.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,391 +379,175 @@
   <data name="Player_icon32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\usericons\goleiroBruno.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rm_hamburger" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_hamburger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\superman.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Panel_bg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\news_splash_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon54" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\chadFinn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_four-lakes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_four-lakes.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mainmenu_paphos_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\mainmenu_paphos_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Arrow2_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Arrow2_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon39" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\gojo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="news_splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\news_splash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon58" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\shrekMotomoto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_glade" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_glade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_michi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_michi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon33" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\corinthians.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon49" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\fortnite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SignOut_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\SignOut_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="seperator_grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\seperator_grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Kill_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Kill_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon15" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR5-064.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="team_shield_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\team_shield_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon25" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\neymar2011.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon53" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\baldGuy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Panel_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\pergaminho.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Duplicate_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Duplicate_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="admin_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\admin_bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_hideout" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_hideout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_steppe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_steppe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon42" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\kimJongUn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_oasis" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_oasis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Defeat_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Defeat_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_atacama" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_atacama.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_team-islands" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_team-islands.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\trashBin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon23" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\pt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR3-019.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_fortress" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_fortress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\bombeiro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR1-001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_highland" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_highland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon37" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\kunglao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR1-002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="delta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\delta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_frigid_lake" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_frigid_lake.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon55" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\emojiLike.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mvp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\mvp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon61" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\kunglao2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_enclosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_enclosed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\sportfc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR3-012.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon34" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\bagre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon19" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\flamengo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR3-031.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_golden-pit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_golden-pit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon14" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR2-001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hand_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Hand_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon52" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\pistonCup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon17" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR5-048.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Help_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Help_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\patrick2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_african_clearing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_african_clearing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Civ-details-bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Civ-details-bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon51" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\memeMan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ant_mainmenu_hr" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\ant_mainmenu_hr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon36" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\santaCruz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon35" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\Stpauli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Shuffle_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Shuffle_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_megarandom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_megarandom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR3-010.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon57" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\moai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Winner_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Winner_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR3-002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="delta2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\delta2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Holidays_1920x1080" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Holidays_1920x1080.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="seperator2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\seperator2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon41" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\caps.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_arabia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_arabia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\eneas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon60" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\condomGuy.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="aoe2-de-uhd-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\aoe2-de-uhd-2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_lombardia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_lombardia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon47" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\patrick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="team_shield_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\team_shield_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR3-023.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon26" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\trump.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR4-028.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Refresh_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Refresh_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="loading_slash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\loading_slash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Change_map_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Change_map_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon44" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\gokuBald.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_haboob" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_haboob.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_black-forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_black-forest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="seperator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\seperator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_qs_runestones" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_qs_runestones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hand_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Hand_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_scandinavia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_scandinavia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="battle_event_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\battle_event_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="UnkownMap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\cm_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Refresh_data_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Refresh_data_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="player_icon21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\bope.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add_iron_4k_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\add_iron_4k_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon62" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\massaCinzenta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_arena" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_arena.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon29" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\soldierScary.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Player_icon43" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\usericons\meme.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rm_gold-rush" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_gold-rush.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon28" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\gruNegao.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_acropolis" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_acropolis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_land_nomad" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_land_nomad.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button_wide_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\button_wide_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_migration" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_migration.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Dark_mode_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Dark_mode_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Open_folder_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Open_folder_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Player_icon63" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\neoCortex.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Player_icon17" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR5-048.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Delete_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Delete_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rm_islands" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_islands.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Player_icon29" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\soldierScary.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="collapse_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\collapse_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Player_icon13" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR3-004.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon18" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR5-096.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_icon31" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\proerd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Link_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Link_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Player_icon9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR3-031.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Player_icon56" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\usericons\ngg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Player_icon27" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\maduro.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Player_icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR3-002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Player_icon16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR5-066.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rm_arena" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_arena.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Player_icon7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\PR5-002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Player_icon64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\superman.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Player_icon24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\usericons\bolsonaro.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Player_icon13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR3-004.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Arrow2_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Arrow2_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_african_clearing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_african_clearing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_iron_4k_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\add_iron_4k_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR5-064.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Duplicate_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Duplicate_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Player_icon10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\usericons\PR3-035.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Player_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR1-001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_scandinavia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_scandinavia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\patrick2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_team-islands" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_team-islands.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loading_slash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\loading_slash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_golden-pit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_golden-pit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="seperator2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\seperator2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon42" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\kimJongUn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon28" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\gruNegao.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_highland" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_highland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Player_icon8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\usericons\PR7-035.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Dark_mode_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Dark_mode_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Player_icon57" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\moai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="news_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\news_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rm_arabia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_arabia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rm_mountain-pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Map_icons\rm_mountain-pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Kill_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Kill_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Civ-details-bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Civ-details-bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_glade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_glade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_hamburger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_hamburger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_oasis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_oasis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR4-028.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon41" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\caps.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Help_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Help_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon55" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\emojiLike.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR3-019.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\delta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Holidays_1920x1080" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Holidays_1920x1080.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR2-001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SignOut_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\SignOut_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\PR3-012.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_hideout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_hideout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hand_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Hand_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_enclosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_enclosed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\condomGuy.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_haboob" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_haboob.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon49" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\fortnite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_icon23" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\usericons\pt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_gold-rush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_gold-rush.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bug_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\bug_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

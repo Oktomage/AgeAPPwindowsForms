@@ -133,6 +133,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bug_icon {
+            get {
+                object obj = ResourceManager.GetObject("bug_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_wide_normal {
             get {
                 object obj = ResourceManager.GetObject("button_wide_normal", resourceCulture);

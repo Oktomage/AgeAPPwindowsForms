@@ -56,6 +56,7 @@ namespace AgeAPP
             AgeAppLabel = new Label();
             HelpButton = new Button();
             panel3 = new Panel();
+            button1 = new Button();
             NewsButton = new Button();
             FlowLayoutPlayers = new AgeAPP.Classes.SmoothFlowLayoutPanel();
             panel4 = new Panel();
@@ -206,7 +207,7 @@ namespace AgeAPP
             AdminPanelButton.Padding = new Padding(10);
             AdminPanelButton.Size = new Size(258, 57);
             AdminPanelButton.TabIndex = 3;
-            AdminPanelButton.Text = "Painel de admin";
+            AdminPanelButton.Text = "Painel do administrador";
             AdminPanelButton.UseVisualStyleBackColor = false;
             AdminPanelButton.Click += AdminPanelButton_Click;
             // 
@@ -401,12 +402,29 @@ namespace AgeAPP
             // 
             panel3.Anchor = AnchorStyles.Left;
             panel3.BackColor = SystemColors.ActiveCaptionText;
+            panel3.Controls.Add(button1);
             panel3.Controls.Add(NewsButton);
             panel3.Controls.Add(ExpandPlayersViewButton);
             panel3.Location = new Point(12, 53);
             panel3.Name = "panel3";
             panel3.Size = new Size(62, 492);
             panel3.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.AutoSize = true;
+            button1.BackgroundImage = Properties.Resources.bug_icon;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Cursor = Cursors.Hand;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(7, 434);
+            button1.Margin = new Padding(5);
+            button1.Name = "button1";
+            button1.Padding = new Padding(5);
+            button1.Size = new Size(50, 50);
+            button1.TabIndex = 4;
+            button1.UseVisualStyleBackColor = true;
             // 
             // NewsButton
             // 
@@ -510,5 +528,6 @@ namespace AgeAPP
         private Button NewsButton;
         private Panel panel4;
         private ComboBox comboBox1;
+        private Button button1;
     }
 }

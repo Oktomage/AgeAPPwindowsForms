@@ -34,7 +34,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplyMatchResultForm));
             dataGridViewMatchLog = new DataGridView();
             label1 = new Label();
-            pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             ApplyResultButton = new Button();
             TeamVictoriousBox = new ComboBox();
@@ -48,11 +47,12 @@
             ChangeMapButton = new Button();
             ProgressBar = new ProgressBar();
             panel1 = new Panel();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMatchLog).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).BeginInit();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridViewMatchLog
@@ -61,7 +61,7 @@
             dataGridViewMatchLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewMatchLog.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
             dataGridViewMatchLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewMatchLog.Location = new Point(12, 48);
+            dataGridViewMatchLog.Location = new Point(12, 100);
             dataGridViewMatchLog.MultiSelect = false;
             dataGridViewMatchLog.Name = "dataGridViewMatchLog";
             dataGridViewMatchLog.ReadOnly = true;
@@ -83,28 +83,17 @@
             label1.BackColor = Color.Black;
             label1.Font = new Font("Segoe UI", 18F);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(12, 13);
+            label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(100, 32);
+            label1.Size = new Size(185, 32);
             label1.TabIndex = 4;
-            label1.Text = "Registro";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = Properties.Resources.loading_slash;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(187, 107);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
+            label1.Text = "Pré-vizualização";
             // 
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = Properties.Resources.seperator2;
-            pictureBox2.Location = new Point(3, 113);
+            pictureBox2.Location = new Point(3, 3);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(187, 35);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -118,9 +107,9 @@
             ApplyResultButton.FlatStyle = FlatStyle.Flat;
             ApplyResultButton.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ApplyResultButton.ForeColor = SystemColors.Control;
-            ApplyResultButton.Location = new Point(3, 214);
+            ApplyResultButton.Location = new Point(0, 112);
             ApplyResultButton.Name = "ApplyResultButton";
-            ApplyResultButton.Size = new Size(187, 47);
+            ApplyResultButton.Size = new Size(190, 47);
             ApplyResultButton.TabIndex = 6;
             ApplyResultButton.Text = "Aplicar";
             ApplyResultButton.UseVisualStyleBackColor = true;
@@ -132,7 +121,7 @@
             TeamVictoriousBox.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TeamVictoriousBox.FormattingEnabled = true;
             TeamVictoriousBox.Items.AddRange(new object[] { "Team A", "Team B" });
-            TeamVictoriousBox.Location = new Point(3, 175);
+            TeamVictoriousBox.Location = new Point(3, 73);
             TeamVictoriousBox.Name = "TeamVictoriousBox";
             TeamVictoriousBox.Size = new Size(187, 33);
             TeamVictoriousBox.TabIndex = 7;
@@ -144,7 +133,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(3, 148);
+            label3.Location = new Point(3, 45);
             label3.Name = "label3";
             label3.Size = new Size(147, 25);
             label3.TabIndex = 4;
@@ -160,7 +149,7 @@
             PlayedMapLabel.BackColor = Color.Black;
             PlayedMapLabel.Font = new Font("Segoe UI", 18F);
             PlayedMapLabel.ForeColor = SystemColors.Control;
-            PlayedMapLabel.Location = new Point(362, 13);
+            PlayedMapLabel.Location = new Point(362, 9);
             PlayedMapLabel.Name = "PlayedMapLabel";
             PlayedMapLabel.Size = new Size(158, 32);
             PlayedMapLabel.TabIndex = 4;
@@ -171,7 +160,7 @@
             HelpButton.BackgroundImage = Properties.Resources.Help_icon;
             HelpButton.BackgroundImageLayout = ImageLayout.Stretch;
             HelpButton.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            HelpButton.Location = new Point(871, 7);
+            HelpButton.Location = new Point(866, 7);
             HelpButton.Name = "HelpButton";
             HelpButton.Size = new Size(38, 38);
             HelpButton.TabIndex = 6;
@@ -189,7 +178,7 @@
             FindLogsButton.BackgroundImage = Properties.Resources.Open_folder_icon;
             FindLogsButton.BackgroundImageLayout = ImageLayout.Stretch;
             FindLogsButton.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FindLogsButton.Location = new Point(827, 7);
+            FindLogsButton.Location = new Point(813, 7);
             FindLogsButton.Name = "FindLogsButton";
             FindLogsButton.Size = new Size(38, 38);
             FindLogsButton.TabIndex = 6;
@@ -214,7 +203,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridViewMaps.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewMaps.Location = new Point(362, 48);
+            dataGridViewMaps.Location = new Point(362, 100);
             dataGridViewMaps.MultiSelect = false;
             dataGridViewMaps.Name = "dataGridViewMaps";
             dataGridViewMaps.ReadOnly = true;
@@ -229,7 +218,7 @@
             ChangeMapButton.FlatStyle = FlatStyle.Flat;
             ChangeMapButton.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ChangeMapButton.ForeColor = SystemColors.Control;
-            ChangeMapButton.Location = new Point(362, 282);
+            ChangeMapButton.Location = new Point(362, 334);
             ChangeMapButton.Name = "ChangeMapButton";
             ChangeMapButton.Size = new Size(187, 47);
             ChangeMapButton.TabIndex = 6;
@@ -239,7 +228,7 @@
             // 
             // ProgressBar
             // 
-            ProgressBar.Location = new Point(3, 267);
+            ProgressBar.Location = new Point(0, 331);
             ProgressBar.Name = "ProgressBar";
             ProgressBar.Size = new Size(187, 44);
             ProgressBar.TabIndex = 9;
@@ -248,29 +237,38 @@
             // 
             panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(ProgressBar);
-            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(TeamVictoriousBox);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(ApplyResultButton);
-            panel1.Location = new Point(712, 48);
+            panel1.Location = new Point(712, 54);
             panel1.Name = "panel1";
-            panel1.Size = new Size(197, 314);
+            panel1.Size = new Size(197, 378);
             panel1.TabIndex = 10;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.ActiveCaptionText;
+            panel2.Controls.Add(HelpButton);
+            panel2.Controls.Add(FindLogsButton);
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(PlayedMapLabel);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(916, 48);
+            panel2.TabIndex = 11;
             // 
             // ApplyMatchResultForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Holidays_1920x1080;
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(918, 368);
+            BackgroundImageLayout = ImageLayout.None;
+            ClientSize = new Size(916, 444);
+            Controls.Add(panel2);
             Controls.Add(dataGridViewMaps);
-            Controls.Add(FindLogsButton);
-            Controls.Add(HelpButton);
             Controls.Add(ChangeMapButton);
-            Controls.Add(PlayedMapLabel);
-            Controls.Add(label1);
             Controls.Add(dataGridViewMatchLog);
             Controls.Add(panel1);
             DoubleBuffered = true;
@@ -282,20 +280,19 @@
             Text = "Aplicando resultado...";
             Load += ApplyMatchResultForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewMatchLog).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private DataGridView dataGridViewMatchLog;
         private Label label1;
-        private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Button ApplyResultButton;
         private ComboBox TeamVictoriousBox;
@@ -309,5 +306,6 @@
         private Button ChangeMapButton;
         private ProgressBar ProgressBar;
         private Panel panel1;
+        private Panel panel2;
     }
 }
