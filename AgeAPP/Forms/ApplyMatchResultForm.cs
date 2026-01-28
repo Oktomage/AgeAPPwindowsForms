@@ -13,10 +13,13 @@ namespace AgeAPP.Forms
 
         // Local data
         private Log selected_log;
+        private ImageList avatarList;
+        private ImageList mapImageList;
 
         public ApplyMatchResultForm(FiresharpData data_service, Log persistent_log)
         {
             InitializeComponent();
+
             local_Data_service = data_service;
 
             if (persistent_log != null)
@@ -25,9 +28,46 @@ namespace AgeAPP.Forms
                 UpdateUIbased_on_log(selected_log);
             }
 
-            GridStyleController.ApplyTheme(dataGridViewMaps);
+            // Configura ListView de preview
+            PreviewListView.View = View.Details;
+            PreviewListView.FullRowSelect = true;
+            PreviewListView.MultiSelect = false;
+            PreviewListView.HeaderStyle = ColumnHeaderStyle.Nonclickable;
 
-            UpdateDataGridViewMaps();
+            PreviewListView.Columns.Clear();
+            PreviewListView.Columns.Add("", 40);          // Avatar
+            PreviewListView.Columns.Add("Jogador", 120);
+            PreviewListView.Columns.Add("Rating", 70);
+            PreviewListView.Columns.Add("Δ", -2);
+
+            // Avatar
+            avatarList = new ImageList();
+            avatarList.ImageSize = new Size(32, 32);
+            avatarList.ColorDepth = ColorDepth.Depth32Bit;
+            PreviewListView.SmallImageList = avatarList;
+
+            // Configura ListView de mapas
+            MapsListView.View = View.Details;
+            MapsListView.FullRowSelect = true;
+            MapsListView.MultiSelect = false;
+            MapsListView.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+
+            MapsListView.Columns.Clear();
+            MapsListView.Columns.Add("", 50);        // Miniatura
+            MapsListView.Columns.Add("Mapa", 140);
+            MapsListView.Columns.Add("Tipo", -2);
+
+            MapsListView.Scrollable = true;
+            MapsListView.HideSelection = false;
+
+            // Miniatura de mapas
+            mapImageList = new ImageList();
+            mapImageList.ImageSize = new Size(32, 32);
+            mapImageList.ColorDepth = ColorDepth.Depth32Bit;
+
+            MapsListView.SmallImageList = mapImageList;
+
+            LoadMapsList();
         }
 
         private void ApplyMatchResultForm_Load(object sender, EventArgs e)
@@ -37,139 +77,108 @@ namespace AgeAPP.Forms
             // Configura ComboBox
             TeamVictoriousBox.SelectedIndex = 0;
 
-            // Configura DataGridView
-            dataGridViewMatchLog.AutoGenerateColumns = false;
-            dataGridViewMatchLog.Columns.Clear();
-
-            dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "TeamA",
-                HeaderText = "TimeA"
-            });
-
-            dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "RatingA",
-                HeaderText = "Rating"
-            });
-
-            dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "DeltaRatingChangeA",
-                HeaderText = "Δ"
-            });
-
-            dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "TeamB",
-                HeaderText = "TimeB"
-            });
-
-            dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "RatingB",
-                HeaderText = "Rating"
-            });
-
-            dataGridViewMatchLog.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "DeltaRatingChangeB",
-                HeaderText = "Δ"
-            });
-
-
-            GridStyleController.ApplyTheme(dataGridViewMatchLog);
+            ControlPanel.Visible = false;
+            PreviewListView.Visible = false;
+            MapsListView.Visible = false;
         }
 
         private void Write_toolTips()
         {
             ToolTips.SetToolTip(HelpButton, "Mostra um pequeno tutorial.");
             ToolTips.SetToolTip(FindLogsButton, "Abre o seletor de arquivos, dentro da pasta de registros de logs.");
-            ToolTips.SetToolTip(ChangeMapButton, "Muda o mapa do log, para o mapa selecionado na lista.");
             ToolTips.SetToolTip(ApplyResultButton, "Aplica o resultado do log no banco.");
         }
 
-        private async void UpdateDataGridViewMaps()
+        private string GetMapTypeName(int type)
         {
-            dataGridViewMaps.DataSource = null;
+            return type switch
+            {
+                0 => "Padrão",
+                1 => "Arena",
+                2 => "Híbrido",
+                3 => "Nômade",
+                _ => "Desconhecido"
+            };
+        }
+
+        private async void LoadMapsList()
+        {
+            MapsListView.Items.Clear();
+            mapImageList.Images.Clear();
 
             var maps = await local_Data_service.GetAllMaps();
-            dataGridViewMaps.DataSource = maps;
 
-            GridStyleController.FixMapsHeaderNames(dataGridViewMaps);
-            GridStyleController.ApplyMapTypeFormatting(dataGridViewMaps);
+            foreach (var map in maps)
+            {
+                Image thumb = MapImageDictionary.Get(map.Name);
+                mapImageList.Images.Add(map.Name, thumb);
+
+                var item = new ListViewItem("") // coluna da imagem
+                {
+                    ImageKey = map.Name,
+                    ForeColor = Color.White
+                };
+
+                item.SubItems.Add(map.Name);                 // nome
+                item.SubItems.Add(GetMapTypeName(map.Type)); // tipo
+                item.Tag = map;
+
+                if (selected_log?.Played_map != null && map.Name == selected_log.Played_map.Name)
+                {
+                    item.BackColor = Color.FromArgb(40, 40, 40);
+                    item.ForeColor = Color.Gold;
+                }
+
+                MapsListView.Items.Add(item);
+            }
         }
 
-        public class MatchRowView
+        private void BuildPreview(List<Player> teamA, List<Player> teamB, bool teamAWon)
         {
-            public string TeamA { get; set; }
-            public int RatingA { get; set; }
-            public string DeltaRatingChangeA { get; set; }
+            PreviewListView.Items.Clear();
+            avatarList.Images.Clear();
+            PreviewListView.BeginUpdate();
 
+            var teamAClone = teamA.Select(p => p.Clone()).ToList();
+            var teamBClone = teamB.Select(p => p.Clone()).ToList();
 
-            public string TeamB { get; set; }
-            public int RatingB { get; set; }
-            public string DeltaRatingChangeB { get; set; }
-        }
-
-        private List<MatchRowView> BuildMatchRows(Log log)
-        {
-            var rows = new List<MatchRowView>();
-
-            int max = Math.Max(log.TeamA_players.Count, log.TeamB_players.Count);
-
-            bool teamAWon = TeamVictoriousBox.SelectedItem?.ToString() == "Team A";
-
-            //  CLONE DOS JOGADORES (preview NÃO pode alterar estado real)
-            var teamAClone = log.TeamA_players
-                .Select(p => p.Clone())
-                .ToList();
-
-            var teamBClone = log.TeamB_players
-                .Select(p => p.Clone())
-                .ToList();
-
-            //  CALCULA UMA ÚNICA VEZ, USANDO O MÉTODO REAL
             MatchResult previewResult =
                 local_Main_functions_service.Get_match_result(
                     teamAClone,
                     teamBClone,
                     teamAWon,
-                    log.Played_map?.Name ?? "Preview"
+                    "Preview"
                 );
 
-            int perPlayerDeltaA = previewResult.PerPlayerDelta;
-            int perPlayerDeltaB = -perPlayerDeltaA;
+            int delta = previewResult.PerPlayerDelta;
 
-            string deltaAFormatted = perPlayerDeltaA > 0 ? $"+{perPlayerDeltaA}" : perPlayerDeltaA.ToString();
-            string deltaBFormatted = perPlayerDeltaB > 0 ? $"+{perPlayerDeltaB}" : perPlayerDeltaB.ToString();
-
-            for (int i = 0; i < max; i++)
+            void AddPlayer(Player p, int playerDelta)
             {
-                var row = new MatchRowView();
+                int newRating = p.Rating + playerDelta;
 
-                if (i < log.TeamA_players.Count)
-                {
-                    var pA = log.TeamA_players[i];
-                    row.TeamA = pA.Name;
-                    row.RatingA = pA.Rating;
-                    row.DeltaRatingChangeA = deltaAFormatted;
-                }
+                Image avatar = MainFunctions.LoadAvatar(p.AvatarId);
+                avatarList.Images.Add(p.Name, avatar);
 
-                if (i < log.TeamB_players.Count)
-                {
-                    var pB = log.TeamB_players[i];
-                    row.TeamB = pB.Name;
-                    row.RatingB = pB.Rating;
-                    row.DeltaRatingChangeB = deltaBFormatted;
-                }
+                var item = new ListViewItem { ImageKey = p.Name };
+                item.SubItems.Add(p.Name);
+                item.SubItems.Add((p.Rating - playerDelta).ToString()); // rating antigo
+                item.SubItems.Add(playerDelta > 0 ? $"+{playerDelta}" : playerDelta.ToString());
 
-                rows.Add(row);
+                item.ForeColor = playerDelta >= 0 ? Color.LimeGreen : Color.IndianRed;
+
+                PreviewListView.Items.Add(item);
             }
 
-            return rows;
-        }
+            // VENCEDORES (sempre TeamA do resultado)
+            foreach (var p in previewResult.TeamA)
+                AddPlayer(p, +delta);
 
+            // PERDEDORES (sempre TeamB do resultado)
+            foreach (var p in previewResult.TeamB)
+                AddPlayer(p, -delta);
+
+            PreviewListView.EndUpdate();
+        }
 
         private void UpdateUIbased_on_log(Log log)
         {
@@ -182,20 +191,42 @@ namespace AgeAPP.Forms
                 return;
             }
 
-            var rows = BuildMatchRows(log);
+            bool teamAWon = TeamVictoriousBox.SelectedItem?.ToString() == "Team A";
 
-            dataGridViewMatchLog.DataSource = null;
-            dataGridViewMatchLog.DataSource = rows;
+            BuildPreview(log.TeamA_players, log.TeamB_players, teamAWon);
 
             PlayedMapLabel.Text = log.Played_map != null ? $"Mapa: {log.Played_map.Name}" : "Desconhecido";
+
+            ControlPanel.Visible = true;
+            PreviewListView.Visible = true;
+            MapsListView.Visible = true;
         }
 
         #region BUTTONS
 
+        private void MapsListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (MapsListView.SelectedItems.Count == 0) return;
+            if (selected_log == null) return;
+
+            var item = MapsListView.SelectedItems[0];
+            var selectedMap = item.Tag as Map;
+
+            if (selectedMap == null) return;
+
+            selected_log.Played_map = selectedMap;
+            PlayedMapLabel.Text = $"Mapa: {selectedMap.Name}";
+
+            System.Media.SystemSounds.Asterisk.Play();
+        }
+
         private void TeamVictoriousBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (selected_log != null)
-                UpdateUIbased_on_log(selected_log);
+            if (selected_log == null) return;
+
+            bool teamAWon = TeamVictoriousBox.SelectedItem.ToString() == "Team A";
+
+            BuildPreview(selected_log.TeamA_players, selected_log.TeamB_players, teamAWon);
         }
 
         private void HelpButton_Click(object sender, EventArgs e)
@@ -305,31 +336,6 @@ namespace AgeAPP.Forms
         }
 
         #endregion
-
-        private void ChangeMapButton_Click(object sender, EventArgs e)
-        {
-            if (selected_log == null)
-            {
-                MessageBox.Show("Selecione um log primeiro.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (dataGridViewMaps.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Selecione um mapa primeiro.");
-                return;
-            }
-
-            var selectedMap = dataGridViewMaps.SelectedRows[0].DataBoundItem as Map;
-
-            if (selectedMap == null)
-                return;
-
-            selected_log.Played_map = selectedMap;
-            PlayedMapLabel.Text = selected_log.Played_map != null ? $"Mapa: {selected_log.Played_map.Name}" : "Desconhecido";
-
-            System.Media.SystemSounds.Exclamation.Play();
-        }
 
         private async Task FakeProgress(int durationMs = 1200)
         {

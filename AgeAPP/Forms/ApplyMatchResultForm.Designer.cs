@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplyMatchResultForm));
-            dataGridViewMatchLog = new DataGridView();
             label1 = new Label();
             pictureBox2 = new PictureBox();
             ApplyResultButton = new Button();
@@ -43,39 +40,15 @@
             HelpButton = new Button();
             ToolTips = new ToolTip(components);
             FindLogsButton = new Button();
-            dataGridViewMaps = new DataGridView();
-            ChangeMapButton = new Button();
             ProgressBar = new ProgressBar();
-            panel1 = new Panel();
+            ControlPanel = new Panel();
             panel2 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMatchLog).BeginInit();
+            PreviewListView = new ListView();
+            MapsListView = new ListView();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).BeginInit();
-            panel1.SuspendLayout();
+            ControlPanel.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // dataGridViewMatchLog
-            // 
-            dataGridViewMatchLog.AllowUserToAddRows = false;
-            dataGridViewMatchLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewMatchLog.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
-            dataGridViewMatchLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewMatchLog.Location = new Point(12, 100);
-            dataGridViewMatchLog.MultiSelect = false;
-            dataGridViewMatchLog.Name = "dataGridViewMatchLog";
-            dataGridViewMatchLog.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridViewMatchLog.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewMatchLog.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewMatchLog.Size = new Size(344, 228);
-            dataGridViewMatchLog.TabIndex = 2;
             // 
             // label1
             // 
@@ -160,7 +133,7 @@
             HelpButton.BackgroundImage = Properties.Resources.Help_icon;
             HelpButton.BackgroundImageLayout = ImageLayout.Stretch;
             HelpButton.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            HelpButton.Location = new Point(866, 7);
+            HelpButton.Location = new Point(868, 7);
             HelpButton.Name = "HelpButton";
             HelpButton.Size = new Size(38, 38);
             HelpButton.TabIndex = 6;
@@ -178,73 +151,32 @@
             FindLogsButton.BackgroundImage = Properties.Resources.Open_folder_icon;
             FindLogsButton.BackgroundImageLayout = ImageLayout.Stretch;
             FindLogsButton.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FindLogsButton.Location = new Point(813, 7);
+            FindLogsButton.Location = new Point(824, 7);
             FindLogsButton.Name = "FindLogsButton";
             FindLogsButton.Size = new Size(38, 38);
             FindLogsButton.TabIndex = 6;
             FindLogsButton.UseVisualStyleBackColor = true;
             FindLogsButton.Click += FindLogButton_Click;
             // 
-            // dataGridViewMaps
-            // 
-            dataGridViewMaps.AllowUserToAddRows = false;
-            dataGridViewMaps.AllowUserToDeleteRows = false;
-            dataGridViewMaps.AllowUserToResizeColumns = false;
-            dataGridViewMaps.AllowUserToResizeRows = false;
-            dataGridViewMaps.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewMaps.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
-            dataGridViewMaps.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewMaps.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridViewMaps.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewMaps.Location = new Point(362, 100);
-            dataGridViewMaps.MultiSelect = false;
-            dataGridViewMaps.Name = "dataGridViewMaps";
-            dataGridViewMaps.ReadOnly = true;
-            dataGridViewMaps.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewMaps.Size = new Size(344, 228);
-            dataGridViewMaps.TabIndex = 8;
-            // 
-            // ChangeMapButton
-            // 
-            ChangeMapButton.BackgroundImage = Properties.Resources.button_wide_normal;
-            ChangeMapButton.BackgroundImageLayout = ImageLayout.Stretch;
-            ChangeMapButton.FlatStyle = FlatStyle.Flat;
-            ChangeMapButton.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ChangeMapButton.ForeColor = SystemColors.Control;
-            ChangeMapButton.Location = new Point(362, 334);
-            ChangeMapButton.Name = "ChangeMapButton";
-            ChangeMapButton.Size = new Size(187, 47);
-            ChangeMapButton.TabIndex = 6;
-            ChangeMapButton.Text = "Trocar mapa";
-            ChangeMapButton.UseVisualStyleBackColor = true;
-            ChangeMapButton.Click += ChangeMapButton_Click;
-            // 
             // ProgressBar
             // 
-            ProgressBar.Location = new Point(0, 331);
+            ProgressBar.Location = new Point(0, 306);
             ProgressBar.Name = "ProgressBar";
-            ProgressBar.Size = new Size(187, 44);
+            ProgressBar.Size = new Size(190, 21);
             ProgressBar.TabIndex = 9;
             // 
-            // panel1
+            // ControlPanel
             // 
-            panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(ProgressBar);
-            panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(TeamVictoriousBox);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(ApplyResultButton);
-            panel1.Location = new Point(712, 54);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(197, 378);
-            panel1.TabIndex = 10;
+            ControlPanel.BackColor = Color.Transparent;
+            ControlPanel.Controls.Add(ProgressBar);
+            ControlPanel.Controls.Add(pictureBox2);
+            ControlPanel.Controls.Add(TeamVictoriousBox);
+            ControlPanel.Controls.Add(label3);
+            ControlPanel.Controls.Add(ApplyResultButton);
+            ControlPanel.Location = new Point(716, 54);
+            ControlPanel.Name = "ControlPanel";
+            ControlPanel.Size = new Size(197, 327);
+            ControlPanel.TabIndex = 10;
             // 
             // panel2
             // 
@@ -256,8 +188,29 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(916, 48);
+            panel2.Size = new Size(919, 48);
             panel2.TabIndex = 11;
+            // 
+            // PreviewListView
+            // 
+            PreviewListView.BackColor = Color.Black;
+            PreviewListView.BorderStyle = BorderStyle.None;
+            PreviewListView.Location = new Point(12, 54);
+            PreviewListView.Name = "PreviewListView";
+            PreviewListView.Size = new Size(344, 327);
+            PreviewListView.TabIndex = 13;
+            PreviewListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // MapsListView
+            // 
+            MapsListView.BackColor = Color.Black;
+            MapsListView.BorderStyle = BorderStyle.None;
+            MapsListView.Location = new Point(362, 54);
+            MapsListView.Name = "MapsListView";
+            MapsListView.Size = new Size(344, 327);
+            MapsListView.TabIndex = 13;
+            MapsListView.UseCompatibleStateImageBehavior = false;
+            MapsListView.SelectedIndexChanged += MapsListView_SelectedIndexChanged;
             // 
             // ApplyMatchResultForm
             // 
@@ -265,12 +218,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Holidays_1920x1080;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(916, 444);
+            ClientSize = new Size(919, 392);
+            Controls.Add(MapsListView);
+            Controls.Add(PreviewListView);
             Controls.Add(panel2);
-            Controls.Add(dataGridViewMaps);
-            Controls.Add(ChangeMapButton);
-            Controls.Add(dataGridViewMatchLog);
-            Controls.Add(panel1);
+            Controls.Add(ControlPanel);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -279,19 +231,15 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Aplicando resultado...";
             Load += ApplyMatchResultForm_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMatchLog).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ControlPanel.ResumeLayout(false);
+            ControlPanel.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private DataGridView dataGridViewMatchLog;
         private Label label1;
         private PictureBox pictureBox2;
         private Button ApplyResultButton;
@@ -302,10 +250,10 @@
         private Button HelpButton;
         private ToolTip ToolTips;
         private Button FindLogsButton;
-        private DataGridView dataGridViewMaps;
-        private Button ChangeMapButton;
         private ProgressBar ProgressBar;
-        private Panel panel1;
+        private Panel ControlPanel;
         private Panel panel2;
+        private ListView PreviewListView;
+        private ListView MapsListView;
     }
 }
