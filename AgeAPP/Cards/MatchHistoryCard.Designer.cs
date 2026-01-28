@@ -55,7 +55,7 @@
             MapNameLabel.BackColor = Color.Black;
             MapNameLabel.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             MapNameLabel.ForeColor = Color.White;
-            MapNameLabel.Location = new Point(161, 2);
+            MapNameLabel.Location = new Point(170, 0);
             MapNameLabel.Name = "MapNameLabel";
             MapNameLabel.Size = new Size(177, 32);
             MapNameLabel.TabIndex = 0;
@@ -80,7 +80,7 @@
             DateLabel.BackColor = Color.Black;
             DateLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             DateLabel.ForeColor = Color.White;
-            DateLabel.Location = new Point(381, 8);
+            DateLabel.Location = new Point(76, 177);
             DateLabel.Name = "DateLabel";
             DateLabel.Size = new Size(189, 24);
             DateLabel.TabIndex = 0;
@@ -196,7 +196,7 @@
             LogAuthorLabel.BackColor = Color.Black;
             LogAuthorLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LogAuthorLabel.ForeColor = Color.White;
-            LogAuthorLabel.Location = new Point(3, 8);
+            LogAuthorLabel.Location = new Point(3, 0);
             LogAuthorLabel.Name = "LogAuthorLabel";
             LogAuthorLabel.Size = new Size(58, 17);
             LogAuthorLabel.TabIndex = 0;

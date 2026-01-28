@@ -1303,6 +1303,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rm_mountain_pass {
+            get {
+                object obj = ResourceManager.GetObject("rm_mountain-pass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rm_nomad {
             get {
                 object obj = ResourceManager.GetObject("rm_nomad", resourceCulture);

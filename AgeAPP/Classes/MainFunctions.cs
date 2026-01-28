@@ -461,6 +461,7 @@ namespace AgeAPP.Classes
                 { "socotra", Properties.Resources.rm_socotra },
                 { "fortaleza", Properties.Resources.rm_fortress },
                 { "escandinavia", Properties.Resources.rm_scandinavia },
+                { "passos da montanha", Properties.Resources.rm_mountain_pass },
                 { "unknown", Properties.Resources.UnkownMap },
                 };
 
