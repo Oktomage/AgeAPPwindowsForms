@@ -1,6 +1,7 @@
-﻿using AgeAPP.Cards;
-using AgeAPP.Classes;
+﻿using System.Globalization;
 using System.Windows.Forms;
+using AgeAPP.Cards;
+using AgeAPP.Classes;
 using static AgeAPP.Classes.FiresharpData;
 using static AgeAPP.Classes.Main_classes;
 
@@ -74,8 +75,14 @@ namespace AgeAPP.Forms
             FlowLayouPanel.SuspendLayout();
             FlowLayouPanel.Controls.Clear();
 
+
             var limitedLogs = logs
-                .OrderByDescending(l => l.Date)
+                .OrderByDescending(l =>
+                {
+                    if (DateTime.TryParse(l.Date, out var dt))
+                        return dt;
+                    return DateTime.MinValue;
+                })
                 .Take(maxItemsToShow)
                 .ToList();
 
