@@ -34,11 +34,13 @@
             dataGridViewPlayers = new DataGridView();
             SelectedPlayerLabel = new Label();
             panel1 = new Panel();
-            AvatarPictureBox = new PictureBox();
+            panel5 = new Panel();
             DuplicateSelectedPlayerButton = new Button();
+            DeleteSelectedPlayerButton = new Button();
+            AvatarPictureBox = new PictureBox();
+            label5 = new Label();
             ChangeSelectedPlayerRating = new Button();
             SelectedPlayerRatingTextBox = new TextBox();
-            DeleteSelectedPlayerButton = new Button();
             label1 = new Label();
             panel3 = new Panel();
             EditPlayerFavoriteMapsButton = new Button();
@@ -54,15 +56,18 @@
             label4 = new Label();
             ToolTips = new ToolTip(components);
             FilterPlayerTextBox = new TextBox();
-            label5 = new Label();
             panel4 = new Panel();
+            comboBox1 = new ComboBox();
+            PlayersPanelControl = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
+            panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)AvatarPictureBox).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel4.SuspendLayout();
+            PlayersPanelControl.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridViewPlayers
@@ -73,7 +78,7 @@
             dataGridViewPlayers.BackgroundColor = Color.Black;
             dataGridViewPlayers.BorderStyle = BorderStyle.None;
             dataGridViewPlayers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewPlayers.Location = new Point(12, 55);
+            dataGridViewPlayers.Location = new Point(3, 3);
             dataGridViewPlayers.MultiSelect = false;
             dataGridViewPlayers.Name = "dataGridViewPlayers";
             dataGridViewPlayers.ReadOnly = true;
@@ -109,18 +114,55 @@
             // 
             panel1.BackColor = Color.Black;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(panel5);
             panel1.Controls.Add(AvatarPictureBox);
-            panel1.Controls.Add(DuplicateSelectedPlayerButton);
+            panel1.Controls.Add(label5);
             panel1.Controls.Add(ChangeSelectedPlayerRating);
             panel1.Controls.Add(SelectedPlayerRatingTextBox);
-            panel1.Controls.Add(DeleteSelectedPlayerButton);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(SelectedPlayerLabel);
             panel1.Controls.Add(panel3);
-            panel1.Location = new Point(474, 55);
+            panel1.Location = new Point(465, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(371, 473);
             panel1.TabIndex = 3;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.Transparent;
+            panel5.Controls.Add(DuplicateSelectedPlayerButton);
+            panel5.Controls.Add(DeleteSelectedPlayerButton);
+            panel5.Location = new Point(3, 400);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(365, 66);
+            panel5.TabIndex = 8;
+            // 
+            // DuplicateSelectedPlayerButton
+            // 
+            DuplicateSelectedPlayerButton.BackColor = Color.Transparent;
+            DuplicateSelectedPlayerButton.BackgroundImage = Properties.Resources.Duplicate_icon;
+            DuplicateSelectedPlayerButton.BackgroundImageLayout = ImageLayout.Stretch;
+            DuplicateSelectedPlayerButton.Cursor = Cursors.Hand;
+            DuplicateSelectedPlayerButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DuplicateSelectedPlayerButton.Location = new Point(9, 5);
+            DuplicateSelectedPlayerButton.Name = "DuplicateSelectedPlayerButton";
+            DuplicateSelectedPlayerButton.Size = new Size(61, 58);
+            DuplicateSelectedPlayerButton.TabIndex = 4;
+            DuplicateSelectedPlayerButton.UseVisualStyleBackColor = false;
+            // 
+            // DeleteSelectedPlayerButton
+            // 
+            DeleteSelectedPlayerButton.BackColor = Color.Transparent;
+            DeleteSelectedPlayerButton.BackgroundImage = Properties.Resources.Kill_icon;
+            DeleteSelectedPlayerButton.BackgroundImageLayout = ImageLayout.Stretch;
+            DeleteSelectedPlayerButton.Cursor = Cursors.Hand;
+            DeleteSelectedPlayerButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DeleteSelectedPlayerButton.Location = new Point(301, 5);
+            DeleteSelectedPlayerButton.Name = "DeleteSelectedPlayerButton";
+            DeleteSelectedPlayerButton.Size = new Size(61, 58);
+            DeleteSelectedPlayerButton.TabIndex = 4;
+            DeleteSelectedPlayerButton.UseVisualStyleBackColor = false;
+            DeleteSelectedPlayerButton.Click += DeleteSelectedPlayerButton_Click;
             // 
             // AvatarPictureBox
             // 
@@ -135,17 +177,17 @@
             AvatarPictureBox.TabStop = false;
             AvatarPictureBox.Click += AvatarPictureBox_Click;
             // 
-            // DuplicateSelectedPlayerButton
+            // label5
             // 
-            DuplicateSelectedPlayerButton.BackColor = Color.Transparent;
-            DuplicateSelectedPlayerButton.BackgroundImage = Properties.Resources.Duplicate_icon;
-            DuplicateSelectedPlayerButton.BackgroundImageLayout = ImageLayout.Stretch;
-            DuplicateSelectedPlayerButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DuplicateSelectedPlayerButton.Location = new Point(223, 408);
-            DuplicateSelectedPlayerButton.Name = "DuplicateSelectedPlayerButton";
-            DuplicateSelectedPlayerButton.Size = new Size(61, 58);
-            DuplicateSelectedPlayerButton.TabIndex = 4;
-            DuplicateSelectedPlayerButton.UseVisualStyleBackColor = false;
+            label5.AutoSize = true;
+            label5.BackColor = Color.Black;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.Control;
+            label5.Location = new Point(7, 376);
+            label5.Name = "label5";
+            label5.Size = new Size(88, 21);
+            label5.TabIndex = 2;
+            label5.Text = "Comandos:";
             // 
             // ChangeSelectedPlayerRating
             // 
@@ -169,19 +211,6 @@
             SelectedPlayerRatingTextBox.TabIndex = 3;
             SelectedPlayerRatingTextBox.KeyPress += SelectedPlayerRatingTextBox_KeyPress;
             // 
-            // DeleteSelectedPlayerButton
-            // 
-            DeleteSelectedPlayerButton.BackColor = Color.Transparent;
-            DeleteSelectedPlayerButton.BackgroundImage = Properties.Resources.Kill_icon;
-            DeleteSelectedPlayerButton.BackgroundImageLayout = ImageLayout.Stretch;
-            DeleteSelectedPlayerButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DeleteSelectedPlayerButton.Location = new Point(290, 408);
-            DeleteSelectedPlayerButton.Name = "DeleteSelectedPlayerButton";
-            DeleteSelectedPlayerButton.Size = new Size(61, 58);
-            DeleteSelectedPlayerButton.TabIndex = 4;
-            DeleteSelectedPlayerButton.UseVisualStyleBackColor = false;
-            DeleteSelectedPlayerButton.Click += DeleteSelectedPlayerButton_Click;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -200,9 +229,9 @@
             panel3.Controls.Add(EditPlayerFavoriteMapsButton);
             panel3.Controls.Add(FavoriteMapListBox);
             panel3.Controls.Add(label3);
-            panel3.Location = new Point(3, 167);
+            panel3.Location = new Point(3, 152);
             panel3.Name = "panel3";
-            panel3.Size = new Size(348, 211);
+            panel3.Size = new Size(365, 211);
             panel3.TabIndex = 6;
             // 
             // EditPlayerFavoriteMapsButton
@@ -214,7 +243,7 @@
             EditPlayerFavoriteMapsButton.FlatStyle = FlatStyle.Flat;
             EditPlayerFavoriteMapsButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             EditPlayerFavoriteMapsButton.ForeColor = SystemColors.Control;
-            EditPlayerFavoriteMapsButton.Location = new Point(7, 160);
+            EditPlayerFavoriteMapsButton.Location = new Point(9, 160);
             EditPlayerFavoriteMapsButton.Name = "EditPlayerFavoriteMapsButton";
             EditPlayerFavoriteMapsButton.Size = new Size(134, 39);
             EditPlayerFavoriteMapsButton.TabIndex = 4;
@@ -238,7 +267,7 @@
             label3.BackColor = Color.Black;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(7, 0);
+            label3.Location = new Point(9, 0);
             label3.Name = "label3";
             label3.Size = new Size(124, 21);
             label3.TabIndex = 2;
@@ -250,11 +279,11 @@
             label2.BackColor = Color.Black;
             label2.Font = new Font("Segoe UI", 20.25F);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(474, 5);
+            label2.Location = new Point(3, 5);
             label2.Name = "label2";
-            label2.Size = new Size(228, 37);
+            label2.Size = new Size(107, 37);
             label2.TabIndex = 2;
-            label2.Text = "Painel do jogador";
+            label2.Text = "| Painel:";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // CreateNewPlayerButton
@@ -283,7 +312,7 @@
             panel2.Controls.Add(CreateNewMapButton);
             panel2.Controls.Add(CreateNewPlayerButton);
             panel2.Controls.Add(ApplyMatchResultButton);
-            panel2.Location = new Point(851, 55);
+            panel2.Location = new Point(851, 56);
             panel2.Name = "panel2";
             panel2.Size = new Size(265, 473);
             panel2.TabIndex = 5;
@@ -358,9 +387,9 @@
             label4.ForeColor = SystemColors.Control;
             label4.Location = new Point(851, 5);
             label4.Name = "label4";
-            label4.Size = new Size(230, 37);
+            label4.Size = new Size(249, 37);
             label4.TabIndex = 2;
-            label4.Text = "Painel de controle";
+            label4.Text = "| Painel de controle:";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ToolTips
@@ -372,37 +401,46 @@
             // FilterPlayerTextBox
             // 
             FilterPlayerTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FilterPlayerTextBox.Location = new Point(12, 534);
+            FilterPlayerTextBox.Location = new Point(3, 482);
             FilterPlayerTextBox.Name = "FilterPlayerTextBox";
             FilterPlayerTextBox.PlaceholderText = "Filtrar jogador ex: Kakashi";
             FilterPlayerTextBox.Size = new Size(200, 25);
             FilterPlayerTextBox.TabIndex = 7;
             FilterPlayerTextBox.TextChanged += FilterPlayerTextBox_TextChanged;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Black;
-            label5.Font = new Font("Segoe UI", 20.25F);
-            label5.ForeColor = SystemColors.Control;
-            label5.Location = new Point(12, 5);
-            label5.Name = "label5";
-            label5.Size = new Size(234, 37);
-            label5.TabIndex = 2;
-            label5.Text = "Lista de jogadores";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // panel4
             // 
             panel4.BackColor = Color.Black;
+            panel4.Controls.Add(comboBox1);
             panel4.Controls.Add(label2);
-            panel4.Controls.Add(label5);
             panel4.Controls.Add(label4);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1125, 49);
+            panel4.Size = new Size(1123, 49);
             panel4.TabIndex = 8;
+            // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Jogadores", "Mapas" });
+            comboBox1.Location = new Point(116, 12);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(135, 29);
+            comboBox1.TabIndex = 6;
+            // 
+            // PlayersPanelControl
+            // 
+            PlayersPanelControl.BackColor = Color.Transparent;
+            PlayersPanelControl.Controls.Add(dataGridViewPlayers);
+            PlayersPanelControl.Controls.Add(panel1);
+            PlayersPanelControl.Controls.Add(FilterPlayerTextBox);
+            PlayersPanelControl.Location = new Point(9, 53);
+            PlayersPanelControl.Name = "PlayersPanelControl";
+            PlayersPanelControl.Size = new Size(836, 516);
+            PlayersPanelControl.TabIndex = 9;
             // 
             // AdminPanelForm
             // 
@@ -410,12 +448,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.admin_bg;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(1125, 565);
+            ClientSize = new Size(1123, 574);
+            Controls.Add(PlayersPanelControl);
             Controls.Add(panel4);
-            Controls.Add(FilterPlayerTextBox);
             Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(dataGridViewPlayers);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -426,6 +462,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)AvatarPictureBox).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -433,8 +470,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            PlayersPanelControl.ResumeLayout(false);
+            PlayersPanelControl.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -458,11 +496,14 @@
         private ToolTip ToolTips;
         private TextBox FilterPlayerTextBox;
         private Button DuplicateSelectedPlayerButton;
-        private Label label5;
         private Panel panel3;
         private PictureBox AvatarPictureBox;
         private Button EditPlayerFavoriteMapsButton;
         private Button AdminChangesButton;
         private Panel panel4;
+        private Panel PlayersPanelControl;
+        private Panel panel5;
+        private Label label5;
+        private ComboBox comboBox1;
     }
 }

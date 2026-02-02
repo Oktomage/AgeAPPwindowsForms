@@ -59,6 +59,7 @@ namespace AgeAPP
             ReportBugButton = new Button();
             NewsButton = new Button();
             FlowLayoutPlayers = new AgeAPP.Classes.SmoothFlowLayoutPanel();
+            FlowLayoutMaps = new AgeAPP.Classes.SmoothFlowLayoutPanel();
             panel4 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -452,6 +453,14 @@ namespace AgeAPP
             FlowLayoutPlayers.Size = new Size(778, 450);
             FlowLayoutPlayers.TabIndex = 8;
             // 
+            // FlowLayoutMaps
+            // 
+            FlowLayoutMaps.BackColor = Color.Transparent;
+            FlowLayoutMaps.Location = new Point(80, 52);
+            FlowLayoutMaps.Name = "FlowLayoutMaps";
+            FlowLayoutMaps.Size = new Size(778, 450);
+            FlowLayoutMaps.TabIndex = 9;
+            // 
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Bottom;
@@ -469,6 +478,7 @@ namespace AgeAPP
             BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1151, 556);
+            Controls.Add(FlowLayoutMaps);
             Controls.Add(panel4);
             Controls.Add(FlowLayoutPlayers);
             Controls.Add(panel3);
@@ -530,5 +540,6 @@ namespace AgeAPP
         private Panel panel4;
         private ComboBox comboBox1;
         private Button ReportBugButton;
+        private Classes.SmoothFlowLayoutPanel FlowLayoutMaps;
     }
 }
