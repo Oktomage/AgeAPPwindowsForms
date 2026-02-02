@@ -60,6 +60,19 @@ namespace AgeAPP.Classes
             public int Matches { get; set; }
             public int Type { get; set; }
         }
+        public static string GetMapTypeName(int type)
+        {
+            return type switch
+            {
+                0 => "Padrão",
+                1 => "QS",
+                2 => "Nômade",
+                3 => "Arena",
+                4 => "Híbrido",
+                5 => "Água",
+                _ => "Desconhecido"
+            };
+        }
 
         public class Log
         {

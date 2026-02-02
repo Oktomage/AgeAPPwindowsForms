@@ -462,6 +462,10 @@ namespace AgeAPP.Classes
                 { "fortaleza", Properties.Resources.rm_fortress },
                 { "escandinavia", Properties.Resources.rm_scandinavia },
                 { "passos da montanha", Properties.Resources.rm_mountain_pass },
+                { "floresta costeira", Properties.Resources.rm_coastal_forest },
+                { "costal", Properties.Resources.rm_coastal },
+                { "kawasan", Properties.Resources.rm_kawasan },
+                { "lago fantasma", Properties.Resources.rm_ghost_lake },
                 { "unknown", Properties.Resources.UnkownMap },
                 };
 

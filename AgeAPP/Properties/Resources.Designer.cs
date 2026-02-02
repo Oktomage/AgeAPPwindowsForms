@@ -19,7 +19,7 @@ namespace AgeAPP.Properties {
     // através de uma ferramenta como ResGen ou Visual Studio.
     // Para adicionar ou remover um associado, edite o arquivo .ResX e execute ResGen novamente
     // com a opção /str, ou recrie o projeto do VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -1143,6 +1143,26 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rm_coastal {
+            get {
+                object obj = ResourceManager.GetObject("rm_coastal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rm_coastal_forest {
+            get {
+                object obj = ResourceManager.GetObject("rm_coastal_forest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rm_enclosed {
             get {
                 object obj = ResourceManager.GetObject("rm_enclosed", resourceCulture);
@@ -1176,6 +1196,16 @@ namespace AgeAPP.Properties {
         internal static System.Drawing.Bitmap rm_frigid_lake {
             get {
                 object obj = ResourceManager.GetObject("rm_frigid_lake", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rm_ghost_lake {
+            get {
+                object obj = ResourceManager.GetObject("rm_ghost-lake", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1256,6 +1286,16 @@ namespace AgeAPP.Properties {
         internal static System.Drawing.Bitmap rm_islands {
             get {
                 object obj = ResourceManager.GetObject("rm_islands", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rm_kawasan {
+            get {
+                object obj = ResourceManager.GetObject("rm_kawasan", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

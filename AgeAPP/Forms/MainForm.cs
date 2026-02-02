@@ -18,6 +18,7 @@ namespace AgeAPP
 
         // Local data
         private List<Player> allPlayers = new List<Player>();
+        private List<Map> allMaps = new List<Map>();
 
         public FMain()
         {
@@ -68,9 +69,10 @@ namespace AgeAPP
             }
 
             // Atualiza a tabela inicial
-            await UpdateLocalData();
+            MenuSelectionComboBox.SelectedIndex = 0;
+            Switch_visible_layouts();
 
-            GridStyleController.ApplyTheme(dataGridViewMaps);
+            await UpdateLocalData();
 
             // Escreve tooltips
             Write_toolTips();
@@ -103,9 +105,10 @@ namespace AgeAPP
         {
             // Get updated data
             allPlayers = await Data_service.GetAllPlayers();
+            allMaps = await Data_service.GetAllMaps();
 
-            UpdateDataGridViewMaps();
             UpdatePlayersFlow();
+            UpdateMapsFlow();
         }
 
         private List<Player> GetActivePlayers()
@@ -163,15 +166,51 @@ namespace AgeAPP
             FlowLayoutPlayers.ResumeLayout();
         }
 
-        private async void UpdateDataGridViewMaps()
+        private void UpdateMapsFlow()
         {
-            dataGridViewMaps.DataSource = null;
+            FlowLayoutMaps.AutoScroll = true;
+            FlowLayoutMaps.WrapContents = false;
+            FlowLayoutMaps.FlowDirection = FlowDirection.TopDown;
 
-            var maps = await Data_service.GetAllMaps();
-            dataGridViewMaps.DataSource = maps;
+            FlowLayoutMaps.SuspendLayout();
+            FlowLayoutMaps.Controls.Clear();
 
-            GridStyleController.FixMapsHeaderNames(dataGridViewMaps);
-            GridStyleController.ApplyMapTypeFormatting(dataGridViewMaps);
+            for (int i = 0; i < allMaps.Count; i++)
+            {
+                var map = allMaps[i];
+
+                UserControl card;
+
+                card = new MapCard();
+
+                dynamic bindableCard = card;
+                bindableCard.Bind(map);
+
+                FlowLayoutMaps.Controls.Add(card);
+            }
+
+            FlowLayoutMaps.ResumeLayout();
+        }
+
+        private void Switch_visible_layouts()
+        {
+            switch(MenuSelectionComboBox.SelectedIndex)
+            {
+                case 0: // Players
+                    FlowLayoutPlayers.Visible = true;
+                    FlowLayoutMaps.Visible = false;
+                    break;
+
+                case 1: // Maps
+                    FlowLayoutPlayers.Visible = false;
+                    FlowLayoutMaps.Visible = true;
+                    break;
+            }
+        }
+
+        private void MenuSelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Switch_visible_layouts();
         }
 
         #region BUTTONS
@@ -218,8 +257,6 @@ namespace AgeAPP
         {
             // Alterna tema das grids
             GridStyleController.ToggleTheme();
-
-            GridStyleController.ApplyTheme(dataGridViewMaps);
         }
 
         private void AdminConnectedLabel_Click(object sender, EventArgs e)

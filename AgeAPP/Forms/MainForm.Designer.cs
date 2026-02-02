@@ -30,7 +30,6 @@ namespace AgeAPP
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
             SplitButton = new Button();
             panel1 = new Panel();
@@ -44,10 +43,9 @@ namespace AgeAPP
             LoginButton = new Button();
             ForceGridRefreshButton = new Button();
             ConnectionTimer = new System.Windows.Forms.Timer(components);
-            dataGridViewMaps = new DataGridView();
             label1 = new Label();
             panel2 = new Panel();
-            comboBox1 = new ComboBox();
+            MenuSelectionComboBox = new ComboBox();
             ToggleAppThemeButton = new Button();
             ShowOnlyActivePlayersCheckBox = new CheckBox();
             ExpandPlayersViewButton = new Button();
@@ -64,7 +62,6 @@ namespace AgeAPP
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -248,32 +245,6 @@ namespace AgeAPP
             ConnectionTimer.Interval = 500;
             ConnectionTimer.Tick += ConnectionTimer_Tick;
             // 
-            // dataGridViewMaps
-            // 
-            dataGridViewMaps.AllowUserToAddRows = false;
-            dataGridViewMaps.AllowUserToDeleteRows = false;
-            dataGridViewMaps.AllowUserToResizeColumns = false;
-            dataGridViewMaps.AllowUserToResizeRows = false;
-            dataGridViewMaps.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewMaps.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
-            dataGridViewMaps.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewMaps.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridViewMaps.DefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewMaps.Location = new Point(748, 614);
-            dataGridViewMaps.MultiSelect = false;
-            dataGridViewMaps.Name = "dataGridViewMaps";
-            dataGridViewMaps.ReadOnly = true;
-            dataGridViewMaps.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewMaps.Size = new Size(420, 492);
-            dataGridViewMaps.TabIndex = 0;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -289,7 +260,7 @@ namespace AgeAPP
             // panel2
             // 
             panel2.BackColor = SystemColors.ActiveCaptionText;
-            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(MenuSelectionComboBox);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(ToggleAppThemeButton);
             panel2.Controls.Add(ForceGridRefreshButton);
@@ -298,15 +269,16 @@ namespace AgeAPP
             panel2.Size = new Size(846, 37);
             panel2.TabIndex = 5;
             // 
-            // comboBox1
+            // MenuSelectionComboBox
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Jogadores", "Mapas" });
-            comboBox1.Location = new Point(89, 9);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(135, 23);
-            comboBox1.TabIndex = 5;
+            MenuSelectionComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            MenuSelectionComboBox.FormattingEnabled = true;
+            MenuSelectionComboBox.Items.AddRange(new object[] { "Jogadores", "Mapas" });
+            MenuSelectionComboBox.Location = new Point(89, 9);
+            MenuSelectionComboBox.Name = "MenuSelectionComboBox";
+            MenuSelectionComboBox.Size = new Size(135, 23);
+            MenuSelectionComboBox.TabIndex = 5;
+            MenuSelectionComboBox.SelectedIndexChanged += MenuSelectionComboBox_SelectedIndexChanged;
             // 
             // ToggleAppThemeButton
             // 
@@ -406,7 +378,7 @@ namespace AgeAPP
             panel3.Controls.Add(ReportBugButton);
             panel3.Controls.Add(NewsButton);
             panel3.Controls.Add(ExpandPlayersViewButton);
-            panel3.Location = new Point(12, 53);
+            panel3.Location = new Point(12, 54);
             panel3.Name = "panel3";
             panel3.Size = new Size(62, 492);
             panel3.TabIndex = 0;
@@ -466,7 +438,7 @@ namespace AgeAPP
             panel4.Anchor = AnchorStyles.Bottom;
             panel4.BackColor = SystemColors.ActiveCaptionText;
             panel4.Controls.Add(ShowOnlyActivePlayersCheckBox);
-            panel4.Location = new Point(80, 508);
+            panel4.Location = new Point(80, 511);
             panel4.Name = "panel4";
             panel4.Size = new Size(778, 37);
             panel4.TabIndex = 9;
@@ -477,8 +449,7 @@ namespace AgeAPP
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.mainmenu_paphos_bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1151, 556);
-            Controls.Add(FlowLayoutMaps);
+            ClientSize = new Size(1151, 559);
             Controls.Add(panel4);
             Controls.Add(FlowLayoutPlayers);
             Controls.Add(panel3);
@@ -487,7 +458,7 @@ namespace AgeAPP
             Controls.Add(HelpButton);
             Controls.Add(AgeAppLabel);
             Controls.Add(panel1);
-            Controls.Add(dataGridViewMaps);
+            Controls.Add(FlowLayoutMaps);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -500,7 +471,6 @@ namespace AgeAPP
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
@@ -519,7 +489,6 @@ namespace AgeAPP
         private System.Windows.Forms.Timer ConnectionTimer;
         private Label AdminConnectedLabel;
         private PictureBox pictureBox1;
-        private DataGridView dataGridViewMaps;
         private Button MatchesButton;
         private Label label1;
         private Button ForceGridRefreshButton;
@@ -538,7 +507,7 @@ namespace AgeAPP
         private Classes.SmoothFlowLayoutPanel FlowLayoutPlayers;
         private Button NewsButton;
         private Panel panel4;
-        private ComboBox comboBox1;
+        private ComboBox MenuSelectionComboBox;
         private Button ReportBugButton;
         private Classes.SmoothFlowLayoutPanel FlowLayoutMaps;
     }

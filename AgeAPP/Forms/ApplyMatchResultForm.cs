@@ -25,7 +25,7 @@ namespace AgeAPP.Forms
             if (persistent_log != null)
             {
                 selected_log = persistent_log;
-                UpdateUIbased_on_log(selected_log);
+                //UpdateUIbased_on_log(selected_log);
             }
 
             // Configura ListView de preview
@@ -80,6 +80,12 @@ namespace AgeAPP.Forms
             ControlPanel.Visible = false;
             PreviewListView.Visible = false;
             MapsListView.Visible = false;
+
+            // Persistent log
+            if (selected_log != null)
+            {
+                UpdateUIbased_on_log(selected_log);
+            }
         }
 
         private void Write_toolTips()
@@ -87,18 +93,6 @@ namespace AgeAPP.Forms
             ToolTips.SetToolTip(HelpButton, "Mostra um pequeno tutorial.");
             ToolTips.SetToolTip(FindLogsButton, "Abre o seletor de arquivos, dentro da pasta de registros de logs.");
             ToolTips.SetToolTip(ApplyResultButton, "Aplica o resultado do log no banco.");
-        }
-
-        private string GetMapTypeName(int type)
-        {
-            return type switch
-            {
-                0 => "Padrão",
-                1 => "Arena",
-                2 => "Híbrido",
-                3 => "Nômade",
-                _ => "Desconhecido"
-            };
         }
 
         private async void LoadMapsList()
