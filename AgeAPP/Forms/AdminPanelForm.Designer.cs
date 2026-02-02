@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanelForm));
             dataGridViewPlayers = new DataGridView();
             SelectedPlayerLabel = new Label();
@@ -57,8 +58,11 @@
             ToolTips = new ToolTip(components);
             FilterPlayerTextBox = new TextBox();
             panel4 = new Panel();
-            comboBox1 = new ComboBox();
+            MenuSelectionComboBox = new ComboBox();
             PlayersPanelControl = new Panel();
+            MapsPanelControl = new Panel();
+            panel6 = new Panel();
+            dataGridViewMaps = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
@@ -68,6 +72,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel4.SuspendLayout();
             PlayersPanelControl.SuspendLayout();
+            MapsPanelControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).BeginInit();
             SuspendLayout();
             // 
             // dataGridViewPlayers
@@ -411,7 +417,7 @@
             // panel4
             // 
             panel4.BackColor = Color.Black;
-            panel4.Controls.Add(comboBox1);
+            panel4.Controls.Add(MenuSelectionComboBox);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(label4);
             panel4.Dock = DockStyle.Top;
@@ -420,16 +426,17 @@
             panel4.Size = new Size(1123, 49);
             panel4.TabIndex = 8;
             // 
-            // comboBox1
+            // MenuSelectionComboBox
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Jogadores", "Mapas" });
-            comboBox1.Location = new Point(116, 12);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(135, 29);
-            comboBox1.TabIndex = 6;
+            MenuSelectionComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            MenuSelectionComboBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MenuSelectionComboBox.FormattingEnabled = true;
+            MenuSelectionComboBox.Items.AddRange(new object[] { "Jogadores", "Mapas" });
+            MenuSelectionComboBox.Location = new Point(116, 12);
+            MenuSelectionComboBox.Name = "MenuSelectionComboBox";
+            MenuSelectionComboBox.Size = new Size(135, 29);
+            MenuSelectionComboBox.TabIndex = 6;
+            MenuSelectionComboBox.SelectedIndexChanged += MenuSelectionComboBox_SelectedIndexChanged;
             // 
             // PlayersPanelControl
             // 
@@ -442,6 +449,49 @@
             PlayersPanelControl.Size = new Size(836, 516);
             PlayersPanelControl.TabIndex = 9;
             // 
+            // MapsPanelControl
+            // 
+            MapsPanelControl.BackColor = Color.Transparent;
+            MapsPanelControl.Controls.Add(panel6);
+            MapsPanelControl.Controls.Add(dataGridViewMaps);
+            MapsPanelControl.Location = new Point(9, 53);
+            MapsPanelControl.Name = "MapsPanelControl";
+            MapsPanelControl.Size = new Size(836, 516);
+            MapsPanelControl.TabIndex = 8;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Black;
+            panel6.Location = new Point(465, 2);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(374, 477);
+            panel6.TabIndex = 3;
+            // 
+            // dataGridViewMaps
+            // 
+            dataGridViewMaps.AllowUserToAddRows = false;
+            dataGridViewMaps.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewMaps.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
+            dataGridViewMaps.BackgroundColor = Color.Black;
+            dataGridViewMaps.BorderStyle = BorderStyle.None;
+            dataGridViewMaps.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewMaps.Location = new Point(3, 3);
+            dataGridViewMaps.MultiSelect = false;
+            dataGridViewMaps.Name = "dataGridViewMaps";
+            dataGridViewMaps.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridViewMaps.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewMaps.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewMaps.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewMaps.Size = new Size(456, 476);
+            dataGridViewMaps.TabIndex = 2;
+            // 
             // AdminPanelForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -449,9 +499,10 @@
             BackgroundImage = Properties.Resources.admin_bg;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1123, 574);
-            Controls.Add(PlayersPanelControl);
             Controls.Add(panel4);
             Controls.Add(panel2);
+            Controls.Add(MapsPanelControl);
+            Controls.Add(PlayersPanelControl);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -472,6 +523,8 @@
             panel4.PerformLayout();
             PlayersPanelControl.ResumeLayout(false);
             PlayersPanelControl.PerformLayout();
+            MapsPanelControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).EndInit();
             ResumeLayout(false);
         }
 
@@ -504,6 +557,9 @@
         private Panel PlayersPanelControl;
         private Panel panel5;
         private Label label5;
-        private ComboBox comboBox1;
+        private ComboBox MenuSelectionComboBox;
+        private Panel MapsPanelControl;
+        private DataGridView dataGridViewMaps;
+        private Panel panel6;
     }
 }

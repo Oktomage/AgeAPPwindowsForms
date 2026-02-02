@@ -12,6 +12,7 @@ namespace AgeAPP.Forms
         // Local data
         private Player selectedPlayer = null;
         private List<Player> allPlayers = new List<Player>();
+        private List<Map> allMaps = new List<Map>();
 
         public AdminPanelForm(FiresharpData data_service)
         {
@@ -22,6 +23,9 @@ namespace AgeAPP.Forms
         private async void AdminPanelForm_Load(object sender, EventArgs e)
         {
             // Atualiza a tabela inicial
+            MenuSelectionComboBox.SelectedIndex = 0;
+            Switch_visible_layouts();
+
             await UpdateLocalData();
 
             FavoriteMapListBox.DrawMode = DrawMode.OwnerDrawFixed;
@@ -46,8 +50,10 @@ namespace AgeAPP.Forms
         {
             // Get updated data
             allPlayers = await local_Data_service.GetAllPlayers();
+            allMaps = await local_Data_service.GetAllMaps();
 
             UpdateDataGridViewPlayers();
+            UpdataDataGridViewMaps();
         }
 
         private void UpdateDataGridViewPlayers()
@@ -88,6 +94,38 @@ namespace AgeAPP.Forms
                     }
                 }
             }
+        }
+
+        private void UpdataDataGridViewMaps()
+        {
+            dataGridViewMaps.DataSource = null;
+            dataGridViewMaps.DataSource = allMaps;
+
+            GridStyleController.FixMapsHeaderNames(dataGridViewMaps);
+            GridStyleController.ApplyMapTypeFormatting(dataGridViewMaps);
+
+            GridStyleController.ApplyTheme(dataGridViewMaps);
+        }
+
+        private void Switch_visible_layouts()
+        {
+            switch (MenuSelectionComboBox.SelectedIndex)
+            {
+                case 0: // Players
+                    PlayersPanelControl.Visible = true;
+                    MapsPanelControl.Visible = false;
+                    break;
+
+                case 1: // Maps
+                    PlayersPanelControl.Visible = false;
+                    MapsPanelControl.Visible = true;
+                    break;
+            }
+        }
+
+        private void MenuSelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Switch_visible_layouts();
         }
 
         #region PANEL BUTTONS
@@ -271,5 +309,6 @@ namespace AgeAPP.Forms
         }
 
         #endregion
+
     }
 }

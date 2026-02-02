@@ -1,7 +1,5 @@
-﻿using AgeAPP.Properties;
-using System.Collections;
+﻿using System.Collections;
 using System.Globalization;
-using System.Reflection;
 using static AgeAPP.Classes.FiresharpData;
 using static AgeAPP.Classes.Main_classes;
 
