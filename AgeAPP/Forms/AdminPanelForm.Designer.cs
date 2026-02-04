@@ -62,6 +62,12 @@
             PlayersPanelControl = new Panel();
             MapsPanelControl = new Panel();
             panel6 = new Panel();
+            panel7 = new Panel();
+            DeleteSelectedMapButton = new Button();
+            label6 = new Label();
+            SelectedMapStyleLabel = new Label();
+            SelectedMapNameLabel = new Label();
+            MapPictureBox = new PictureBox();
             dataGridViewMaps = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlayers).BeginInit();
             panel1.SuspendLayout();
@@ -73,6 +79,9 @@
             panel4.SuspendLayout();
             PlayersPanelControl.SuspendLayout();
             MapsPanelControl.SuspendLayout();
+            panel6.SuspendLayout();
+            panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)MapPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).BeginInit();
             SuspendLayout();
             // 
@@ -98,7 +107,7 @@
             dataGridViewPlayers.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewPlayers.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewPlayers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewPlayers.Size = new Size(456, 473);
+            dataGridViewPlayers.Size = new Size(456, 476);
             dataGridViewPlayers.TabIndex = 1;
             dataGridViewPlayers.SelectionChanged += dataGridViewPlayers_SelectionChanged;
             // 
@@ -130,12 +139,12 @@
             panel1.Controls.Add(panel3);
             panel1.Location = new Point(465, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(371, 473);
+            panel1.Size = new Size(371, 476);
             panel1.TabIndex = 3;
             // 
             // panel5
             // 
-            panel5.BackColor = Color.Transparent;
+            panel5.BackColor = Color.FromArgb(64, 64, 64);
             panel5.Controls.Add(DuplicateSelectedPlayerButton);
             panel5.Controls.Add(DeleteSelectedPlayerButton);
             panel5.Location = new Point(3, 400);
@@ -407,7 +416,7 @@
             // FilterPlayerTextBox
             // 
             FilterPlayerTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FilterPlayerTextBox.Location = new Point(3, 482);
+            FilterPlayerTextBox.Location = new Point(3, 485);
             FilterPlayerTextBox.Name = "FilterPlayerTextBox";
             FilterPlayerTextBox.PlaceholderText = "Filtrar jogador ex: Kakashi";
             FilterPlayerTextBox.Size = new Size(200, 25);
@@ -462,10 +471,87 @@
             // panel6
             // 
             panel6.BackColor = Color.Black;
+            panel6.Controls.Add(panel7);
+            panel6.Controls.Add(label6);
+            panel6.Controls.Add(SelectedMapStyleLabel);
+            panel6.Controls.Add(SelectedMapNameLabel);
+            panel6.Controls.Add(MapPictureBox);
             panel6.Location = new Point(465, 2);
             panel6.Name = "panel6";
             panel6.Size = new Size(374, 477);
             panel6.TabIndex = 3;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(64, 64, 64);
+            panel7.Controls.Add(DeleteSelectedMapButton);
+            panel7.Location = new Point(3, 401);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(365, 66);
+            panel7.TabIndex = 10;
+            // 
+            // DeleteSelectedMapButton
+            // 
+            DeleteSelectedMapButton.BackColor = Color.Transparent;
+            DeleteSelectedMapButton.BackgroundImage = Properties.Resources.Kill_icon;
+            DeleteSelectedMapButton.BackgroundImageLayout = ImageLayout.Stretch;
+            DeleteSelectedMapButton.Cursor = Cursors.Hand;
+            DeleteSelectedMapButton.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DeleteSelectedMapButton.Location = new Point(301, 5);
+            DeleteSelectedMapButton.Name = "DeleteSelectedMapButton";
+            DeleteSelectedMapButton.Size = new Size(61, 58);
+            DeleteSelectedMapButton.TabIndex = 4;
+            DeleteSelectedMapButton.UseVisualStyleBackColor = false;
+            DeleteSelectedMapButton.Click += DeleteSelectedMapButton_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Black;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = SystemColors.Control;
+            label6.Location = new Point(7, 377);
+            label6.Name = "label6";
+            label6.Size = new Size(88, 21);
+            label6.TabIndex = 9;
+            label6.Text = "Comandos:";
+            // 
+            // SelectedMapStyleLabel
+            // 
+            SelectedMapStyleLabel.AutoSize = true;
+            SelectedMapStyleLabel.BackColor = Color.Black;
+            SelectedMapStyleLabel.Cursor = Cursors.Hand;
+            SelectedMapStyleLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SelectedMapStyleLabel.ForeColor = SystemColors.Control;
+            SelectedMapStyleLabel.Location = new Point(132, 48);
+            SelectedMapStyleLabel.Name = "SelectedMapStyleLabel";
+            SelectedMapStyleLabel.Size = new Size(114, 21);
+            SelectedMapStyleLabel.TabIndex = 3;
+            SelectedMapStyleLabel.Text = "Estilo: Nomade";
+            // 
+            // SelectedMapNameLabel
+            // 
+            SelectedMapNameLabel.AutoSize = true;
+            SelectedMapNameLabel.BackColor = Color.Black;
+            SelectedMapNameLabel.Cursor = Cursors.Hand;
+            SelectedMapNameLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SelectedMapNameLabel.ForeColor = SystemColors.Control;
+            SelectedMapNameLabel.Location = new Point(132, 13);
+            SelectedMapNameLabel.Name = "SelectedMapNameLabel";
+            SelectedMapNameLabel.Size = new Size(184, 32);
+            SelectedMapNameLabel.TabIndex = 3;
+            SelectedMapNameLabel.Text = "Clareira africana";
+            // 
+            // MapPictureBox
+            // 
+            MapPictureBox.BackColor = Color.FromArgb(64, 64, 64);
+            MapPictureBox.BackgroundImage = Properties.Resources.UnkownMap;
+            MapPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            MapPictureBox.Location = new Point(12, 13);
+            MapPictureBox.Name = "MapPictureBox";
+            MapPictureBox.Size = new Size(114, 102);
+            MapPictureBox.TabIndex = 0;
+            MapPictureBox.TabStop = false;
             // 
             // dataGridViewMaps
             // 
@@ -491,6 +577,7 @@
             dataGridViewMaps.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewMaps.Size = new Size(456, 476);
             dataGridViewMaps.TabIndex = 2;
+            dataGridViewMaps.SelectionChanged += dataGridViewMaps_SelectionChanged;
             // 
             // AdminPanelForm
             // 
@@ -524,6 +611,10 @@
             PlayersPanelControl.ResumeLayout(false);
             PlayersPanelControl.PerformLayout();
             MapsPanelControl.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)MapPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMaps).EndInit();
             ResumeLayout(false);
         }
@@ -561,5 +652,11 @@
         private Panel MapsPanelControl;
         private DataGridView dataGridViewMaps;
         private Panel panel6;
+        private PictureBox MapPictureBox;
+        private Label SelectedMapNameLabel;
+        private Label SelectedMapStyleLabel;
+        private Panel panel7;
+        private Button DeleteSelectedMapButton;
+        private Label label6;
     }
 }

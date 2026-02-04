@@ -11,6 +11,7 @@ namespace AgeAPP.Forms
 
         // Local data
         private Player selectedPlayer = null;
+        private Map selectedMap = null;
         private List<Player> allPlayers = new List<Player>();
         private List<Map> allMaps = new List<Map>();
 
@@ -105,6 +106,22 @@ namespace AgeAPP.Forms
             GridStyleController.ApplyMapTypeFormatting(dataGridViewMaps);
 
             GridStyleController.ApplyTheme(dataGridViewMaps);
+        }
+
+        private void dataGridViewMaps_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridViewMaps.SelectedRows.Count == 0)
+                return;
+
+            selectedMap = dataGridViewMaps.SelectedRows[0].DataBoundItem as Map;
+
+            // Mostra dados do mapa no painel
+            if (selectedMap != null)
+            {
+                SelectedMapNameLabel.Text = $"{selectedMap.Name}";
+                SelectedMapStyleLabel.Text = $"Estilo: {Main_classes.GetMapTypeName(selectedMap.Type)}";
+                MapPictureBox.BackgroundImage = MainFunctions.MapImageDictionary.Get(selectedMap.Name);
+            }
         }
 
         private void Switch_visible_layouts()
@@ -286,6 +303,31 @@ namespace AgeAPP.Forms
             {
                 await UpdateLocalData();
             }
+        }
+
+        #endregion
+
+        #region MAP PANEL BUTTONS
+
+        private async void DeleteSelectedMapButton_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show($"Tem certeza que deseja excluir o mapa {selectedMap.Name} ? \nEssa ação não pode ser desfeita.", "Confirmar exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result != DialogResult.Yes)
+                return;
+
+            // Deleta o mapa
+            /*
+            await local_Data_service.Delete_player(selectedPlayer);
+            await local_Data_service.Post_log_on_dataBase(new Log
+            {
+                Author_name = local_Data_service.LocalAccount.Username,
+                Role = "Player_changes",
+                Date = DateTime.Now.ToString(),
+                Content = $"Deletou o jogador: {selectedPlayer.Name}"
+            });*/
+
+            await UpdateLocalData();
         }
 
         #endregion
