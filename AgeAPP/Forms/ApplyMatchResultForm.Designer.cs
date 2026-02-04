@@ -58,9 +58,9 @@
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(185, 32);
+            label1.Size = new Size(184, 32);
             label1.TabIndex = 4;
-            label1.Text = "Pré-vizualização";
+            label1.Text = "Pré-visualização";
             // 
             // pictureBox2
             // 

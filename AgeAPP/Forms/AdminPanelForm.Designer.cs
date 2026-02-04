@@ -65,6 +65,7 @@
             panel7 = new Panel();
             DeleteSelectedMapButton = new Button();
             label6 = new Label();
+            SelectedMapMatchesLabel = new Label();
             SelectedMapStyleLabel = new Label();
             SelectedMapNameLabel = new Label();
             MapPictureBox = new PictureBox();
@@ -116,11 +117,11 @@
             SelectedPlayerLabel.AutoSize = true;
             SelectedPlayerLabel.BackColor = Color.Black;
             SelectedPlayerLabel.Cursor = Cursors.Hand;
-            SelectedPlayerLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SelectedPlayerLabel.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SelectedPlayerLabel.ForeColor = SystemColors.Control;
             SelectedPlayerLabel.Location = new Point(72, 12);
             SelectedPlayerLabel.Name = "SelectedPlayerLabel";
-            SelectedPlayerLabel.Size = new Size(80, 32);
+            SelectedPlayerLabel.Size = new Size(83, 32);
             SelectedPlayerLabel.TabIndex = 2;
             SelectedPlayerLabel.Text = "Nome";
             SelectedPlayerLabel.Click += SelectedPlayerLabel_Click;
@@ -473,6 +474,7 @@
             panel6.BackColor = Color.Black;
             panel6.Controls.Add(panel7);
             panel6.Controls.Add(label6);
+            panel6.Controls.Add(SelectedMapMatchesLabel);
             panel6.Controls.Add(SelectedMapStyleLabel);
             panel6.Controls.Add(SelectedMapNameLabel);
             panel6.Controls.Add(MapPictureBox);
@@ -516,6 +518,19 @@
             label6.TabIndex = 9;
             label6.Text = "Comandos:";
             // 
+            // SelectedMapMatchesLabel
+            // 
+            SelectedMapMatchesLabel.AutoSize = true;
+            SelectedMapMatchesLabel.BackColor = Color.Black;
+            SelectedMapMatchesLabel.Cursor = Cursors.Hand;
+            SelectedMapMatchesLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SelectedMapMatchesLabel.ForeColor = SystemColors.Control;
+            SelectedMapMatchesLabel.Location = new Point(132, 74);
+            SelectedMapMatchesLabel.Name = "SelectedMapMatchesLabel";
+            SelectedMapMatchesLabel.Size = new Size(148, 21);
+            SelectedMapMatchesLabel.TabIndex = 3;
+            SelectedMapMatchesLabel.Text = "Total de partidas: 99";
+            // 
             // SelectedMapStyleLabel
             // 
             SelectedMapStyleLabel.AutoSize = true;
@@ -534,11 +549,11 @@
             SelectedMapNameLabel.AutoSize = true;
             SelectedMapNameLabel.BackColor = Color.Black;
             SelectedMapNameLabel.Cursor = Cursors.Hand;
-            SelectedMapNameLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SelectedMapNameLabel.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SelectedMapNameLabel.ForeColor = SystemColors.Control;
             SelectedMapNameLabel.Location = new Point(132, 13);
             SelectedMapNameLabel.Name = "SelectedMapNameLabel";
-            SelectedMapNameLabel.Size = new Size(184, 32);
+            SelectedMapNameLabel.Size = new Size(201, 32);
             SelectedMapNameLabel.TabIndex = 3;
             SelectedMapNameLabel.Text = "Clareira africana";
             // 
@@ -588,8 +603,8 @@
             ClientSize = new Size(1123, 574);
             Controls.Add(panel4);
             Controls.Add(panel2);
-            Controls.Add(MapsPanelControl);
             Controls.Add(PlayersPanelControl);
+            Controls.Add(MapsPanelControl);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -658,5 +673,6 @@
         private Panel panel7;
         private Button DeleteSelectedMapButton;
         private Label label6;
+        private Label SelectedMapMatchesLabel;
     }
 }

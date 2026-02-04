@@ -120,6 +120,7 @@ namespace AgeAPP.Forms
             {
                 SelectedMapNameLabel.Text = $"{selectedMap.Name}";
                 SelectedMapStyleLabel.Text = $"Estilo: {Main_classes.GetMapTypeName(selectedMap.Type)}";
+                SelectedMapMatchesLabel.Text = $"Total de partidas: {selectedMap.Matches}";
                 MapPictureBox.BackgroundImage = MainFunctions.MapImageDictionary.Get(selectedMap.Name);
             }
         }
@@ -317,15 +318,15 @@ namespace AgeAPP.Forms
                 return;
 
             // Deleta o mapa
-            /*
-            await local_Data_service.Delete_player(selectedPlayer);
+            
+            await local_Data_service.Delete_map(selectedMap);
             await local_Data_service.Post_log_on_dataBase(new Log
             {
                 Author_name = local_Data_service.LocalAccount.Username,
-                Role = "Player_changes",
+                Role = "Map_changes",
                 Date = DateTime.Now.ToString(),
-                Content = $"Deletou o jogador: {selectedPlayer.Name}"
-            });*/
+                Content = $"Deletou o mapa: {selectedMap.Name}"
+            });
 
             await UpdateLocalData();
         }

@@ -562,4 +562,28 @@
   <data name="rm_ghost-lake" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Map_icons\rm_ghost-lake.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rm_nile-delta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_nile-delta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_dunesprings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_dunesprings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_fortified_clearing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_fortified_clearing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_shoals" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_shoals.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_cliffbound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_cliffbound.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_archipelago" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_archipelago.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_qs_arabia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_qs_arabia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rm_runestones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Map_icons\rm_runestones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

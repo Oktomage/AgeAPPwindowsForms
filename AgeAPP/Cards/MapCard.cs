@@ -18,10 +18,10 @@ namespace AgeAPP.Cards
             MapNameLabel.Text = map.Name;
 
             // Tipo
-            MapStyleLabel.Text = GetMapTypeName(map.Type);
+            MapStyleLabel.Text = $"Estilo: {GetMapTypeName(map.Type)}";
 
             // Partidas
-            MapMatchesLabel.Text = $"Partidas: {map.Matches}";
+            MapMatchesLabel.Text = $"Total de partidas: {map.Matches}";
 
             // Imagem
             MapPictureBox.BackgroundImage = MapImageDictionary.Get(map.Name);

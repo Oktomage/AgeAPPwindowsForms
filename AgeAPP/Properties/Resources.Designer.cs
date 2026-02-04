@@ -1103,6 +1103,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rm_archipelago {
+            get {
+                object obj = ResourceManager.GetObject("rm_archipelago", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rm_arena {
             get {
                 object obj = ResourceManager.GetObject("rm_arena", resourceCulture);
@@ -1143,6 +1153,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rm_cliffbound {
+            get {
+                object obj = ResourceManager.GetObject("rm_cliffbound", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rm_coastal {
             get {
                 object obj = ResourceManager.GetObject("rm_coastal", resourceCulture);
@@ -1163,9 +1183,29 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rm_dunesprings {
+            get {
+                object obj = ResourceManager.GetObject("rm_dunesprings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rm_enclosed {
             get {
                 object obj = ResourceManager.GetObject("rm_enclosed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rm_fortified_clearing {
+            get {
+                object obj = ResourceManager.GetObject("rm_fortified_clearing", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1363,6 +1403,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rm_nile_delta {
+            get {
+                object obj = ResourceManager.GetObject("rm_nile-delta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rm_nomad {
             get {
                 object obj = ResourceManager.GetObject("rm_nomad", resourceCulture);
@@ -1383,6 +1433,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rm_qs_arabia {
+            get {
+                object obj = ResourceManager.GetObject("rm_qs_arabia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rm_qs_runestones {
             get {
                 object obj = ResourceManager.GetObject("rm_qs_runestones", resourceCulture);
@@ -1393,9 +1453,29 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rm_runestones {
+            get {
+                object obj = ResourceManager.GetObject("rm_runestones", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rm_scandinavia {
             get {
                 object obj = ResourceManager.GetObject("rm_scandinavia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rm_shoals {
+            get {
+                object obj = ResourceManager.GetObject("rm_shoals", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
