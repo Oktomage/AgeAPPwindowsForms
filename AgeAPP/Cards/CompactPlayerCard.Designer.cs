@@ -33,7 +33,9 @@
             AvatarPictureBox = new PictureBox();
             LeaderboardRankLabel = new Label();
             panel1 = new Panel();
+            GraphButton = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)AvatarPictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)GraphButton).BeginInit();
             SuspendLayout();
             // 
             // PlayerRatingLabel
@@ -41,7 +43,7 @@
             PlayerRatingLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             PlayerRatingLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PlayerRatingLabel.ForeColor = SystemColors.Control;
-            PlayerRatingLabel.Location = new Point(661, 4);
+            PlayerRatingLabel.Location = new Point(608, 5);
             PlayerRatingLabel.Name = "PlayerRatingLabel";
             PlayerRatingLabel.Size = new Size(76, 29);
             PlayerRatingLabel.TabIndex = 10;
@@ -88,6 +90,17 @@
             panel1.Size = new Size(5, 40);
             panel1.TabIndex = 14;
             // 
+            // GraphButton
+            // 
+            GraphButton.BackgroundImage = Properties.Resources.Graph_icon;
+            GraphButton.BackgroundImageLayout = ImageLayout.Stretch;
+            GraphButton.Cursor = Cursors.Hand;
+            GraphButton.Location = new Point(690, 5);
+            GraphButton.Name = "GraphButton";
+            GraphButton.Size = new Size(36, 30);
+            GraphButton.TabIndex = 8;
+            GraphButton.TabStop = false;
+            // 
             // CompactPlayerCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -97,11 +110,13 @@
             Controls.Add(LeaderboardRankLabel);
             Controls.Add(PlayerRatingLabel);
             Controls.Add(PlayerNameLabel);
+            Controls.Add(GraphButton);
             Controls.Add(AvatarPictureBox);
             Margin = new Padding(3, 3, 3, 6);
             Name = "CompactPlayerCard";
             Size = new Size(740, 40);
             ((System.ComponentModel.ISupportInitialize)AvatarPictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)GraphButton).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -113,5 +128,6 @@
         private PictureBox AvatarPictureBox;
         private Label LeaderboardRankLabel;
         private Panel panel1;
+        private PictureBox GraphButton;
     }
 }

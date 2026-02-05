@@ -263,6 +263,16 @@ namespace AgeAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Graph_icon {
+            get {
+                object obj = ResourceManager.GetObject("Graph_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Hand_icon {
             get {
                 object obj = ResourceManager.GetObject("Hand_icon", resourceCulture);
