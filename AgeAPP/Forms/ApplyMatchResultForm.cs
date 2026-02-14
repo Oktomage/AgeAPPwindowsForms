@@ -304,7 +304,7 @@ namespace AgeAPP.Forms
                 await local_Data_service.Overwrite_player(player);
 
             // Aplicar mudanças no mapa
-            Map played_map = await local_Data_service.Get_map(match_result.PlayedMap_name);
+            Map played_map = await local_Data_service.Get_map(match_result.PlayedMap_name.ToLower());
             played_map.Matches += 1;
 
             await local_Data_service.Overwrite_map(played_map);

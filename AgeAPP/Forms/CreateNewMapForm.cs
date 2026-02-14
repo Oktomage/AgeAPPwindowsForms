@@ -33,7 +33,7 @@ namespace AgeAPP.Forms
 
             var newMap = new Map
             {
-                Name = TextBoxMapName.Text,
+                Name = TextBoxMapName.Text.ToLower(),
                 Matches = 0,
                 Type = MapTypeComboBox.SelectedIndex,
             };
