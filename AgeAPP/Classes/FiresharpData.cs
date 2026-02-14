@@ -157,6 +157,19 @@ namespace AgeAPP.Classes
             // Salvar o JSON formatado no arquivo
             File.WriteAllText(backupFilePath, formattedJson);
         }
+        
+        public async Task Create_account(string username, string password, bool isAdmin)
+        {
+            var newAccount = new Account
+            {
+                Username = username,
+                Password = password,
+                IsAdmin = isAdmin,
+                Last_sessionDate = DateTime.Now.ToString("dd/MM/yyyy HH:mm")
+            };
+
+            await client.SetAsync($"accounts/{username.ToLower()}", newAccount);
+        }
 
         // PLAYERS
 
