@@ -11,7 +11,7 @@ namespace AgeAPP
     public partial class FMain : Form
     {
         // Serviços
-        public static FiresharpData Data_service = new FiresharpData();
+        public static FiresharpData Data_service;
         public static AgeApp_settings AgeApp_settings_service = new AgeApp_settings();
         private MainFunctions local_Main_functions_service = new MainFunctions();
         private Main_classes local_Main_classes = new Main_classes();
@@ -217,6 +217,8 @@ namespace AgeAPP
 
         private void SplitButton_Click(object sender, EventArgs e)
         {
+            throw new Exception("TESTE DE CRASH CONTROLADO");
+
             SplitForm splitForm = new SplitForm(Data_service);
             splitForm.ShowDialog();
         }

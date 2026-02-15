@@ -326,5 +326,19 @@ namespace AgeAPP.Classes
                 .Take(100)
                 .ToList();
         }
+
+        // CRASHES
+
+        public async Task Post_crashLog_on_dataBase(CrashLog crashlog)
+        {
+            try
+            {
+                await client.PushAsync("crash_logs", crashlog);
+            }
+            catch
+            {
+                // Silencioso por segurança
+            }
+        }
     }
 }

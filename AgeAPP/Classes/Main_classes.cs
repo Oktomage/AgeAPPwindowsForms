@@ -103,5 +103,14 @@ namespace AgeAPP.Classes
         {
             public string ChangeLogs { get; set; }
         }
+
+        public class CrashLog
+        {
+            public string Username { get; set; }
+            public string Message { get; set; }
+            public string StackTrace { get; set; }
+            public string Version { get; set; }
+            public string Date { get; set; }
+        }
     }
 }

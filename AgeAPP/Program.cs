@@ -1,3 +1,5 @@
+using AgeAPP.Classes;
+
 namespace AgeAPP
 {
     internal static class Program
@@ -8,9 +10,24 @@ namespace AgeAPP
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+
+            var dataService = new FiresharpData();
+            FMain.Data_service = dataService;
+
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+
+            Application.ThreadException += async (sender, args) =>
+            {
+                await GlobalCrashHandler.HandleAsync(args.Exception, dataService);
+            };
+
+            AppDomain.CurrentDomain.UnhandledException += async (sender, args) =>
+            {
+                if (args.ExceptionObject is Exception ex)
+                    await GlobalCrashHandler.HandleAsync(ex, dataService);
+            };
+
             Application.Run(new FMain());
         }
     }
