@@ -100,6 +100,7 @@
             GraphButton.Size = new Size(36, 30);
             GraphButton.TabIndex = 8;
             GraphButton.TabStop = false;
+            GraphButton.Click += GraphButton_Click;
             // 
             // CompactPlayerCard
             // 

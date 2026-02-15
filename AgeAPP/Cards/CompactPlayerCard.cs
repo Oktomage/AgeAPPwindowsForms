@@ -1,4 +1,5 @@
 ﻿using AgeAPP.Classes;
+using AgeAPP.Forms;
 using static AgeAPP.Classes.Main_classes;
 using static AgeAPP.Styles.CSS;
 
@@ -6,6 +7,8 @@ namespace AgeAPP.Cards
 {
     public partial class CompactPlayerCard : UserControl
     {
+        private Player BindedPlayer;
+
         public CompactPlayerCard()
         {
             InitializeComponent();
@@ -14,6 +17,8 @@ namespace AgeAPP.Cards
 
         public void Bind(Player player, int rank)
         {
+            BindedPlayer = player;
+
             // Nome
             PlayerNameLabel.Text = player.Name;
 
@@ -44,6 +49,15 @@ namespace AgeAPP.Cards
 
             // Avatar
             AvatarPictureBox.BackgroundImage = MainFunctions.LoadAvatar(player.AvatarId);
+        }
+
+        private void GraphButton_Click(object sender, EventArgs e)
+        {
+            if (BindedPlayer == null)
+                return;
+
+            AnalyzePlayerForm form = new AnalyzePlayerForm(BindedPlayer);
+            form.ShowDialog();
         }
     }
 }
