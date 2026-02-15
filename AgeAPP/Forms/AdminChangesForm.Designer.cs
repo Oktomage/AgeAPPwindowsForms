@@ -57,7 +57,7 @@
             MaximizeBox = false;
             Name = "AdminChangesForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Histórico ADMIN";
+            Text = "Histórico administrativo";
             Load += AdminChangesForm_Load;
             ResumeLayout(false);
         }

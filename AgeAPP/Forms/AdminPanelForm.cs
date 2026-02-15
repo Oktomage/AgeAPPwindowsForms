@@ -212,13 +212,28 @@ namespace AgeAPP.Forms
             if (result != DialogResult.Yes)
                 return;
 
-            await local_Data_service.Overwrite_playerData(selectedPlayer, "Rating", int.Parse(SelectedPlayerRatingTextBox.Text));
+            int oldRating = selectedPlayer.Rating;
+            int newRating = int.Parse(SelectedPlayerRatingTextBox.Text);
+
+            // Validação
+            if(newRating == oldRating)
+            {
+                MessageBox.Show("O rating não pode ser igual ao anterior.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (newRating < 0)
+            {
+                MessageBox.Show("O rating não pode ser negativo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            await local_Data_service.Overwrite_playerData(selectedPlayer, "Rating", newRating);
             await local_Data_service.Post_log_on_dataBase(new Log
             {
                 Author_name = local_Data_service.LocalAccount.Username,
                 Role = "Player_changes",
                 Date = DateTime.Now.ToString(),
-                Content = $"Alterou o rating do jogador {selectedPlayer.Name} para {SelectedPlayerRatingTextBox.Text}"
+                Content = $"Alterou o rating do jogador {selectedPlayer.Name} => de ({oldRating}) para ({newRating})"
             });
 
             await UpdateLocalData();

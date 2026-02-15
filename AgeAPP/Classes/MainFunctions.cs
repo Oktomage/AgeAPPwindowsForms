@@ -492,6 +492,9 @@ namespace AgeAPP.Classes
                 { "arquipelago", Properties.Resources.rm_archipelago },
                 { "QS arabia", Properties.Resources.rm_qs_arabia },
                 { "QS pedras runicas", Properties.Resources.rm_qs_runestones },
+                { "pedreira de dorotheia", Properties.Resources.rm_dorothea_quarry },
+                { "lago ness", Properties.Resources.rm_loch_ness },
+                { "brejo", Properties.Resources.rm_bogland },
                 { "unknown", Properties.Resources.UnkownMap },
                 };
 

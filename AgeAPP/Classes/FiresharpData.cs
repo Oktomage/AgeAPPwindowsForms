@@ -311,7 +311,7 @@ namespace AgeAPP.Classes
 
             foreach (var admin in admins)
             {
-                foreach (var role in new[] { "Player_changes", "Map_changes" })
+                foreach (var role in new[] { "Player_changes", "Map_changes", "Match_results", "Split_changes" })
                 {
                     var res = await client.GetAsync($"logs/{admin}/{role}");
                     if (res.Body == "null") continue;

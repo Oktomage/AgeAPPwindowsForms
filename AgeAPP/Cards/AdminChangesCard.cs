@@ -24,13 +24,18 @@ namespace AgeAPP.Cards
                     break;
 
                 case "Map_changes":
-                    ChangeIconPictureBox.BackgroundImage = Properties.Resources.UnkownMap;
+                    ChangeIconPictureBox.BackgroundImage = Properties.Resources.rm_arabia;
                     ChangeTitleLabel.Text = "Alteração de mapa";
                     break;
 
                 case "Match_results":
-                    ChangeIconPictureBox.BackgroundImage = Properties.Resources.UnkownMap;
+                    ChangeIconPictureBox.BackgroundImage = Properties.Resources.Bell_icon;
                     ChangeTitleLabel.Text = "Resultado de partida";
+                    break;
+
+                case "Split_changes":
+                    ChangeIconPictureBox.BackgroundImage = Properties.Resources.Agressive_instance_icon;
+                    ChangeTitleLabel.Text = "Split de times";
                     break;
 
                 default:

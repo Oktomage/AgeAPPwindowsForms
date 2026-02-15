@@ -137,6 +137,17 @@ namespace AgeAPP.Forms
             // Salvar log
             current_log = Request_save_splitLog(teamA, teamB, selectedMap);
 
+            if(local_Data_service.LocalAccount != null)
+            {
+                await local_Data_service.Post_log_on_dataBase(new Log
+                {
+                    Author_name = local_Data_service.LocalAccount.Username,
+                    Role = "Split_changes",
+                    Date = DateTime.Now.ToString(),
+                    Content = $"Criou um novo split."
+                });
+            }
+
             System.Media.SystemSounds.Exclamation.Play();
         }
 
