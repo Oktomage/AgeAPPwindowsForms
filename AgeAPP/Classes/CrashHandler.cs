@@ -1,30 +1,15 @@
-﻿using static AgeAPP.Classes.Main_classes;
+﻿using System.Diagnostics;
+using static AgeAPP.Classes.Main_classes;
 
 namespace AgeAPP.Classes
 {
     public static class GlobalCrashHandler
     {
-        private static bool _handling;
-
-        public static async Task HandleAsync(Exception ex, FiresharpData dataService)
+        public static void Handle(Exception ex, FiresharpData dataService)
         {
-            if (_handling) return;
-            _handling = true;
-
             try
             {
-                if (dataService != null)
-                {
-                    await dataService.Post_crashLog_on_dataBase(new CrashLog
-                    {
-                        Username = dataService.LocalAccount?.Username ?? "unidentified",
-                        Message = ex.Message,
-                        StackTrace = ex.ToString(),
-                        Version = Application.ProductVersion,
-                        Date = DateTime.UtcNow.ToString("dd-MM-yyyy HH:mm:ss")
-                    });
-                }
-
+                // Mostra mensagem imediatamente (UI thread livre)
                 MessageBox.Show(
                     "Ops... ocorreu um erro inesperado.\n\n" +
                     "O erro foi enviado automaticamente para análise.\n" +
@@ -32,20 +17,31 @@ namespace AgeAPP.Classes
                     "Erro inesperado",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-            }
-            catch
-            {
-                // silêncio absoluto
-            }
-            finally
-            {
-                _handling = false;
 
-                // pequena espera para garantir envio
-                await Task.Delay(1000);
-
-                Environment.Exit(1);
+                // Envia log em background e espera terminar
+                Task.Run(async () =>
+                {
+                    try
+                    {
+                        if (dataService != null)
+                        {
+                            await dataService.Post_crashLog_on_dataBase(new CrashLog
+                            {
+                                Username = dataService.LocalAccount?.Username ?? "unidentified",
+                                Message = ex.Message,
+                                StackTrace = ex.ToString(),
+                                Version = Main_classes.Local_app_Version,
+                                Date = DateTime.UtcNow.ToString("dd/MM/yyyy HH:mm:ss")
+                            });
+                        }
+                    }
+                    catch { }
+                }).GetAwaiter().GetResult();
             }
+            catch { }
+
+            Environment.Exit(1);
+            Process.GetCurrentProcess().Kill();
         }
     }
 }

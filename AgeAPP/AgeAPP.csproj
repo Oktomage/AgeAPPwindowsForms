@@ -7,13 +7,6 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>Img\AgeappIcon2.ico</ApplicationIcon>
-	  
-	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
-	<PublishSingleFile>true</PublishSingleFile>
-	<SelfContained>true</SelfContained>
-	<PublishTrimmed>false</PublishTrimmed>
-	<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
-	<DebugType>none</DebugType>
   </PropertyGroup>
 
   <ItemGroup>

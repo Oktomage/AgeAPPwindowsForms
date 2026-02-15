@@ -15,17 +15,18 @@ namespace AgeAPP
             var dataService = new FiresharpData();
             FMain.Data_service = dataService;
 
+
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
 
-            Application.ThreadException += async (sender, args) =>
+            Application.ThreadException += (sender, args) =>
             {
-                await GlobalCrashHandler.HandleAsync(args.Exception, dataService);
+                GlobalCrashHandler.Handle(args.Exception, dataService);
             };
 
-            AppDomain.CurrentDomain.UnhandledException += async (sender, args) =>
+            AppDomain.CurrentDomain.UnhandledException += (sender, args) =>
             {
                 if (args.ExceptionObject is Exception ex)
-                    await GlobalCrashHandler.HandleAsync(ex, dataService);
+                    GlobalCrashHandler.Handle(ex, dataService);
             };
 
             Application.Run(new FMain());

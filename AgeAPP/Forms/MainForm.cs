@@ -217,8 +217,6 @@ namespace AgeAPP
 
         private void SplitButton_Click(object sender, EventArgs e)
         {
-            throw new Exception("TESTE DE CRASH CONTROLADO");
-
             SplitForm splitForm = new SplitForm(Data_service);
             splitForm.ShowDialog();
         }
