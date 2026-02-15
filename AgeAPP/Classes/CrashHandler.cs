@@ -9,6 +9,11 @@ namespace AgeAPP.Classes
         {
             try
             {
+                // Salvo localmente primeiro
+                MainFunctions newMainFunc = new MainFunctions();
+
+                newMainFunc.Save_crash_log_to_file(ex);
+
                 // Mostra mensagem imediatamente (UI thread livre)
                 MessageBox.Show(
                     "Ops... ocorreu um erro inesperado.\n\n" +

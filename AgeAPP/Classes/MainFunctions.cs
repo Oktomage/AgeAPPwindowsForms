@@ -11,15 +11,21 @@ namespace AgeAPP.Classes
         public string DataFolder_path { get; set; } = Path.Combine(basePath, "Data");
         public string LogsFolder_path { get; set; } = Path.Combine(basePath, "Data", "Logs");
         public string BackupsFolder_path { get; set; } = Path.Combine(basePath, "Data", "Backups");
+        public string CrashLogsFolder_path { get; set; } = Path.Combine(basePath, "Data", "CrashLogs");
 
         public void Create_Required_folders()
         {
-            if(Directory.Exists(DataFolder_path))
-                return;
+            if(!Directory.Exists(DataFolder_path))
+                Directory.CreateDirectory(DataFolder_path);
 
-            Directory.CreateDirectory(DataFolder_path);
-            Directory.CreateDirectory(LogsFolder_path);
-            Directory.CreateDirectory(BackupsFolder_path);
+            if (!Directory.Exists(LogsFolder_path))
+                Directory.CreateDirectory(LogsFolder_path);
+
+            if (!Directory.Exists(BackupsFolder_path))
+                Directory.CreateDirectory(BackupsFolder_path);
+
+            if (!Directory.Exists(CrashLogsFolder_path))
+                Directory.CreateDirectory(CrashLogsFolder_path);
         }
 
         public bool Check_for_updates()
@@ -335,6 +341,19 @@ namespace AgeAPP.Classes
             string json = System.Text.Json.JsonSerializer.Serialize(log, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
 
             File.WriteAllText(logFilePath, json);
+        }
+
+        #endregion
+
+        #region Crash Methods
+
+        public void Save_crash_log_to_file(Exception ex)
+        {
+            string logFileName = $"crash_{DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss")}.txt";
+            string logFilePath = Path.Combine(CrashLogsFolder_path, logFileName);
+            string logContent = $"[{DateTime.Now}] Crash: {ex.Message}\n{ex.StackTrace}";
+
+            File.WriteAllText(logFilePath, logContent);
         }
 
         #endregion
