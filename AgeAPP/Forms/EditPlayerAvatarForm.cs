@@ -50,6 +50,18 @@ namespace AgeAPP.Forms
 
             await local_Data_service.Overwrite_player(currentPlayer);
 
+            if(local_Data_service.LocalAccount != null)
+            {
+                // Publica o log da alteração do avatar
+                await local_Data_service.Post_log_on_dataBase(new Log
+                {
+                    Author_name = local_Data_service.LocalAccount.Username,
+                    Role = "Player_changes",
+                    Date = DateTime.Now.ToString(),
+                    Content = $"Alterou o avatar do jogador: {currentPlayer.Name}"
+                });
+            }
+
             MessageBox.Show("Avatar atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
