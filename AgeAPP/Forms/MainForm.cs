@@ -217,8 +217,6 @@ namespace AgeAPP
 
         private void SplitButton_Click(object sender, EventArgs e)
         {
-            throw new Exception("ERRO PARA TESTE");
-
             SplitForm splitForm = new SplitForm(Data_service);
             splitForm.ShowDialog();
         }
