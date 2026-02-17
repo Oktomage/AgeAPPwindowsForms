@@ -305,7 +305,7 @@ namespace AgeAPP.Classes
                 .ToList();
         }
 
-        public async Task<List<Log>> GetGlobalAdminLogs(List<string> admins)
+        public async Task<List<Log>> GetGlobalAdminLogs(List<string> admins, int maxItems)
         {
             var allLogs = new List<Log>();
 
@@ -323,7 +323,7 @@ namespace AgeAPP.Classes
 
             return allLogs
                 .OrderByDescending(l => DateTime.Parse(l.Date))
-                .Take(100)
+                .Take(maxItems)
                 .ToList();
         }
 

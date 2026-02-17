@@ -299,7 +299,7 @@ namespace AgeAPP
 
         private void ReportBugButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Lembre-se ! Para reportar um bug você deve enviar os detalhes da mensagem de erro, e como ocorreu o bug, e se possivel também o ultimo log gerado !", "Reportar bug", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show("Lembre-se ! Para reportar um bug você deve enviar os detalhes de como o erro aconteceu, e se possivel também o ultimo crashlog gerado ! Ele fica em Data/Crash_logs", "Reportar bug", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         #endregion

@@ -22,12 +22,16 @@ namespace AgeAPP.Forms
 
         private async void AdminChangesForm_Load(object sender, EventArgs e)
         {
+            LoadingLabel.Visible = true;
+
             await Load_history();
+
+            LoadingLabel.Visible = false;
         }
 
         private async Task Load_history()
         {
-            var logs = await local_Data_service.GetGlobalAdminLogs(local_Data_service.Admins_names);
+            var logs = await local_Data_service.GetGlobalAdminLogs(local_Data_service.Admins_names, 10);
 
             FlowLayoutPanel.SuspendLayout();
             FlowLayoutPanel.Controls.Clear();

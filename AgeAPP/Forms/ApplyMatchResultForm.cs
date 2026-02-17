@@ -290,6 +290,7 @@ namespace AgeAPP.Forms
 
             // Desabilita o botão (EVITAR DUPLICAÇÃO)
             ApplyResultButton.Enabled = false;
+            this.ControlBox = false;
 
             var progressTask = FakeProgress();
 
