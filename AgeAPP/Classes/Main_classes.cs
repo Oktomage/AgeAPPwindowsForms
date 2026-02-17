@@ -99,6 +99,12 @@ namespace AgeAPP.Classes
             public DateTime MatchDate { get; set; }
         }
 
+        public class RatingHistory
+        {
+            public DateTime Date { get; set; }
+            public int Rating { get; set; }
+        }
+
         public class Updates
         {
             public string ChangeLogs { get; set; }

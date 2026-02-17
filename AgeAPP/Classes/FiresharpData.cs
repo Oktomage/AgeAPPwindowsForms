@@ -288,7 +288,7 @@ namespace AgeAPP.Classes
                        .ToList();
         }
 
-        public async Task<List<Log>> GetGlobalMatchHistory(List<string> admins)
+        public async Task<List<Log>> GetGlobalMatchHistory(List<string> admins, int maxItems)
         {
             var allLogs = new List<Log>();
 
@@ -301,7 +301,7 @@ namespace AgeAPP.Classes
             return allLogs
                 .Where(l => l.Match_result != null)
                 .OrderByDescending(l => l.Match_result.MatchDate)
-                .Take(30) // LIMITE AQUI
+                .Take(maxItems) // LIMITE AQUI
                 .ToList();
         }
 
@@ -325,6 +325,34 @@ namespace AgeAPP.Classes
                 .OrderByDescending(l => DateTime.Parse(l.Date))
                 .Take(100)
                 .ToList();
+        }
+
+        public async Task<List<RatingHistory>> BuildPlayerRatingHistory(string playerName)
+        {
+            var logs = await GetGlobalMatchHistory(Admins_names, 200);
+
+            var history = new List<RatingHistory>();
+
+            foreach (var log in logs.OrderBy(x => x.Match_result.MatchDate))
+            {
+                var match = log.Match_result;
+
+                var player =
+                    match.TeamA.FirstOrDefault(p => p.Name == playerName)
+                    ??
+                    match.TeamB.FirstOrDefault(p => p.Name == playerName);
+
+                if (player != null)
+                {
+                    history.Add(new RatingHistory
+                    {
+                        Date = match.MatchDate,
+                        Rating = player.Rating
+                    });
+                }
+            }
+
+            return history;
         }
 
         // CRASHES

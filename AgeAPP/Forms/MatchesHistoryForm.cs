@@ -70,7 +70,7 @@ namespace AgeAPP.Forms
             LoadingLabel.Visible = true;
             ListSizeComboBox.Enabled = false;
 
-            var logs = await local_Data_service.GetGlobalMatchHistory(local_Data_service.Admins_names);
+            var logs = await local_Data_service.GetGlobalMatchHistory(local_Data_service.Admins_names, maxItemsToShow);
 
             FlowLayouPanel.SuspendLayout();
             FlowLayouPanel.Controls.Clear();

@@ -30,7 +30,7 @@ namespace AgeAPP.Forms
 
         private void AnalyzePlayerForm_Load(object sender, EventArgs e)
         {
-            LoadRatingChart();
+            ApplyDarkTheme();
             LoadPlayerData();
         }
 
@@ -45,36 +45,61 @@ namespace AgeAPP.Forms
             FormChartPlot.Plot.Grid.MajorLineColor = ScottPlot.Color.FromHex("#1e293b");
         }
 
-        private void LoadRatingChart()
+        private void LoadChart(List<RatingHistory> history)
         {
-            // exemplo (substitua pelos dados do seu Firebase)
-            double[] ratings = { 1000, 1200, 1400, 1350, 1500, 1650, 1600, 1750, 1800 };
+            if (history == null || history.Count == 0)
+                return;
 
-            double[] xs = Enumerable.Range(0, ratings.Length)
-                .Select(x => (double)x)
+            double[] xs = history
+                .Select(x => x.Date.ToOADate())
+                .ToArray();
+
+            double[] ys = history
+                .Select(x => (double)x.Rating)
                 .ToArray();
 
             FormChartPlot.Plot.Clear();
 
-            var line = FormChartPlot.Plot.Add.Scatter(xs, ratings);
+            var line = FormChartPlot.Plot.Add.ScatterLine(xs, ys);
 
-            // cor laranja igual ao gráfico que você mostrou
             line.Color = ScottPlot.Color.FromHex("#f59e0b");
-
             line.LineWidth = 2;
+            line.MarkerSize = 6;
+            line.MarkerShape = ScottPlot.MarkerShape.FilledCircle;
+            line.MarkerFillColor = ScottPlot.Color.FromHex("#f59e0b");
 
-            ApplyDarkTheme();
+            // eixo de tempo real
+            FormChartPlot.Plot.Axes.DateTimeTicksBottom();
+
+            FormChartPlot.Plot.Axes.Bottom.TickGenerator =
+            new ScottPlot.TickGenerators.DateTimeAutomatic
+            {
+                LabelFormatter = dt => dt.ToString("dd/MM")
+            };
+
+            FormChartPlot.Plot.Axes.Bottom.TickLabelStyle.Rotation = 0;
+
+            // Corrige as cores
+            FormChartPlot.Plot.Axes.Bottom.TickLabelStyle.ForeColor = ScottPlot.Color.FromHex("#ffffff");
+            FormChartPlot.Plot.Axes.Left.TickLabelStyle.ForeColor = ScottPlot.Color.FromHex("#ffffff");
+
+            FormChartPlot.Plot.Axes.AutoScale();
 
             FormChartPlot.Refresh();
         }
 
         private async void LoadPlayerData()
         {
-            PlayerNameLabel.Text = CurrentPlayer.Name;
+            LoadingLabel.Visible = true;
+            PlayerNameLabel.Text = $"| Jogador: ({CurrentPlayer.Name})";
 
-            var history = await Data_service.GetPlayerRatingHistory(_player.Name);
+            FormChartPlot.UserInputProcessor.IsEnabled = false;
+
+            var history = await local_Data_service.BuildPlayerRatingHistory(CurrentPlayer.Name);
 
             LoadChart(history);
+
+            LoadingLabel.Visible = false;
         }
     }
 }
