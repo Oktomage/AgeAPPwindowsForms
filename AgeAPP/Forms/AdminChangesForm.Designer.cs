@@ -57,6 +57,7 @@
             ListSizeComboBox.Name = "ListSizeComboBox";
             ListSizeComboBox.Size = new Size(67, 29);
             ListSizeComboBox.TabIndex = 1;
+            ListSizeComboBox.SelectedIndexChanged += ListSizeComboBox_SelectedIndexChanged;
             // 
             // label1
             // 

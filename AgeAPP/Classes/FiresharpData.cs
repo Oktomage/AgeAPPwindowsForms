@@ -3,7 +3,6 @@ using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Newtonsoft.Json;
-using static AgeAPP.Classes.FiresharpData;
 using static AgeAPP.Classes.Main_classes;
 
 namespace AgeAPP.Classes

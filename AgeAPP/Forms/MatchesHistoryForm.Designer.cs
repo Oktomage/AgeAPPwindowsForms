@@ -104,6 +104,7 @@
             ClientSize = new Size(714, 846);
             Controls.Add(panel1);
             Controls.Add(FlowLayouPanel);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;

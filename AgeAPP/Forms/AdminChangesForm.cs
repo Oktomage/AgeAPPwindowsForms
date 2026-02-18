@@ -8,6 +8,8 @@ namespace AgeAPP.Forms
     {
         private FiresharpData local_Data_service;
 
+        private int maxItemsToShow = 10;
+
         public AdminChangesForm(FiresharpData Data_service)
         {
             InitializeComponent();
@@ -22,16 +24,29 @@ namespace AgeAPP.Forms
 
         private async void AdminChangesForm_Load(object sender, EventArgs e)
         {
-            LoadingLabel.Visible = true;
+            ListSizeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            ListSizeComboBox.Items.Clear();
+            ListSizeComboBox.Items.AddRange(new object[]
+            {
+                10,
+                20,
+                30,
+                50,
+                100
+            });
+
+            ListSizeComboBox.SelectedItem = 10;
 
             await Load_history();
-
-            LoadingLabel.Visible = false;
         }
 
         private async Task Load_history()
         {
-            var logs = await local_Data_service.GetGlobalAdminLogs(local_Data_service.Admins_names, 10);
+            LoadingLabel.Visible = true;
+            ListSizeComboBox.Enabled = false;
+
+            var logs = await local_Data_service.GetGlobalAdminLogs(local_Data_service.Admins_names, maxItemsToShow);
 
             FlowLayoutPanel.SuspendLayout();
             FlowLayoutPanel.Controls.Clear();
@@ -45,6 +60,19 @@ namespace AgeAPP.Forms
             }
 
             FlowLayoutPanel.ResumeLayout();
+
+            ListSizeComboBox.Enabled = true;
+            LoadingLabel.Visible = false;
+        }
+
+        private async void ListSizeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListSizeComboBox.SelectedItem is int value)
+            {
+                maxItemsToShow = value;
+
+                await Load_history();
+            }
         }
     }
 }
