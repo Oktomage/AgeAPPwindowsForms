@@ -57,7 +57,7 @@ namespace AgeAPP.Cards
                 return;
 
             AnalyzePlayerForm form = new AnalyzePlayerForm(BindedPlayer);
-            form.ShowDialog();
+            form.Show();
         }
     }
 }

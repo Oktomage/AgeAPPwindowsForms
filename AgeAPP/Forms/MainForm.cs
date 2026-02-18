@@ -35,8 +35,9 @@ namespace AgeAPP
             // 🔹 1. Conecta como USER primeiro (client EXISTE)
             Data_service.Connect_to_firesharp("user");
 
-            // 🔹 2. Agora PODE buscar admins
+            // 🔹 2. Agora PODE buscar admins & contas
             await Data_service.Request_adminAccounts();
+            await Data_service.Request_allAccountsNames();
 
             // 🔹 3. Recupera sessão
             Data_service.LocalAccount = local_Main_functions_service.Load_session();

@@ -26,6 +26,7 @@ namespace AgeAPP.Classes
         public Account LocalAccount;
 
         public List<string> Admins_names = new List<string>();
+        public List<string> All_accountsNames = new List<string>();
 
         public async Task<List<string>> Request_adminAccounts()
         {
@@ -45,6 +46,23 @@ namespace AgeAPP.Classes
                 .ToList();
 
             return Admins_names;
+        }
+
+        public async Task<List<string>> Request_allAccountsNames()
+        {
+            var response = await client.GetAsync("accounts");
+
+            if (response.Body == "null")
+            {
+                All_accountsNames = new List<string>();
+                return All_accountsNames;
+            }
+
+            var data = JsonConvert.DeserializeObject<Dictionary<string, Account>>(response.Body);
+
+            All_accountsNames = data.Keys.ToList();
+
+            return All_accountsNames;
         }
 
         // CONNECTION
