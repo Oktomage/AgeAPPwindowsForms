@@ -11,6 +11,8 @@ namespace AgeAPP.Cards
         public MatchHistoryCard()
         {
             InitializeComponent();
+
+            this.BackColor = Color.FromArgb(180, 0, 0, 0);
         }
 
         public void Bind(Main_classes.Log log)

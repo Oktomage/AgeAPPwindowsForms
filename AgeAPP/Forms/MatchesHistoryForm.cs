@@ -30,6 +30,7 @@ namespace AgeAPP.Forms
 
         private async void MatchesHistoryForm_Load(object sender, EventArgs e)
         {
+            // Tamanho da lista
             ListSizeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
             ListSizeComboBox.Items.Clear();
@@ -43,6 +44,9 @@ namespace AgeAPP.Forms
             });
 
             ListSizeComboBox.SelectedItem = 10;
+
+            // Background
+            //FlowLayouPanel.BackColor = Color.FromArgb(140, 0, 0, 0);
 
             await Load_history();
         }

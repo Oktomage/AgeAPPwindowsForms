@@ -41,9 +41,9 @@
             // 
             FlowLayouPanel.BackColor = Color.Transparent;
             FlowLayouPanel.Dock = DockStyle.Bottom;
-            FlowLayouPanel.Location = new Point(0, 44);
+            FlowLayouPanel.Location = new Point(0, 37);
             FlowLayouPanel.Name = "FlowLayouPanel";
-            FlowLayouPanel.Size = new Size(714, 802);
+            FlowLayouPanel.Size = new Size(714, 809);
             FlowLayouPanel.TabIndex = 0;
             // 
             // panel1
